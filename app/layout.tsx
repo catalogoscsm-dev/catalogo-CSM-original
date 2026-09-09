@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import { ThemeProvider } from '@/components/ThemeProvider'
+import SearchToolbar from '@/components/SearchToolbar'
 import { getSession } from '@/lib/auth'
+import { Suspense } from 'react'
 
-const geist = Geist({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: 'Catálogo CSM',
@@ -17,11 +20,16 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="pt-BR">
-      <body className={`${geist.className} bg-gray-50 min-h-screen`}>
-        <Header isAdmin={!!isAdmin} />
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
-        </main>
+      <body className={`${inter.variable} min-h-screen`}>
+        <ThemeProvider>
+          <Header isAdmin={!!isAdmin} />
+          <Suspense>
+            <SearchToolbar />
+          </Suspense>
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   )

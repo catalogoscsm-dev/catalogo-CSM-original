@@ -4,8 +4,10 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ImageZoom from '@/components/ImageZoom'
 import FavShare from './FavShare'
+import FichaTecnica from '@/components/FichaTecnica'
+import DimensoesDisplay from '@/components/DimensoesDisplay'
 import { getSession } from '@/lib/auth'
-import { ShieldCheck } from 'lucide-react'
+import { ShieldCheck, ChevronRight } from 'lucide-react'
 
 type ProdutoRow = Produto & { imagens: string; catalogo_pasta: string }
 
@@ -31,10 +33,10 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
   const fichaPublica = [
     { label: 'Material', value: produto.material },
-    { label: 'Dimensões', value: produto.dimensoes },
-    { label: 'Acabamento', value: produto.acabamento },
-    { label: 'Cores disponíveis', value: produto.cores },
-  ].filter(c => c.value)
+  ].filter(c => c.value && c.value.trim().length > 1)
+
+  const temDimensoes = produto.dimensoes && produto.dimensoes.trim().length > 1
+  const temAcabamento = produto.acabamento && produto.acabamento.trim().length > 1
 
   const fichaInterna = [
     { label: 'Fornecedor', value: produto.catalogo_nome },
@@ -43,77 +45,93 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
   ].filter(c => c.value)
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 animate-fade-in">
+
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm">
-        <Link href="/" className="text-gray-400 hover:text-gray-600">Início</Link>
-        <span className="text-gray-300">/</span>
-        <span className="text-gray-700 font-medium truncate max-w-xs">{produto.nome}</span>
+      <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--muted)' }}>
+        <Link href="/" className="hover:underline transition-colors" style={{ color: 'var(--bronze)' }}>Início</Link>
+        <ChevronRight className="w-3 h-3" />
+        <span style={{ color: 'var(--charcoal)' }}>{produto.nome}</span>
       </div>
 
-      {/* Layout: imagem à esquerda, info à direita */}
-      <div className="grid lg:grid-cols-2 gap-10 items-start">
+      {/* Layout principal */}
+      <div className="grid lg:grid-cols-2 gap-12 items-start">
 
-        <ImageZoom
-          src={produto.imagens[0] ?? null}
-          alt={produto.nome}
-          thumbnails={produto.imagens}
-        />
+        {/* Coluna esquerda — zoom */}
+        <div className="animate-fade-up">
+          <ImageZoom
+            src={produto.imagens[0] ?? null}
+            alt={produto.nome}
+            thumbnails={produto.imagens}
+          />
+        </div>
 
-        <div className="space-y-6">
-          <h1 className="text-2xl font-bold text-gray-900 leading-tight">{produto.nome}</h1>
+        {/* Coluna direita */}
+        <div className="space-y-8 animate-fade-up delay-200">
+
+          {/* Badge categoria + Nome */}
+          <div className="space-y-3">
+            {produto.descricao && produto.descricao.trim().length > 1 && (
+              <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
+                style={{ background: 'rgba(140,110,24,0.1)', color: 'var(--bronze)' }}>
+                {produto.descricao}
+              </span>
+            )}
+            <h1 className="text-3xl font-bold leading-tight"
+              style={{ fontFamily: "'Playfair Display', serif", color: 'var(--charcoal)' }}>
+              {produto.nome}
+            </h1>
+          </div>
 
           <FavShare produtoId={produto.id} />
 
-          {produto.descricao && (
-            <p className="text-gray-600 text-sm leading-relaxed">{produto.descricao}</p>
-          )}
+          {/* Divisor dourado */}
+          <div className="h-px" style={{ background: 'linear-gradient(90deg, var(--bronze-pale), transparent)' }} />
 
-          {/* Ficha técnica pública */}
-          {fichaPublica.length > 0 && (
-            <div>
-              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-3">
-                Ficha Técnica
-              </h2>
-              <table className="w-full text-sm border-collapse">
-                <tbody>
-                  {fichaPublica.map(({ label, value }) => (
-                    <tr key={label} className="border-b border-gray-100 last:border-0">
-                      <td className="py-3 pr-4 text-gray-400 font-medium w-44 align-top">{label}</td>
-                      <td className="py-3 text-gray-800">{value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          {/* Ficha Técnica */}
+          {(fichaPublica.length > 0 || temDimensoes || temAcabamento) && (
+            <div className="space-y-6">
+              {fichaPublica.length > 0 && (
+                <>
+                  <h2 className="text-xs uppercase tracking-[0.25em] font-medium" style={{ color: 'var(--muted)' }}>
+                    Ficha Técnica
+                  </h2>
+                  <FichaTecnica items={fichaPublica as { label: string; value: string }[]} />
+                </>
+              )}
+
+              <DimensoesDisplay
+                raw={temDimensoes ? produto.dimensoes : null}
+                acabamento={temAcabamento ? produto.acabamento : null}
+              />
             </div>
           )}
 
-          {/* Bloco interno — visível apenas para admin */}
+          {/* Dados internos admin */}
           {isAdmin && fichaInterna.length > 0 && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 space-y-3">
-              <div className="flex items-center gap-2 text-amber-700 font-semibold text-sm">
+            <div className="rounded-2xl p-5 space-y-4"
+              style={{ background: 'linear-gradient(135deg, rgba(184,151,58,0.08), rgba(212,184,106,0.10))',
+                border: '1px solid rgba(184,151,58,0.25)' }}>
+              <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--bronze)' }}>
                 <ShieldCheck className="w-4 h-4" />
                 Dados internos
               </div>
-              <table className="w-full text-sm">
-                <tbody>
-                  {fichaInterna.map(({ label, value }) => (
-                    <tr key={label} className="border-b border-amber-100 last:border-0">
-                      <td className="py-2.5 pr-4 text-amber-600 font-medium w-44">{label}</td>
-                      <td className="py-2.5 text-amber-900 font-semibold">{value}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              {fichaInterna.map(({ label, value }) => (
+                <div key={label} className="flex items-center gap-4">
+                  <span className="text-xs w-36 shrink-0" style={{ color: 'var(--bronze-light)' }}>{label}</span>
+                  <span className="text-sm font-semibold" style={{ color: 'var(--charcoal)' }}>{value}</span>
+                </div>
+              ))}
             </div>
           )}
 
           {produto.texto_livre && (
-            <div className="bg-gray-50 rounded-xl p-4">
-              <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-widest mb-2">
-                Informações adicionais
+            <div className="rounded-2xl p-5 space-y-2"
+              style={{ background: 'rgba(247,244,240,0.8)', border: '1px solid var(--border)' }}>
+              <h2 className="text-xs uppercase tracking-[0.25em] font-medium" style={{ color: 'var(--muted)' }}>
+                Observações
               </h2>
-              <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">
+              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--charcoal)' }}>
                 {produto.texto_livre}
               </p>
             </div>

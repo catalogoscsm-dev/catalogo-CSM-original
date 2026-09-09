@@ -24,21 +24,19 @@ export default function FavShare({ produtoId }: { produtoId: number }) {
 
   return (
     <div className="flex gap-3">
-      <button
-        onClick={toggleFav}
-        className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-          isFav
-            ? 'bg-red-500 text-white'
-            : 'bg-gray-100 text-gray-600 hover:bg-red-50 hover:text-red-500'
-        }`}
-      >
+      <button onClick={toggleFav}
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+        style={{
+          background: isFav ? 'var(--bronze)' : 'transparent',
+          border: `1px solid ${isFav ? 'var(--bronze)' : 'var(--border)'}`,
+          color: isFav ? '#FDFCFB' : 'var(--muted)',
+        }}>
         <Heart className="w-4 h-4" fill={isFav ? 'currentColor' : 'none'} />
         {isFav ? 'Salvo' : 'Favoritar'}
       </button>
-      <button
-        onClick={compartilhar}
-        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-100 text-gray-600 hover:bg-blue-50 hover:text-blue-500 text-sm font-medium transition-colors"
-      >
+      <button onClick={compartilhar}
+        className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:scale-105"
+        style={{ background: 'transparent', border: '1px solid var(--border)', color: 'var(--muted)' }}>
         <Share2 className="w-4 h-4" />
         {copied ? 'Copiado!' : 'Compartilhar'}
       </button>
