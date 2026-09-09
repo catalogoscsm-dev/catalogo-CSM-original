@@ -1,69 +1,103 @@
-import Image from "next/image";
+import { Suspense } from 'react'
+import SearchBar from '@/components/SearchBar'
+import ProductCard from '@/components/ProductCard'
+import { getDb } from '@/lib/db'
+import { Produto } from '@/lib/types'
 
-export default function Home() {
+function getProdutos(q?: string, catalogo?: string): Produto[] {
+  const db = getDb()
+  let sql = `
+    SELECT p.*, c.nome as catalogo_nome
+    FROM produtos p
+    JOIN catalogos c ON p.catalogo_id = c.id
+    WHERE 1=1
+  `
+  const params: unknown[] = []
+
+  if (q) {
+    sql += ` AND (p.nome LIKE ? OR p.descricao LIKE ? OR p.material LIKE ? OR p.texto_livre LIKE ?)`
+    params.push(`%${q}%`, `%${q}%`, `%${q}%`, `%${q}%`)
+  }
+  if (catalogo) {
+    sql += ` AND c.pasta = ?`
+    params.push(catalogo)
+  }
+
+  sql += ` LIMIT 60`
+  const rows = db.prepare(sql).all(...params) as (Produto & { imagens: string })[]
+  return rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') }))
+}
+
+function getTotalCatalogos(): number {
+  const db = getDb()
+  const row = db.prepare('SELECT COUNT(*) as total FROM catalogos').get() as { total: number }
+  return row.total
+}
+
+function getTotalProdutos(): number {
+  const db = getDb()
+  const row = db.prepare('SELECT COUNT(*) as total FROM produtos').get() as { total: number }
+  return row.total
+}
+
+export default function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; catalogo?: string }>
+}) {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <Suspense>
+      <HomeContent searchParamsPromise={searchParams} />
+    </Suspense>
+  )
+}
+
+async function HomeContent({
+  searchParamsPromise,
+}: {
+  searchParamsPromise: Promise<{ q?: string; catalogo?: string }>
+}) {
+  const { q, catalogo } = await searchParamsPromise
+  const produtos = getProdutos(q, catalogo)
+  const totalCatalogos = getTotalCatalogos()
+  const totalProdutos = getTotalProdutos()
+
+  return (
+    <div className="space-y-8">
+      <div className="text-center space-y-4 py-8">
+        <h1 className="text-4xl font-bold text-gray-900">Catálogo Digital</h1>
+        <p className="text-gray-500 text-lg">
+          {totalCatalogos} catálogos · {totalProdutos} produtos
+        </p>
+        <div className="max-w-2xl mx-auto">
+          <SearchBar />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </div>
+
+      {produtos.length === 0 ? (
+        <div className="text-center py-20 text-gray-400">
+          <p className="text-xl">Nenhum produto encontrado</p>
+          {q && <p className="text-sm mt-2">Tente buscar por outro termo</p>}
+          {totalProdutos === 0 && (
+            <p className="text-sm mt-4 text-gray-400">
+              O catálogo ainda não foi alimentado com produtos.
+            </p>
+          )}
         </div>
-      </main>
+      ) : (
+        <>
+          {q && (
+            <p className="text-sm text-gray-500">
+              {produtos.length} resultado(s) para &quot;{q}&quot;
+            </p>
+          )}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {produtos.map(p => (
+              <ProductCard key={p.id} produto={p} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
-  );
+  )
 }
