@@ -146,7 +146,15 @@ export default function ProductsView({ produtos, total }: Props) {
     })
   }, [produtos, query])
 
-  const [view, setView] = useState<'grid' | 'list'>('grid')
+  const [view, setView] = useState<'grid' | 'list'>(() => {
+    if (typeof window === 'undefined') return 'grid'
+    return (localStorage.getItem('csm_view') as 'grid' | 'list') ?? 'grid'
+  })
+
+  function changeView(v: 'grid' | 'list') {
+    setView(v)
+    localStorage.setItem('csm_view', v)
+  }
 
   return (
     <div className="space-y-4">
@@ -160,7 +168,7 @@ export default function ProductsView({ produtos, total }: Props) {
 
         <div className="flex items-center gap-1 p-1 rounded-lg" style={{ background: 'var(--surface)' }}>
           <button
-            onClick={() => setView('grid')}
+            onClick={() => changeView('grid')}
             title="Grade"
             className="w-8 h-7 rounded-md flex items-center justify-center transition-all duration-200"
             style={{
@@ -171,7 +179,7 @@ export default function ProductsView({ produtos, total }: Props) {
             <LayoutGrid className="w-3.5 h-3.5" />
           </button>
           <button
-            onClick={() => setView('list')}
+            onClick={() => changeView('list')}
             title="Lista"
             className="w-8 h-7 rounded-md flex items-center justify-center transition-all duration-200"
             style={{
