@@ -20,10 +20,13 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
   const [mounted, setMounted]   = useState(false)
   const [imgLoaded, setImgLoaded] = useState(false)
   const [revealed, setRevealed] = useState(false)
+  const [imgIdx, setImgIdx]     = useState(0)
+  const [fading, setFading]     = useState(false)
 
   const cardRef = useRef<HTMLDivElement>(null)
   const { theme } = useTheme()
   const isDark = mounted && theme === 'dark'
+  const imgs = produto.imagens ?? []
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -34,7 +37,6 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          // Delay leve para não revelar tudo de uma vez no carregamento inicial
           setTimeout(() => setRevealed(true), 80)
           observer.disconnect()
         }
@@ -45,7 +47,25 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
     return () => observer.disconnect()
   }, [])
 
-  const img = produto.imagens?.[0] ?? null
+  // Ciclo de imagens no hover
+  useEffect(() => {
+    if (!hovered || imgs.length <= 1) return
+    const interval = setInterval(() => {
+      setFading(true)
+      setTimeout(() => {
+        setImgIdx(i => (i + 1) % imgs.length)
+        setFading(false)
+      }, 180)
+    }, 950)
+    return () => clearInterval(interval)
+  }, [hovered, imgs.length])
+
+  // Reset ao sair
+  useEffect(() => {
+    if (!hovered) { setImgIdx(0); setFading(false) }
+  }, [hovered])
+
+  const img = imgs[imgIdx] ?? null
 
   async function toggleFavorito(e: React.MouseEvent) {
     e.preventDefault()
@@ -78,14 +98,16 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
           {img ? (
             <>
-              <Image
-                src={img}
-                alt={produto.nome}
-                fill
-                className="object-contain transition-transform duration-500"
-                style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
-                onLoad={() => setImgLoaded(true)}
-              />
+              <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.18s ease', position: 'absolute', inset: 0 }}>
+                <Image
+                  src={img}
+                  alt={produto.nome}
+                  fill
+                  className="object-contain transition-transform duration-500"
+                  style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
+                  onLoad={() => setImgLoaded(true)}
+                />
+              </div>
 
               {/* Skeleton: some quando imagem carrega */}
               {!imgLoaded && (
@@ -94,6 +116,28 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
               {/* Cortina de reveal: sobe quando card entra na viewport */}
               <div className={`img-curtain ${revealed ? 'revealed' : ''}`} />
+
+              {/* Dots indicadores de múltiplas imagens */}
+              {imgs.length > 1 && (
+                <div
+                  className="absolute bottom-2 inset-x-0 flex justify-center gap-1 transition-opacity duration-200"
+                  style={{ opacity: hovered ? 1 : 0.5, zIndex: 15 }}
+                >
+                  {imgs.map((_, i) => (
+                    <div
+                      key={i}
+                      style={{
+                        width: i === imgIdx ? 14 : 5,
+                        height: 5,
+                        borderRadius: 3,
+                        background: i === imgIdx ? 'white' : 'rgba(255,255,255,0.5)',
+                        transition: 'all 0.25s ease',
+                        boxShadow: '0 1px 3px rgba(0,0,0,0.4)',
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
             </>
           ) : (
             <div className="flex flex-col items-center justify-center h-full gap-2">
