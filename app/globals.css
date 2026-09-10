@@ -294,7 +294,7 @@ html.dark .catalog-card:hover {
 @media (max-width: 640px) {
   .list-card {
     grid-template-columns: 1fr !important;
-    grid-template-rows: 260px auto;
+    grid-template-rows: 200px auto;
   }
 }
 

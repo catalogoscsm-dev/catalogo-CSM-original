@@ -32,7 +32,7 @@ function ListCard({ produto }: { produto: Produto }) {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          minHeight: 300,
+          minHeight: 240,
           background: 'var(--surface)',
           border: '1px solid var(--border)',
         }}
@@ -84,7 +84,7 @@ function ListCard({ produto }: { produto: Produto }) {
               fill
               unoptimized
               className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-              style={{ padding: '2rem' }}
+              style={{ padding: '1rem' }}
             />
           ) : (
             <div className="flex items-center justify-center h-full text-sm" style={{ color: '#bbb', minHeight: 280 }}>
@@ -94,7 +94,7 @@ function ListCard({ produto }: { produto: Produto }) {
         </div>
 
         {/* ── Lado da info ── */}
-        <div className="flex flex-col justify-center px-10 py-8 gap-4" style={{ background: 'var(--bg)' }}>
+        <div className="flex flex-col justify-center px-8 py-6 gap-3" style={{ background: 'var(--bg)' }}>
           <div className="space-y-2">
             {produto.catalogo_nome && (
               <p className="text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--text-secondary)', opacity: 0.7 }}>
@@ -102,7 +102,7 @@ function ListCard({ produto }: { produto: Produto }) {
               </p>
             )}
             <h2 className="font-display" style={{
-              fontSize: 'clamp(1.5rem, 2.5vw, 2.4rem)',
+              fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
               fontWeight: 400,
               lineHeight: 1.1,
               color: 'var(--text-primary)',
