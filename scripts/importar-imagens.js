@@ -56,18 +56,21 @@ if (!catalogo) {
   process.exit(1)
 }
 
-const pastaDestino = path.join(BASE_DIR, catalogoPasta, 'imagens dos produtos')
+const pastaDestino    = path.join(BASE_DIR, catalogoPasta, 'imagens dos produtos')
+const pastaPublica    = path.join(__dirname, '..', 'public', 'imagens', catalogoPasta)
 fs.mkdirSync(pastaDestino, { recursive: true })
+fs.mkdirSync(pastaPublica, { recursive: true })
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
-function buildApiPath(filename) {
-  return `/api/imagem/${encodeURIComponent(catalogoPasta)}/imagens%20dos%20produtos/${encodeURIComponent(filename)}`
+function buildPath(filename) {
+  return `/imagens/${encodeURIComponent(catalogoPasta)}/${encodeURIComponent(filename)}`
 }
 
 function copyFile(arq) {
   fs.copyFileSync(path.join(pastaOrigem, arq), path.join(pastaDestino, arq))
-  return buildApiPath(arq)
+  fs.copyFileSync(path.join(pastaOrigem, arq), path.join(pastaPublica, arq))
+  return buildPath(arq)
 }
 
 const _cache = {}
@@ -91,8 +94,9 @@ function nearestProduto(pagina) {
 
 // ── Escanear pasta de origem ───────────────────────────────────────────────────
 
-const PAG_RE     = /^pag\s+(\d+)\.\w+$/i
-const RECORTE_RE = /^pag\s+recorte\s+(\d+)\.\w+$/i
+// Aceita qualquer prefixo antes de "pag" e "recorte pag N" ou "pag recorte N"
+const RECORTE_RE = /(?:recorte\s+pag|pag\s+recorte)\s+0*(\d+)\.\w+$/i
+const PAG_RE     = /pag\s+0*(\d+)\.\w+$/i
 
 // lote[pagina] = { main: arquivo|null, recortes: arquivo[] }
 const lote = {}
@@ -120,7 +124,7 @@ for (const arq of fs.readdirSync(pastaOrigem)) {
 const paginas = Object.keys(lote).map(Number).sort((a, b) => a - b)
 
 if (paginas.length === 0) {
-  console.warn('\nNenhum arquivo reconhecido. Padrões aceitos:  pag 17.jpg  /  pag recorte 18.png\n')
+  console.warn('\nNenhum arquivo reconhecido. Padrões aceitos:  pag 17.jpg  /  pag recorte 18.png  /  recorte pag 18.png  /  Catalogo pag 17.png\n')
   process.exit(0)
 }
 
