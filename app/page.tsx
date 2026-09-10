@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { getDb } from '@/lib/db'
+import { normalizeQuery } from '@/lib/search'
 import { Produto } from '@/lib/types'
 import ProductCard from '@/components/ProductCard'
 import SkeletonCard from '@/components/SkeletonCard'
@@ -14,8 +15,9 @@ function getProdutos(q?: string): Produto[] {
   `
   const params: unknown[] = []
   if (q) {
-    sql += ` AND (p.nome LIKE ? OR p.descricao LIKE ? OR p.material LIKE ? OR p.texto_livre LIKE ? OR p.acabamento LIKE ?)`
-    params.push(`%${q}%`, `%${q}%`, `%${q}%`, `%${q}%`, `%${q}%`)
+    const nq = `%${normalizeQuery(q)}%`
+    sql += ` AND (norm(p.nome) LIKE ? OR norm(p.descricao) LIKE ? OR norm(p.material) LIKE ? OR norm(p.texto_livre) LIKE ? OR norm(p.acabamento) LIKE ?)`
+    params.push(nq, nq, nq, nq, nq)
   }
   sql += ` LIMIT 60`
   const rows = db.prepare(sql).all(...params) as (Produto & { imagens: string })[]

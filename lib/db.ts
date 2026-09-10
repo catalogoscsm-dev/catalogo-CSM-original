@@ -12,6 +12,11 @@ export function getDb(): Database.Database {
     db = new Database(DB_PATH)
     db.pragma('journal_mode = WAL')
     initSchema(db)
+    // Função customizada para comparação sem acentos
+    db.function('norm', (s: unknown) => {
+      if (!s) return ''
+      return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    })
   }
   return db
 }

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
+import { normalizeQuery } from '@/lib/search'
 import { Produto } from '@/lib/types'
 
 export async function POST(req: Request) {
@@ -45,13 +46,14 @@ export async function GET(req: Request) {
   const q = searchParams.get('q') ?? ''
   const db = getDb()
 
+  const nq = `%${normalizeQuery(q)}%`
   const rows = db.prepare(`
     SELECT p.*, c.nome as catalogo_nome
     FROM produtos p
     JOIN catalogos c ON p.catalogo_id = c.id
-    WHERE p.nome LIKE ? OR p.material LIKE ? OR p.descricao LIKE ?
+    WHERE norm(p.nome) LIKE ? OR norm(p.material) LIKE ? OR norm(p.descricao) LIKE ?
     LIMIT 50
-  `).all(`%${q}%`, `%${q}%`, `%${q}%`) as (Produto & { imagens: string })[]
+  `).all(nq, nq, nq) as (Produto & { imagens: string })[]
 
   return NextResponse.json(rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') })))
 }
