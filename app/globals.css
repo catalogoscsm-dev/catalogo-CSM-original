@@ -290,6 +290,14 @@ html.dark .catalog-card:hover {
   }
 }
 
+/* ─── Modo foco: mobile empilhado ─── */
+@media (max-width: 640px) {
+  .focus-card {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 55dvh 1fr;
+  }
+}
+
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
