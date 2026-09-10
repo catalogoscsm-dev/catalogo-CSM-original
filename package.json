@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export-data": "node scripts/export-data.js"
   },
   "dependencies": {
     "better-sqlite3": "^13.0.3",

@@ -1,19 +1,6 @@
-import { getDb } from '@/lib/db'
-import { Catalogo } from '@/lib/types'
+import { getCatalogos } from '@/lib/data'
 import Link from 'next/link'
 import { BookOpen, Package } from 'lucide-react'
-
-function getCatalogos(): Catalogo[] {
-  const db = getDb()
-  const rows = db.prepare(`
-    SELECT c.*, COUNT(p.id) as total_produtos
-    FROM catalogos c
-    LEFT JOIN produtos p ON p.catalogo_id = c.id
-    GROUP BY c.id
-    ORDER BY c.nome
-  `).all() as Catalogo[]
-  return rows
-}
 
 export default function CatalogosPage() {
   const catalogos = getCatalogos()

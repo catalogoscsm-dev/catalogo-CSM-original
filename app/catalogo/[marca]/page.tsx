@@ -1,46 +1,19 @@
-import { getDb } from '@/lib/db'
-import { Produto, Catalogo } from '@/lib/types'
+import { getCatalogos, getCatalogoPorPasta, getProdutosPorCatalogo } from '@/lib/data'
 import ProductCard from '@/components/ProductCard'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 
-function getCatalogo(pasta: string): Catalogo | null {
-  const db = getDb()
-  const row = db.prepare(`
-    SELECT c.*, COUNT(p.id) as total_produtos
-    FROM catalogos c
-    LEFT JOIN produtos p ON p.catalogo_id = c.id
-    WHERE c.pasta = ?
-    GROUP BY c.id
-  `).get(decodeURIComponent(pasta)) as Catalogo | null
-  return row
-}
-
-function getProdutos(catalogoId: number): Produto[] {
-  const db = getDb()
-  const rows = db.prepare(`
-    SELECT p.*, c.nome as catalogo_nome
-    FROM produtos p
-    JOIN catalogos c ON p.catalogo_id = c.id
-    WHERE p.catalogo_id = ?
-    ORDER BY p.pagina, p.nome
-  `).all(catalogoId) as (Produto & { imagens: string })[]
-  return rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') }))
-}
-
 export async function generateStaticParams() {
-  const db = getDb()
-  const rows = db.prepare('SELECT pasta FROM catalogos').all() as { pasta: string }[]
-  return rows.map(r => ({ marca: encodeURIComponent(r.pasta) }))
+  return getCatalogos().map(c => ({ marca: encodeURIComponent(c.pasta) }))
 }
 
 export default async function CatalogoPage({ params }: { params: Promise<{ marca: string }> }) {
   const { marca } = await params
-  const catalogo = getCatalogo(marca)
+  const catalogo = getCatalogoPorPasta(decodeURIComponent(marca))
   if (!catalogo) notFound()
 
-  const produtos = getProdutos(catalogo.id)
+  const produtos = getProdutosPorCatalogo(catalogo.pasta)
 
   return (
     <div className="space-y-6">

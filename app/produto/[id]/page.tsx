@@ -1,5 +1,4 @@
-import { getDb } from '@/lib/db'
-import { Produto } from '@/lib/types'
+import { getProdutos, getProduto } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ImageZoom from '@/components/ImageZoom'
@@ -8,24 +7,8 @@ import FichaTecnica from '@/components/FichaTecnica'
 import DimensoesDisplay from '@/components/DimensoesDisplay'
 import { ShieldCheck, ChevronRight } from 'lucide-react'
 
-type ProdutoRow = Produto & { imagens: string; catalogo_pasta: string }
-
-function getProduto(id: string): (Produto & { catalogo_pasta: string }) | null {
-  const db = getDb()
-  const row = db.prepare(`
-    SELECT p.*, c.nome as catalogo_nome, c.pasta as catalogo_pasta
-    FROM produtos p
-    JOIN catalogos c ON p.catalogo_id = c.id
-    WHERE p.id = ?
-  `).get(id) as ProdutoRow | null
-  if (!row) return null
-  return { ...row, imagens: JSON.parse(row.imagens ?? '[]') }
-}
-
 export async function generateStaticParams() {
-  const db = getDb()
-  const rows = db.prepare('SELECT id FROM produtos').all() as { id: number }[]
-  return rows.map(r => ({ id: String(r.id) }))
+  return getProdutos().map(p => ({ id: String(p.id) }))
 }
 
 export default async function ProdutoPage({ params }: { params: Promise<{ id: string }> }) {
@@ -52,7 +35,6 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
     <div className="produto-fullbleed animate-fade-in">
       <div className="produto-grid">
 
-        {/* ── Imagem (sticky no desktop, normal no mobile) ── */}
         <div className="produto-img-col">
           <ImageZoom
             src={produto.imagens[0] ?? null}
@@ -62,10 +44,8 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
           />
         </div>
 
-        {/* ── Informações ── */}
         <div className="produto-info-col">
 
-          {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
             <Link href="/" className="hover:underline hover:opacity-70 transition-opacity"
               style={{ color: 'var(--text-secondary)' }}>
@@ -75,7 +55,6 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
             <span style={{ color: 'var(--text-primary)' }}>{produto.nome}</span>
           </div>
 
-          {/* Badge + Nome */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             {produto.descricao && produto.descricao.trim().length > 1 && (
               <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
@@ -103,7 +82,6 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
           <div className="h-px" style={{ background: 'var(--border)' }} />
 
-          {/* Ficha técnica + dimensões */}
           {(fichaPublica.length > 0 || temDimensoes || temAcabamento) && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {fichaPublica.length > 0 && (
@@ -122,7 +100,6 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
             </div>
           )}
 
-          {/* Dados internos admin */}
           {isAdmin && fichaInterna.length > 0 && (
             <div className="rounded-xl p-5 space-y-3"
               style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>

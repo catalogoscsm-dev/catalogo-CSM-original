@@ -1,17 +1,7 @@
-import { getDb } from '@/lib/db'
-import { Produto } from '@/lib/types'
+import { getProdutos } from '@/lib/data'
 import FavoritosClient from './FavoritosClient'
 
 export default function FavoritosPage() {
-  const db = getDb()
-  const rows = db.prepare(`
-    SELECT p.*, c.nome as catalogo_nome
-    FROM produtos p
-    JOIN catalogos c ON p.catalogo_id = c.id
-    ORDER BY p.nome
-  `).all() as (Produto & { imagens: string })[]
-
-  const todos = rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') }))
-
+  const todos = getProdutos()
   return <FavoritosClient todos={todos} />
 }
