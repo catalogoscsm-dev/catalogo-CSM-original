@@ -55,8 +55,8 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
       setTimeout(() => {
         setImgIdx(i => (i + 1) % imgs.length)
         setFading(false)
-      }, 180)
-    }, 950)
+      }, 300)
+    }, 2000)
     return () => clearInterval(interval)
   }, [hovered, imgs.length])
 
@@ -98,7 +98,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
           {img ? (
             <>
-              <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.18s ease', position: 'absolute', inset: 0 }}>
+              <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.3s ease', position: 'absolute', inset: 0 }}>
                 <Image
                   src={img}
                   alt={produto.nome}
