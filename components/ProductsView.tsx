@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { LayoutGrid, Rows3 } from 'lucide-react'
 import { Produto } from '@/lib/types'
@@ -21,12 +21,50 @@ interface Props {
 
 /* ── Card horizontal (modo lista) ── */
 function ListCard({ produto }: { produto: Produto }) {
-  const [imgIdx, setImgIdx] = useState(0)
   const imgs = produto.imagens ?? []
   const categoria = produto.descricao?.trim() || produto.catalogo_nome || ''
 
+  const [imgIdx, setImgIdx]   = useState(0)
+  const [fading, setFading]   = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const intervalRef           = useRef<ReturnType<typeof setInterval> | null>(null)
+  const idxRef                = useRef(0)
+
+  // Pré-carrega imagens ao entrar no hover
+  useEffect(() => {
+    if (!hovered || imgs.length <= 1) return
+    imgs.slice(1).forEach(src => { fetch(src).catch(() => {}) })
+  }, [hovered]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Ciclo automático de imagens no hover
+  useEffect(() => {
+    if (!hovered || imgs.length <= 1) return
+    idxRef.current = imgIdx
+    intervalRef.current = setInterval(() => {
+      setFading(true)
+      setTimeout(() => {
+        idxRef.current = (idxRef.current + 1) % imgs.length
+        setImgIdx(idxRef.current)
+        setTimeout(() => setFading(false), 80)
+      }, 320)
+    }, 2200)
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [hovered, imgs.length]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Reset ao sair do hover
+  useEffect(() => {
+    if (!hovered) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      setFading(true)
+      setTimeout(() => { setImgIdx(0); idxRef.current = 0; setFading(false) }, 300)
+    }
+  }, [hovered])
+
   return (
-    <Link href={`/produto/${produto.id}`} className="block group">
+    <Link href={`/produto/${produto.id}`} className="block group"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <div
         className="list-card rounded-2xl overflow-hidden transition-all duration-300 group-hover:shadow-xl"
         style={{
@@ -77,15 +115,17 @@ function ListCard({ produto }: { produto: Produto }) {
           )}
 
           {imgs[imgIdx] ? (
-            <Image
-              key={imgIdx}
-              src={imgs[imgIdx]}
-              alt={produto.nome}
-              fill
-              unoptimized
-              className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
-              style={{ padding: '1rem' }}
-            />
+            <div style={{ position: 'absolute', inset: 0, opacity: fading ? 0 : 1, transition: 'opacity 0.32s ease' }}>
+              <Image
+                key={imgIdx}
+                src={imgs[imgIdx]}
+                alt={produto.nome}
+                fill
+                unoptimized
+                className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                style={{ padding: '1rem' }}
+              />
+            </div>
           ) : (
             <div className="flex items-center justify-center h-full text-sm" style={{ color: '#bbb', minHeight: 280 }}>
               sem imagem
