@@ -1,23 +1,28 @@
 # Catálogo Digital CSM
 
-Catálogo digital interno da **CSM — Campinas Shopping Móveis**.
-Permite consultar produtos de móveis e decoração extraídos dos PDFs de fornecedores, com fotos, ficha técnica, dimensões, acabamentos e favoritos.
+Catálogo digital da **CSM — Campinas Shopping Móveis**.
+Consulta de produtos de móveis e decoração extraídos de PDFs de fornecedores.
+
+**Site ao vivo:** https://catalogo-csm-original.vercel.app
+**Repositório:** https://github.com/catalogoscsm-dev/catalogo-CSM-original
 
 ---
 
 ## Tecnologias
 
-- **Next.js 16** (App Router)
-- **better-sqlite3** — banco local em `database/catalogo.db`
-- **Tailwind CSS v4**
-- **framer-motion** — transições de página
-- **lucide-react** — ícones
+- **Next.js 16** (App Router, `output: 'export'` — geração estática)
+- **better-sqlite3** — banco local SQLite (usado só em dev/scripts)
+- **Vercel** — hospedagem gratuita, auto-deploy a cada `git push`
+- **Tailwind CSS v4** + **lucide-react** + **framer-motion**
 
 ---
 
-## Rodar o projeto
+## Rodar localmente
 
 ```bash
+git clone https://github.com/catalogoscsm-dev/catalogo-CSM-original.git
+cd catalogo-CSM-original
+npm install
 npm run dev
 ```
 
@@ -25,26 +30,50 @@ Acesse em: http://localhost:3000
 
 ---
 
-## Estrutura de pastas relevante
+## Estrutura de pastas
 
 ```
 catalogo-digital/
-├── app/                    → páginas e rotas (Next.js App Router)
-├── components/             → componentes React reutilizáveis
+├── app/                      → páginas (Next.js App Router)
+├── components/               → componentes React
+│   ├── ProductCard.tsx       → card com hover slideshow
+│   └── ProductsView.tsx      → grade (3 cols) e lista (horizontal)
 ├── database/
-│   └── catalogo.db         → banco SQLite com produtos, catálogos e favoritos
-├── scripts/                → scripts de manutenção e importação
-│   ├── seed.js             → popula o banco com catálogos e produtos
-│   ├── importar-imagens.js → importa fotos novas para um catálogo
-│   └── resinkar-catalogo.js→ religar imagens já na pasta ao banco
-└── lib/                    → utilitários, auth, db
-
-Imagens ficam em:
-C:\Users\joao.miguel\Documents\catalogos\catalogos separados\
-  └── {NOME DO CATÁLOGO}\
-        └── imagens dos produtos\
-              └── pag 17.png, pag recorte 18.png ...
+│   └── catalogo.db           → banco SQLite local
+├── data/
+│   └── static-data.json      → snapshot do banco para o build estático
+├── lib/
+│   ├── data.ts               → lê static-data.json (usado nas páginas)
+│   └── db.ts                 → acesso SQLite (usado nos scripts/admin)
+├── public/
+│   └── imagens/              → fotos dos produtos (commitadas no repo)
+│       ├── ABV 2025/
+│       ├── Artano 2024/
+│       └── Gold Line 2025/
+└── scripts/
+    ├── importar-imagens.js   → importa fotos novas de uma pasta
+    ├── resinkar-catalogo.js  → religar imagens já na pasta ao banco
+    └── export-data.js        → exporta banco → data/static-data.json
 ```
+
+---
+
+## ⚠️ Workflow obrigatório ao adicionar produtos ou fotos
+
+```bash
+# 1. Importar as fotos para o banco
+node scripts/importar-imagens.js "NOME DO CATÁLOGO" "PASTA COM AS FOTOS"
+
+# 2. OBRIGATÓRIO — atualizar o JSON que o site usa
+npm run export-data
+
+# 3. Commitar e subir (Vercel atualiza em ~1 minuto)
+git add .
+git commit -m "novos produtos"
+git push
+```
+
+**Se pular o `npm run export-data`, o site não vai mostrar os novos produtos.**
 
 ---
 
@@ -52,81 +81,70 @@ C:\Users\joao.miguel\Documents\catalogos\catalogos separados\
 
 ### Como nomear os arquivos
 
-Ao baixar imagens do PDF de um fornecedor, salve com os nomes:
+Ao extrair imagens do PDF de um fornecedor, salve com os nomes:
 
 | Nome do arquivo | Significado |
 |---|---|
-| `pag N.png` | Foto da página N (foto ambiente/completa do produto) |
+| `pag N.png` | Foto da página N (foto ambiente/completa) |
 | `pag recorte N.png` | Foto recortada/limpa da página N |
 
 `N` = número da página no PDF. Extensões aceitas: `.jpg`, `.jpeg`, `.png`, `.webp`
 
----
+### Regras de associação (automáticas)
 
-### Regras de associação (aplicadas automaticamente pelo script)
-
-1. `pag recorte N` → sempre a **capa** do produto cuja página no banco é N
-2. `pag N` + `pag recorte N` juntos → recorte vira capa, pag vira galeria
+1. `pag recorte N` → **capa** do produto cuja página no banco é N
+2. `pag N` + `pag recorte N` juntos → recorte = capa, pag = galeria
 3. Só `pag N` sem recorte → vira a **capa**
-4. Página N sem produto no banco → o script busca o produto mais próximo (N+1, N-1, N+2…) e adiciona como **galeria**
+4. Página N sem produto no banco → vai para galeria do produto mais próximo
 
----
+### Script 1 — Importar fotos novas
 
-### Script 1 — Importar imagens novas
-
-Use quando você baixou arquivos novos e quer adicioná-los ao catálogo.
-
-```bash
-node scripts/importar-imagens.js "NOME DO CATÁLOGO" "PASTA COM AS FOTOS"
-```
-
-**Exemplo:**
 ```bash
 node scripts/importar-imagens.js "ABV 2025" "C:\Users\joao\Desktop\fotos abv"
 ```
 
-O que acontece:
 - Lê os arquivos `pag N` e `pag recorte N` da pasta indicada
-- Copia cada um para `catalogos separados\{CATÁLOGO}\imagens dos produtos\`
-- Atualiza o campo `imagens` no banco de dados
-- Rodar duas vezes com os mesmos arquivos não duplica nada
-
----
+- Copia para `public/imagens/{catálogo}/`
+- Atualiza o campo `imagens` no banco
+- Idempotente (rodar duas vezes não duplica)
 
 ### Script 2 — Resinkar catálogo
 
-Use quando as imagens já estão na pasta do catálogo mas ainda não estão ligadas ao banco (ou estão desatualizadas).
-
 ```bash
-node scripts/resinkar-catalogo.js "NOME DO CATÁLOGO"
-# com --force: reprocessa mesmo quem já tem foto
-node scripts/resinkar-catalogo.js "NOME DO CATÁLOGO" --force
+node scripts/resinkar-catalogo.js "ABV 2025"
+node scripts/resinkar-catalogo.js "ABV 2025" --force   # reprocessa todos
 ```
 
-O que acontece:
-- Lê diretamente a pasta `imagens dos produtos` do catálogo
-- Reconhece qualquer convenção de nome (desde que o número da página apareça no filename)
-- Por padrão só toca produtos que ainda não têm foto
+- Usa arquivos que já estão na pasta do catálogo
+- `--force` reprocessa mesmo quem já tem foto
 
 ---
 
-### Fluxo completo de trabalho
+## Localização das imagens no disco
+
+Os scripts buscam as imagens em:
 
 ```
-1. Abrir o PDF do fornecedor
-
-2. Para cada produto:
-   → Salvar a foto da página como:      pag N.png
-   → Salvar a foto recortada como:      pag recorte N.png
-     (N = número da página no PDF)
-
-3. Juntar tudo numa pasta (ex: Desktop\fotos abv)
-
-4. Rodar o script:
-   node scripts/importar-imagens.js "ABV 2025" "C:\Users\...\fotos abv"
-
-5. Conferir no site — cada card já aparece com a foto correta e galeria
+C:\Users\joao.miguel\Documents\catalogos\catalogos separados\
+  └── {NOME DO CATÁLOGO}\
+        └── imagens dos produtos\
+              └── pag 17.png
+              └── pag recorte 18.png
+              └── ...
 ```
+
+---
+
+## Estado atual (set/2026)
+
+| Catálogo | Produtos | Imagens |
+|---|---|---|
+| ABV 2025 | catalogado págs 7–107 | ✅ importadas |
+| Artano 2024 | no banco | ⏳ fotos pendentes |
+| Gold Line 2025 | no banco | ⏳ fotos pendentes |
+
+- **57 produtos** no banco, **51 com fotos**, **102 imagens** no repositório
+- ~100 outros catálogos em disco ainda não importados
 
 ---
 
@@ -137,11 +155,13 @@ O que acontece:
 | Campo | Tipo | Descrição |
 |---|---|---|
 | `pagina` | INTEGER | Página do produto no PDF (chave de match para imagens) |
-| `imagens` | TEXT | JSON array de paths `/api/imagem/{catalogo}/imagens%20dos%20produtos/{arquivo}` |
+| `imagens` | TEXT | JSON array de paths `/imagens/{catalogo}/{arquivo}` |
 | `nome` | TEXT | Nome do produto |
 | `material` | TEXT | Material principal |
-| `dimensoes` | TEXT | Dimensões (ex: L 160 x P 90 x A 76 cm) |
+| `dimensoes` | TEXT | Dimensões |
 | `acabamento` | TEXT | Acabamentos disponíveis |
+| `codigo` | TEXT | Código do produto |
+| `texto_livre` | TEXT | Observações |
 
 ---
 
