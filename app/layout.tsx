@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import SearchToolbar from '@/components/SearchToolbar'
+import PageTransition from '@/components/PageTransition'
 import { getSession } from '@/lib/auth'
 import { Suspense } from 'react'
 
@@ -27,7 +28,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <SearchToolbar />
           </Suspense>
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
         </ThemeProvider>
       </body>

@@ -1,7 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
 
+/* ─── Light ─── */
 :root {
+  --bg: #FFFFFF;
+  --bg2: #F9F5EF;
+  --surface: #FAFAF9;
+  --surface-hover: #F5F2EE;
+  --surface-elevated: rgba(255,255,255,0.95);
+  --text-primary: #1A1714;
+  --text-secondary: #8A8480;
+  --border: rgba(0,0,0,0.08);
+  --accent: #8C6E18;
+  --accent-light: #B8973A;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* legado */
   --cream: #FFFFFF;
   --warm-white: #FFFFFF;
   --charcoal: #1A1714;
@@ -10,35 +25,108 @@
   --bronze-light: #B8973A;
   --bronze-pale: #F0E4C0;
   --muted: #8A8480;
-  --border: #F0EAE0;
+  --border-old: #F0EAE0;
+}
+
+/* ─── Dark ─── */
+html.dark {
+  --bg: #0f0f0f;
+  --bg2: #0f0f0f;
+  --surface: #212121;
+  --surface-hover: #2d2d2d;
+  --surface-elevated: rgba(33,33,33,0.98);
+  --text-primary: #f1f1f1;
+  --text-secondary: #aaaaaa;
+  --border: rgba(255,255,255,0.1);
+  --accent: #f1f1f1;
+  --accent-light: #cccccc;
+
+  /* legado */
+  --cream: #0f0f0f;
+  --warm-white: #212121;
+  --charcoal: #f1f1f1;
+  --muted: #aaaaaa;
+  --border-old: rgba(255,255,255,0.1);
+  --bronze: #d4a843;
+  --bronze-light: #e8c06a;
+  --bronze-pale: rgba(212,168,67,0.15);
 }
 
 * { box-sizing: border-box; }
 
 body {
-  background: linear-gradient(160deg, #FFFFFF 0%, #F9F5EF 40%, #F3EDE3 100%);
-  background-attachment: fixed;
-  color: var(--charcoal);
-  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Animações globais */
+html:not(.dark) body {
+  background-image: linear-gradient(160deg, #FFFFFF 0%, #F9F5EF 40%, #F3EDE3 100%);
+  background-attachment: fixed;
+}
+
+/* ─── Grain / Noise (dark mode) ─── */
+html.dark body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+/* ─── Skeleton shimmer ─── */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface)       0%,
+    var(--surface-hover) 40%,
+    var(--surface)       80%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.6s ease-in-out infinite;
+}
+
+/* ─── Reveal de imagem (cortina) ─── */
+.img-curtain {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  transform: translateY(0%);
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  background: var(--surface);
+}
+.img-curtain.revealed {
+  transform: translateY(-101%);
+}
+
+/* ─── Tipografia display ─── */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Animações ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
-@keyframes shimmer {
-  0%   { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(0.96); }
   to   { opacity: 1; transform: scale(1); }
@@ -54,40 +142,156 @@ body {
 .delay-400 { animation-delay: 0.4s; opacity: 0; }
 .delay-500 { animation-delay: 0.5s; opacity: 0; }
 
-/* Gradiente de texto dourado */
-.text-gradient {
-  background: linear-gradient(135deg, #B8973A 0%, #F0E4C0 50%, #8C6E18 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ─── Header ─── */
+.site-header {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+html.dark .site-header {
+  background: rgba(15,15,15,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Shimmer no hover */
-.shimmer-hover:hover {
-  background: linear-gradient(90deg, transparent 0%, rgba(184,151,58,0.08) 50%, transparent 100%);
-  background-size: 200% auto;
-  animation: shimmer 1.5s linear infinite;
+/* ─── Toolbar de busca ─── */
+.search-toolbar {
+  background: rgba(255,255,255,0.95);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+html.dark .search-toolbar {
+  background: rgba(15,15,15,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Card glass */
-.glass-card {
-  background: rgba(253, 252, 251, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(232, 210, 188, 0.4);
+/* ─── Input de busca ─── */
+.search-input {
+  background: #F7F4F0;
+  color: var(--text-primary);
+  border: 1px solid rgba(0,0,0,0.12);
+}
+html.dark .search-input {
+  background: #121212;
+  color: #f1f1f1;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.search-input:focus {
+  border-color: rgba(0,0,0,0.3);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+  outline: none;
+}
+html.dark .search-input:focus {
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.06);
 }
 
-/* Nav links */
-.nav-link {
-  color: var(--muted);
+/* ─── Botões da toolbar ─── */
+.toolbar-btn {
+  background: #F7F4F0;
+  border: 1px solid rgba(0,0,0,0.12);
 }
+html.dark .toolbar-btn {
+  background: #212121;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+html.dark .toolbar-btn:hover { background: #2d2d2d; }
+
+/* ─── Cards de produto ─── */
+.product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.14);
+}
+html.dark .product-card:hover {
+  background: var(--surface-hover);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  border-color: rgba(255,255,255,0.14);
+}
+
+/* ─── Título do card — Cormorant Garamond ─── */
+.card-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ─── Cards de catálogo ─── */
+.catalog-card:hover {
+  background: var(--surface-hover) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+html.dark .catalog-card:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+/* ─── Nav links ─── */
+.nav-link { color: var(--text-secondary); }
 .nav-link:hover {
-  color: var(--bronze);
-  background: rgba(184,151,58,0.08);
+  color: var(--text-primary);
+  background: var(--surface-hover);
 }
 
-/* Scrollbar elegante */
+/* ─── Produto: layout split-screen ─── */
+.produto-fullbleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+}
+
+.produto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: calc(100vh - 112px);
+  align-items: start;
+}
+
+.produto-img-col {
+  background: #ffffff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* mobile: altura natural baseada na imagem */
+  min-height: 60vw;
+  max-height: 90vw;
+}
+
+.produto-info-col {
+  background: var(--bg);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+@media (min-width: 1024px) {
+  .produto-grid {
+    grid-template-columns: 55% 45%;
+  }
+
+  .produto-img-col {
+    position: sticky;
+    top: 112px;
+    height: calc(100vh - 112px);
+    min-height: unset;
+    max-height: unset;
+    border-right: 1px solid var(--border);
+  }
+}
+
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--cream); }
-::-webkit-scrollbar-thumb { background: var(--bronze-pale); border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: var(--bronze-light); }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(128,128,128,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(128,128,128,0.5); }

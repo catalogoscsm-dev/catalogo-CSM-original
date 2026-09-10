@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Heart, Share2, Package } from 'lucide-react'
 import { Produto } from '@/lib/types'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useTheme } from './ThemeProvider'
 
 interface Props {
@@ -14,14 +14,36 @@ interface Props {
 }
 
 export default function ProductCard({ produto, favorito = false, onToggleFavorito }: Props) {
-  const [isFav, setIsFav] = useState(favorito)
-  const [copied, setCopied] = useState(false)
-  const [hovered, setHovered] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const [isFav, setIsFav]       = useState(favorito)
+  const [copied, setCopied]     = useState(false)
+  const [hovered, setHovered]   = useState(false)
+  const [mounted, setMounted]   = useState(false)
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [revealed, setRevealed] = useState(false)
+
+  const cardRef = useRef<HTMLDivElement>(null)
   const { theme } = useTheme()
   const isDark = mounted && theme === 'dark'
 
   useEffect(() => { setMounted(true) }, [])
+
+  // Reveal via IntersectionObserver — dispara quando o card entra na viewport
+  useEffect(() => {
+    const el = cardRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Delay leve para não revelar tudo de uma vez no carregamento inicial
+          setTimeout(() => setRevealed(true), 80)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.08 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const img = produto.imagens?.[0] ?? null
 
@@ -42,115 +64,96 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
     setTimeout(() => setCopied(false), 2000)
   }
 
-  // cores do card baseadas no tema
-  const cardBg = isDark
-    ? hovered ? '#201C14' : '#17140F'
-    : hovered ? '#FDFCFB' : '#FAFAF9'
-
-  const cardBorder = isDark
-    ? hovered ? 'rgba(184,151,58,0.5)' : 'rgba(44,39,25,0.9)'
-    : hovered ? 'rgba(184,151,58,0.5)' : 'rgba(232,226,218,0.8)'
-
-  const cardShadow = isDark
-    ? hovered
-      ? '0 20px 60px rgba(0,0,0,0.6), 0 4px 20px rgba(184,151,58,0.12), inset 0 1px 0 rgba(255,240,200,0.04)'
-      : '0 2px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,240,200,0.03)'
-    : hovered
-      ? '0 20px 60px rgba(26,23,20,0.12), 0 4px 16px rgba(139,107,71,0.08)'
-      : '0 2px 12px rgba(26,23,20,0.04)'
-
-  const imgBg = '#FDFCFB'
-  const actionBg = isDark ? 'rgba(28,29,36,0.95)' : 'rgba(253,252,251,0.95)'
-
   return (
     <Link href={`/produto/${produto.id}`} className="block group">
       <div
+        ref={cardRef}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="relative rounded-2xl overflow-hidden transition-all duration-500"
-        style={{
-          background: cardBg,
-          border: `1px solid ${cardBorder}`,
-          boxShadow: cardShadow,
-          transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-        }}
+        className="product-card"
+        style={{ transform: hovered ? 'translateY(-3px)' : 'translateY(0)' }}
       >
-        {/* fio dourado no topo (dark only) */}
-        {isDark && (
-          <div className="absolute top-0 inset-x-0 h-px pointer-events-none"
-            style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(184,151,58,0.2) 50%, transparent 90%)' }} />
-        )}
+        {/* Área de imagem */}
+        <div className="relative aspect-square overflow-hidden" style={{ background: '#ffffff' }}>
 
-        {/* Imagem */}
-        <div className="relative aspect-square overflow-hidden" style={{ background: imgBg }}>
           {img ? (
-            <Image
-              src={img}
-              alt={produto.nome}
-              fill
-              className="object-contain transition-transform duration-700"
-              style={{ transform: hovered ? 'scale(1.06)' : 'scale(1)', padding: '8px' }}
-            />
+            <>
+              <Image
+                src={img}
+                alt={produto.nome}
+                fill
+                className="object-contain transition-transform duration-500"
+                style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
+                onLoad={() => setImgLoaded(true)}
+              />
+
+              {/* Skeleton: some quando imagem carrega */}
+              {!imgLoaded && (
+                <div className="absolute inset-0 z-10 skeleton" />
+              )}
+
+              {/* Cortina de reveal: sobe quando card entra na viewport */}
+              <div className={`img-curtain ${revealed ? 'revealed' : ''}`} />
+            </>
           ) : (
             <div className="flex flex-col items-center justify-center h-full gap-2">
-              <Package className="w-10 h-10" style={{ color: 'var(--bronze-pale)' }} />
-              <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--bronze-pale)' }}>sem imagem</span>
+              <Package className="w-10 h-10" style={{ color: 'var(--text-secondary)', opacity: 0.4 }} />
+              <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-secondary)', opacity: 0.4 }}>
+                sem imagem
+              </span>
             </div>
           )}
 
-          {/* Ações */}
-          <div className="absolute top-2.5 right-2.5 flex flex-col gap-1.5 transition-all duration-300"
-            style={{ opacity: hovered ? 1 : 0, transform: hovered ? 'translateX(0)' : 'translateX(8px)' }}>
+          {/* Ações (hover) */}
+          <div
+            className="absolute top-2 right-2 flex flex-col gap-1.5 transition-all duration-200"
+            style={{
+              opacity: hovered ? 1 : 0,
+              transform: hovered ? 'translateX(0)' : 'translateX(6px)',
+              zIndex: 20,
+            }}
+          >
             <button onClick={toggleFavorito}
               className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
               style={{
-                background: isFav ? '#8C6E18' : actionBg,
-                boxShadow: '0 2px 8px rgba(0,0,0,0.18)',
+                background: isFav ? 'rgba(251,113,133,0.15)' : (isDark ? 'rgba(33,33,33,0.95)' : 'rgba(255,255,255,0.95)'),
+                boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                border: isFav ? '1px solid rgba(251,113,133,0.4)' : '1px solid transparent',
               }}>
-              <Heart className="w-3.5 h-3.5" fill={isFav ? 'white' : 'none'}
-                style={{ color: isFav ? 'white' : 'var(--bronze)' }} />
+              <Heart className="w-3.5 h-3.5 transition-all duration-200"
+                fill={isFav ? 'currentColor' : 'none'}
+                style={{ color: isFav ? '#fb7185' : 'var(--text-secondary)' }} />
             </button>
             <button onClick={compartilhar}
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
-              style={{ background: actionBg, boxShadow: '0 2px 8px rgba(0,0,0,0.18)' }}>
-              <Share2 className="w-3.5 h-3.5" style={{ color: 'var(--bronze)' }} />
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
+              style={{
+                background: isDark ? 'rgba(33,33,33,0.95)' : 'rgba(255,255,255,0.95)',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+              }}>
+              <Share2 className="w-3.5 h-3.5" style={{ color: 'var(--text-secondary)' }} />
             </button>
           </div>
 
           {copied && (
             <div className="absolute bottom-2 inset-x-2 text-center py-1 rounded-lg text-xs font-medium"
-              style={{ background: 'var(--charcoal)', color: '#FDFCFB' }}>
+              style={{ background: 'rgba(0,0,0,0.75)', color: '#f1f1f1', zIndex: 20 }}>
               Link copiado!
             </div>
           )}
-
-          {/* dissolução branco → card escuro (dark only) */}
-          {isDark && (
-            <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
-              style={{ background: `linear-gradient(to bottom, transparent 0%, ${cardBg} 100%)` }} />
-          )}
-
-          {/* linha âmbar inferior */}
-          <div className="absolute bottom-0 left-0 right-0 h-0.5 transition-all duration-500"
-            style={{
-              background: 'linear-gradient(90deg, transparent, #8C6E18, transparent)',
-              opacity: hovered ? 1 : 0,
-            }} />
         </div>
 
         {/* Info */}
-        <div className="p-4 space-y-1.5">
-          <h3 className="font-semibold text-sm leading-snug line-clamp-2 transition-colors duration-200"
-            style={{ color: hovered ? 'var(--bronze)' : 'var(--charcoal)', fontFamily: "'Playfair Display', serif" }}>
+        <div className="p-3 space-y-1">
+          <h3 className="card-title line-clamp-2">
             {produto.nome}
           </h3>
           {produto.dimensoes && (
-            <p className="text-xs truncate" style={{ color: 'var(--muted)' }}>
+            <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>
               {produto.dimensoes.split('|')[0].trim()}
             </p>
           )}
           {produto.acabamento && (
-            <p className="text-xs truncate" style={{ color: 'var(--bronze-light)' }}>
+            <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>
               {produto.acabamento}
             </p>
           )}

@@ -45,61 +45,72 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
   ].filter(c => c.value)
 
   return (
-    <div className="space-y-8 animate-fade-in">
+    <div className="produto-fullbleed animate-fade-in">
+      <div className="produto-grid">
 
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--muted)' }}>
-        <Link href="/" className="hover:underline transition-colors" style={{ color: 'var(--bronze)' }}>Início</Link>
-        <ChevronRight className="w-3 h-3" />
-        <span style={{ color: 'var(--charcoal)' }}>{produto.nome}</span>
-      </div>
-
-      {/* Layout principal */}
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
-
-        {/* Coluna esquerda — zoom */}
-        <div className="animate-fade-up">
+        {/* ── Imagem (sticky no desktop, normal no mobile) ── */}
+        <div className="produto-img-col">
           <ImageZoom
             src={produto.imagens[0] ?? null}
             alt={produto.nome}
             thumbnails={produto.imagens}
+            fullHeight
           />
         </div>
 
-        {/* Coluna direita */}
-        <div className="space-y-8 animate-fade-up delay-200">
+        {/* ── Informações ── */}
+        <div className="produto-info-col">
 
-          {/* Badge categoria + Nome */}
-          <div className="space-y-3">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+            <Link href="/" className="hover:underline hover:opacity-70 transition-opacity"
+              style={{ color: 'var(--text-secondary)' }}>
+              Início
+            </Link>
+            <ChevronRight className="w-3 h-3 opacity-40" />
+            <span style={{ color: 'var(--text-primary)' }}>{produto.nome}</span>
+          </div>
+
+          {/* Badge + Nome */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
             {produto.descricao && produto.descricao.trim().length > 1 && (
               <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
-                style={{ background: 'rgba(140,110,24,0.1)', color: 'var(--bronze)' }}>
+                style={{
+                  alignSelf: 'flex-start',
+                  background: 'var(--surface-hover)',
+                  color: 'var(--text-secondary)',
+                  border: '1px solid var(--border)',
+                }}>
                 {produto.descricao}
               </span>
             )}
-            <h1 className="text-3xl font-bold leading-tight"
-              style={{ fontFamily: "'Playfair Display', serif", color: 'var(--charcoal)' }}>
+            <h1 className="font-display" style={{
+              color: 'var(--text-primary)',
+              fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
+              fontWeight: 400,
+              lineHeight: 1.15,
+              letterSpacing: '-0.01em',
+            }}>
               {produto.nome}
             </h1>
           </div>
 
           <FavShare produtoId={produto.id} />
 
-          {/* Divisor dourado */}
-          <div className="h-px" style={{ background: 'linear-gradient(90deg, var(--bronze-pale), transparent)' }} />
+          <div className="h-px" style={{ background: 'var(--border)' }} />
 
-          {/* Ficha Técnica */}
+          {/* Ficha técnica + dimensões */}
           {(fichaPublica.length > 0 || temDimensoes || temAcabamento) && (
-            <div className="space-y-6">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {fichaPublica.length > 0 && (
                 <>
-                  <h2 className="text-xs uppercase tracking-[0.25em] font-medium" style={{ color: 'var(--muted)' }}>
+                  <h2 className="text-xs uppercase tracking-[0.2em] font-semibold"
+                    style={{ color: 'var(--text-secondary)' }}>
                     Ficha Técnica
                   </h2>
                   <FichaTecnica items={fichaPublica as { label: string; value: string }[]} />
                 </>
               )}
-
               <DimensoesDisplay
                 raw={temDimensoes ? produto.dimensoes : null}
                 acabamento={temAcabamento ? produto.acabamento : null}
@@ -109,33 +120,35 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
           {/* Dados internos admin */}
           {isAdmin && fichaInterna.length > 0 && (
-            <div className="rounded-2xl p-5 space-y-4"
-              style={{ background: 'linear-gradient(135deg, rgba(184,151,58,0.08), rgba(212,184,106,0.10))',
-                border: '1px solid rgba(184,151,58,0.25)' }}>
-              <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--bronze)' }}>
+            <div className="rounded-xl p-5 space-y-3"
+              style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+              <div className="flex items-center gap-2 text-sm font-medium"
+                style={{ color: 'var(--text-secondary)' }}>
                 <ShieldCheck className="w-4 h-4" />
                 Dados internos
               </div>
               {fichaInterna.map(({ label, value }) => (
                 <div key={label} className="flex items-center gap-4">
-                  <span className="text-xs w-36 shrink-0" style={{ color: 'var(--bronze-light)' }}>{label}</span>
-                  <span className="text-sm font-semibold" style={{ color: 'var(--charcoal)' }}>{value}</span>
+                  <span className="text-xs w-36 shrink-0" style={{ color: 'var(--text-secondary)' }}>{label}</span>
+                  <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{value}</span>
                 </div>
               ))}
             </div>
           )}
 
           {produto.texto_livre && (
-            <div className="rounded-2xl p-5 space-y-2"
-              style={{ background: 'rgba(247,244,240,0.8)', border: '1px solid var(--border)' }}>
-              <h2 className="text-xs uppercase tracking-[0.25em] font-medium" style={{ color: 'var(--muted)' }}>
+            <div className="rounded-xl p-5 space-y-2"
+              style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+              <h2 className="text-xs uppercase tracking-[0.2em] font-semibold"
+                style={{ color: 'var(--text-secondary)' }}>
                 Observações
               </h2>
-              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--charcoal)' }}>
+              <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--text-primary)' }}>
                 {produto.texto_livre}
               </p>
             </div>
           )}
+
         </div>
       </div>
     </div>

@@ -39,17 +39,18 @@ export default async function CatalogoPage({ params }: { params: Promise<{ marca
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <Link href="/catalogos" className="text-gray-400 hover:text-gray-600">
+        <Link href="/catalogos" className="transition-colors duration-200 hover:opacity-70"
+          style={{ color: 'var(--text-secondary)' }}>
           <ChevronLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">{catalogo.nome}</h1>
-          <p className="text-gray-500 text-sm">{catalogo.total_produtos} produto(s)</p>
+          <h1 className="font-display" style={{ color: 'var(--text-primary)', fontSize: '2rem', fontWeight: 400 }}>{catalogo.nome}</h1>
+          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{catalogo.total_produtos} produto(s)</p>
         </div>
       </div>
 
       {produtos.length === 0 ? (
-        <div className="text-center py-20 text-gray-400">
+        <div className="text-center py-20" style={{ color: 'var(--text-secondary)' }}>
           <p>Nenhum produto importado para este catálogo ainda.</p>
         </div>
       ) : (

@@ -17,11 +17,15 @@ export default function AdminButton({ isAdmin }: { isAdmin: boolean }) {
   if (isAdmin) {
     return (
       <button onClick={logout}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105"
-        style={{ background: 'rgba(184,151,58,0.12)', color: 'var(--bronze)', border: '1px solid rgba(184,151,58,0.3)' }}>
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:opacity-75"
+        style={{
+          background: 'var(--surface)',
+          color: 'var(--text-secondary)',
+          border: '1px solid var(--border)',
+        }}>
         <Shield className="w-3.5 h-3.5" />
         Admin
-        <LogOut className="w-3 h-3 opacity-60" />
+        <LogOut className="w-3 h-3 opacity-50" />
       </button>
     )
   }
@@ -29,15 +33,11 @@ export default function AdminButton({ isAdmin }: { isAdmin: boolean }) {
   return (
     <>
       <button onClick={() => setShowModal(true)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105"
-        style={{ color: 'var(--muted)', border: '1px solid var(--border)' }}
-        onMouseEnter={e => {
-          (e.currentTarget as HTMLElement).style.color = 'var(--bronze)'
-          ;(e.currentTarget as HTMLElement).style.borderColor = 'rgba(184,151,58,0.4)'
-        }}
-        onMouseLeave={e => {
-          (e.currentTarget as HTMLElement).style.color = 'var(--muted)'
-          ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 hover:opacity-75"
+        style={{
+          color: 'var(--text-secondary)',
+          border: '1px solid var(--border)',
+          background: 'transparent',
         }}>
         <Shield className="w-3.5 h-3.5" />
         Área Admin
