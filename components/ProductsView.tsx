@@ -186,7 +186,7 @@ export default function ProductsView({ produtos, total }: Props) {
 
       {/* ── GRADE ── */}
       {view === 'grid' && (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           {filtered.map((p, i) => (
             <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
               <ProductCard produto={p} />
