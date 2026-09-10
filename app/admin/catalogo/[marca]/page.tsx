@@ -29,8 +29,10 @@ function getProdutos(catalogoId: number): Produto[] {
   return rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') }))
 }
 
+export async function generateStaticParams() { return [{ marca: '_' }] }
+
 export default async function AdminCatalogoPage({ params }: { params: Promise<{ marca: string }> }) {
-  const session = await requireAdmin()
+  const session = await requireAdmin().catch(() => null)
   if (!session) redirect('/admin/login')
 
   const { marca } = await params

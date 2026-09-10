@@ -30,7 +30,13 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
   const isDark = mounted && theme === 'dark'
   const imgs = produto.imagens ?? []
 
-  useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    setMounted(true)
+    if (!favorito) {
+      const favs: number[] = JSON.parse(localStorage.getItem('csm_favoritos') ?? '[]')
+      setIsFav(favs.includes(produto.id))
+    }
+  }, [produto.id, favorito])
 
   // Reveal via IntersectionObserver — dispara quando o card entra na viewport
   useEffect(() => {
@@ -84,14 +90,14 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
   const img = imgs[imgIdx] ?? null
 
-  async function toggleFavorito(e: React.MouseEvent) {
+  function toggleFavorito(e: React.MouseEvent) {
     e.preventDefault()
-    const res = await fetch('/api/favoritos', {
-      method: isFav ? 'DELETE' : 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ produto_id: produto.id }),
-    })
-    if (res.ok) { setIsFav(!isFav); onToggleFavorito?.(produto.id) }
+    const LS_KEY = 'csm_favoritos'
+    const favs: number[] = JSON.parse(localStorage.getItem(LS_KEY) ?? '[]')
+    const next = isFav ? favs.filter(id => id !== produto.id) : [...favs, produto.id]
+    localStorage.setItem(LS_KEY, JSON.stringify(next))
+    setIsFav(!isFav)
+    onToggleFavorito?.(produto.id)
   }
 
   async function compartilhar(e: React.MouseEvent) {

@@ -29,6 +29,12 @@ function getProdutos(catalogoId: number): Produto[] {
   return rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') }))
 }
 
+export async function generateStaticParams() {
+  const db = getDb()
+  const rows = db.prepare('SELECT pasta FROM catalogos').all() as { pasta: string }[]
+  return rows.map(r => ({ marca: encodeURIComponent(r.pasta) }))
+}
+
 export default async function CatalogoPage({ params }: { params: Promise<{ marca: string }> }) {
   const { marca } = await params
   const catalogo = getCatalogo(marca)

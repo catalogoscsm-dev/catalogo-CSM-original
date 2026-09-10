@@ -1,30 +1,49 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { LayoutGrid, RectangleHorizontal, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Produto } from '@/lib/types'
 import ProductCard from './ProductCard'
 import Link from 'next/link'
 import Image from 'next/image'
 
+function normalizeStr(s: string): string {
+  let n = s.trim().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  if (n.length > 3 && n.endsWith('s')) n = n.slice(0, -1)
+  return n
+}
+
 interface Props {
   produtos: Produto[]
   total: number
-  query?: string
 }
 
-export default function ProductsView({ produtos, total, query }: Props) {
+export default function ProductsView({ produtos, total }: Props) {
+  const searchParams = useSearchParams()
+  const query = searchParams.get('q') ?? ''
+
+  const filtered = useMemo(() => {
+    if (!query.trim()) return produtos
+    const nq = normalizeStr(query)
+    return produtos.filter(p => {
+      const haystack = [p.nome, p.material, p.descricao, p.texto_livre, p.acabamento]
+        .filter(Boolean).join(' ')
+      return normalizeStr(haystack).includes(nq)
+    })
+  }, [produtos, query])
+
   const [view, setView]         = useState<'grid' | 'focus'>('grid')
   const [idx, setIdx]           = useState(0)
   const [visible, setVisible]   = useState(true)
   const [imgIdx, setImgIdx]     = useState(0)
   const containerRef            = useRef<HTMLDivElement>(null)
 
-  const produto = produtos[idx]
+  const produto = filtered[idx]
   const imgs    = produto?.imagens ?? []
 
-  // Reset ao mudar produtos (nova busca)
-  useEffect(() => { setIdx(0); setImgIdx(0) }, [produtos.length])
+  // Reset ao mudar busca
+  useEffect(() => { setIdx(0); setImgIdx(0) }, [query])
 
   // Keyboard navigation
   useEffect(() => {
@@ -36,12 +55,12 @@ export default function ProductsView({ produtos, total, query }: Props) {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [view, idx, produtos.length]) // eslint-disable-line react-hooks/exhaustive-deps
+  }, [view, idx, filtered.length]) // eslint-disable-line react-hooks/exhaustive-deps
 
   function navigate(dir: 1 | -1) {
     setVisible(false)
     setTimeout(() => {
-      setIdx(i => (i + dir + produtos.length) % produtos.length)
+      setIdx(i => (i + dir + filtered.length) % filtered.length)
       setImgIdx(0)
       setVisible(true)
       containerRef.current?.focus()
@@ -61,7 +80,7 @@ export default function ProductsView({ produtos, total, query }: Props) {
       <div className="flex items-center justify-between">
         <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
           {query
-            ? <><span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>"{query}"</span> — {produtos.length} resultado(s)</>
+            ? <><span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>"{query}"</span> — {filtered.length} resultado(s)</>
             : <>{total} produto(s)</>}
         </p>
 
@@ -95,7 +114,7 @@ export default function ProductsView({ produtos, total, query }: Props) {
       {/* ── MODO GRADE ──────────────────────────────────────────────────── */}
       {view === 'grid' && (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-          {produtos.map((p, i) => (
+          {filtered.map((p, i) => (
             <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
               <ProductCard produto={p} />
             </div>
@@ -104,7 +123,7 @@ export default function ProductsView({ produtos, total, query }: Props) {
       )}
 
       {/* ── MODO FOCO ───────────────────────────────────────────────────── */}
-      {view === 'focus' && produto && (
+      {view === 'focus' && filtered.length > 0 && produto && (
         <div className="flex flex-col items-center gap-6">
 
           {/* Card principal */}
@@ -238,7 +257,7 @@ export default function ProductsView({ produtos, total, query }: Props) {
             </button>
 
             <p className="text-sm tabular-nums" style={{ color: 'var(--text-secondary)', minWidth: 64, textAlign: 'center' }}>
-              {idx + 1} / {produtos.length}
+              {idx + 1} / {filtered.length}
             </p>
 
             <button
@@ -252,7 +271,7 @@ export default function ProductsView({ produtos, total, query }: Props) {
         </div>
       )}
 
-      {produtos.length === 0 && (
+      {filtered.length === 0 && (
         <div className="text-center py-24 space-y-3 animate-fade-in">
           <p className="text-2xl font-light" style={{ color: 'var(--text-secondary)' }}>
             {query ? `Nenhum resultado para "${query}"` : 'Nenhum produto ainda'}

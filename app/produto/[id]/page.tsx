@@ -6,7 +6,6 @@ import ImageZoom from '@/components/ImageZoom'
 import FavShare from './FavShare'
 import FichaTecnica from '@/components/FichaTecnica'
 import DimensoesDisplay from '@/components/DimensoesDisplay'
-import { getSession } from '@/lib/auth'
 import { ShieldCheck, ChevronRight } from 'lucide-react'
 
 type ProdutoRow = Produto & { imagens: string; catalogo_pasta: string }
@@ -23,13 +22,18 @@ function getProduto(id: string): (Produto & { catalogo_pasta: string }) | null {
   return { ...row, imagens: JSON.parse(row.imagens ?? '[]') }
 }
 
+export async function generateStaticParams() {
+  const db = getDb()
+  const rows = db.prepare('SELECT id FROM produtos').all() as { id: number }[]
+  return rows.map(r => ({ id: String(r.id) }))
+}
+
 export default async function ProdutoPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const produto = getProduto(id)
   if (!produto) notFound()
 
-  const session = await getSession()
-  const isAdmin = session?.role === 'admin'
+  const isAdmin = false
 
   const fichaPublica = [
     { label: 'Material', value: produto.material },

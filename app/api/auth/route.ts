@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     username !== process.env.ADMIN_USER ||
     password !== process.env.ADMIN_PASSWORD
   ) {
-    return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 })
+    return NextResponse.json({ error: 'Credenciais invÃ¡lidas' }, { status: 401 })
   }
 
   const token = await signToken({ username, role: 'admin' })
@@ -29,3 +29,4 @@ export async function DELETE() {
   res.cookies.delete(COOKIE_NAME)
   return res
 }
+

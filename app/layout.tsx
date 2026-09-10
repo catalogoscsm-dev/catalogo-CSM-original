@@ -5,7 +5,6 @@ import Header from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import SearchToolbar from '@/components/SearchToolbar'
 import PageTransition from '@/components/PageTransition'
-import { getSession } from '@/lib/auth'
 import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -15,15 +14,12 @@ export const metadata: Metadata = {
   description: 'Catálogo CSM de produtos de móveis e decoração',
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const session = await getSession()
-  const isAdmin = session?.role === 'admin'
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body className={`${inter.variable} min-h-screen`}>
         <ThemeProvider>
-          <Header isAdmin={!!isAdmin} />
+          <Header isAdmin={false} />
           <Suspense>
             <SearchToolbar />
           </Suspense>

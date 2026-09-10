@@ -1,3 +1,4 @@
+export const dynamic = 'force-static'
 import { NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { normalizeQuery } from '@/lib/search'
@@ -8,13 +9,13 @@ export async function POST(req: Request) {
   const { catalogo_pasta, ...produto } = body
 
   if (!catalogo_pasta || !produto.nome) {
-    return NextResponse.json({ error: 'catalogo_pasta e nome são obrigatórios' }, { status: 400 })
+    return NextResponse.json({ error: 'catalogo_pasta e nome sÃ£o obrigatÃ³rios' }, { status: 400 })
   }
 
   const db = getDb()
   const catalogo = db.prepare('SELECT id FROM catalogos WHERE pasta = ?').get(catalogo_pasta) as { id: number } | null
   if (!catalogo) {
-    return NextResponse.json({ error: 'Catálogo não encontrado' }, { status: 404 })
+    return NextResponse.json({ error: 'CatÃ¡logo nÃ£o encontrado' }, { status: 404 })
   }
 
   const stmt = db.prepare(`
@@ -57,3 +58,4 @@ export async function GET(req: Request) {
 
   return NextResponse.json(rows.map(r => ({ ...r, imagens: JSON.parse(r.imagens ?? '[]') })))
 }
+

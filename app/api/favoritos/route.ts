@@ -1,3 +1,4 @@
+export const dynamic = 'force-static'
 import { NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { Produto } from '@/lib/types'
@@ -37,3 +38,4 @@ export async function DELETE(req: Request) {
   db.prepare('DELETE FROM favoritos WHERE produto_id = ?').run(produto_id)
   return NextResponse.json({ ok: true })
 }
+

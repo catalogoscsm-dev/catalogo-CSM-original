@@ -1,24 +1,35 @@
 'use client'
 
 import { Heart, Share2 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+const LS_KEY = 'csm_favoritos'
+
+function getFavs(): number[] {
+  try { return JSON.parse(localStorage.getItem(LS_KEY) ?? '[]') } catch { return [] }
+}
+function saveFavs(ids: number[]) {
+  localStorage.setItem(LS_KEY, JSON.stringify(ids))
+}
 
 export default function FavShare({ produtoId }: { produtoId: number }) {
-  const [isFav, setIsFav] = useState(false)
+  const [isFav, setIsFav]       = useState(false)
   const [animating, setAnimating] = useState(false)
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied]     = useState(false)
+  const [mounted, setMounted]   = useState(false)
 
-  async function toggleFav() {
-    const res = await fetch('/api/favoritos', {
-      method: isFav ? 'DELETE' : 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ produto_id: produtoId }),
-    })
-    if (res.ok) {
-      setAnimating(true)
-      setIsFav(!isFav)
-      setTimeout(() => setAnimating(false), 600)
-    }
+  useEffect(() => {
+    setMounted(true)
+    setIsFav(getFavs().includes(produtoId))
+  }, [produtoId])
+
+  function toggleFav() {
+    const favs = getFavs()
+    const next = isFav ? favs.filter(id => id !== produtoId) : [...favs, produtoId]
+    saveFavs(next)
+    setIsFav(!isFav)
+    setAnimating(true)
+    setTimeout(() => setAnimating(false), 600)
   }
 
   async function compartilhar() {
@@ -26,6 +37,8 @@ export default function FavShare({ produtoId }: { produtoId: number }) {
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)
   }
+
+  if (!mounted) return null
 
   return (
     <>
@@ -42,7 +55,7 @@ export default function FavShare({ produtoId }: { produtoId: number }) {
           50%  { box-shadow: 0 0 0 10px rgba(251, 113, 133, 0); }
           100% { box-shadow: 0 0 0 0 rgba(251, 113, 133, 0); }
         }
-        .heart-pop { animation: heartPop 0.55s cubic-bezier(.36,.07,.19,.97) forwards; }
+        .heart-pop  { animation: heartPop 0.55s cubic-bezier(.36,.07,.19,.97) forwards; }
         .heart-glow { animation: heartGlow 0.6s ease-out forwards; }
       `}</style>
 
@@ -58,10 +71,7 @@ export default function FavShare({ produtoId }: { produtoId: number }) {
           }}
         >
           <span className={animating ? 'heart-pop' : ''} style={{ display: 'flex' }}>
-            <Heart
-              className="w-4 h-4 transition-all duration-300"
-              fill={isFav ? 'currentColor' : 'none'}
-            />
+            <Heart className="w-4 h-4 transition-all duration-300" fill={isFav ? 'currentColor' : 'none'} />
           </span>
           {isFav ? 'Salvo' : 'Favoritar'}
         </button>
@@ -69,11 +79,7 @@ export default function FavShare({ produtoId }: { produtoId: number }) {
         <button
           onClick={compartilhar}
           className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-75 active:scale-95"
-          style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            color: 'var(--text-secondary)',
-          }}
+          style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
         >
           <Share2 className="w-4 h-4" />
           {copied ? 'Copiado!' : 'Compartilhar'}

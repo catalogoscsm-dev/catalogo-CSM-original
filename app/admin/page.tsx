@@ -25,7 +25,7 @@ function getTotais() {
 }
 
 export default async function AdminPage() {
-  const session = await requireAdmin()
+  const session = await requireAdmin().catch(() => null)
   if (!session) redirect('/admin/login')
 
   const catalogos = getCatalogos()

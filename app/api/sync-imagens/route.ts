@@ -34,17 +34,17 @@ export async function OPTIONS() {
 export async function POST(req: NextRequest) {
   try {
     const { catalog } = await req.json()
-    if (!catalog) return NextResponse.json({ error: 'catalog obrigatório' }, { status: 400, headers: CORS })
+    if (!catalog) return NextResponse.json({ error: 'catalog obrigatÃ³rio' }, { status: 400, headers: CORS })
 
     const db = getDb()
 
     const catalogRow = db.prepare('SELECT id FROM catalogos WHERE pasta = ?').get(catalog) as { id: number } | null
-    if (!catalogRow) return NextResponse.json({ error: `Catálogo "${catalog}" não encontrado` }, { status: 404, headers: CORS })
+    if (!catalogRow) return NextResponse.json({ error: `CatÃ¡logo "${catalog}" nÃ£o encontrado` }, { status: 404, headers: CORS })
 
     const pastaImagens = path.join(BASE_DIR, catalog, 'imagens dos produtos')
     if (!fs.existsSync(pastaImagens)) return NextResponse.json({ ok: true, updated: 0 }, { headers: CORS })
 
-    // ── Montar lote de arquivos ────────────────────────────────────────────────
+    // â”€â”€ Montar lote de arquivos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     const lote: Record<number, { mains: string[]; recortes: string[] }> = {}
 
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
 
     const paginas = Object.keys(lote).map(Number).sort((a, b) => a - b)
 
-    // ── Helpers de busca no banco ──────────────────────────────────────────────
+    // â”€â”€ Helpers de busca no banco â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     type ProdRow = { id: number; nome: string; pagina: number; imagens: string }
     const _cache: Record<number, ProdRow | null> = {}
@@ -82,7 +82,7 @@ export async function POST(req: NextRequest) {
       return null
     }
 
-    // ── Atribuições por produto ────────────────────────────────────────────────
+    // â”€â”€ AtribuiÃ§Ãµes por produto â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     const slots: Record<number, { produto: ProdRow; cover: string | null; gallery: string[] }> = {}
 
@@ -91,7 +91,7 @@ export async function POST(req: NextRequest) {
       return slots[p.id]
     }
 
-    // Passagem 1: páginas COM produto direto
+    // Passagem 1: pÃ¡ginas COM produto direto
     for (const pagina of paginas) {
       const produto = getProduto(pagina)
       if (!produto) continue
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // Passagem 2: páginas órfãs → produto mais próximo
+    // Passagem 2: pÃ¡ginas Ã³rfÃ£s â†’ produto mais prÃ³ximo
     for (const pagina of paginas) {
       const produto = getProduto(pagina)
       if (produto) continue
@@ -119,7 +119,7 @@ export async function POST(req: NextRequest) {
       ensureSlot(found).gallery.push(...allFiles)
     }
 
-    // ── Gravar ─────────────────────────────────────────────────────────────────
+    // â”€â”€ Gravar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
     const updateImagens = db.prepare('UPDATE produtos SET imagens = ? WHERE id = ?')
     let updated = 0
@@ -151,3 +151,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: msg }, { status: 500, headers: CORS })
   }
 }
+

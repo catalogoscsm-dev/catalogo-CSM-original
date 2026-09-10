@@ -20,8 +20,10 @@ function getProduto(id: string): (Produto & { catalogo_pasta: string }) | null {
   return { ...row, imagens: JSON.parse(row.imagens ?? '[]') }
 }
 
+export async function generateStaticParams() { return [{ id: '0' }] }
+
 export default async function AdminProdutoPage({ params }: { params: Promise<{ id: string }> }) {
-  const session = await requireAdmin()
+  const session = await requireAdmin().catch(() => null)
   if (!session) redirect('/admin/login')
 
   const { id } = await params
