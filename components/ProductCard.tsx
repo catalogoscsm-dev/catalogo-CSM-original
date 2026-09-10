@@ -50,12 +50,10 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
   }, [])
 
   // Pré-carrega todas as imagens ao entrar no hover
+  // Usa fetch direto pois Next.js Image transforma a URL e o preload via new Image() não funcionaria
   useEffect(() => {
     if (!hovered || imgs.length <= 1) return
-    imgs.forEach(src => {
-      const el = new window.Image()
-      el.src = src
-    })
+    imgs.slice(1).forEach(src => { fetch(src).catch(() => {}) })
   }, [hovered]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Ciclo de imagens no hover
@@ -119,9 +117,11 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
             <>
               <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.32s ease', position: 'absolute', inset: 0 }}>
                 <Image
+                  key={imgIdx}
                   src={img}
                   alt={produto.nome}
                   fill
+                  unoptimized
                   className="object-contain transition-transform duration-500"
                   style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
                   onLoad={() => setImgLoaded(true)}
