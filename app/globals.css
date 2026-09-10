@@ -290,12 +290,35 @@ html.dark .catalog-card:hover {
   }
 }
 
-/* ─── Modo foco: mobile empilhado ─── */
+/* ─── Modo lista: mobile empilhado ─── */
 @media (max-width: 640px) {
-  .focus-card {
+  .list-card {
     grid-template-columns: 1fr !important;
-    grid-template-rows: 55dvh 1fr;
+    grid-template-rows: 260px auto;
   }
+}
+
+/* ─── Botão "Ver produto completo" ─── */
+.ver-produto-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 8px 18px;
+  border-radius: 8px;
+  align-self: flex-start;
+  transition: opacity 0.2s, transform 0.2s;
+  background: #1A1714;
+  color: #fff;
+}
+html.dark .ver-produto-btn {
+  background: #f1f1f1;
+  color: #1A1714;
+}
+.ver-produto-btn:hover {
+  opacity: 0.82;
+  transform: scale(1.02);
 }
 
 /* ─── Scrollbar ─── */
