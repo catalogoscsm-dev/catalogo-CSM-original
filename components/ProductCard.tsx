@@ -22,6 +22,8 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
   const [revealed, setRevealed] = useState(false)
   const [imgIdx, setImgIdx]     = useState(0)
   const [fading, setFading]     = useState(false)
+  const intervalRef             = useRef<ReturnType<typeof setInterval> | null>(null)
+  const idxRef                  = useRef(0)
 
   const cardRef = useRef<HTMLDivElement>(null)
   const { theme } = useTheme()
@@ -47,22 +49,39 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
     return () => observer.disconnect()
   }, [])
 
+  // Pré-carrega todas as imagens ao entrar no hover
+  useEffect(() => {
+    if (!hovered || imgs.length <= 1) return
+    imgs.forEach(src => {
+      const el = new window.Image()
+      el.src = src
+    })
+  }, [hovered]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // Ciclo de imagens no hover
   useEffect(() => {
     if (!hovered || imgs.length <= 1) return
-    const interval = setInterval(() => {
+    idxRef.current = 0
+
+    intervalRef.current = setInterval(() => {
       setFading(true)
       setTimeout(() => {
-        setImgIdx(i => (i + 1) % imgs.length)
-        setFading(false)
-      }, 300)
-    }, 2000)
-    return () => clearInterval(interval)
+        idxRef.current = (idxRef.current + 1) % imgs.length
+        setImgIdx(idxRef.current)
+        setTimeout(() => setFading(false), 80) // aguarda imagem estar pronta
+      }, 320) // tempo suficiente para o fade-out de 300ms completar
+    }, 2200)
+
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
   }, [hovered, imgs.length])
 
   // Reset ao sair
   useEffect(() => {
-    if (!hovered) { setImgIdx(0); setFading(false) }
+    if (!hovered) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      setFading(true)
+      setTimeout(() => { setImgIdx(0); idxRef.current = 0; setFading(false) }, 300)
+    }
   }, [hovered])
 
   const img = imgs[imgIdx] ?? null
@@ -98,7 +117,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
           {img ? (
             <>
-              <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.3s ease', position: 'absolute', inset: 0 }}>
+              <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.32s ease', position: 'absolute', inset: 0 }}>
                 <Image
                   src={img}
                   alt={produto.nome}
