@@ -21,9 +21,10 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
   const [hoverL, setHoverL]     = useState(false)
   const [hoverR, setHoverR]     = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const touchX   = useRef<number | null>(null)
-  const touchY   = useRef<number | null>(null)
-  const busy     = useRef(false)
+  const touchX     = useRef<number | null>(null)
+  const touchY     = useRef<number | null>(null)
+  const multiTouch = useRef(false)
+  const busy       = useRef(false)
 
   /* ── Enter animation ── */
   useEffect(() => {
@@ -73,13 +74,29 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
     return () => window.removeEventListener('keydown', fn)
   }, [prevId, nextId]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  /* ── Swipe ── */
+  /* ── Swipe (cancela se for pinch) ── */
   const onTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length > 1) {
+      multiTouch.current = true
+      touchX.current = null
+      return
+    }
+    multiTouch.current = false
     touchX.current = e.touches[0].clientX
     touchY.current = e.touches[0].clientY
   }
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length > 1) {
+      multiTouch.current = true
+      touchX.current = null
+    }
+  }
   const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchX.current === null) return
+    if (touchX.current === null || multiTouch.current) {
+      touchX.current = null
+      multiTouch.current = false
+      return
+    }
     const dx = e.changedTouches[0].clientX - touchX.current
     const dy = Math.abs(e.changedTouches[0].clientY - (touchY.current ?? 0))
     if (Math.abs(dx) > 55 && Math.abs(dx) > dy * 1.2) {
@@ -163,6 +180,7 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
       <div
         style={contentAnim}
         onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
         {children}
