@@ -16,12 +16,13 @@ const db  = new Database(path.join(__dirname, '..', 'database', 'catalogo.db'))
 const cat = db.prepare('SELECT id FROM catalogos WHERE pasta = ?').get(CATALOG_PASTA)
 if (!cat) { console.error('Catálogo não encontrado'); process.exit(1) }
 
-// ── Ordena imagens: recortes → fotos de página → resto (jfif/ilustrações por último)
+// ── Ordena: pag (sem recorte) → recortes → outros → gemini (último)
 function sortImages(files) {
   const rank = f => {
     const l = f.toLowerCase()
-    if (l.includes('recorte')) return 0
-    if (/pag\s*\d+/.test(l))  return 1
+    if (l.includes('gemini'))                      return 3
+    if (l.includes('recorte'))                     return 1
+    if (/pag[\s_-]*\d+/.test(l) || l.startsWith('pag')) return 0
     return 2
   }
   return [...files].sort((a, b) => {
