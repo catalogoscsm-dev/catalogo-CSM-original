@@ -22,6 +22,7 @@ export interface Produto {
   pagina: number | null
   texto_livre: string | null
   imagens: string[]
+  catalogo_pasta?: string
 }
 
 export interface Favorito {

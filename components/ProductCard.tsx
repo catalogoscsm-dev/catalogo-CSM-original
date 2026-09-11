@@ -119,6 +119,20 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
         {/* Área de imagem */}
         <div className="relative aspect-square overflow-hidden" style={{ background: '#ffffff' }}>
 
+          {/* Badge NEW */}
+          {produto.catalogo_pasta === 'Aco Mobilia 2025-7' && (
+            <div style={{
+              position: 'absolute', top: 8, left: 8, zIndex: 25,
+              background: '#D4A017', color: '#fff',
+              fontSize: 9, fontWeight: 800, letterSpacing: '0.12em',
+              padding: '3px 7px', borderRadius: 4,
+              textTransform: 'uppercase',
+              boxShadow: '0 1px 4px rgba(0,0,0,0.3)',
+            }}>
+              NEW
+            </div>
+          )}
+
           {img ? (
             <>
               <div style={{ opacity: fading ? 0 : 1, transition: 'opacity 0.32s ease', position: 'absolute', inset: 0 }}>
@@ -129,7 +143,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
                   fill
                   unoptimized
                   className="object-contain transition-transform duration-500"
-                  style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
+                  style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)', padding: '4px' }}
                   onLoad={() => setImgLoaded(true)}
                 />
               </div>

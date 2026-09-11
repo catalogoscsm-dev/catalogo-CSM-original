@@ -90,7 +90,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
                 alt={alt}
                 fill
                 className="object-contain pointer-events-none"
-                style={{ padding: '2rem' }}
+                style={{ padding: '6px' }}
                 priority
               />
               {zooming && (

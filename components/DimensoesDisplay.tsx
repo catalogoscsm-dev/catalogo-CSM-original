@@ -39,6 +39,10 @@ const COLOR_MAP: { keywords: string[]; color: string }[] = [
   { keywords: ['lacgiandula', 'giandula', 'gianduia'],           color: '#D4C4A0' },
   { keywords: ['rosa', 'pink', 'blush'],                         color: '#E8B4A0' },
   { keywords: ['roxo', 'purple', 'lilas', 'lilás'],              color: '#7B5EA7' },
+  { keywords: ['fendi'],                                         color: '#C8B89A' },
+  { keywords: ['relva'],                                         color: '#4A7C59' },
+  { keywords: ['titanium', 'titânio'],                           color: '#8D8D8D' },
+  { keywords: ['black camurça', 'camurça'],                      color: '#2A2A2A' },
 ]
 
 function getSwatchColor(name: string): string | null {
@@ -99,6 +103,24 @@ function parseFormatC(raw: string): Row | null {
   return cells.length > 0 ? { size: null, cells } : null
 }
 
+// Formato D: "A: 0,78m | L: 0,56m | P: 0,53m | Assento: 0,44m"
+function parseFormatD(variants: string[]): Table | null {
+  const cells: Cell[] = []
+  for (const v of variants) {
+    const m = v.match(/^([A-Za-zÀ-ú]+(?:\s+[A-Za-zÀ-ú]+)*)\s*:\s*([0-9,.]+)\s*(m|cm)?$/i)
+    if (!m) return null
+    const key = m[1].trim().toUpperCase()
+    const raw = m[2].replace(',', '.')
+    const unit = (m[3] ?? '').toLowerCase()
+    const val = unit === 'm'
+      ? String(Math.round(parseFloat(raw) * 100))
+      : raw
+    cells.push({ label: LABEL[key] ?? m[1].trim(), val })
+  }
+  if (cells.length === 0) return null
+  return { cols: cells.map(c => c.label), rows: [{ size: null, cells }] }
+}
+
 function parseAll(raw: string): Table | null {
   const variants = raw.split('|').map(s => s.trim()).filter(Boolean)
   if (variants.length === 1) {
@@ -107,6 +129,9 @@ function parseAll(raw: string): Table | null {
     const rowC = parseFormatC(variants[0])
     if (rowC) return { cols: rowC.cells.map(c => c.label), rows: [rowC] }
   }
+  // Tenta formato D: "LABEL: valor_com_unidade | ..."
+  const tableD = parseFormatD(variants)
+  if (tableD) return tableD
   const rows: Row[] = []
   for (const v of variants) {
     const row = parseFormatA(v)
@@ -121,8 +146,15 @@ function parseAll(raw: string): Table | null {
 
 export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | null; acabamento?: string | null }) {
   const table = raw && raw.trim().length > 1 ? parseAll(raw) : null
-  const cores = acabamento
-    ? acabamento.split(/[+,/]/).map(s => s.trim()).filter(Boolean)
+  // Se o acabamento tem padrão "Descrição: Cor1, Cor2", extrai só as cores
+  const acabamentoNorm = (() => {
+    if (!acabamento) return null
+    const colonIdx = acabamento.indexOf(':')
+    if (colonIdx !== -1) return acabamento.slice(colonIdx + 1).trim()
+    return acabamento
+  })()
+  const cores = acabamentoNorm
+    ? acabamentoNorm.split(/[+,/]/).map(s => s.trim()).filter(Boolean)
     : []
 
   const sectionLabel: React.CSSProperties = {

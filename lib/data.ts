@@ -13,7 +13,8 @@ function withBase(p: ProdutoFull): ProdutoFull {
 }
 
 export function getProdutos(): ProdutoFull[] {
-  return data.produtos.map(withBase)
+  const all = data.produtos.map(withBase)
+  return [...all.filter(p => p.catalogo_pasta === 'Aco Mobilia 2025-7'), ...all.filter(p => p.catalogo_pasta !== 'Aco Mobilia 2025-7')]
 }
 
 export function getProduto(id: number | string): ProdutoFull | null {
