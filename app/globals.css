@@ -262,9 +262,8 @@ html.dark .catalog-card:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* mobile: altura natural baseada na imagem */
-  min-height: 60vw;
-  max-height: 90vw;
+  /* mobile: altura fixa para Image fill funcionar */
+  height: 75vw;
 }
 
 .produto-info-col {

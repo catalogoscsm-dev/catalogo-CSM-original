@@ -67,7 +67,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
   if (fullHeight) {
     // ── Modo split-screen: imagem preenche 100% do painel sticky ──
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%', flex: 1 }}>
 
         {/* Imagem principal — flex-1 */}
         <div
