@@ -7,7 +7,7 @@ const cat = db.prepare("SELECT id FROM catalogos WHERE pasta = 'Aco Mobilia 2025
 const prod = db.prepare("SELECT id, imagens FROM produtos WHERE catalogo_id = ? AND nome = 'Mesa & Cadeira Santorini'").get(cat.id)
 let imgs = JSON.parse(prod.imagens)
 
-const capa = 'Gemini_Generated_Image_6gu6fm6gu6fm6gu6.jfif'
+const capa = 'Gemini_Generated_Image_6gu6fm6gu6fm6gu6.jpg'
 const idx  = imgs.findIndex(u => u.includes(encodeURIComponent(capa)) || u.includes(capa))
 
 if (idx > 0) {
