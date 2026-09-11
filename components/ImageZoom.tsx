@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 import { createPortal } from 'react-dom'
-import { Package } from 'lucide-react'
+import { Package, ZoomIn } from 'lucide-react'
 
 interface Props {
   src: string | null
@@ -22,9 +22,17 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
   const [lens, setLens]           = useState({ x: 0, y: 0 })
   const [panelPos, setPanelPos]   = useState({ top: 0, left: 0 })
   const [mounted, setMounted]     = useState(false)
+  const [lightbox, setLightbox]   = useState(false)
+  const [isMobileDevice, setIsMobileDevice] = useState(false)
   const imageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => { setMounted(true) }, [])
+  useEffect(() => {
+    const check = () => setIsMobileDevice(window.innerWidth < 1024 || 'ontouchstart' in window)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     const el = imageRef.current
@@ -41,6 +49,49 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
     if (top  + PANEL_H > window.innerHeight - 8) top  = window.innerHeight - PANEL_H - 8
     setPanelPos({ top, left })
   }, [])
+
+  const lightboxPortal = mounted && lightbox && active && createPortal(
+    <div
+      onClick={() => setLightbox(false)}
+      style={{
+        position: 'fixed', inset: 0, zIndex: 9998,
+        background: 'rgba(0,0,0,0.92)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        overflowY: 'auto',
+        WebkitOverflowScrolling: 'touch' as React.CSSProperties['WebkitOverflowScrolling'],
+        cursor: 'zoom-out',
+      }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={active}
+        alt={alt}
+        onClick={e => e.stopPropagation()}
+        style={{
+          maxWidth: '100%',
+          maxHeight: '90dvh',
+          objectFit: 'contain',
+          touchAction: 'pinch-zoom',
+          userSelect: 'none',
+          borderRadius: 8,
+        }}
+      />
+      <button
+        onClick={() => setLightbox(false)}
+        style={{
+          position: 'fixed', top: 16, right: 16,
+          width: 36, height: 36, borderRadius: '50%',
+          background: 'rgba(255,255,255,0.15)',
+          border: '1px solid rgba(255,255,255,0.3)',
+          color: '#fff', fontSize: 20, lineHeight: 1,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          cursor: 'pointer', zIndex: 9999,
+        }}
+        aria-label="Fechar"
+      >×</button>
+    </div>,
+    document.body
+  )
 
   const zoomPanel = mounted && active && zooming && createPortal(
     <div style={{
@@ -79,9 +130,10 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
             overflow: 'hidden',
             minHeight: 0,
           }}
-          onMouseEnter={() => active && setZooming(true)}
+          onMouseEnter={() => !isMobileDevice && active && setZooming(true)}
           onMouseLeave={() => setZooming(false)}
           onMouseMove={handleMouseMove}
+          onClick={() => isMobileDevice && active && setLightbox(true)}
         >
           {active ? (
             <>
@@ -90,7 +142,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
                 alt={alt}
                 fill
                 className="object-contain pointer-events-none"
-                style={{ padding: '6px' }}
+                style={{ padding: '6px', cursor: isMobileDevice ? 'zoom-in' : 'crosshair' }}
                 priority
               />
               {zooming && (
@@ -106,6 +158,17 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
                   borderRadius: '50%',
                   pointerEvents: 'none',
                 }} />
+              )}
+              {isMobileDevice && !zooming && (
+                <div style={{
+                  position: 'absolute', bottom: 10, right: 10,
+                  background: 'rgba(0,0,0,0.35)', borderRadius: 6,
+                  padding: '4px 6px', pointerEvents: 'none', display: 'flex',
+                  alignItems: 'center', gap: 4,
+                }}>
+                  <ZoomIn style={{ width: 14, height: 14, color: '#fff' }} />
+                  <span style={{ color: '#fff', fontSize: 10, fontWeight: 600 }}>Toque para ampliar</span>
+                </div>
               )}
             </>
           ) : (
@@ -153,6 +216,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
         )}
 
         {zoomPanel}
+        {lightboxPortal}
       </div>
     )
   }

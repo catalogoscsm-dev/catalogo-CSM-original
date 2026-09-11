@@ -20,6 +20,7 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
   const [scrollY, setScrollY]   = useState(0)
   const [hoverL, setHoverL]     = useState(false)
   const [hoverR, setHoverR]     = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const touchX   = useRef<number | null>(null)
   const touchY   = useRef<number | null>(null)
   const busy     = useRef(false)
@@ -32,6 +33,14 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
     setPhase('entering')
     const t = setTimeout(() => setPhase('idle'), 520)
     return () => clearTimeout(t)
+  }, [])
+
+  /* ── Mobile detection ── */
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
   }, [])
 
   /* ── Scroll parallax ── */
@@ -93,7 +102,9 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
   /* ── Arrow style helper ── */
   const arrowStyle = (side: 'l' | 'r', hovered: boolean): React.CSSProperties => ({
     position:       'fixed',
-    top:            `calc(50vh + ${parallax}px)`,
+    top:            isMobile
+      ? 'calc(144px + 37.5vw)'
+      : `calc(50vh + ${parallax}px)`,
     [side === 'l' ? 'left' : 'right']: 14,
     transform:      'translateY(-50%)',
     zIndex:         100,
