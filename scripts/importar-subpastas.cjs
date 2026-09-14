@@ -8,8 +8,9 @@ const Database = require('better-sqlite3')
 const path     = require('path')
 const fs       = require('fs')
 
+const { BASE_CATALOGOS } = require('./config.cjs')
 const CATALOG_PASTA = 'Aco Mobilia 2025-7'
-const SRC_BASE      = 'C:\\Users\\joao.miguel\\Documents\\catalogos\\catalogos separados\\Aço Mobilia 2025-7\\imagens dos produtos'
+const SRC_BASE      = `${BASE_CATALOGOS}\\Aço Mobilia 2025-7\\imagens dos produtos`
 const PUBLIC_BASE   = path.join(__dirname, '..', 'public', 'imagens', CATALOG_PASTA)
 const IMG_EXTS      = new Set(['.png', '.jpg', '.jpeg', '.webp', '.jfif'])
 

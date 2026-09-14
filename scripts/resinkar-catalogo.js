@@ -27,7 +27,7 @@ const fs       = require('fs')
 
 // ── Configuração ───────────────────────────────────────────────────────────────
 
-const BASE_DIR = 'C:\\Users\\joao.miguel\\Documents\\catalogos\\catalogos separados'
+const { BASE_CATALOGOS: BASE_DIR } = require('./config.cjs')
 const DB_PATH  = path.join(__dirname, '..', 'database', 'catalogo.db')
 const IMG_EXTS = new Set(['.jpg', '.jpeg', '.png', '.webp'])
 

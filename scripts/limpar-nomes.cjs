@@ -8,8 +8,9 @@
  */
 const fs   = require('fs')
 const path = require('path')
+const { BASE_CATALOGOS } = require('./config.cjs')
 
-const SRC_BASE = 'C:\\Users\\joao.miguel\\Documents\\catalogos\\catalogos separados\\Aço Mobilia 2025-7\\imagens dos produtos'
+const SRC_BASE = `${BASE_CATALOGOS}\\Aço Mobilia 2025-7\\imagens dos produtos`
 const IMG_EXTS = new Set(['.png', '.jpg', '.jpeg', '.webp', '.jfif'])
 
 const SUFIXOS = { '(1)': 'b', '(2)': 'c', '(3)': 'd', '(4)': 'e', '(5)': 'f' }
