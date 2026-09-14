@@ -177,20 +177,21 @@ O QUE O CLAUDE FAZ AUTOMATICAMENTE
 ------------------------------------
 Quando você avisa "acabei de adicionar mais imagens", o Claude:
 
-  1. limpar-nomes.cjs
-     - Remove prefixos como "Aço Mobilia 2025-7 —"
-     - Converte .jfif → .jpg
-     - Renomeia (1), (2), (3) → b, c, d
-
-  2. importar-subpastas.cjs
+  1. importar-subpastas.cjs
+     - Limpa os nomes dos arquivos automaticamente antes de copiar
+       (remove prefixos como "Aço Mobilia 2025-7 —", converte .jfif → .jpg,
+        renomeia (1), (2), (3) → b, c, d)
      - Copia as imagens para public/imagens/
      - Atualiza o banco de dados com as URLs
      - Atribui as fotos a todos os produtos daquela página
 
-  3. export-data.js
+  NOTA: o limpar-nomes.cjs ainda existe separado, mas não precisa mais
+  ser rodado manualmente — o importar-subpastas já faz isso internamente.
+
+  2. export-data.js
      - Gera o arquivo data/static-data.json usado pelo site
 
-  4. git commit + git push
+  3. git commit + git push
      - Sobe tudo para o GitHub → Vercel redeploy automático
 
 
@@ -203,7 +204,24 @@ Para páginas ambiente (28, 30, 34, 38) — fotos de sala mostrando vários móv
 as imagens também são distribuídas para todos os produtos listados naquela página.
 
 
-ESTADO ATUAL (última atualização)
------------------------------------
-Produtos com imagens:  pag 04, 06, 08, 10, 12, 14, 16
-Produtos sem imagens:  pag 18 até pag 60
+TRABALHANDO DE OUTRO COMPUTADOR
+---------------------------------
+Os PDFs e imagens originais não sobem pro GitHub (são muito grandes).
+Eles ficam sincronizados via Google Drive.
+
+Ao clonar o repositório em outro computador:
+  1. git clone https://github.com/catalogoscsm-dev/catalogo-CSM-original
+  2. npm install
+  3. Editar UMA linha no arquivo scripts/config.cjs:
+       const BASE_CATALOGOS = 'CAMINHO DA PASTA NO NOVO COMPUTADOR'
+     Exemplo se o usuário for diferente:
+       const BASE_CATALOGOS = 'C:\\Users\\outro-usuario\\Google Drive\\catalogos separados'
+
+Todos os scripts leem o caminho a partir desse arquivo — não precisa
+alterar mais nada.
+
+
+ESTADO ATUAL (última atualização: set/2026)
+--------------------------------------------
+Produtos com imagens:  pag 04 até pag 50
+Produtos sem imagens:  pag 53 até pag 60
