@@ -1,0 +1,209 @@
+Como funcionar a catalogação de imagens
+
+Conceito geral
+
+Cada produto no banco de dados tem um campo pagina — o número da página onde ele aparece no PDF do catálogo. Usamos esse número para saber qual imagem pertence a qual produto.
+
+Você baixa as imagens do PDF e salva com nomes específicos. O script lê esses nomes, identifica o número da página, localiza o produto correspondente no banco e atualiza as fotos automaticamente.
+
+---
+Como nomear os arquivos
+
+Existem dois tipos de imagem:
+
+pag N.png — foto principal da página N
+- Geralmente é a foto ambiente/completa do produto, como aparece no catálogo
+- Vira a galeria (foto secundária) quando também existe uma versão recortada
+
+pag recorte N.png — foto recortada da página N
+- É a imagem limpa do produto, sem texto ou elementos ao redor
+- Sempre vira a capa do card (foto principal)
+
+▎ Substitua N pelo número da página. A extensão pode ser .jpg, .jpeg, .png ou .webp.
+
+Exemplos práticos:
+
+┌─────────────────────────────────────┬─────────────────────────────────────────────────┐
+│            Arquivo salvo            │               O que o script faz                │
+├─────────────────────────────────────┼─────────────────────────────────────────────────┤
+│ pag 17.png                          │ Capa do produto que está na página 17           │
+├─────────────────────────────────────┼─────────────────────────────────────────────────┤
+│ pag recorte 17.png                  │ Capa do produto na pág. 17 (tem prioridade)     │
+├─────────────────────────────────────┼─────────────────────────────────────────────────┤
+│ pag 17.png + pag recorte 17.png     │ Recorte vira capa, página inteira vira galeria  │
+├─────────────────────────────────────┼─────────────────────────────────────────────────┤
+│ pag 18.png (sem produto na pág. 18) │ Galeria do produto mais próximo (pág. 17 ou 19) │
+└─────────────────────────────────────┴─────────────────────────────────────────────────┘
+
+---
+Regras de prioridade
+
+1. Se existe pag recorte N → ela é sempre a capa
+2. Se existe pag N junto com pag recorte N → pag N vira galeria
+3. Se existe só pag N (sem recorte) → ela é a capa
+4. Se a página N não tem produto cadastrado → o script busca o produto mais próximo (N+1, N-1, N+2...) e adiciona a imagem como galeria dele
+
+---
+Os dois scripts
+
+Script 1 — importar-imagens.js
+
+Quando usar: você baixou novas imagens e quer importá-las para o catálogo.
+
+node scripts/importar-imagens.js "NOME DO CATÁLOGO" "PASTA COM AS FOTOS"
+
+Exemplo:
+node scripts/importar-imagens.js "ABV 2025" "C:\Users\joao\Desktop\fotos abv"
+
+O que ele faz:
+
+O que ele faz:
+- Lê os arquivos da pasta que você indicou
+- Copia cada imagem para a pasta correta do catálogo
+- Atualiza o banco de dados com os caminhos das fotos
+
+---
+Script 2 — resinkar-catalogo.js
+
+Quando usar: as imagens já estão na pasta do catálogo (seja por importação anterior ou qualquer outro motivo) e você quer religar tudo ao banco.
+
+node scripts/resinkar-catalogo.js "NOME DO CATÁLOGO"
+
+Exemplo:
+node scripts/resinkar-catalogo.js "ABV 2025"
+
+Flags opcionais:
+- --force → reprocessa mesmo os produtos que já têm foto
+
+O que ele faz:
+- Lê os arquivos que já estão em imagens dos produtos
+- Reconhece automaticamente qualquer convenção de nome (novo padrão, padrão antigo, etc.)
+- Só toca em produtos que ainda não têm foto (a menos que use --force)
+
+---
+Fluxo completo de trabalho
+
+1. Abrir o PDF do catálogo
+
+2. Para cada produto:
+   → Salvar a foto da página como:     pag N.png
+   → Salvar a foto recortada como:     pag recorte N.png
+     (onde N = número da página no PDF)
+
+3. Juntar todos os arquivos em uma pasta (ex: Desktop\fotos abv)
+
+4. Rodar o script de importação:
+   node scripts/importar-imagens.js "ABV 2025" "C:\...\fotos abv"
+
+5. Conferir no site — cada card já aparece com a foto correta
+
+---
+O que o script faz automaticamente
+
+- Copia as imagens para o lugar certo (não precisa mover manualmente)
+- Não duplica fotos se você rodar duas vezes com o mesmo arquivo
+- Preserva fotos de importações anteriores que não foram substituídas
+- Associa páginas sem produto ao produto vizinho mais próximo
+- Funciona com qualquer extensão de imagem (jpg, png, webp…)
+
+
+=============================================================
+FLUXO ATUAL — AÇO MOBILIA 2025-7 (informações adicionais)
+=============================================================
+
+FLUXO RESUMIDO
+--------------
+1. Abra o PDF do catálogo
+2. Salve as imagens da página X na pasta "pag XX"
+3. Avise o Claude: "acabei de adicionar mais imagens"
+4. O Claude roda os scripts e sobe pro site automaticamente
+
+
+ONDE SALVAR AS IMAGENS
+----------------------
+Pasta base:
+  C:\Users\joao.miguel\Documents\catalogos\catalogos separados\Aço Mobilia 2025-7\imagens dos produtos\
+
+Cada página do catálogo tem sua própria subpasta:
+  pag 04  →  Mesa & Cadeira Athenas
+  pag 06  →  Mesa & Cadeira Santorini
+  pag 08  →  Cadeira Atrani Tapeçada
+  pag 10  →  Mesa Capri
+  pag 12  →  Mesa Siena
+  pag 14  →  Cadeira Luxor + Mesa Louvre
+  pag 16  →  Cadeira Ágatha + Mesa Milão
+  pag 18  →  Cadeira Madrid + Mesa Amalfi
+  pag 20  →  Cadeira Milão
+  pag 22  →  Cadeira Belagio
+  pag 24  →  Cadeira Caribe
+  pag 26  →  Mesa Topazio
+  pag 28  →  Página ambiente (Belagio + Mesa Capri)
+  pag 30  →  Poltrona Madrid
+  pag 32  →  Mesa Madrid
+  pag 34  →  Página ambiente (Ágatha + Mesa Madrid)
+  pag 36  →  Poltrona Luxor
+  pag 38  →  Página ambiente (Caribe + Madrid + Mesa Capri)
+  pag 40  →  Mesa Milão Office
+  pag 42  →  Cadeira Bora Bora Corda Náutica + Mesa Moorea
+  pag 44  →  Cadeira Bora Bora + Mesa Taiti
+  pag 46  →  Banqueta Athenas Alta + Baixa
+  pag 48  →  Banqueta Caribe Alta + Baixa + Bistrô Capri
+  pag 50  →  Banqueta Belagio Alta + Baixa + Bistrô Maupiti
+  pag 53  →  Mesa Canto Anaa + Mesa Centro Raiatea
+  pag 54  →  Poltrona Polinésia Corda Náutica
+  pag 55  →  Mesa Centro Ostuni
+  pag 56  →  Mesa de Centro Atlas
+  pag 57  →  Mesa Canto Sicilia + Mesa Canto Athenas
+  pag 58  →  Aparador Athenas
+  pag 59  →  Aparador Milão
+  pag 60  →  Aparador Louvre
+
+Regra simples: olhe o número da página no PDF → salve na pasta "pag XX".
+
+
+ORDEM DAS FOTOS NO CARD
+------------------------
+  pag XX.png          →  CAPA (foto principal, aparece primeiro)
+  recorte pag XX.png  →  recorte do produto (aparece depois)
+  recorte pag XXb.png →  segundo recorte (use b, c, d... para múltiplos)
+  Gemini_...jpg       →  vai por ÚLTIMO (ilustrações de IA)
+
+ATENÇÃO: Pode salvar com qualquer nome exportado pelo sistema
+(ex: "Aço Mobilia 2025-7 pag 17.png"). O script de limpeza
+renomeia automaticamente antes de importar.
+
+
+O QUE O CLAUDE FAZ AUTOMATICAMENTE
+------------------------------------
+Quando você avisa "acabei de adicionar mais imagens", o Claude:
+
+  1. limpar-nomes.cjs
+     - Remove prefixos como "Aço Mobilia 2025-7 —"
+     - Converte .jfif → .jpg
+     - Renomeia (1), (2), (3) → b, c, d
+
+  2. importar-subpastas.cjs
+     - Copia as imagens para public/imagens/
+     - Atualiza o banco de dados com as URLs
+     - Atribui as fotos a todos os produtos daquela página
+
+  3. export-data.js
+     - Gera o arquivo data/static-data.json usado pelo site
+
+  4. git commit + git push
+     - Sobe tudo para o GitHub → Vercel redeploy automático
+
+
+PÁGINAS COM MÚLTIPLOS PRODUTOS
+--------------------------------
+Quando a pasta tem mais de um produto (ex: pag 14 = Cadeira Luxor + Mesa Louvre),
+as mesmas imagens são atribuídas a ambos os produtos automaticamente.
+
+Para páginas ambiente (28, 30, 34, 38) — fotos de sala mostrando vários móveis juntos —
+as imagens também são distribuídas para todos os produtos listados naquela página.
+
+
+ESTADO ATUAL (última atualização)
+-----------------------------------
+Produtos com imagens:  pag 04, 06, 08, 10, 12, 14, 16
+Produtos sem imagens:  pag 18 até pag 60
