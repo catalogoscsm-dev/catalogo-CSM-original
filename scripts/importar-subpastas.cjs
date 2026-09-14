@@ -2,6 +2,7 @@
  * importar-subpastas.cjs
  * Lê cada pasta "pag XX" de "imagens dos produtos", copia para public/
  * e atualiza o banco para todos os produtos daquela página.
+ * Roda limpeza de nomes automaticamente antes de importar.
  */
 const Database = require('better-sqlite3')
 const path     = require('path')
@@ -11,6 +12,35 @@ const CATALOG_PASTA = 'Aco Mobilia 2025-7'
 const SRC_BASE      = 'C:\\Users\\joao.miguel\\Documents\\catalogos\\catalogos separados\\Aço Mobilia 2025-7\\imagens dos produtos'
 const PUBLIC_BASE   = path.join(__dirname, '..', 'public', 'imagens', CATALOG_PASTA)
 const IMG_EXTS      = new Set(['.png', '.jpg', '.jpeg', '.webp', '.jfif'])
+
+// ── Limpeza de nomes (equivalente ao limpar-nomes.cjs)
+const SUFIXOS = { '(1)': 'b', '(2)': 'c', '(3)': 'd', '(4)': 'e', '(5)': 'f' }
+
+function limparNome(nome) {
+  let n = nome
+  n = n.replace(/^[Aa][çc][o]?\s+[Mm]obilia\s+\d{4}-\d+\s*[—\-]*\s*/i, '')
+  n = n.replace(/^[Aa][çc][o]?\s+[Mm]obilia\s+\d{4}-\d+\s*/i, '')
+  n = n.replace(/\s*\[[^\]]*\]\s*/g, ' ').trim()
+  n = n.replace(/\s*—\s*/g, ' ').trim()
+  for (const [suf, letra] of Object.entries(SUFIXOS)) {
+    n = n.replace(` ${suf}`, letra)
+    n = n.replace(suf, letra)
+  }
+  n = n.replace(/\.jfif$/i, '.jpg')
+  n = n.replace(/\s+/g, ' ').trim()
+  return n
+}
+
+function limparPasta(dir) {
+  const arquivos = fs.readdirSync(dir).filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+  for (const arquivo of arquivos) {
+    const novo = limparNome(arquivo)
+    if (novo === arquivo) continue
+    const destPath = path.join(dir, novo)
+    if (fs.existsSync(destPath)) continue
+    fs.renameSync(path.join(dir, arquivo), destPath)
+  }
+}
 
 const db  = new Database(path.join(__dirname, '..', 'database', 'catalogo.db'))
 const cat = db.prepare('SELECT id FROM catalogos WHERE pasta = ?').get(CATALOG_PASTA)
@@ -50,6 +80,7 @@ let totalAtualizados = 0
 
 for (const subpasta of subpastas) {
   const srcDir = path.join(SRC_BASE, subpasta)
+  limparPasta(srcDir)
   const arquivos = fs.readdirSync(srcDir)
     .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
 
