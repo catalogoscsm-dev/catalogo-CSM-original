@@ -1,0 +1,13 @@
+const Database = require('better-sqlite3')
+const path = require('path')
+const db = new Database(path.join(__dirname, '..', 'database', 'catalogo.db'))
+const cat = db.prepare("SELECT id FROM catalogos WHERE pasta = 'Aco Mobilia 2025-7'").get()
+const prods = db.prepare("SELECT id, nome FROM produtos WHERE catalogo_id = ?").all(cat.id)
+const atrani = prods.filter(p => p.nome.includes('Atrani') || p.nome.includes('atrani'))
+console.log('Encontrados:', atrani.length)
+atrani.forEach(p => {
+  const hex = Buffer.from(p.nome, 'utf8').toString('hex')
+  console.log('Nome:', p.nome)
+  console.log('Hex:', hex)
+})
+db.close()

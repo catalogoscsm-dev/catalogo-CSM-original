@@ -1,0 +1,7 @@
+const Database = require('better-sqlite3')
+const path = require('path')
+const db = new Database(path.join(__dirname, '..', 'database', 'catalogo.db'))
+const cat = db.prepare("SELECT id FROM catalogos WHERE pasta = 'Aco Mobilia 2025-7'").get()
+const prods = db.prepare("SELECT nome, pagina FROM produtos WHERE catalogo_id = ? ORDER BY pagina").all(cat.id)
+prods.forEach(p => console.log(`pag ${String(p.pagina).padStart(3)} | ${p.nome}`))
+db.close()
