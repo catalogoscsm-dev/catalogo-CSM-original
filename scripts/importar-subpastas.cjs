@@ -50,8 +50,8 @@ if (!cat) { console.error('Catálogo não encontrado'); process.exit(1) }
 function sortImages(files) {
   const rank = f => {
     const l = f.toLowerCase()
-    if (l.includes('gemini'))                             return 3
-    if (l.includes('recorte'))                            return 1
+    if (l.includes('recorte'))                            return 1  // recorte sempre no meio, mesmo que seja gemini
+    if (l.includes('gemini'))                             return 3  // gemini sem recorte por último
     if (/pag[\s_-]*\d+/.test(l) || l.startsWith('pag')) return 0
     return 2
   }
