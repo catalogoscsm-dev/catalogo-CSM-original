@@ -186,10 +186,12 @@ export default function ProductsView({ produtos, total }: Props) {
     })
   }, [produtos, query])
 
-  const [view, setView] = useState<'grid' | 'list'>(() => {
-    if (typeof window === 'undefined') return 'grid'
-    return (localStorage.getItem('csm_view') as 'grid' | 'list') ?? 'grid'
-  })
+  const [view, setView] = useState<'grid' | 'list'>('grid')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('csm_view') as 'grid' | 'list' | null
+    if (saved) setView(saved)
+  }, [])
 
   function changeView(v: 'grid' | 'list') {
     setView(v)
