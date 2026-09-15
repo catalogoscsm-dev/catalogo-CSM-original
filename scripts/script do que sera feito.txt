@@ -215,16 +215,31 @@ NOVO FLUXO — CATÁLOGOS SIMPLIFICADOS (VITRINE)
 
 FILOSOFIA
 ----------
-Para catálogos novos, não extraímos dimensões nem detalhes técnicos.
-O objetivo é uma vitrine de luxo: nome + foto + categoria + fornecedor.
-Detalhes ficam com os vendedores. Clientes entram em contato direto.
+O catálogo é uma vitrine de luxo — não um manual técnico completo.
+Mas páginas completamente vazias prejudicam a busca e a experiência do cliente.
+
+EQUILÍBRIO IDEAL POR PRODUTO:
+  ✓ Nome do produto (exato, como aparece no catálogo)
+  ✓ Categoria (Sofá, Poltrona, Mesa, etc.)
+  ✓ Material principal (1 linha — ex: "Estrutura em lyptus, pés em Tauarí")
+  ✓ Dimensão geral (ex: "230 x 95 x 78 cm" — só a versão padrão)
+  ✓ Acabamentos disponíveis (ex: "Tecido, couro, veludo") — se constar no PDF
+  ✗ Tabelas de configuração completas → desnecessário
+  ✗ Especificações de engenharia → desnecessário
+
+POR QUE ESSE EQUILÍBRIO?
+  - Material e dimensão geral ajudam o cliente a filtrar antes de contatar o vendedor
+  - Palavras-chave como "couro", "lyptus", "alumínio" aparecem na busca do site
+  - A ficha fica visualmente preenchida sem exigir horas de extração por PDF
+  - Detalhes avançados (configurações, módulos, preços) ficam com os vendedores
+
 
 FLUXO COMPLETO PARA UM NOVO CATÁLOGO
 --------------------------------------
 1. Abra o PDF do catálogo
 
-2. Envie o PDF para o ChatGPT (GPT-4o) com o prompt abaixo
-   → O GPT retorna uma tabela com página, nome, categoria e descrição
+2. Envie o PDF para o ChatGPT (GPT-4o) com o PROMPT PRINCIPAL abaixo
+   → O GPT retorna uma tabela com página, nome, categoria, material e dimensão
 
 3. Cole a tabela aqui para o Claude catalogar no banco de dados
    → Claude cria o catálogo, insere os produtos e gera as pastas
@@ -236,25 +251,41 @@ FLUXO COMPLETO PARA UM NOVO CATÁLOGO
 5. Avise o Claude: "adicionei imagens"
    → Claude roda importar-CATALOGO.cjs e sobe pro site
 
-6. Conferir no site — cards já aparecem com foto
+6. Conferir no site — cards já aparecem com foto e ficha básica
 
 
-PROMPT PARA O GPT (copie e cole junto com o PDF)
--------------------------------------------------
-Você é um assistente de catalogação de móveis. Analise cada página deste PDF de catálogo de móveis e extraia as informações de cada produto encontrado.
+PROMPT PRINCIPAL PARA O GPT (copie e cole junto com o PDF)
+-----------------------------------------------------------
+Você é um assistente de catalogação de móveis. Analise cada página deste PDF
+de catálogo de móveis e extraia as informações de cada produto encontrado.
 
 Para cada produto, retorne uma tabela com as colunas:
-| Página | Nome do Produto | Categoria | Descrição Curta |
+| Página | Nome do Produto | Categoria | Material | Dimensão Geral | Acabamentos |
 
 Regras:
-- Categoria deve ser uma palavra: Cadeira, Mesa, Poltrona, Sofá, Aparador, Buffet, Banqueta, Rack, Estante, Cama, Criado-mudo, etc.
-- Descrição Curta: no máximo 1 linha descrevendo material ou estilo (ex: "Estrutura em alumínio com assento em corda náutica"). Se não houver informação suficiente, deixe em branco.
-- Ignore páginas de capa, contracapa, índice, apresentação da empresa e páginas sem produto identificado.
-- Se uma página mostrar variações do mesmo produto (cores, tamanhos), liste como um único produto.
-- Se uma página mostrar produtos diferentes, liste cada um em uma linha separada.
+- Categoria: uma palavra — Cadeira, Mesa, Poltrona, Sofá, Aparador, Buffet,
+  Banqueta, Rack, Estante, Cama, Criado-mudo, Chaise, Recamier, Puff, etc.
+- Material: estrutura e revestimento em até 1 linha
+  (ex: "Estrutura em lyptus, pés em Tauarí, assento em espuma D28")
+- Dimensão Geral: apenas a medida principal no formato "L x P x A cm"
+  (somente a versão padrão; ignore tabelas de módulos e configurações)
+- Acabamentos: opções de revestimento disponíveis em até 1 linha
+  (ex: "Tecido, couro natural, couro sintético"). Se não constar, deixe em branco.
+- Ignore páginas de capa, contracapa, índice e páginas sem produto identificado.
+- Se uma página mostrar variações do mesmo produto, liste como um único produto.
+- Se uma página mostrar produtos diferentes, liste cada um em linha separada.
 - Mantenha os nomes exatamente como aparecem no catálogo, sem traduzir.
 
 Retorne apenas a tabela, sem texto adicional.
+
+
+PROMPT COMPLEMENTAR (use se o GPT não extraiu material/dimensão na primeira rodada)
+------------------------------------------------------------------------------------
+Com base no mesmo PDF, atualize a tabela anterior adicionando duas colunas:
+- Dimensão Geral: medida principal no formato "L x P x A cm" (versão padrão apenas)
+- Material: estrutura e revestimento em até 1 linha
+
+Retorne a tabela completa atualizada.
 
 
 SCRIPTS POR CATÁLOGO
