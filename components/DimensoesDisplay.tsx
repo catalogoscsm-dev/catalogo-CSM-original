@@ -126,20 +126,34 @@ function parseFormatD(variants: string[]): Table | null {
   return { cols: cells.map(c => c.label), rows: [{ size: null, cells }] }
 }
 
-// Formato E: "1,10x2,70m | 1,00x2,20m | A: 0,76m | Estrutura: Metalão 70x30"
-// Variantes que começam com dígito viram linhas (Largura x Compr.); variantes rotuladas viram colunas fixas.
+// Formato E — cobre todos os casos de mesas com múltiplos tamanhos:
+//   NxN puro:              "1,10x2,70m | 1,00x2,20m | A: 0,76m | Estrutura: X"
+//   NxN com descritor:     "0,50x0,50m redonda | 0,44x0,40m redonda | Estrutura: X"
+//   NxN com parêntese:     "0,70x1,21m (A: 0,34m) | 0,42x0,73m (A: 0,29m) | Estrutura: X"
+//   Variantes de forma:    "1,20x2,70m | Redonda: 1,50m | Redonda: 1,30m | A: 0,76m"
 function parseFormatE(variants: string[]): Table | null {
   if (!variants.some(v => /^\d/.test(v))) return null
 
+  // Parse um valor numérico, ignorando palavras descritivas no final ("redonda", "quadrada"…)
   const parseNum = (s: string, fallbackUnit = ''): string | null => {
-    const m = s.trim().match(/^([0-9,.]+)\s*(m|cm)?$/i)
+    const clean = s.trim().replace(/\s+[a-záàãâéêíóôõúüç]+$/i, '').trim()
+    const m = clean.match(/^([0-9,.]+)\s*(m|cm)?$/i)
     if (!m) return null
     const n = m[1].replace(',', '.')
     const u = m[2] ? m[2].toLowerCase() : fallbackUnit
     return u === 'm' ? String(Math.round(parseFloat(n) * 100)) : n
   }
 
+  // Descobre a unidade da última parte de um NxN, ignorando palavras descritivas
+  const getUnit = (s: string): string => {
+    const clean = s.trim().replace(/\s+[a-záàãâéêíóôõúüç]+$/i, '').trim()
+    return clean.match(/^[0-9,.]+\s*(m|cm)$/i)?.[1]?.toLowerCase() ?? ''
+  }
+
+  // Classifica variantes rotuladas: chaves de dimensão → coluna fixa; formas nomeadas → linha extra
   const fixedCells: Cell[] = []
+  const shapeRows: { label: string; val: string }[] = []
+
   for (const v of variants) {
     if (/^\d/.test(v)) continue
     const m = v.match(/^([A-Za-zÀ-úØ]+(?:\s+[A-Za-zÀ-úØ]+)*)\s*:\s*(.+)$/i)
@@ -147,31 +161,50 @@ function parseFormatE(variants: string[]): Table | null {
     const key = m[1].trim().toUpperCase()
     const rawVal = m[2].trim()
     const num = parseNum(rawVal)
-    fixedCells.push({ label: LABEL[key] ?? m[1].trim(), val: num ?? rawVal })
+    if (key in LABEL || !num) {
+      fixedCells.push({ label: LABEL[key] ?? m[1].trim(), val: num ?? rawVal })
+    } else {
+      shapeRows.push({ label: m[1].trim(), val: num })
+    }
   }
 
-  // Se há labels duplicados nas colunas fixas, o formato é complexo demais — cai em texto
-  const seen = new Set<string>()
-  for (const c of fixedCells) {
-    if (seen.has(c.label)) return null
-    seen.add(c.label)
-  }
-
+  // Linhas NxN, com suporte a parêntese de altura: "0,70x1,21m (A: 0,34m)"
   const rows: Row[] = []
   for (const v of variants) {
     if (!/^\d/.test(v)) continue
-    const parts = v.split(/\s*[x×]\s*/i)
+    const parenM = v.match(/^([^(]+?)\s*\(([^)]+)\)\s*$/)
+    const sizeStr = parenM ? parenM[1].trim() : v.trim()
+    const parenCells: Cell[] = []
+    if (parenM) {
+      for (const part of parenM[2].split(/[,;]/)) {
+        const pm = part.trim().match(/^([A-Za-zÀ-úØ]+)\s*:\s*([0-9,.]+)\s*(m|cm)?$/i)
+        if (pm) {
+          const n = pm[2].replace(',', '.')
+          const u = (pm[3] ?? '').toLowerCase()
+          parenCells.push({ label: LABEL[pm[1].toUpperCase()] ?? pm[1].trim(), val: u === 'm' ? String(Math.round(parseFloat(n) * 100)) : n })
+        }
+      }
+    }
+    const parts = sizeStr.split(/\s*[x×]\s*/i)
     if (parts.length < 2) return null
-    const lastUnit = parts[parts.length - 1].trim().match(/[a-z]+$/i)?.[0]?.toLowerCase() ?? ''
+    const lastUnit = getUnit(parts[parts.length - 1])
     const v1 = parseNum(parts[0], lastUnit)
     const v2 = parseNum(parts[parts.length - 1], lastUnit)
     if (!v1 || !v2) return null
-    rows.push({ size: null, cells: [{ label: 'Largura', val: v1 }, { label: 'Compr.', val: v2 }, ...fixedCells] })
+    rows.push({ size: null, cells: [{ label: 'Largura', val: v1 }, { label: 'Compr.', val: v2 }, ...parenCells, ...fixedCells] })
+  }
+
+  // Linhas de forma nomeada (Redonda, Quadrada…)
+  for (const sr of shapeRows) {
+    rows.push({ size: sr.label, cells: [{ label: 'Diâm./Lado', val: sr.val }, ...fixedCells] })
   }
 
   if (rows.length === 0) return null
-  const cols: string[] = []
-  for (const row of rows) for (const cell of row.cells) if (!cols.includes(cell.label)) cols.push(cell.label)
+
+  const PREF = ['Largura', 'Compr.', 'Diâm./Lado', 'Altura']
+  const allCols: string[] = []
+  for (const row of rows) for (const cell of row.cells) if (!allCols.includes(cell.label)) allCols.push(cell.label)
+  const cols = [...PREF.filter(c => allCols.includes(c)), ...allCols.filter(c => !PREF.includes(c))]
   return { cols, rows }
 }
 
