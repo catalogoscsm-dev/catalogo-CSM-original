@@ -103,18 +103,23 @@ function parseFormatC(raw: string): Row | null {
   return cells.length > 0 ? { size: null, cells } : null
 }
 
-// Formato D: "A: 0,78m | L: 0,56m | P: 0,53m | Assento: 0,44m"
+// Formato D: "A: 0,78m | L: 0,56m | P: 0,53m | Assento: 0,44m | Estrutura: Metalão 10x30"
 function parseFormatD(variants: string[]): Table | null {
   const cells: Cell[] = []
   for (const v of variants) {
-    const m = v.match(/^([A-Za-zÀ-ú]+(?:\s+[A-Za-zÀ-ú]+)*)\s*:\s*([0-9,.]+)\s*(m|cm)?$/i)
+    const m = v.match(/^([A-Za-zÀ-úØ]+(?:\s+[A-Za-zÀ-úØ]+)*)\s*:\s*(.+)$/i)
     if (!m) return null
     const key = m[1].trim().toUpperCase()
-    const raw = m[2].replace(',', '.')
-    const unit = (m[3] ?? '').toLowerCase()
-    const val = unit === 'm'
-      ? String(Math.round(parseFloat(raw) * 100))
-      : raw
+    const rawVal = m[2].trim()
+    const numM = rawVal.match(/^([0-9,.]+)\s*(m|cm)?$/i)
+    let val: string
+    if (numM) {
+      const num = numM[1].replace(',', '.')
+      const unit = (numM[2] ?? '').toLowerCase()
+      val = unit === 'm' ? String(Math.round(parseFloat(num) * 100)) : num
+    } else {
+      val = rawVal
+    }
     cells.push({ label: LABEL[key] ?? m[1].trim(), val })
   }
   if (cells.length === 0) return null
@@ -216,7 +221,7 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
                     {temSize && <td style={tdSize}>{row.size ?? '—'}</td>}
                     {table.cols.map(col => {
                       const cell = row.cells.find(c => c.label === col)
-                      return <td key={col} style={tdVal}>{cell ? `${cell.val}cm` : '—'}</td>
+                      return <td key={col} style={tdVal}>{cell ? (/^\d/.test(cell.val) ? `${cell.val}cm` : cell.val) : '—'}</td>
                     })}
                   </tr>
                 ))}
