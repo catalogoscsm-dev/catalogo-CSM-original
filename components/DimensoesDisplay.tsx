@@ -126,6 +126,55 @@ function parseFormatD(variants: string[]): Table | null {
   return { cols: cells.map(c => c.label), rows: [{ size: null, cells }] }
 }
 
+// Formato E: "1,10x2,70m | 1,00x2,20m | A: 0,76m | Estrutura: Metalão 70x30"
+// Variantes que começam com dígito viram linhas (Largura x Compr.); variantes rotuladas viram colunas fixas.
+function parseFormatE(variants: string[]): Table | null {
+  if (!variants.some(v => /^\d/.test(v))) return null
+
+  const parseNum = (s: string, fallbackUnit = ''): string | null => {
+    const m = s.trim().match(/^([0-9,.]+)\s*(m|cm)?$/i)
+    if (!m) return null
+    const n = m[1].replace(',', '.')
+    const u = m[2] ? m[2].toLowerCase() : fallbackUnit
+    return u === 'm' ? String(Math.round(parseFloat(n) * 100)) : n
+  }
+
+  const fixedCells: Cell[] = []
+  for (const v of variants) {
+    if (/^\d/.test(v)) continue
+    const m = v.match(/^([A-Za-zÀ-úØ]+(?:\s+[A-Za-zÀ-úØ]+)*)\s*:\s*(.+)$/i)
+    if (!m) return null
+    const key = m[1].trim().toUpperCase()
+    const rawVal = m[2].trim()
+    const num = parseNum(rawVal)
+    fixedCells.push({ label: LABEL[key] ?? m[1].trim(), val: num ?? rawVal })
+  }
+
+  // Se há labels duplicados nas colunas fixas, o formato é complexo demais — cai em texto
+  const seen = new Set<string>()
+  for (const c of fixedCells) {
+    if (seen.has(c.label)) return null
+    seen.add(c.label)
+  }
+
+  const rows: Row[] = []
+  for (const v of variants) {
+    if (!/^\d/.test(v)) continue
+    const parts = v.split(/\s*[x×]\s*/i)
+    if (parts.length < 2) return null
+    const lastUnit = parts[parts.length - 1].trim().match(/[a-z]+$/i)?.[0]?.toLowerCase() ?? ''
+    const v1 = parseNum(parts[0], lastUnit)
+    const v2 = parseNum(parts[parts.length - 1], lastUnit)
+    if (!v1 || !v2) return null
+    rows.push({ size: null, cells: [{ label: 'Largura', val: v1 }, { label: 'Compr.', val: v2 }, ...fixedCells] })
+  }
+
+  if (rows.length === 0) return null
+  const cols: string[] = []
+  for (const row of rows) for (const cell of row.cells) if (!cols.includes(cell.label)) cols.push(cell.label)
+  return { cols, rows }
+}
+
 function parseAll(raw: string): Table | null {
   const variants = raw.split('|').map(s => s.trim()).filter(Boolean)
   if (variants.length === 1) {
@@ -137,6 +186,8 @@ function parseAll(raw: string): Table | null {
   // Tenta formato D: "LABEL: valor_com_unidade | ..."
   const tableD = parseFormatD(variants)
   if (tableD) return tableD
+  const tableE = parseFormatE(variants)
+  if (tableE) return tableE
   const rows: Row[] = []
   for (const v of variants) {
     const row = parseFormatA(v)
