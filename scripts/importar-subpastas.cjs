@@ -116,4 +116,20 @@ for (const subpasta of subpastas) {
 }
 
 console.log(`\n${totalAtualizados} produto(s) atualizados.`)
+
+// ── Aplica ordens personalizadas (image-overrides.json) ──────────────────────
+const overridesPath = path.join(__dirname, 'image-overrides.json')
+if (fs.existsSync(overridesPath)) {
+  const overrides = JSON.parse(fs.readFileSync(overridesPath, 'utf8'))
+  let totalOverrides = 0
+  for (const [id, imagens] of Object.entries(overrides)) {
+    const prod = db.prepare('SELECT nome FROM produtos WHERE id = ?').get(Number(id))
+    if (!prod) continue
+    db.prepare('UPDATE produtos SET imagens = ? WHERE id = ?').run(JSON.stringify(imagens), Number(id))
+    console.log(`  ✓ override [id ${id}] ${prod.nome}`)
+    totalOverrides++
+  }
+  if (totalOverrides > 0) console.log(`${totalOverrides} override(s) de ordem aplicado(s).`)
+}
+
 db.close()
