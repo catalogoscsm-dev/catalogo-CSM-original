@@ -254,38 +254,63 @@ FLUXO COMPLETO PARA UM NOVO CATÁLOGO
 6. Conferir no site — cards já aparecem com foto e ficha básica
 
 
-PROMPT PRINCIPAL PARA O GPT (copie e cole junto com o PDF)
------------------------------------------------------------
-Você é um assistente de catalogação de móveis. Analise cada página deste PDF
-de catálogo de móveis e extraia as informações de cada produto encontrado.
+PROMPT UNIVERSAL DE CATALOGAÇÃO (use este para todos os PDFs)
+--------------------------------------------------------------
+Você é um especialista em catalogação de móveis e decoração de alto padrão.
+Analise este catálogo PDF página por página e extraia os dados de cada produto.
 
-Para cada produto, retorne uma tabela com as colunas:
-| Página | Nome do Produto | Categoria | Material | Dimensão Geral | Acabamentos |
+Retorne uma tabela com exatamente estas colunas:
+| Página | Nome | Categoria | Material | Dimensão | Acabamentos | Descrição |
 
-Regras:
-- Categoria: uma palavra — Cadeira, Mesa, Poltrona, Sofá, Aparador, Buffet,
-  Banqueta, Rack, Estante, Cama, Criado-mudo, Chaise, Recamier, Puff, etc.
-- Material: estrutura e revestimento em até 1 linha
-  (ex: "Estrutura em lyptus, pés em Tauarí, assento em espuma D28")
-- Dimensão Geral: apenas a medida principal no formato "L x P x A cm"
-  (somente a versão padrão; ignore tabelas de módulos e configurações)
-- Acabamentos: opções de revestimento disponíveis em até 1 linha
-  (ex: "Tecido, couro natural, couro sintético"). Se não constar, deixe em branco.
-- Ignore páginas de capa, contracapa, índice e páginas sem produto identificado.
-- Se uma página mostrar variações do mesmo produto, liste como um único produto.
-- Se uma página mostrar produtos diferentes, liste cada um em linha separada.
-- Mantenha os nomes exatamente como aparecem no catálogo, sem traduzir.
+REGRAS POR COLUNA:
 
-Retorne apenas a tabela, sem texto adicional.
+▸ Página
+  Número da página onde o produto aparece.
+  Se um produto aparece em mais de uma página, use a primeira.
 
+▸ Nome
+  Exatamente como aparece no catálogo — sem traduzir, sem abreviar.
+  Se o catálogo usar código (ex: "MOD-042"), use o código completo.
 
-PROMPT COMPLEMENTAR (use se o GPT não extraiu material/dimensão na primeira rodada)
-------------------------------------------------------------------------------------
-Com base no mesmo PDF, atualize a tabela anterior adicionando duas colunas:
-- Dimensão Geral: medida principal no formato "L x P x A cm" (versão padrão apenas)
-- Material: estrutura e revestimento em até 1 linha
+▸ Categoria
+  Uma única palavra que classifica o produto. Use sempre em português:
+  Sofá, Poltrona, Cadeira, Mesa, Aparador, Buffet, Rack, Estante,
+  Cama, Criado-mudo, Banqueta, Puff, Chaise, Recamier, Luminária,
+  Tapete, Espelho, Prateleira, Pendente, Armário, Cômodas, Biombo.
+  Se não se encaixar em nenhuma, use a palavra mais próxima.
 
-Retorne a tabela completa atualizada.
+▸ Material
+  Estrutura + revestimento em até 2 linhas curtas.
+  Inclua: madeira, metal, tecido, couro, fibra, espuma, etc.
+  Exemplo: "Estrutura em MDF lacado, pés em alumínio fosco, assento em espuma D33"
+  Se não constar no catálogo, deixe em branco.
+
+▸ Dimensão
+  Apenas a medida principal (versão padrão ou menor disponível).
+  Formato: "L x P x A cm" — converta para cm se estiver em metros.
+  Ignore tabelas de módulos, composições e variações — só a dimensão base.
+  Se não constar, deixe em branco.
+
+▸ Acabamentos
+  Opções de cor, revestimento ou material disponíveis, em até 1 linha.
+  Exemplo: "Tecido, veludo, couro natural, couro sintético"
+  Se não constar, deixe em branco.
+
+▸ Descrição
+  1 frase destacando o que torna o produto especial ou diferente.
+  Foque em estilo, design ou característica marcante.
+  Exemplo: "Design escandinavo com costuras aparentes e pés palito em madeira maciça."
+  Se não houver nada relevante além do básico, deixe em branco.
+
+REGRAS GERAIS:
+  • Ignore: capa, contracapa, índice, páginas institucionais, páginas sem produto.
+  • Uma página com variações (cores, tamanhos) do mesmo produto = 1 linha na tabela.
+  • Uma página com produtos diferentes = 1 linha por produto.
+  • Quando a informação não estiver clara ou visível no PDF, deixe o campo em branco.
+    Não invente nem suponha dados que não estejam explícitos.
+  • Priorize informações que um cliente usaria para decidir uma compra.
+
+Retorne APENAS a tabela, sem introdução, sem comentários, sem texto adicional.
 
 
 SCRIPTS POR CATÁLOGO
