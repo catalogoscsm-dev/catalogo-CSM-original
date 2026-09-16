@@ -3,18 +3,25 @@ const db = new Database("database/catalogo.db");
 
 const cat = db.prepare("SELECT id FROM catalogos WHERE pasta = ?").get("Adrián Line 2023");
 
-// Ágape — pag 16 — módulos 150|170|190|210|230 cm, prof. ~100cm, alt. ~95cm
-// Êxodo — pag 04 — módulos 80|90|100|110|120 cm, prof. ~107cm, alt. ~107cm
+// CONVENÇÃO: campo "dimensoes" guarda a medida representativa (exibição simplificada).
+// Dados completos ficam documentados aqui para enriquecimento futuro se necessário.
+//
+// ÁGAPE — pag 16 — dados completos:
+//   "150X100X95CM | 170X100X95CM | 190X100X95CM | 210X100X95CM | 230X100X95CM"
+//
+// ÊXODO — pag 04 — dados completos:
+//   "80X107X107CM | 90X107X107CM | 100X107X107CM | 110X107X107CM | 120X107X107CM"
+
 const updates = [
   {
     pagina: 16,
     nome: "Ágape",
-    dimensoes: "150X100X95CM | 170X100X95CM | 190X100X95CM | 210X100X95CM | 230X100X95CM"
+    dimensoes: "190 x 100 x 95 cm"   // módulos de 150 a 230 cm — exibição representativa
   },
   {
     pagina: 4,
     nome: "Êxodo",
-    dimensoes: "80X107X107CM | 90X107X107CM | 100X107X107CM | 110X107X107CM | 120X107X107CM"
+    dimensoes: "100 x 107 x 107 cm"  // módulos de 80 a 120 cm — exibição representativa
   }
 ];
 
