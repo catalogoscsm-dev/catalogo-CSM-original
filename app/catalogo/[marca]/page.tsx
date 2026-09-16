@@ -1,6 +1,7 @@
 import { getCatalogos, getCatalogoPorPasta, getProdutosPorCatalogo } from '@/lib/data'
+import { getSession } from '@/lib/auth'
 import ProductCard from '@/components/ProductCard'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 
@@ -9,6 +10,9 @@ export async function generateStaticParams() {
 }
 
 export default async function CatalogoPage({ params }: { params: Promise<{ marca: string }> }) {
+  const session = await getSession()
+  if (!session) redirect('/admin/login')
+
   const { marca } = await params
   const catalogo = getCatalogoPorPasta(decodeURIComponent(marca))
   if (!catalogo) notFound()
