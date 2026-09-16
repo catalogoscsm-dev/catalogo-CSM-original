@@ -45,26 +45,39 @@ async function aplicarWatermark(srcPath, destPath) {
 }
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-function sortImages(files) {
-  const rank = f => {
-    const l = f.toLowerCase()
-    if (l.includes('recorte'))                            return 1
-    if (l.includes('gemini'))                             return 3
-    if (/pag[\s_-]*\d+/.test(l) || l.startsWith('pag')) return 0
-    return 2
-  }
-  return [...files].sort((a, b) => rank(a) - rank(b) || a.localeCompare(b))
+
+// Detecta o tipo da imagem pelo nome do arquivo (sem extensão):
+//   só letras  → capa (primária)  → rank 0
+//   só números → galeria           → rank 1
+//   nomes já formatados (pag XX, recorte...) também funcionam
+function tipoImagem(filename) {
+  const base = path.basename(filename, path.extname(filename)).trim()
+  if (/^[a-zA-Z]+$/.test(base))  return 'capa'
+  if (/^\d+$/.test(base))        return 'galeria'
+  // nomes já formatados — mantém lógica antiga
+  const l = filename.toLowerCase()
+  if (l.includes('recorte'))     return 'capa'
+  if (l.includes('gemini'))      return 'gemini'
+  if (/^pag[\s_]/.test(l))      return 'galeria'
+  return 'galeria'
 }
 
-function limparNome(nome) {
-  const SUFIXOS = { '(1)': 'b', '(2)': 'c', '(3)': 'd', '(4)': 'e' }
-  let n = nome
-    .replace(/\s*\[[^\]]*\]\s*/g, ' ')
-    .replace(/\s*—\s*/g, ' ')
-    .replace(/\.jfif$/i, '.jpg')
-    .trim()
-  for (const [s, l] of Object.entries(SUFIXOS)) n = n.replace(` ${s}`, l).replace(s, l)
-  return n.replace(/\s+/g, ' ').trim()
+function rankImagem(filename) {
+  const t = tipoImagem(filename)
+  if (t === 'capa')    return 0
+  if (t === 'galeria') return 1
+  if (t === 'gemini')  return 2
+  return 1
+}
+
+// Renomeia arquivos de letras/números para nomes legíveis
+function nomeFormatado(filename, pagNum, index, tipo) {
+  const ext = path.extname(filename)
+  const pagStr = String(pagNum).padStart(2, '0')
+  if (tipo === 'capa')    return `pag ${pagStr}${ext}`
+  // galeria: pag 02 galeria.png, pag 02 galeria b.png ...
+  const sufixo = index === 0 ? '' : ` ${String.fromCharCode(98 + index - 1)}` // b, c, d...
+  return `pag ${pagStr} galeria${sufixo}${ext}`
 }
 
 // ── Importação ────────────────────────────────────────────────────────────────
@@ -80,26 +93,48 @@ async function main() {
 
   for (const subpasta of subpastas) {
     const srcDir = path.join(SRC_BASE, subpasta)
+    const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
 
-    // limpar nomes
-    for (const f of fs.readdirSync(srcDir)) {
-      if (!IMG_EXTS.has(path.extname(f).toLowerCase())) continue
-      const novo = limparNome(f)
-      if (novo !== f && !fs.existsSync(path.join(srcDir, novo)))
-        fs.renameSync(path.join(srcDir, f), path.join(srcDir, novo))
+    const arquivosRaw = fs.readdirSync(srcDir)
+      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+    if (arquivosRaw.length === 0) continue
+
+    // ── Renomear letras/números para nomes decentes ───────────────────────────
+    const capas    = arquivosRaw.filter(f => tipoImagem(f) === 'capa').sort()
+    const galerias = arquivosRaw.filter(f => tipoImagem(f) === 'galeria').sort()
+    const geminis  = arquivosRaw.filter(f => tipoImagem(f) === 'gemini').sort()
+
+    function renomear(lista, tipo) {
+      let gIdx = 0
+      for (const f of lista) {
+        const base = path.basename(f, path.extname(f))
+        const isPureAlpha   = /^[a-zA-Z]+$/.test(base)
+        const isPureNumeric = /^\d+$/.test(base)
+        if (!isPureAlpha && !isPureNumeric) continue // já tem nome decente
+
+        const novoNome = nomeFormatado(f, pageNum, tipo === 'galeria' ? gIdx++ : 0, tipo)
+        const srcPath  = path.join(srcDir, f)
+        const dstPath  = path.join(srcDir, novoNome)
+        if (!fs.existsSync(dstPath)) {
+          fs.renameSync(srcPath, dstPath)
+          console.log(`  ↳ renomeado: ${f} → ${novoNome}`)
+        }
+      }
     }
 
-    const arquivos = fs.readdirSync(srcDir).filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
-    if (arquivos.length === 0) continue
+    renomear(capas,    'capa')
+    renomear(galerias, 'galeria')
 
-    const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
+    // ── Re-ler após renomeação ────────────────────────────────────────────────
+    const arquivos = fs.readdirSync(srcDir)
+      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+      .sort((a, b) => rankImagem(a) - rankImagem(b) || a.localeCompare(b))
+
     const produtos = db.prepare('SELECT * FROM produtos WHERE catalogo_id = ? AND pagina = ?').all(cat.id, pageNum)
     if (!produtos.length) { console.warn(`  [${subpasta}] Sem produto na pág. ${pageNum}. Pulando.`); continue }
 
-    const ordenados = sortImages(arquivos)
     const urls = []
-
-    for (const arquivo of ordenados) {
+    for (const arquivo of arquivos) {
       const srcPath  = path.join(srcDir, arquivo)
       const destPath = path.join(PUBLIC_BASE, arquivo)
       if (!fs.existsSync(destPath)) {
