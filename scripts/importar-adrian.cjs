@@ -52,13 +52,15 @@ async function aplicarWatermark(srcPath, destPath) {
 //   nomes já formatados (pag XX, recorte...) também funcionam
 function tipoImagem(filename) {
   const base = path.basename(filename, path.extname(filename)).trim()
+  // nomes temporários do usuário
   if (/^[a-zA-Z]+$/.test(base))  return 'capa'
   if (/^\d+$/.test(base))        return 'galeria'
-  // nomes já formatados — mantém lógica antiga
+  // nomes já formatados
   const l = filename.toLowerCase()
-  if (l.includes('recorte'))     return 'capa'
   if (l.includes('gemini'))      return 'gemini'
-  if (/^pag[\s_]/.test(l))      return 'galeria'
+  if (l.includes('galeria'))     return 'galeria'
+  if (l.includes('recorte'))     return 'galeria'  // recorte = foto secundária
+  if (/^pag\s*\d+\.[a-z]+$/.test(l)) return 'capa'  // pag 02.png = capa
   return 'galeria'
 }
 
