@@ -1,12 +1,8 @@
 import { getCatalogos } from '@/lib/data'
-import { getSession } from '@/lib/auth'
-import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { BookOpen, Package } from 'lucide-react'
 
 export default async function CatalogosPage() {
-  const session = await getSession()
-  if (!session) redirect('/admin/login')
   const catalogos = getCatalogos()
 
   return (
