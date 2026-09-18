@@ -1,5 +1,4 @@
-import { requireAdmin } from '@/lib/auth'
-import { redirect, notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
 import { getDb } from '@/lib/db'
 import { Produto } from '@/lib/types'
 import Link from 'next/link'
@@ -23,9 +22,6 @@ function getProduto(id: string): (Produto & { catalogo_pasta: string }) | null {
 export async function generateStaticParams() { return [{ id: '0' }] }
 
 export default async function AdminProdutoPage({ params }: { params: Promise<{ id: string }> }) {
-  const session = await requireAdmin().catch(() => null)
-  if (!session) redirect('/admin/login')
-
   const { id } = await params
   const produto = getProduto(id)
   if (!produto) notFound()

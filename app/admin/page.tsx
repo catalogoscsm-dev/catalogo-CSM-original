@@ -1,5 +1,3 @@
-import { requireAdmin } from '@/lib/auth'
-import { redirect } from 'next/navigation'
 import { getDb } from '@/lib/db'
 import { Catalogo } from '@/lib/types'
 import Link from 'next/link'
@@ -25,9 +23,6 @@ function getTotais() {
 }
 
 export default async function AdminPage() {
-  const session = await requireAdmin().catch(() => null)
-  if (!session) redirect('/admin/login')
-
   const catalogos = getCatalogos()
   const totais = getTotais()
 

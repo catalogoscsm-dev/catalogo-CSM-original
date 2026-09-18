@@ -2,7 +2,7 @@ import { getCatalogos } from '@/lib/data'
 import Link from 'next/link'
 import { BookOpen, Package } from 'lucide-react'
 
-export default async function CatalogosPage() {
+export default function CatalogosPage() {
   const catalogos = getCatalogos()
 
   return (

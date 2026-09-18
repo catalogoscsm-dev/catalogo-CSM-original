@@ -1,5 +1,3 @@
-import { requireAdmin } from '@/lib/auth'
-import { redirect } from 'next/navigation'
 import { getDb } from '@/lib/db'
 import { Produto, Catalogo } from '@/lib/types'
 import Link from 'next/link'
@@ -32,9 +30,6 @@ function getProdutos(catalogoId: number): Produto[] {
 export async function generateStaticParams() { return [{ marca: '_' }] }
 
 export default async function AdminCatalogoPage({ params }: { params: Promise<{ marca: string }> }) {
-  const session = await requireAdmin().catch(() => null)
-  if (!session) redirect('/admin/login')
-
   const { marca } = await params
   const catalogo = getCatalogo(marca)
   if (!catalogo) notFound()
