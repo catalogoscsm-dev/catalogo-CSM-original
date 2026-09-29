@@ -187,11 +187,17 @@ export default function ProductsView({ produtos, total }: Props) {
   }, [produtos, query])
 
   const [view, setView] = useState<'grid' | 'list'>('grid')
+  const [visibleCount, setVisibleCount] = useState(48)
 
   useEffect(() => {
     const saved = localStorage.getItem('csm_view') as 'grid' | 'list' | null
     if (saved) setView(saved)
   }, [])
+
+  // Reseta ao mudar busca
+  useEffect(() => {
+    setVisibleCount(48)
+  }, [query])
 
   function changeView(v: 'grid' | 'list') {
     setView(v)
@@ -237,7 +243,7 @@ export default function ProductsView({ produtos, total }: Props) {
       {/* ── GRADE ── */}
       {view === 'grid' && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {filtered.map((p, i) => (
+          {filtered.slice(0, visibleCount).map((p, i) => (
             <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
               <ProductCard produto={p} />
             </div>
@@ -248,11 +254,31 @@ export default function ProductsView({ produtos, total }: Props) {
       {/* ── LISTA ── */}
       {view === 'list' && (
         <div className="flex flex-col gap-4">
-          {filtered.map((p, i) => (
+          {filtered.slice(0, visibleCount).map((p, i) => (
             <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.03}s`, opacity: 0 }}>
               <ListCard produto={p} />
             </div>
           ))}
+        </div>
+      )}
+
+      {/* ── LOAD MORE ── */}
+      {visibleCount < filtered.length && (
+        <div className="flex flex-col items-center gap-2 pt-4 pb-8">
+          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+            Mostrando {Math.min(visibleCount, filtered.length)} de {filtered.length} produto(s)
+          </p>
+          <button
+            onClick={() => setVisibleCount(v => v + 48)}
+            className="px-8 py-3 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95"
+            style={{
+              background: 'var(--surface)',
+              border: '1px solid var(--border)',
+              color: 'var(--text-primary)',
+            }}
+          >
+            Carregar mais
+          </button>
         </div>
       )}
 
