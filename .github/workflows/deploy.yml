@@ -29,9 +29,10 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build
+        run: npx next build --no-turbopack
         env:
           NEXT_PUBLIC_BASE_PATH: /catalogo-CSM-original
+          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
