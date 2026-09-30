@@ -320,6 +320,74 @@ html.dark .ver-produto-btn {
   transform: scale(1.02);
 }
 
+/* ─── Histórico: drawer lateral ─── */
+@keyframes drawerIn {
+  from { transform: translateX(100%); opacity: 0.4; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes drawerOut {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0.4; }
+}
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes backdropOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+.hist-drawer        { animation: drawerIn   0.36s cubic-bezier(0.32, 0, 0.15, 1) forwards; }
+.hist-drawer-close  { animation: drawerOut  0.30s cubic-bezier(0.4, 0, 1, 1)     forwards; }
+.hist-backdrop      { animation: backdropIn  0.32s ease forwards; }
+.hist-backdrop-close{ animation: backdropOut 0.28s ease forwards; }
+
+/* ─── Favoritos: remoção ─── */
+@keyframes favRemove {
+  from { opacity: 1; transform: scale(1)    translateY(0);  filter: blur(0);   }
+  to   { opacity: 0; transform: scale(0.88) translateY(8px); filter: blur(5px); }
+}
+.fav-removing {
+  animation: favRemove 0.38s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+/* ─── WhatsApp FAB ─── */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.65);
+}
+.whatsapp-fab-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  animation: waPulse 2.4s ease-out infinite;
+  z-index: -1;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
+}
+
 /* ─── Scrollbar ─── */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

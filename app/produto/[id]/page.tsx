@@ -6,6 +6,7 @@ import FavShare from './FavShare'
 import FichaTecnica from '@/components/FichaTecnica'
 import DimensoesDisplay from '@/components/DimensoesDisplay'
 import ProductNavAnimated from '@/components/ProductNavAnimated'
+import ViewTracker from '@/components/ViewTracker'
 import { ShieldCheck, ChevronRight } from 'lucide-react'
 
 export async function generateStaticParams() {
@@ -42,6 +43,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
       prevId={anterior?.id ?? null}
       nextId={proximo?.id  ?? null}
     >
+      <ViewTracker produtoId={produto.id} />
       <div className="produto-fullbleed">
         <div className="produto-grid">
 
@@ -88,7 +90,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
               </h1>
             </div>
 
-            <FavShare produtoId={produto.id} />
+            <FavShare produtoId={produto.id} nomeProduto={produto.nome} />
 
             <div className="h-px" style={{ background: 'var(--border)' }} />
 
