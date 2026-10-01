@@ -1,4 +1,3 @@
-export const dynamic = 'force-static'
 import { NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { Produto } from '@/lib/types'

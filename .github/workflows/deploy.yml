@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Export database to JSON
+        run: npm run export-data
+
       - name: Build static site
         run: npm run build
         env:
