@@ -370,6 +370,9 @@ html.dark .ver-produto-btn {
   cursor: pointer;
   text-decoration: none;
 }
+@media (max-width: 767px) {
+  .whatsapp-fab { bottom: 100px; }
+}
 .whatsapp-fab:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 30px rgba(37, 211, 102, 0.65);
