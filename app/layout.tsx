@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body className={`${inter.variable} min-h-screen`}>
         <ThemeProvider>
-          <Header isAdmin={false} />
+          <Header />
           <Suspense>
             <SearchToolbar />
           </Suspense>
