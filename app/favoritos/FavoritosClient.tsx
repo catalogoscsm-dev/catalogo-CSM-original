@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Produto } from '@/lib/types'
 import { Heart, X, History, RotateCcw } from 'lucide-react'
@@ -89,6 +90,7 @@ function HistItem({ produto, at, action, isFav, onAction, onClose }: {
 }
 
 export default function FavoritosClient({ todos }: { todos: Produto[] }) {
+  const searchParams = useSearchParams()
   const [favIds, setFavIds]           = useState<number[]>([])
   const [removidos, setRemovidosList] = useState<HistEntry[]>([])
   const [vistos, setVistos]           = useState<HistEntry[]>([])
@@ -103,6 +105,9 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
     setFavIds(getLS(LS_FAV, []))
     setRemovidosList(getLS(LS_REMOVIDOS, []))
     setVistos(getLS(LS_VISTOS, []))
+    if (searchParams.get('hist') === '1') {
+      setDrawerOpen(true)
+    }
   }, [])
 
   useEffect(() => {

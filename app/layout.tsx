@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import SearchToolbar from '@/components/SearchToolbar'
 import PageTransition from '@/components/PageTransition'
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton'
+import MobileBottomNav from '@/components/MobileBottomNav'
 import { Suspense } from 'react'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </PageTransition>
           </main>
           <WhatsAppFloatingButton />
+          <Suspense><MobileBottomNav /></Suspense>
         </ThemeProvider>
       </body>
     </html>
