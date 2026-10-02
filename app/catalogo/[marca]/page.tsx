@@ -13,7 +13,13 @@ export default async function CatalogoPage({ params }: { params: Promise<{ marca
   const catalogo = getCatalogoPorPasta(decodeURIComponent(marca))
   if (!catalogo) notFound()
 
-  const produtos = getProdutosPorCatalogo(catalogo.pasta)
+  const produtosRaw = getProdutosPorCatalogo(catalogo.pasta)
+  // Products with images first, rest maintain original order
+  const produtos = [
+    ...produtosRaw.filter(p => p.imagens.length > 0),
+    ...produtosRaw.filter(p => p.imagens.length === 0),
+  ]
+  const newIds = new Set(produtosRaw.filter(p => p.imagens.length > 0).map(p => p.id))
 
   return (
     <div className="space-y-6">
@@ -35,7 +41,15 @@ export default async function CatalogoPage({ params }: { params: Promise<{ marca
       ) : (
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {produtos.map(p => (
-            <ProductCard key={p.id} produto={p} />
+            <div key={p.id} className="relative">
+              {newIds.has(p.id) && (
+                <span className="absolute top-2 left-2 z-10 text-xs font-bold px-2 py-0.5 rounded-full pointer-events-none"
+                  style={{ background: 'var(--j)', color: '#fff', letterSpacing: '0.05em' }}>
+                  NEW
+                </span>
+              )}
+              <ProductCard produto={p} />
+            </div>
           ))}
         </div>
       )}
