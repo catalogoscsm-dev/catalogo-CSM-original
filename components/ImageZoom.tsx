@@ -246,7 +246,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
           style={{
             flex: 1, position: 'relative',
             cursor: active ? (isMobileDevice ? 'zoom-in' : 'crosshair') : 'default',
-            overflow: 'hidden', minHeight: 0,
+            overflow: 'hidden', minHeight: '200px',
           }}
           onMouseEnter={() => !isMobileDevice && active && setZooming(true)}
           onMouseLeave={() => setZooming(false)}

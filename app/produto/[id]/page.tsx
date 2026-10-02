@@ -44,10 +44,11 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
       nextId={proximo?.id  ?? null}
     >
       <ViewTracker produtoId={produto.id} />
-      <div className="produto-fullbleed">
-        <div className="produto-grid">
+      <style>{`._wf { display: none !important; }`}</style>
+      <div className="_fb">
+        <div className="_pg">
 
-          <div className="produto-img-col">
+          <div className="_pi">
             <ImageZoom
               src={produto.imagens[0] ?? null}
               alt={produto.nome}
@@ -56,7 +57,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
             />
           </div>
 
-          <div className="produto-info-col">
+          <div className="_po">
 
             <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--g)' }}>
               <Link href="/" className="hover:underline hover:opacity-70 transition-opacity"
