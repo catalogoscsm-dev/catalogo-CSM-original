@@ -91,16 +91,24 @@ export default function FavShare({ produtoId, nomeProduto }: Props) {
 
   const getUrl = () => typeof window !== 'undefined' ? window.location.href : ''
 
+  const isMobileDevice = () =>
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0) &&
+    window.innerWidth < 1024
+
   const handleShare = useCallback(async () => {
     const url  = getUrl()
-    const text = msgWhatsApp(nomeProduto, url)
 
-    if (typeof navigator !== 'undefined' && navigator.share) {
+    if (isMobileDevice() && typeof navigator !== 'undefined' && navigator.share) {
       try {
-        await navigator.share({ title: nomeProduto, text, url })
+        await navigator.share({ title: nomeProduto, text: msgWhatsApp(nomeProduto, url), url })
         return
-      } catch {}
+      } catch (e: unknown) {
+        const name = (e as { name?: string })?.name
+        if (name === 'AbortError') return
+      }
     }
+
     setSheetOpen(true)
   }, [nomeProduto])
 
@@ -181,8 +189,13 @@ export default function FavShare({ produtoId, nomeProduto }: Props) {
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-75 active:scale-95"
-          style={{ background: 'var(--c)', border: '1px solid var(--h)', color: 'var(--g)' }}
+          className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-80 active:scale-95"
+          style={{
+            background: 'linear-gradient(135deg, var(--j) 0%, var(--k) 100%)',
+            border: 'none',
+            color: '#fff',
+            boxShadow: '0 2px 12px rgba(140,110,24,0.3)',
+          }}
         >
           <Share2 className="w-4 h-4" />
           Compartilhar
