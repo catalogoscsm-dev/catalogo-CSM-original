@@ -243,11 +243,20 @@ export default function ProductsView({ produtos, total }: Props) {
       {/* ── GRADE ── */}
       {view === 'grid' && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {filtered.slice(0, visibleCount).map((p, i) => (
-            <div key={p.id} className="_u" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
-              <ProductCard produto={p} />
-            </div>
-          ))}
+          {filtered.slice(0, visibleCount).map((p, i) => {
+            const isNew = p.catalogo_pasta === 'Aprimore Decor 2025' && p.imagens.length > 0
+            return (
+              <div key={p.id} className="_u relative" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
+                {isNew && (
+                  <span className="absolute top-2 left-2 z-10 text-xs font-bold px-2 py-0.5 rounded-full pointer-events-none"
+                    style={{ background: 'var(--j)', color: '#fff', letterSpacing: '0.05em' }}>
+                    NEW
+                  </span>
+                )}
+                <ProductCard produto={p} />
+              </div>
+            )
+          })}
         </div>
       )}
 
