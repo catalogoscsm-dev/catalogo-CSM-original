@@ -1,4 +1,4 @@
-import { getProdutos, getProduto } from '@/lib/data'
+﻿import { getProdutos, getProduto } from '@/lib/data'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ImageZoom from '@/components/ImageZoom'
@@ -58,13 +58,13 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
           <div className="produto-info-col">
 
-            <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-secondary)' }}>
+            <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--g)' }}>
               <Link href="/" className="hover:underline hover:opacity-70 transition-opacity"
-                style={{ color: 'var(--text-secondary)' }}>
+                style={{ color: 'var(--g)' }}>
                 Início
               </Link>
               <ChevronRight className="w-3 h-3 opacity-40" />
-              <span style={{ color: 'var(--text-primary)' }}>{produto.nome}</span>
+              <span style={{ color: 'var(--f)' }}>{produto.nome}</span>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -72,15 +72,15 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
                 <span className="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full"
                   style={{
                     alignSelf:  'flex-start',
-                    background: 'var(--surface-hover)',
-                    color:      'var(--text-secondary)',
-                    border:     '1px solid var(--border)',
+                    background: 'var(--d)',
+                    color:      'var(--g)',
+                    border:     '1px solid var(--h)',
                   }}>
                   {produto.descricao}
                 </span>
               )}
-              <h1 className="font-display" style={{
-                color:         'var(--text-primary)',
+              <h1 className="_fd" style={{
+                color:         'var(--f)',
                 fontSize:      'clamp(1.8rem, 3.5vw, 2.8rem)',
                 fontWeight:    400,
                 lineHeight:    1.15,
@@ -92,14 +92,14 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
             <FavShare produtoId={produto.id} nomeProduto={produto.nome} />
 
-            <div className="h-px" style={{ background: 'var(--border)' }} />
+            <div className="h-px" style={{ background: 'var(--h)' }} />
 
             {(fichaPublica.length > 0 || temDimensoes || temAcabamento) && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {fichaPublica.length > 0 && (
                   <>
                     <h2 className="text-xs uppercase tracking-[0.2em] font-semibold"
-                      style={{ color: 'var(--text-secondary)' }}>
+                      style={{ color: 'var(--g)' }}>
                       Ficha Técnica
                     </h2>
                     <FichaTecnica items={fichaPublica as { label: string; value: string }[]} />
@@ -114,16 +114,16 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
             {isAdmin && fichaInterna.length > 0 && (
               <div className="rounded-xl p-5 space-y-3"
-                style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+                style={{ background: 'var(--c)', border: '1px solid var(--h)' }}>
                 <div className="flex items-center gap-2 text-sm font-medium"
-                  style={{ color: 'var(--text-secondary)' }}>
+                  style={{ color: 'var(--g)' }}>
                   <ShieldCheck className="w-4 h-4" />
                   Dados internos
                 </div>
                 {fichaInterna.map(({ label, value }) => (
                   <div key={label} className="flex items-center gap-4">
-                    <span className="text-xs w-36 shrink-0" style={{ color: 'var(--text-secondary)' }}>{label}</span>
-                    <span className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>{value}</span>
+                    <span className="text-xs w-36 shrink-0" style={{ color: 'var(--g)' }}>{label}</span>
+                    <span className="text-sm font-semibold" style={{ color: 'var(--f)' }}>{value}</span>
                   </div>
                 ))}
               </div>
@@ -131,12 +131,12 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
 
             {produto.texto_livre && (
               <div className="rounded-xl p-5 space-y-2"
-                style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}>
+                style={{ background: 'var(--c)', border: '1px solid var(--h)' }}>
                 <h2 className="text-xs uppercase tracking-[0.2em] font-semibold"
-                  style={{ color: 'var(--text-secondary)' }}>
+                  style={{ color: 'var(--g)' }}>
                   Observações
                 </h2>
-                <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--text-primary)' }}>
+                <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: 'var(--f)' }}>
                   {produto.texto_livre}
                 </p>
               </div>

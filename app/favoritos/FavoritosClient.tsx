@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
@@ -58,27 +58,27 @@ function HistItem({ produto, at, action, isFav, onAction, onClose }: {
 }) {
   const img = produto.imagens?.[0] ?? null
   return (
-    <div className="flex items-center gap-3 px-5 py-3.5 transition-colors duration-150 hover:bg-[var(--surface-hover)]">
+    <div className="flex items-center gap-3 px-5 py-3.5 transition-colors duration-150 hover:bg-[var(--d)]">
       <Link href={`/produto/${produto.id}`} onClick={onClose} className="shrink-0">
-        <div className="w-14 h-14 rounded-xl overflow-hidden" style={{ background: 'var(--surface)' }}>
+        <div className="w-14 h-14 rounded-xl overflow-hidden" style={{ background: 'var(--c)' }}>
           {img && <img src={img} alt={produto.nome} className="w-full h-full object-contain" />}
         </div>
       </Link>
 
       <div className="flex-1 min-w-0">
         <Link href={`/produto/${produto.id}`} onClick={onClose} className="hover:underline">
-          <p className="text-sm font-medium leading-tight" style={{ color: 'var(--text-primary)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+          <p className="text-sm font-medium leading-tight" style={{ color: 'var(--f)', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
             {produto.nome}
           </p>
         </Link>
-        <p className="text-xs mt-1" style={{ color: 'var(--text-secondary)' }}>{timeAgo(at)}</p>
+        <p className="text-xs mt-1" style={{ color: 'var(--g)' }}>{timeAgo(at)}</p>
       </div>
 
       <button
         onClick={onAction}
         disabled={isFav}
         className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-150 hover:opacity-80 disabled:opacity-40 disabled:cursor-default"
-        style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-primary)' }}
+        style={{ background: 'var(--c)', border: '1px solid var(--h)', color: 'var(--f)' }}
       >
         {isFav
           ? <Heart className="w-3.5 h-3.5" fill="currentColor" style={{ color: '#fb7185' }} />
@@ -183,8 +183,8 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
         {/* Header */}
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div>
-            <h1 className="font-display" style={{ color: 'var(--text-primary)', fontSize: '2rem', fontWeight: 400 }}>Favoritos</h1>
-            <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <h1 className="_fd" style={{ color: 'var(--f)', fontSize: '2rem', fontWeight: 400 }}>Favoritos</h1>
+            <p className="mt-1 text-sm" style={{ color: 'var(--g)' }}>
               {mounted ? `${produtos.length} produto(s) salvos` : ''}
             </p>
           </div>
@@ -194,12 +194,12 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
               <button
                 onClick={openDrawer}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-80"
-                style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
+                style={{ background: 'var(--c)', border: '1px solid var(--h)', color: 'var(--g)' }}
               >
                 <History className="w-4 h-4" />
                 Histórico
                 <span className="px-1.5 py-0.5 rounded-full text-xs font-bold"
-                  style={{ background: 'var(--surface-hover)', color: 'var(--text-primary)' }}>
+                  style={{ background: 'var(--d)', color: 'var(--f)' }}>
                   {totalHist}
                 </span>
               </button>
@@ -222,7 +222,7 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
 
         {/* Empty state */}
         {mounted && produtos.length === 0 && (
-          <div className="text-center py-16" style={{ color: 'var(--text-secondary)' }}>
+          <div className="text-center py-16" style={{ color: 'var(--g)' }}>
             <Heart className="w-12 h-12 mx-auto mb-4 opacity-20" />
             <p>Nenhum produto favoritado ainda.</p>
           </div>
@@ -236,7 +236,7 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
               return (
                 <div
                   key={p.id}
-                  className={`relative ${isRemoving ? 'fav-removing' : 'animate-fade-up'}`}
+                  className={`relative ${isRemoving ? '_fr' : '_u'}`}
                   style={isRemoving ? {} : { animationDelay: `${i * 0.04}s`, opacity: 0 }}
                 >
                   <ProductCard produto={p} favorito onToggleFavorito={remover} />
@@ -260,7 +260,7 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
         <>
           {/* Backdrop */}
           <div
-            className={closing ? 'hist-backdrop-close' : 'hist-backdrop'}
+            className={closing ? '_bc' : '_bp'}
             onClick={closeDrawer}
             style={{
               position: 'fixed', inset: 0, zIndex: 40,
@@ -272,12 +272,12 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
 
           {/* Drawer panel */}
           <div
-            className={closing ? 'hist-drawer-close' : 'hist-drawer'}
+            className={closing ? '_hc' : '_hd'}
             style={{
               position: 'fixed', top: 0, right: 0, bottom: 0, zIndex: 50,
               width: 'min(440px, 92vw)',
-              background: 'var(--bg)',
-              borderLeft: '1px solid var(--border)',
+              background: 'var(--a)',
+              borderLeft: '1px solid var(--h)',
               boxShadow: '-12px 0 48px rgba(0,0,0,0.18)',
               display: 'flex', flexDirection: 'column',
               overflowY: 'auto',
@@ -285,19 +285,19 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
           >
             {/* Drawer header */}
             <div className="flex items-center justify-between px-6 py-5 sticky top-0 z-10"
-              style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
+              style={{ background: 'var(--a)', borderBottom: '1px solid var(--h)' }}>
               <div className="flex items-center gap-2.5">
-                <History className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                <span className="text-base font-semibold" style={{ color: 'var(--text-primary)' }}>Histórico</span>
+                <History className="w-4 h-4" style={{ color: 'var(--g)' }} />
+                <span className="text-base font-semibold" style={{ color: 'var(--f)' }}>Histórico</span>
                 <span className="px-1.5 py-0.5 rounded-full text-xs font-bold"
-                  style={{ background: 'var(--surface-hover)', color: 'var(--text-secondary)' }}>
+                  style={{ background: 'var(--d)', color: 'var(--g)' }}>
                   {totalHist}
                 </span>
               </div>
               <button
                 onClick={closeDrawer}
                 className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
-                style={{ background: 'var(--surface)', color: 'var(--text-secondary)' }}
+                style={{ background: 'var(--c)', color: 'var(--g)' }}
               >
                 <X className="w-4 h-4" />
               </button>
@@ -307,10 +307,10 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
             {histRemovidos.length > 0 && (
               <div>
                 <p className="px-6 pt-5 pb-2 text-xs uppercase tracking-widest font-semibold"
-                  style={{ color: 'var(--text-secondary)' }}>
+                  style={{ color: 'var(--g)' }}>
                   Removidos dos favoritos
                 </p>
-                <div className="divide-y" style={{ borderColor: 'var(--border)' }}>
+                <div className="divide-y" style={{ borderColor: 'var(--h)' }}>
                   {histRemovidos.map(({ produto, at }) => (
                     <HistItem
                       key={produto.id}
@@ -328,12 +328,12 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
 
             {/* Visited section */}
             {histVistos.length > 0 && (
-              <div style={{ borderTop: histRemovidos.length ? '1px solid var(--border)' : undefined }}>
+              <div style={{ borderTop: histRemovidos.length ? '1px solid var(--h)' : undefined }}>
                 <p className="px-6 pt-5 pb-2 text-xs uppercase tracking-widest font-semibold"
-                  style={{ color: 'var(--text-secondary)' }}>
+                  style={{ color: 'var(--g)' }}>
                   Visitados recentemente
                 </p>
-                <div className="divide-y" style={{ borderColor: 'var(--border)' }}>
+                <div className="divide-y" style={{ borderColor: 'var(--h)' }}>
                   {histVistos.map(({ produto, at }) => (
                     <HistItem
                       key={produto.id}

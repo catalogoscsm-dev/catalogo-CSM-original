@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useMemo, useEffect, useRef } from 'react'
 import { useSearchParams } from 'next/navigation'
@@ -66,13 +66,13 @@ function ListCard({ produto }: { produto: Produto }) {
       onMouseLeave={() => setHovered(false)}
     >
       <div
-        className="list-card rounded-2xl overflow-hidden transition-all duration-300 group-hover:shadow-xl"
+        className="_l rounded-2xl overflow-hidden transition-all duration-300 group-hover:shadow-xl"
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           minHeight: 240,
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
+          background: 'var(--c)',
+          border: '1px solid var(--h)',
         }}
       >
         {/* ── Lado da imagem ── */}
@@ -134,18 +134,18 @@ function ListCard({ produto }: { produto: Produto }) {
         </div>
 
         {/* ── Lado da info ── */}
-        <div className="flex flex-col justify-center px-8 py-6 gap-3" style={{ background: 'var(--bg)' }}>
+        <div className="flex flex-col justify-center px-8 py-6 gap-3" style={{ background: 'var(--a)' }}>
           <div className="space-y-2">
             {produto.catalogo_nome && (
-              <p className="text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--text-secondary)', opacity: 0.7 }}>
+              <p className="text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--g)', opacity: 0.7 }}>
                 {produto.catalogo_nome}
               </p>
             )}
-            <h2 className="font-display" style={{
+            <h2 className="_fd" style={{
               fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
               fontWeight: 400,
               lineHeight: 1.1,
-              color: 'var(--text-primary)',
+              color: 'var(--f)',
             }}>
               {produto.nome}
             </h2>
@@ -154,15 +154,15 @@ function ListCard({ produto }: { produto: Produto }) {
           {(produto.material || produto.dimensoes) && (
             <div className="space-y-1">
               {produto.material && (
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{produto.material}</p>
+                <p className="text-sm" style={{ color: 'var(--g)' }}>{produto.material}</p>
               )}
               {produto.dimensoes && (
-                <p className="text-xs" style={{ color: 'var(--text-secondary)', opacity: 0.65 }}>{produto.dimensoes}</p>
+                <p className="text-xs" style={{ color: 'var(--g)', opacity: 0.65 }}>{produto.dimensoes}</p>
               )}
             </div>
           )}
 
-          <span className="ver-produto-btn">
+          <span className="_v">
             Ver produto completo →
           </span>
         </div>
@@ -208,20 +208,20 @@ export default function ProductsView({ produtos, total }: Props) {
     <div className="space-y-4">
       {/* Barra de controle */}
       <div className="flex items-center justify-between">
-        <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+        <p className="text-sm" style={{ color: 'var(--g)' }}>
           {query
-            ? <><span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>"{query}"</span> — {filtered.length} resultado(s)</>
+            ? <><span style={{ color: 'var(--f)', fontWeight: 600 }}>"{query}"</span> — {filtered.length} resultado(s)</>
             : <>{total} produto(s)</>}
         </p>
 
-        <div className="flex items-center gap-1 p-1 rounded-lg" style={{ background: 'var(--surface)' }}>
+        <div className="flex items-center gap-1 p-1 rounded-lg" style={{ background: 'var(--c)' }}>
           <button
             onClick={() => changeView('grid')}
             title="Grade"
             className="w-8 h-7 rounded-md flex items-center justify-center transition-all duration-200"
             style={{
-              background: view === 'grid' ? 'var(--surface-hover)' : 'transparent',
-              color: view === 'grid' ? 'var(--text-primary)' : 'var(--text-secondary)',
+              background: view === 'grid' ? 'var(--d)' : 'transparent',
+              color: view === 'grid' ? 'var(--f)' : 'var(--g)',
             }}
           >
             <LayoutGrid className="w-3.5 h-3.5" />
@@ -231,8 +231,8 @@ export default function ProductsView({ produtos, total }: Props) {
             title="Lista"
             className="w-8 h-7 rounded-md flex items-center justify-center transition-all duration-200"
             style={{
-              background: view === 'list' ? 'var(--surface-hover)' : 'transparent',
-              color: view === 'list' ? 'var(--text-primary)' : 'var(--text-secondary)',
+              background: view === 'list' ? 'var(--d)' : 'transparent',
+              color: view === 'list' ? 'var(--f)' : 'var(--g)',
             }}
           >
             <Rows3 className="w-3.5 h-3.5" />
@@ -244,7 +244,7 @@ export default function ProductsView({ produtos, total }: Props) {
       {view === 'grid' && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-5">
           {filtered.slice(0, visibleCount).map((p, i) => (
-            <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
+            <div key={p.id} className="_u" style={{ animationDelay: `${i * 0.04}s`, opacity: 0 }}>
               <ProductCard produto={p} />
             </div>
           ))}
@@ -255,7 +255,7 @@ export default function ProductsView({ produtos, total }: Props) {
       {view === 'list' && (
         <div className="flex flex-col gap-4">
           {filtered.slice(0, visibleCount).map((p, i) => (
-            <div key={p.id} className="animate-fade-up" style={{ animationDelay: `${i * 0.03}s`, opacity: 0 }}>
+            <div key={p.id} className="_u" style={{ animationDelay: `${i * 0.03}s`, opacity: 0 }}>
               <ListCard produto={p} />
             </div>
           ))}
@@ -265,16 +265,16 @@ export default function ProductsView({ produtos, total }: Props) {
       {/* ── LOAD MORE ── */}
       {visibleCount < filtered.length && (
         <div className="flex flex-col items-center gap-2 pt-4 pb-8">
-          <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-xs" style={{ color: 'var(--g)' }}>
             Mostrando {Math.min(visibleCount, filtered.length)} de {filtered.length} produto(s)
           </p>
           <button
             onClick={() => setVisibleCount(v => v + 48)}
             className="px-8 py-3 rounded-full text-sm font-medium transition-all duration-200 hover:scale-105 active:scale-95"
             style={{
-              background: 'var(--surface)',
-              border: '1px solid var(--border)',
-              color: 'var(--text-primary)',
+              background: 'var(--c)',
+              border: '1px solid var(--h)',
+              color: 'var(--f)',
             }}
           >
             Carregar mais
@@ -284,7 +284,7 @@ export default function ProductsView({ produtos, total }: Props) {
 
       {filtered.length === 0 && (
         <div className="text-center py-24">
-          <p className="text-2xl font-light" style={{ color: 'var(--text-secondary)' }}>
+          <p className="text-2xl font-light" style={{ color: 'var(--g)' }}>
             {query ? `Nenhum resultado para "${query}"` : 'Nenhum produto ainda'}
           </p>
         </div>

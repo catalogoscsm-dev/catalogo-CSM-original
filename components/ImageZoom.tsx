@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useRef, useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
@@ -12,7 +12,7 @@ interface Props {
   fullHeight?: boolean
 }
 
-const ZOOM_FACTOR = 3
+const ZOOM_FACTOR = 5
 const PANEL_W = 340
 const PANEL_H = 340
 const DBL_TAP_MS = 280
@@ -75,7 +75,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
     // Double-tap to toggle zoom (2.5×)
     const now = Date.now()
     if (now - lbLastTap.current < DBL_TAP_MS) {
-      setLbScale(s => s > 1 ? 1 : 2.5)
+      setLbScale(s => s > 1 ? 1 : 4)
       lbLastTap.current = 0
       lbTouchX.current = null
       return
@@ -331,7 +331,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
       <div
         ref={imageRef}
         className="relative aspect-[4/3] rounded-2xl cursor-crosshair select-none overflow-hidden"
-        style={{ background: '#ffffff', border: '1px solid var(--border)' }}
+        style={{ background: '#ffffff', border: '1px solid var(--h)' }}
         onMouseEnter={() => active && setZooming(true)}
         onMouseLeave={() => setZooming(false)}
         onMouseMove={handleMouseMove}
@@ -353,8 +353,8 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
           </>
         ) : (
           <div className="flex flex-col items-center justify-center h-full gap-3">
-            <Package className="w-16 h-16" style={{ color: 'var(--text-secondary)', opacity: 0.3 }} />
-            <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-secondary)', opacity: 0.4 }}>
+            <Package className="w-16 h-16" style={{ color: 'var(--g)', opacity: 0.3 }} />
+            <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--g)', opacity: 0.4 }}>
               sem imagem
             </span>
           </div>
@@ -371,7 +371,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
               onClick={() => setActive(img)}
               className="relative w-16 h-16 rounded-xl overflow-hidden transition-all duration-200 hover:scale-105"
               style={{
-                border: active === img ? '2px solid var(--text-primary)' : '2px solid var(--border)',
+                border: active === img ? '2px solid var(--f)' : '2px solid var(--h)',
                 opacity: active === img ? 1 : 0.6,
                 background: '#fff',
               }}

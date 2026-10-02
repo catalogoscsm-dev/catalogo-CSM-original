@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Search, X, Heart, Sun, Moon } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
@@ -34,33 +34,33 @@ export default function SearchToolbar() {
   return (
     <>
       <style>{`
-        @keyframes spin-in {
+        @keyframes k10 {
           0%   { transform: rotate(-180deg) scale(0.4); opacity: 0; }
           60%  { transform: rotate(20deg) scale(1.2); opacity: 1; }
           100% { transform: rotate(0deg) scale(1); opacity: 1; }
         }
-        .theme-icon-spin { animation: spin-in 0.55s cubic-bezier(.34,1.56,.64,1) forwards; }
+        ._ts { animation: k10 0.55s cubic-bezier(.34,1.56,.64,1) forwards; }
       `}</style>
 
-      <div className="search-toolbar sticky top-14 z-30">
+      <div className="_t sticky top-14 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
           <div className="flex items-center gap-2.5">
 
             {/* Barra de pesquisa */}
             <form onSubmit={handleSubmit} className="flex-1 relative">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 pointer-events-none"
-                style={{ color: 'var(--text-secondary)' }} />
+                style={{ color: 'var(--g)' }} />
               <input
                 type="text"
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 placeholder="Buscar produtos, acabamentos, dimensões..."
-                className="search-input w-full pl-10 pr-10 py-2 text-sm rounded-lg outline-none transition-all duration-200"
+                className="_q w-full pl-10 pr-10 py-2 text-sm rounded-lg outline-none transition-all duration-200"
               />
               {value && (
                 <button type="button" onClick={() => { setValue(''); router.push('/') }}
                   className="absolute right-3 top-1/2 -translate-y-1/2">
-                  <X className="w-3.5 h-3.5" style={{ color: 'var(--text-secondary)' }} />
+                  <X className="w-3.5 h-3.5" style={{ color: 'var(--g)' }} />
                 </button>
               )}
             </form>
@@ -69,10 +69,10 @@ export default function SearchToolbar() {
             <div className="flex items-center gap-1.5">
               <button
                 onClick={handleToggle}
-                className={`toolbar-btn w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105 ${spinning ? '' : ''}`}
+                className={`_b w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105 ${spinning ? '' : ''}`}
                 title={isDark ? 'Modo claro' : 'Modo escuro'}
               >
-                <span key={theme} className="theme-icon-spin flex items-center justify-center">
+                <span key={theme} className="_ts flex items-center justify-center">
                   {isDark
                     ? <Sun className="w-4 h-4" style={{ color: '#aaaaaa' }} />
                     : <Moon className="w-4 h-4" style={{ color: '#8A8480' }} />}
@@ -81,10 +81,10 @@ export default function SearchToolbar() {
 
               <Link
                 href="/favoritos"
-                className="toolbar-btn w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
+                className="_b w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
                 title="Favoritos"
               >
-                <Heart className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
+                <Heart className="w-4 h-4" style={{ color: 'var(--g)' }} />
               </Link>
             </div>
           </div>

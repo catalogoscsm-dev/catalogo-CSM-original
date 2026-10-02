@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
@@ -142,7 +142,7 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
     boxShadow:      hovered
       ? '0 8px 32px rgba(0,0,0,0.28), inset 0 1px 1px rgba(255,255,255,0.3)'
       : '0 4px 16px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255,255,255,0.15)',
-    color:          'var(--text-primary)',
+    color:          'var(--f)',
     animation:      hovered ? 'none' : `pn-float 3.2s ease-in-out infinite`,
     transition:     'width 0.2s ease, height 0.2s ease, background 0.2s ease, box-shadow 0.2s ease',
     willChange:     'transform',

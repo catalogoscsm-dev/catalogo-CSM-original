@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Heart, Share2 } from 'lucide-react'
 import { useState, useEffect } from 'react'
@@ -74,9 +74,9 @@ export default function FavShare({ produtoId, nomeProduto }: { produtoId: number
           onClick={toggleFav}
           className={`flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${animating ? 'heart-glow' : ''}`}
           style={{
-            background: isFav ? 'rgba(251,113,133,0.12)' : 'var(--surface)',
-            border: `1px solid ${isFav ? 'rgba(251,113,133,0.45)' : 'var(--border)'}`,
-            color: isFav ? '#fb7185' : 'var(--text-secondary)',
+            background: isFav ? 'rgba(251,113,133,0.12)' : 'var(--c)',
+            border: `1px solid ${isFav ? 'rgba(251,113,133,0.45)' : 'var(--h)'}`,
+            color: isFav ? '#fb7185' : 'var(--g)',
             boxShadow: isFav ? '0 0 16px rgba(251,113,133,0.12)' : 'none',
           }}
         >
@@ -89,7 +89,7 @@ export default function FavShare({ produtoId, nomeProduto }: { produtoId: number
         <button
           onClick={compartilhar}
           className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-75 active:scale-95"
-          style={{ background: 'var(--surface)', border: '1px solid var(--border)', color: 'var(--text-secondary)' }}
+          style={{ background: 'var(--c)', border: '1px solid var(--h)', color: 'var(--g)' }}
         >
           <Share2 className="w-4 h-4" />
           {copied ? 'Copiado!' : 'Compartilhar'}

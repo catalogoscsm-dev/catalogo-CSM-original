@@ -1,4 +1,4 @@
-interface Cell  { label: string; val: string }
+﻿interface Cell  { label: string; val: string }
 interface Row   { size: string | null; cells: Cell[] }
 interface Table { cols: string[]; rows: Row[] }
 
@@ -247,7 +247,7 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
     : []
 
   const sectionLabel: React.CSSProperties = {
-    color: 'var(--text-secondary)',
+    color: 'var(--g)',
     fontWeight: 600,
     fontSize: '0.68rem',
     letterSpacing: '0.2em',
@@ -258,7 +258,7 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
   const thStyle: React.CSSProperties = {
     padding: '8px 14px',
     textAlign: 'left',
-    color: 'var(--text-secondary)',
+    color: 'var(--g)',
     fontWeight: 600,
     fontSize: '0.68rem',
     letterSpacing: '0.12em',
@@ -269,14 +269,14 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
     padding: '11px 14px',
     fontWeight: 600,
     fontSize: '0.875rem',
-    color: 'var(--text-primary)',
+    color: 'var(--f)',
   }
 
   const tdVal: React.CSSProperties = {
     padding: '11px 14px',
     fontWeight: 400,
     fontSize: '0.875rem',
-    color: 'var(--text-primary)',
+    color: 'var(--f)',
   }
 
   const temSize = table?.rows.some(r => r.size !== null) ?? false
@@ -288,10 +288,10 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
       {table ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
           <p style={sectionLabel}>Dimensões</p>
-          <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--border)' }}>
+          <div style={{ borderRadius: 10, overflow: 'hidden', border: '1px solid var(--h)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
               <thead>
-                <tr style={{ background: 'var(--surface-hover)' }}>
+                <tr style={{ background: 'var(--d)' }}>
                   {temSize && <th style={{ ...thStyle, width: '22%' }}>Tamanho</th>}
                   {table.cols.map(col => <th key={col} style={thStyle}>{col}</th>)}
                 </tr>
@@ -299,8 +299,8 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
               <tbody>
                 {table.rows.map((row, i) => (
                   <tr key={i} style={{
-                    borderBottom: i < table.rows.length - 1 ? '1px solid var(--border)' : 'none',
-                    background: i % 2 === 0 ? 'transparent' : 'var(--surface-hover)',
+                    borderBottom: i < table.rows.length - 1 ? '1px solid var(--h)' : 'none',
+                    background: i % 2 === 0 ? 'transparent' : 'var(--d)',
                   }}>
                     {temSize && <td style={tdSize}>{row.size ?? '—'}</td>}
                     {table.cols.map(col => {
@@ -317,7 +317,7 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
       ) : raw && raw.trim().length > 1 ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
           <p style={sectionLabel}>Dimensões</p>
-          <p style={{ color: 'var(--text-primary)', fontSize: '0.875rem', margin: 0 }}>
+          <p style={{ color: 'var(--f)', fontSize: '0.875rem', margin: 0 }}>
             {raw.replace(/CM/gi, 'cm').replace(/[Xx]/g, ' × ')}
           </p>
         </div>
@@ -337,8 +337,8 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
                   gap: '9px',
                   padding: '6px 12px 6px 8px',
                   borderRadius: '999px',
-                  background: 'var(--surface-hover)',
-                  border: '1px solid var(--border)',
+                  background: 'var(--d)',
+                  border: '1px solid var(--h)',
                 }}>
                   {/* Swatch */}
                   <span style={{
@@ -346,11 +346,11 @@ export default function DimensoesDisplay({ raw, acabamento }: { raw?: string | n
                     height: 14,
                     borderRadius: '50%',
                     flexShrink: 0,
-                    background: swatchColor ?? 'var(--border)',
+                    background: swatchColor ?? 'var(--h)',
                     border: '1.5px solid rgba(128,128,128,0.25)',
                     boxShadow: swatchColor ? '0 1px 3px rgba(0,0,0,0.2)' : 'none',
                   }} />
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-primary)', fontWeight: 500 }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--f)', fontWeight: 500 }}>
                     {cor}
                   </span>
                 </div>

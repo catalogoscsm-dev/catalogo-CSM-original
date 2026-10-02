@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Home, Search, Heart, Clock } from 'lucide-react'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ export default function MobileBottomNav() {
   function handleSearch() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setTimeout(() => {
-      document.querySelector<HTMLInputElement>('.search-input')?.focus()
+      document.querySelector<HTMLInputElement>('._q')?.focus()
     }, 350)
   }
 
@@ -18,26 +18,26 @@ export default function MobileBottomNav() {
   const isFav  = pathname.startsWith('/favoritos') && !pathname.includes('hist')
 
   return (
-    <nav className="mobile-bottom-nav">
+    <nav className="_mn">
 
-      <Link href="/" className={isHome ? 'mob-nav-item active' : 'mob-nav-item'}>
-        <Home className="mob-nav-icon" />
-        <span className="mob-nav-label">Início</span>
+      <Link href="/" className={isHome ? '_mi _a' : '_mi'}>
+        <Home className="_mo" />
+        <span className="_ml">Início</span>
       </Link>
 
-      <button onClick={handleSearch} className="mob-nav-item">
-        <Search className="mob-nav-icon" />
-        <span className="mob-nav-label">Buscar</span>
+      <button onClick={handleSearch} className="_mi">
+        <Search className="_mo" />
+        <span className="_ml">Buscar</span>
       </button>
 
-      <Link href="/favoritos" className={isFav ? 'mob-nav-item active' : 'mob-nav-item'}>
-        <Heart className="mob-nav-icon" />
-        <span className="mob-nav-label">Favoritos</span>
+      <Link href="/favoritos" className={isFav ? '_mi _a' : '_mi'}>
+        <Heart className="_mo" />
+        <span className="_ml">Favoritos</span>
       </Link>
 
-      <Link href="/favoritos?hist=1" className="mob-nav-item">
-        <Clock className="mob-nav-icon" />
-        <span className="mob-nav-label">Histórico</span>
+      <Link href="/favoritos?hist=1" className="_mi">
+        <Clock className="_mo" />
+        <span className="_ml">Histórico</span>
       </Link>
 
     </nav>

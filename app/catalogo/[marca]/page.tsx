@@ -1,4 +1,4 @@
-import { getCatalogos, getCatalogoPorPasta, getProdutosPorCatalogo } from '@/lib/data'
+﻿import { getCatalogos, getCatalogoPorPasta, getProdutosPorCatalogo } from '@/lib/data'
 import ProductCard from '@/components/ProductCard'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -19,17 +19,17 @@ export default async function CatalogoPage({ params }: { params: Promise<{ marca
     <div className="space-y-6">
       <div className="flex items-center gap-3">
         <Link href="/catalogos" className="transition-colors duration-200 hover:opacity-70"
-          style={{ color: 'var(--text-secondary)' }}>
+          style={{ color: 'var(--g)' }}>
           <ChevronLeft className="w-5 h-5" />
         </Link>
         <div>
-          <h1 className="font-display" style={{ color: 'var(--text-primary)', fontSize: '2rem', fontWeight: 400 }}>{catalogo.nome}</h1>
-          <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{catalogo.total_produtos} produto(s)</p>
+          <h1 className="_fd" style={{ color: 'var(--f)', fontSize: '2rem', fontWeight: 400 }}>{catalogo.nome}</h1>
+          <p className="text-sm" style={{ color: 'var(--g)' }}>{catalogo.total_produtos} produto(s)</p>
         </div>
       </div>
 
       {produtos.length === 0 ? (
-        <div className="text-center py-20" style={{ color: 'var(--text-secondary)' }}>
+        <div className="text-center py-20" style={{ color: 'var(--g)' }}>
           <p>Nenhum produto importado para este catálogo ainda.</p>
         </div>
       ) : (

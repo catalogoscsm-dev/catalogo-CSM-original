@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { useEffect, useRef } from 'react'
 import ProductCard from './ProductCard'
@@ -58,7 +58,7 @@ export default function ParallaxCardGrid({ produtos, favorito, onToggleFavorito 
         <div
           key={p.id}
           ref={el => { itemRefs.current[i] = el }}
-          className="animate-fade-up"
+          className="_u"
           style={{
             animationDelay: `${i * 0.04}s`,
             opacity: 0,

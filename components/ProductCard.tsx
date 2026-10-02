@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -125,7 +125,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
         ref={cardRef}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        className="product-card"
+        className="_p"
         style={{ transform: hovered ? 'translateY(-3px)' : 'translateY(0)' }}
       >
         {/* Área de imagem */}
@@ -162,11 +162,11 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
               {/* Skeleton: some quando imagem carrega */}
               {!imgLoaded && (
-                <div className="absolute inset-0 z-10 skeleton" />
+                <div className="absolute inset-0 z-10 _s" />
               )}
 
               {/* Cortina de reveal: sobe quando card entra na viewport */}
-              <div className={`img-curtain ${revealed ? 'revealed' : ''}`} />
+              <div className={`_c ${revealed ? '_r' : ''}`} />
 
               {/* Dots indicadores de múltiplas imagens */}
               {imgs.length > 1 && (
@@ -192,8 +192,8 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
             </>
           ) : (
             <div className="flex flex-col items-center justify-center h-full gap-2">
-              <Package className="w-10 h-10" style={{ color: 'var(--text-secondary)', opacity: 0.4 }} />
-              <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--text-secondary)', opacity: 0.4 }}>
+              <Package className="w-10 h-10" style={{ color: 'var(--g)', opacity: 0.4 }} />
+              <span className="text-xs uppercase tracking-widest" style={{ color: 'var(--g)', opacity: 0.4 }}>
                 sem imagem
               </span>
             </div>
@@ -217,7 +217,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
               }}>
               <Heart className="w-3.5 h-3.5 transition-all duration-200"
                 fill={isFav ? 'currentColor' : 'none'}
-                style={{ color: isFav ? '#fb7185' : 'var(--text-secondary)' }} />
+                style={{ color: isFav ? '#fb7185' : 'var(--g)' }} />
             </button>
             <button onClick={compartilhar}
               className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
@@ -225,7 +225,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
                 background: isDark ? 'rgba(33,33,33,0.95)' : 'rgba(255,255,255,0.95)',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
               }}>
-              <Share2 className="w-3.5 h-3.5" style={{ color: 'var(--text-secondary)' }} />
+              <Share2 className="w-3.5 h-3.5" style={{ color: 'var(--g)' }} />
             </button>
             <a
               href={`https://wa.me/${WA_PHONE}?text=${waProductMsg(produto.nome, produto.id)}`}
@@ -255,16 +255,16 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
         {/* Info */}
         <div className="p-3 space-y-1">
-          <h3 className="card-title line-clamp-2">
+          <h3 className="_ct line-clamp-2">
             {produto.nome}
           </h3>
           {produto.dimensoes && (
-            <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-xs truncate" style={{ color: 'var(--g)' }}>
               {produto.dimensoes.split('|')[0].trim()}
             </p>
           )}
           {produto.acabamento && (
-            <p className="text-xs truncate" style={{ color: 'var(--text-secondary)' }}>
+            <p className="text-xs truncate" style={{ color: 'var(--g)' }}>
               {produto.acabamento}
             </p>
           )}
