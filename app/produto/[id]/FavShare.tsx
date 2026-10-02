@@ -189,7 +189,7 @@ export default function FavShare({ produtoId, nomeProduto }: Props) {
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-80 active:scale-95"
+          className="flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:opacity-80 active:scale-95"
           style={{
             background: 'linear-gradient(135deg, var(--j) 0%, var(--k) 100%)',
             border: 'none',
