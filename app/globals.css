@@ -2,48 +2,48 @@
 @import "tailwindcss";
 
 :root {
-  --a: #FFFFFF;
-  --b: #F9F5EF;
-  --c: #FAFAF9;
-  --d: #F5F2EE;
-  --e: rgba(255,255,255,0.95);
-  --f: #1A1714;
-  --g: #8A8480;
-  --h: rgba(0,0,0,0.08);
+  --a: #FAF8F3;
+  --b: #F0EBE0;
+  --c: #FFFFFF;
+  --d: #F5F0E8;
+  --e: rgba(250,248,243,0.97);
+  --f: #1C1916;
+  --g: #7A7470;
+  --h: rgba(0,0,0,0.07);
   --j: #8C6E18;
   --k: #B8973A;
   --m: 'Cormorant Garamond', serif;
   --n: 'Inter', sans-serif;
-  --p: #FFFFFF;
-  --q: #FFFFFF;
-  --r: #1A1714;
+  --p: #FAF8F3;
+  --q: #FAF8F3;
+  --r: #1C1916;
   --s: #2D2926;
   --t: #8C6E18;
   --u: #B8973A;
   --v: #F0E4C0;
-  --w: #8A8480;
-  --z: #F0EAE0;
+  --w: #7A7470;
+  --z: #E8E0D4;
 }
 
 html.dark {
-  --a: #0f0f0f;
-  --b: #0f0f0f;
-  --c: #212121;
-  --d: #2d2d2d;
-  --e: rgba(33,33,33,0.98);
-  --f: #f1f1f1;
-  --g: #aaaaaa;
-  --h: rgba(255,255,255,0.1);
-  --j: #f1f1f1;
-  --k: #cccccc;
-  --p: #0f0f0f;
-  --q: #212121;
-  --r: #f1f1f1;
-  --w: #aaaaaa;
-  --z: rgba(255,255,255,0.1);
-  --t: #d4a843;
-  --u: #e8c06a;
-  --v: rgba(212,168,67,0.15);
+  --a: #0A0A0A;
+  --b: #0D0D0D;
+  --c: #141414;
+  --d: #1C1C1C;
+  --e: rgba(14,14,14,0.98);
+  --f: #EDE8E2;
+  --g: #807C78;
+  --h: rgba(255,255,255,0.08);
+  --j: #C4924A;
+  --k: #D4A860;
+  --p: #0A0A0A;
+  --q: #141414;
+  --r: #EDE8E2;
+  --w: #807C78;
+  --z: rgba(255,255,255,0.08);
+  --t: #C4924A;
+  --u: #D4A860;
+  --v: rgba(196,146,74,0.15);
 }
 
 * { box-sizing: border-box; }
@@ -57,7 +57,7 @@ body {
 }
 
 html:not(.dark) body {
-  background-image: linear-gradient(160deg, #FFFFFF 0%, #F9F5EF 40%, #F3EDE3 100%);
+  background-image: linear-gradient(160deg, #FAF8F3 0%, #F0EBE0 50%, #E5DDD0 100%);
   background-attachment: fixed;
 }
 
@@ -132,36 +132,36 @@ html.dark body::after {
 ._e5 { animation-delay: 0.5s; opacity: 0; }
 
 ._h {
-  background: rgba(255,255,255,0.95);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(250,248,243,0.96);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
 html.dark ._h {
-  background: rgba(15,15,15,0.97);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,10,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 ._t {
-  background: rgba(255,255,255,0.95);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  background: rgba(250,248,243,0.96);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 html.dark ._t {
-  background: rgba(15,15,15,0.97);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,10,10,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 ._q {
-  background: #F7F4F0;
+  background: rgba(0,0,0,0.04);
   color: var(--f);
-  border: 1px solid rgba(0,0,0,0.12);
+  border: 1px solid rgba(0,0,0,0.09);
 }
 html.dark ._q {
-  background: #121212;
-  color: #f1f1f1;
-  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  color: var(--f);
+  border: 1px solid rgba(255,255,255,0.10);
 }
 ._q:focus {
   border-color: rgba(0,0,0,0.3);
@@ -174,14 +174,15 @@ html.dark ._q:focus {
 }
 
 ._b {
-  background: #F7F4F0;
-  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.09);
 }
+._b:hover { background: rgba(0,0,0,0.09); }
 html.dark ._b {
-  background: #212121;
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
 }
-html.dark ._b:hover { background: #2d2d2d; }
+html.dark ._b:hover { background: rgba(255,255,255,0.11); }
 
 ._p {
   background: var(--c);
@@ -233,7 +234,7 @@ html.dark ._g:hover {
 ._pg {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 136px);
   align-items: start;
 }
 
@@ -260,8 +261,8 @@ html.dark ._g:hover {
 
   ._pi {
     position: sticky;
-    top: 112px;
-    height: calc(100vh - 112px);
+    top: 136px;
+    height: calc(100vh - 136px);
     min-height: unset;
     max-height: unset;
     border-right: 1px solid var(--h);

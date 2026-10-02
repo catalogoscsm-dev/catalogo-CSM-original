@@ -120,7 +120,7 @@ export default function ProductNavAnimated({ prevId, nextId, children }: Props) 
   const arrowStyle = (side: 'l' | 'r', hovered: boolean): React.CSSProperties => ({
     position:       'fixed',
     top:            isMobile
-      ? 'calc(144px + 37.5vw)'
+      ? 'calc(136px + 37.5vw)'
       : `calc(50vh + ${parallax}px)`,
     [side === 'l' ? 'left' : 'right']: 14,
     transform:      'translateY(-50%)',
