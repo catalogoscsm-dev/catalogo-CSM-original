@@ -27,14 +27,16 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
   const [isMobileDevice, setIsMobile]   = useState(false)
 
   // Lightbox state
-  const [lbOpen, setLbOpen]   = useState(false)
-  const [lbIndex, setLbIndex] = useState(0)
-  const [lbScale, setLbScale] = useState(1)
+  const [lbOpen, setLbOpen]         = useState(false)
+  const [lbIndex, setLbIndex]       = useState(0)
+  const [lbScale, setLbScale]       = useState(1)
+  const [lbTranslate, setLbTranslate] = useState({ x: 0, y: 0 })
 
   // Lightbox touch refs
   const lbTouchX    = useRef<number | null>(null)
   const lbLastTap   = useRef(0)
   const lbMulti     = useRef(false)
+  const lbDragStart = useRef<{ x: number; y: number; tx: number; ty: number } | null>(null)
 
   const imageRef = useRef<HTMLDivElement>(null)
 
@@ -51,36 +53,52 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
     const idx = thumbnails.findIndex(u => u === active)
     setLbIndex(idx >= 0 ? idx : 0)
     setLbScale(1)
+    setLbTranslate({ x: 0, y: 0 })
     setLbOpen(true)
   }, [active, thumbnails])
 
   // Lightbox navigation
-  const lbPrev = () => { setLbIndex(i => Math.max(0, i - 1)); setLbScale(1) }
-  const lbNext = () => { setLbIndex(i => Math.min(thumbnails.length - 1, i + 1)); setLbScale(1) }
+  const lbPrev = () => { setLbIndex(i => Math.max(0, i - 1)); setLbScale(1); setLbTranslate({ x: 0, y: 0 }) }
+  const lbNext = () => { setLbIndex(i => Math.min(thumbnails.length - 1, i + 1)); setLbScale(1); setLbTranslate({ x: 0, y: 0 }) }
 
   // Lightbox touch handlers
   const lbTouchStart = (e: React.TouchEvent) => {
     e.stopPropagation()
-    if (e.touches.length > 1) { lbMulti.current = true; lbTouchX.current = null; return }
+    if (e.touches.length > 1) { lbMulti.current = true; lbTouchX.current = null; lbDragStart.current = null; return }
     lbMulti.current = false
-    lbTouchX.current = e.touches[0].clientX
+    const t = e.touches[0]
+    lbTouchX.current = t.clientX
+    if (lbScale > 1) {
+      lbDragStart.current = { x: t.clientX, y: t.clientY, tx: lbTranslate.x, ty: lbTranslate.y }
+    }
   }
   const lbTouchMove = (e: React.TouchEvent) => {
     e.stopPropagation()
-    if (e.touches.length > 1) { lbMulti.current = true; lbTouchX.current = null }
+    if (e.touches.length > 1) { lbMulti.current = true; lbTouchX.current = null; lbDragStart.current = null; return }
+    if (lbScale > 1 && lbDragStart.current) {
+      e.preventDefault()
+      const t = e.touches[0]
+      setLbTranslate({
+        x: lbDragStart.current.tx + (t.clientX - lbDragStart.current.x),
+        y: lbDragStart.current.ty + (t.clientY - lbDragStart.current.y),
+      })
+    }
   }
   const lbTouchEnd = (e: React.TouchEvent) => {
     e.stopPropagation()
 
-    // Double-tap to toggle zoom (2.5×)
+    // Double-tap to toggle zoom
     const now = Date.now()
     if (now - lbLastTap.current < DBL_TAP_MS) {
-      setLbScale(s => s > 1 ? 1 : 4)
+      setLbScale(s => { const next = s > 1 ? 1 : 4; if (next === 1) setLbTranslate({ x: 0, y: 0 }); return next })
       lbLastTap.current = 0
       lbTouchX.current = null
+      lbDragStart.current = null
       return
     }
     lbLastTap.current = now
+
+    lbDragStart.current = null
 
     // Swipe only when not zoomed and single touch
     if (lbTouchX.current === null || lbMulti.current || lbScale > 1) {
@@ -134,7 +152,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
         position: 'fixed', inset: 0, zIndex: 9998,
         background: 'rgba(0,0,0,0.95)',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        touchAction: lbScale > 1 ? 'pinch-zoom' : 'pan-y',
+        touchAction: lbScale > 1 ? 'none' : 'pan-y',
       }}
       onTouchStart={lbTouchStart}
       onTouchMove={lbTouchMove}
@@ -154,9 +172,9 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
             objectFit: 'contain',
             userSelect: 'none',
             borderRadius: 8,
-            transform: `scale(${lbScale})`,
-            transition: 'transform 0.22s ease',
-            touchAction: lbScale > 1 ? 'pinch-zoom' : 'none',
+            transform: `translate(${lbTranslate.x}px, ${lbTranslate.y}px) scale(${lbScale})`,
+            transition: lbDragStart.current ? 'none' : 'transform 0.22s ease',
+            touchAction: 'none',
           }}
         />
       )}
