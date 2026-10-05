@@ -8,6 +8,105 @@ Consulta de produtos de móveis e decoração extraídos de PDFs de fornecedores
 
 ---
 
+## LEIA PRIMEIRO — Estado atual e próximos passos (outubro/2025)
+
+### O que está em andamento agora
+
+Estamos catalogando o **ARMIL COMPLETO 2024** — catálogo com múltiplos produtos por página.
+
+| Situação | Valor |
+|---|---|
+| Total de produtos no banco | 125 |
+| Produtos com imagens | 70 |
+| Placeholders pendentes | 0 |
+| Última página com imagem | pag 114 |
+
+**O que falta:** recortar e inserir as páginas que ainda estão com pastas vazias em:
+```
+C:\Users\joao.miguel\Documents\PROJETOS CSM\catalogos\catalogos separados\ARMIL COMPLETO 2024\imagens dos produtos\
+```
+
+---
+
+### Fluxo atual — ARMIL (catálogos com múltiplos produtos por página)
+
+#### Convenção de pastas e nomes de arquivo
+
+Cada produto tem sua própria pasta. Para páginas com mais de um produto:
+
+```
+pag 9/    → produto principal    (pagina = 9)
+pag 9b/   → segundo produto      (pagina = 9.1)
+pag 9c/   → terceiro produto     (pagina = 9.2)
+pag 9d/   → quarto produto       (pagina = 9.3)
+```
+
+Dentro de cada pasta, o nome do arquivo define o tipo:
+
+| Nome do arquivo | O que vira no catálogo |
+|---|---|
+| Só **letras** (`abcdef.png`) | Imagem de capa/recorte do card |
+| Só **números** (`45645.png`) | Foto de galeria do produto |
+| Misto ou com espaços | Tratado como galeria (com aviso) |
+
+#### Passo a passo para inserir novas imagens
+
+1. Recortar os produtos com o software e salvar nas pastas com a convenção acima
+2. Avisar Claude: *"subi mais imagens"*
+3. Claude roda o import:
+   ```
+   node scripts/importar-armil.cjs "ARMIL COMPLETO 2024"
+   ```
+4. Claude lê as imagens de galeria para extrair nome, dimensões, material, acabamento
+5. Claude atualiza o banco, roda o export, faz commit e push
+6. Site atualiza no Vercel em ~1 minuto
+
+**Script de import para catálogos multi-produto:** `scripts/importar-armil.cjs`
+Serve para qualquer catálogo com essa estrutura de pastas — não é exclusivo do ARMIL.
+
+---
+
+### Fluxo NOVO — para todos os catálogos a partir do próximo (aprovado)
+
+Este é o fluxo mais rápido, correto e sem erros. Elimina qualquer necessidade de extrair texto de PDF.
+
+#### Por que PNG em vez de PDF?
+
+PDFs de catálogos de móveis usam fontes com encoding customizado — o texto extraído sai como lixo ilegível (`BTL <ÅÄ Â 0a{...`). Claude é multimodal e lê texto em imagens PNG nativamente, sem nenhuma ferramenta externa. **O que está visível na tela, Claude lê com precisão total.**
+
+#### As 3 fases do novo fluxo
+
+**Fase 1 — Análise (você envia os PNGs, Claude lê tudo)**
+1. Baixar todas as páginas do PDF como PNG
+2. Enviar os PNGs no chat para o Claude
+3. Claude analisa cada página e entrega um mapa completo:
+   - Quais páginas têm 1 produto, quais têm 2 ou 3
+   - Nome, dimensões, material, acabamento de cada produto
+   - Quais sub-pastas precisam ser criadas (pag Nb, Nc...)
+4. Você recebe o mapa completo **antes** de tocar em qualquer arquivo
+
+**Fase 2 — Recortes (você usa seu software)**
+Com o mapa em mãos:
+- Você sabe exatamente o que recortar e em quantas partes
+- Sabe em qual pasta salvar cada recorte
+- Nomeia com letras (capa) ou números (galeria) conforme a convenção
+
+**Fase 3 — Catalogação (Claude faz tudo)**
+1. Você avisa que terminou os recortes
+2. Claude roda o import, lê as imagens, preenche o banco, export, commit, push
+3. Site atualizado em minutos, sem nenhum dado faltando
+
+#### Lições aprendidas — erros para nunca repetir
+
+- Nunca extrair texto diretamente do PDF — encoding customizado gera lixo
+- Sempre ler as imagens de galeria para extrair dados — a informação está visível no PNG
+- Se a galeria for só foto sem texto, ler a imagem de capa também
+- Ao adicionar sub-páginas (9b, 9c...), sempre verificar se o produto da página principal também está com nome correto — pode ter sido importado errado via PDF anteriormente
+
+---
+
+---
+
 ## Tecnologias
 
 - **Next.js 16** (App Router, `output: 'export'` — geração estática)
