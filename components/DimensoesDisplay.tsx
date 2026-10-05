@@ -67,6 +67,9 @@ function parseFormatA(raw: string): Row | null {
     if (mDiam) { cells.push({ label: 'Diâm.', val: mDiam[1] }); continue }
     const mDot = tok.match(/^([A-Z])\.(\d+(?:[.,]\d+)?(?:\/\d+(?:[.,]\d+)?)?)(?:CM)?$/i)
     if (mDot) { cells.push({ label: LABEL[mDot[1].toUpperCase()] ?? mDot[1].toUpperCase(), val: mDot[2] }); continue }
+    // L179, A77, P44cm — letra colada no número (ex: L179xA77xP44cm)
+    const mLabeled = tok.match(/^([A-ZÀ-Ú])(\d+(?:[.,]\d+)?(?:\/\d+(?:[.,]\d+)?)?)(?:CM)?$/i)
+    if (mLabeled) { cells.push({ label: LABEL[mLabeled[1].toUpperCase()] ?? mLabeled[1].toUpperCase(), val: mLabeled[2] }); continue }
     const mNum = tok.match(/^(\d+(?:[.,]\d+)?(?:\/\d+(?:[.,]\d+)?)?)(?:CM)?$/i)
     if (mNum) {
       const key = POSITIONAL[i] ?? `D${i + 1}`
