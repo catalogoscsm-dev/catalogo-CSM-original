@@ -1,0 +1,5 @@
+const db = require('better-sqlite3')('database/catalogo.db')
+db.prepare("UPDATE produtos SET nome = 'MESA AUXILIAR FIORE' WHERE nome LIKE '%pag 74b%'").run()
+db.prepare("UPDATE produtos SET nome = 'MESA AUXILIAR GRÉCIA' WHERE nome LIKE '%pag 74c%'").run()
+console.log('OK')
+db.close()

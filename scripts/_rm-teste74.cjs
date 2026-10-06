@@ -1,0 +1,7 @@
+const db = require('better-sqlite3')('database/catalogo.db')
+const prod = db.prepare("SELECT id, imagens FROM produtos WHERE nome = 'MESA AUXILIAR GRÉCIA' AND pagina = 74").get()
+let imgs = JSON.parse(prod.imagens || '[]')
+imgs = imgs.filter(i => !i.includes('teste'))
+db.prepare('UPDATE produtos SET imagens = ? WHERE id = ?').run(JSON.stringify(imgs), prod.id)
+console.log('OK — imagens:', imgs)
+db.close()

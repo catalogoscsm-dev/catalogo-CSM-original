@@ -1,0 +1,911 @@
+{
+  "atualizados": [],
+  "criados": [
+    {
+      "casoca": "Mesa Lateral Kit",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Poltrona Carminha Giratória",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Cadeira Norah Giratória",
+      "categoria": "Cadeiras, Cadeiras de Escritório"
+    },
+    {
+      "casoca": "Mesa Lateral Chapada",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Estante Soft Slim",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Mesa De Centro Trento",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa De Centro Poly",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Poltrona Celina",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Jantar Spock Orgânico",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Carminha 03",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Carrinho Bar Quatro",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa De Centro Pio",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa Lateral Ted",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Carrinho Bar Capitólio",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Escrivaninha Lavoro",
+      "categoria": "Escrivaninhas"
+    },
+    {
+      "casoca": "Mesa de Jantar Cerco 03 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Duck",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Cachepot Manilla",
+      "categoria": "Vasos, Cestos e Baús"
+    },
+    {
+      "casoca": "Banqueta Mossô",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Jantar Madson",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Pilares Plus",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Escrivaninha Isla",
+      "categoria": "Escrivaninhas"
+    },
+    {
+      "casoca": "Mesa Lateral Chá",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa Lateral Vinil",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banco Palmira",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa De Apoio Theo",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Banco Cipó",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Carrinho Bar Leme Oval",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Moldura De Espelho Átrio",
+      "categoria": "Espelhos Retangulares"
+    },
+    {
+      "casoca": "Cadeira Tamara",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Buffet Goulart 01",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Cameron Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Poltrona Cristine",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Estante Soft New",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Banqueta Joana Estofada",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Jantar Canelas Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Atenas",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Aparador Prívia",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Sofá Table Plana",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Carrinho Bar Leme",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Jantar Conne 03 New Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Estante Torino",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Estante Bangalô 04",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Sofá Table City",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Chanceler 04 Plus Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Palma",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Poltrona Carminha 03",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Estante Bangalô New",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Mesa De Centro Tangran",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Prados Cristal",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Atenas",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Revisteiro West",
+      "categoria": "Revisteiros"
+    },
+    {
+      "casoca": "Buffet Marrocos",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Montana Soft",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Selena 02",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Poltrona Aurora",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Carrinho Bar Nexus",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Jantar Garoni Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Anápolis",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Olma 01 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Matter",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa De Apoio Hebi",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Jantar Chanceler 04 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Samara Slim Moeda Grandes Formatos",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Palazzo Delta",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Banqueta Joana Tela",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Buffet Soma",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Cachepot Sul Rec",
+      "categoria": "Vasos, Cestos e Baús"
+    },
+    {
+      "casoca": "Poltrona Dorothy",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Poltrona Carminha Plus",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Conversação Pilares",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Poltrona Giovana",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Jantar Solaris 02",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Finger Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Angelina",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa De Centro Mitreo",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Velma",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Banco Orni",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa de Jantar Maiorca Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Yasmin",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Atenas 03 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Sofá Table Matter",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa Lateral Kal",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa De Apoio Lee",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Jantar Outono New Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Banco Carminha Plus",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa De Centro Spock",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Carminha Giratória Flex",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Puff Guri",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Mesa de Jantar Atenas Oblongo",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Estante Empório",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Mesa De Centro Poá",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Cerco Oblongo",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Gru",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Savana",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Mônica",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Fórum",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Pilares Plus 02 Quadrado",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Norah",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Banco Remo",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Moldura De Espelho Damião",
+      "categoria": "Espelhos Redondos"
+    },
+    {
+      "casoca": "Mesa Lateral Vinil 02",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Centro Carrossel",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Pilares Plus 03 Redondo Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Carminha Plus",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Buffet Missione Tela 01",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Banqueta Joana Madeira",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Jantar Prados Round",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Trevor",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Buffet Angaro",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa Lateral Lilás 02",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Jantar Connect Oblongo",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Bandeja Pretty",
+      "categoria": "Bandejas"
+    },
+    {
+      "casoca": "Mesa Lateral Lilás",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Jantar Sydney",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Centro Palma",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa Lateral Tod",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Jantar Belize Orgânico",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Antares",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Carrinho Bar Ecco",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Jantar Garoni",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Buffet Carlton",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Odessa 02",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Serrano",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Sofá Table Syrah",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa De Centro Atenas Redonda",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Augusta Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Plana",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Poltrona Aurora 02",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Centro Chapada",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Chloe Tela",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Alfred Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Pilares Plus Orgânico",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Ato",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Buffet Euro",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Bancada Bistrô Cleo Quadrada",
+      "categoria": "Bistrô"
+    },
+    {
+      "casoca": "Buffet Goulart 02",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Aparador Maiorca",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Missouri Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Meridiam Retangular",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Bancada Bistrô Cleo Redonda",
+      "categoria": "Bistrô"
+    },
+    {
+      "casoca": "Mesa Lateral Carmo",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Jantar Plissê Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Banqueta Cacau",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa De Centro Box",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa Lateral Kan",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Carrinho Bar Yet",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Conjunto Cardeal",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Laguna Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Jantar Azimute Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Yasmin Tela com Braço",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Centro Antares",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Delfos",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Bancada Bistrô Mossô",
+      "categoria": "Bistrô"
+    },
+    {
+      "casoca": "Mesa de Jantar Delfos Orgânico",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Poltrona Aurora 03",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Jantar Atenas Double Oblongo",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Aparador Plana",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Banqueta Velma",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Jantar Ópera 03 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Pedestal Lume",
+      "categoria": "Luminárias De Piso"
+    },
+    {
+      "casoca": "Mesa De Centro Plana",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Urca",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Régia",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa Lateral Frasco",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa Lateral Jazz",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banqueta Godan",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Jantar Brasília 03 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Gueixa",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa De Centro Box 02 Rec",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Halo 01 Giratório",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cadeira Sula",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Moldura De Espelho Évol 02",
+      "categoria": "Espelhos"
+    },
+    {
+      "casoca": "Mesa Lateral Matter",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banco April",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Aparador Poly",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Cadeira Tamara Plus",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Quasar Raggio",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Buffet Missione",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Aparador Aruba",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa De Apoio Val",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Banco Faro",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa De Centro Ted",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Roberta",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa Lateral Nina",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Jantar Samara Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Malha",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Orlando Arc",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Biombo Oásis",
+      "categoria": "Biombos"
+    },
+    {
+      "casoca": "Mesa de Jantar Agave 01 Giratório Quadrada",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Carrinho Bar Leme Quadrado",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Jantar Libra Slim Moeda",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa De Centro Ozzi 02 Plus",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa De Apoio Ozzi 02 Plus",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Jantar Majestic",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Urca",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de Jantar Meridiam 02 Retangular",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa Lateral Cold",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Cadeira Yasmin Tela",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Buffet Visage",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jogos Texas",
+      "categoria": "Mesas de Jogos"
+    },
+    {
+      "casoca": "Mesa Lateral Torres",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa Lateral Prumo",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Cadeira Denise",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Doppia Arc",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Centro Núcleo",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Brenda",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Jantar Colossus Soft",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Centro Destaque",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Albania",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Aparador Peregrino",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Carrinho Bar Capitólio 02",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Banco Charlene",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Mesa de Centro Grão",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Banqueta Vânia",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Carrinho Bar Cosmos",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Cadeira Spirit",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa Lateral Peregrino",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa De Centro Serrano 02",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Poltrona Gioconda 02",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Cadeira Saori",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Centro Prelúdio",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Poltrona Floripa",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Cadeira Josi",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Centro Peregrino",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Poltrona Margarida",
+      "categoria": "Poltronas"
+    }
+  ],
+  "sem_match": [],
+  "sem_imagem": []
+}

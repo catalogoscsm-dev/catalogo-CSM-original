@@ -4,8 +4,10 @@
  * Handles folders: "pag 9", "pag 9b", "pag 9c", "pag 9d"
  *
  * Naming rules (based on source filename stem):
- *   letters only  → capa/recorte  → "recorte pag N[suffix].png"
- *   numbers only  → gallery       → "pag N[suffix].png", "pag N[suffix]-2.png", ...
+ *   "capa"        → capa (new tool)  → "recorte pag N[suffix].png"
+ *   letters only  → capa (old style) → "recorte pag N[suffix].png"
+ *   numbers only  → gallery (old)    → "pag N[suffix].png", "pag N[suffix]-2.png", ...
+ *   "recorte pag" → gallery (new)    → "pag N[suffix].png", "pag N[suffix]-2.png", ...
  *   mixed/other   → gallery (warn)
  *
  * Sub-page numbering in DB:
@@ -33,6 +35,7 @@ const SUFFIX_OFFSET = { '': 0, b: 0.1, c: 0.2, d: 0.3, e: 0.4, f: 0.5, g: 0.6, h
 
 function isLetterOnly(stem) { return /^[a-zA-ZçãõêâôíúàáäëüöÇÃÕÊÂÔÍÚÀÁÄËÜÖ,;.]+$/.test(stem) }
 function isNumberOnly(stem) { return /^\d+$/.test(stem) }
+function isGaleriaExplicito(stem) { return /^recorte\s+pag\b/i.test(stem) }
 
 const catalogoNome = process.argv[2]
 if (!catalogoNome) {
@@ -97,8 +100,9 @@ for (const { nome: subNome, page, suffix, pagina } of subpastas) {
 
   for (const file of files) {
     const stem = path.basename(file, path.extname(file))
-    if (isLetterOnly(stem))      capas.push(file)
-    else if (isNumberOnly(stem)) extras.push(file)
+    if (isLetterOnly(stem))          capas.push(file)   // antigo (letras) ou novo "capa"
+    else if (isNumberOnly(stem))     extras.push(file)  // antigo (números)
+    else if (isGaleriaExplicito(stem)) extras.push(file) // novo "recorte pag X"
     else {
       extras.push(file)
       console.warn(`  [warn]  "${file}" (nome misto) → tratado como galeria`)

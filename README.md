@@ -43,6 +43,15 @@ pag 9d/   → quarto produto       (pagina = 9.3)
 
 Dentro de cada pasta, o nome do arquivo define o tipo:
 
+**Padrão novo (ferramenta atualizada):**
+
+| Nome do arquivo | O que vira no catálogo |
+|---|---|
+| `capa.png` | Imagem de capa/recorte do card |
+| `recorte pag X.png` | Foto de galeria do produto |
+
+**Padrão antigo (ainda suportado, congelado):**
+
 | Nome do arquivo | O que vira no catálogo |
 |---|---|
 | Só **letras** (`abcdef.png`) | Imagem de capa/recorte do card |

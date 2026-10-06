@@ -1,0 +1,657 @@
+{
+  "processados": [
+    {
+      "pasta": "AMERIBOX 2025",
+      "totalPaginas": 9,
+      "produtos": 7,
+      "pastas": 7,
+      "catId": 7
+    },
+    {
+      "pasta": "ARMIL COMPLETO 2024",
+      "totalPaginas": 116,
+      "produtos": 85,
+      "pastas": 85,
+      "catId": 8
+    },
+    {
+      "pasta": "ARTESANO 2025",
+      "totalPaginas": 171,
+      "produtos": 22,
+      "pastas": 22,
+      "catId": 9
+    },
+    {
+      "pasta": "ASTEROPE MÓVEIS",
+      "totalPaginas": 86,
+      "produtos": 44,
+      "pastas": 44,
+      "catId": 10
+    },
+    {
+      "pasta": "AUTHENTIC 05.24",
+      "totalPaginas": 40,
+      "produtos": 4,
+      "pastas": 4,
+      "catId": 11
+    },
+    {
+      "pasta": "Aprimore Decor 2025",
+      "totalPaginas": 88,
+      "produtos": 45,
+      "pastas": 45,
+      "catId": 12
+    },
+    {
+      "pasta": "Art Ferro 2024-25",
+      "totalPaginas": 72,
+      "produtos": 67,
+      "pastas": 67,
+      "catId": 13
+    },
+    {
+      "pasta": "Aço Mobilia 2025-7",
+      "totalPaginas": 62,
+      "produtos": 2,
+      "pastas": 2,
+      "catId": 14
+    },
+    {
+      "pasta": "BONTÉ 2025",
+      "totalPaginas": 130,
+      "produtos": 105,
+      "pastas": 105,
+      "catId": 15
+    },
+    {
+      "pasta": "Buruti 2025",
+      "totalPaginas": 98,
+      "produtos": 2,
+      "pastas": 2,
+      "catId": 16
+    },
+    {
+      "pasta": "CASA A 2025",
+      "totalPaginas": 117,
+      "produtos": 81,
+      "pastas": 81,
+      "catId": 17
+    },
+    {
+      "pasta": "CASA E JARDIM 2025",
+      "totalPaginas": 80,
+      "produtos": 60,
+      "pastas": 60,
+      "catId": 18
+    },
+    {
+      "pasta": "Carppem 2025.2026",
+      "totalPaginas": 76,
+      "produtos": 67,
+      "pastas": 67,
+      "catId": 19
+    },
+    {
+      "pasta": "Ceval 2025",
+      "totalPaginas": 63,
+      "produtos": 57,
+      "pastas": 57,
+      "catId": 20
+    },
+    {
+      "pasta": "Combinare 2025.1",
+      "totalPaginas": 145,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 21
+    },
+    {
+      "pasta": "Combinare Domi 2025.1",
+      "totalPaginas": 74,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 22
+    },
+    {
+      "pasta": "DAF 2025",
+      "totalPaginas": 55,
+      "produtos": 9,
+      "pastas": 9,
+      "catId": 23
+    },
+    {
+      "pasta": "DI FRANCO - CATÁLOGO 2025",
+      "totalPaginas": 35,
+      "produtos": 26,
+      "pastas": 26,
+      "catId": 24
+    },
+    {
+      "pasta": "Deccor 2024",
+      "totalPaginas": 53,
+      "produtos": 51,
+      "pastas": 51,
+      "catId": 25
+    },
+    {
+      "pasta": "Deccor 2025 lançamentos",
+      "totalPaginas": 20,
+      "produtos": 18,
+      "pastas": 18,
+      "catId": 26
+    },
+    {
+      "pasta": "ENELE 2025",
+      "totalPaginas": 59,
+      "produtos": 32,
+      "pastas": 32,
+      "catId": 27
+    },
+    {
+      "pasta": "EURONOBRE 02.25",
+      "totalPaginas": 74,
+      "produtos": 54,
+      "pastas": 54,
+      "catId": 28
+    },
+    {
+      "pasta": "Estobel - Catálogo Camas 2025",
+      "totalPaginas": 34,
+      "produtos": 16,
+      "pastas": 16,
+      "catId": 29
+    },
+    {
+      "pasta": "FARUK AGOSTO 2025",
+      "totalPaginas": 342,
+      "produtos": 57,
+      "pastas": 57,
+      "catId": 30
+    },
+    {
+      "pasta": "Fazzio 2026",
+      "totalPaginas": 58,
+      "produtos": 11,
+      "pastas": 11,
+      "catId": 31
+    },
+    {
+      "pasta": "FÁBIO FUZIMOTO 2025",
+      "totalPaginas": 64,
+      "produtos": 6,
+      "pastas": 6,
+      "catId": 32
+    },
+    {
+      "pasta": "G.Moveis 2024",
+      "totalPaginas": 42,
+      "produtos": 31,
+      "pastas": 31,
+      "catId": 33
+    },
+    {
+      "pasta": "Gottems 2026",
+      "totalPaginas": 29,
+      "produtos": 26,
+      "pastas": 26,
+      "catId": 34
+    },
+    {
+      "pasta": "Grando 2025",
+      "totalPaginas": 84,
+      "produtos": 71,
+      "pastas": 71,
+      "catId": 35
+    },
+    {
+      "pasta": "HERVAL COLCHÕES 2025",
+      "totalPaginas": 79,
+      "produtos": 39,
+      "pastas": 39,
+      "catId": 36
+    },
+    {
+      "pasta": "HERVAL EDEZ 2025",
+      "totalPaginas": 48,
+      "produtos": 30,
+      "pastas": 30,
+      "catId": 37
+    },
+    {
+      "pasta": "HERVAL ESTOFADOS 2025",
+      "totalPaginas": 75,
+      "produtos": 65,
+      "pastas": 65,
+      "catId": 38
+    },
+    {
+      "pasta": "HERVAL MADEIRAS 2025",
+      "totalPaginas": 75,
+      "produtos": 40,
+      "pastas": 40,
+      "catId": 39
+    },
+    {
+      "pasta": "HUGO SCHUSTER 2025",
+      "totalPaginas": 83,
+      "produtos": 1,
+      "pastas": 1,
+      "catId": 40
+    },
+    {
+      "pasta": "IDEALE JUL 2025",
+      "totalPaginas": 68,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 41
+    },
+    {
+      "pasta": "ILHA BELA 2025",
+      "totalPaginas": 67,
+      "produtos": 48,
+      "pastas": 48,
+      "catId": 42
+    },
+    {
+      "pasta": "IUMMI 2025",
+      "totalPaginas": 339,
+      "produtos": 178,
+      "pastas": 178,
+      "catId": 43
+    },
+    {
+      "pasta": "JAMES Catálogo",
+      "totalPaginas": 215,
+      "produtos": 11,
+      "pastas": 11,
+      "catId": 44
+    },
+    {
+      "pasta": "JAMES LANÇAMENTOS 2025",
+      "totalPaginas": 22,
+      "produtos": 21,
+      "pastas": 21,
+      "catId": 45
+    },
+    {
+      "pasta": "Jardim 2024",
+      "totalPaginas": 196,
+      "produtos": 2,
+      "pastas": 2,
+      "catId": 46
+    },
+    {
+      "pasta": "Jhovini 2024",
+      "totalPaginas": 95,
+      "produtos": 1,
+      "pastas": 1,
+      "catId": 47
+    },
+    {
+      "pasta": "KLASSIC 2024",
+      "totalPaginas": 88,
+      "produtos": 70,
+      "pastas": 70,
+      "catId": 48
+    },
+    {
+      "pasta": "Karams 2024",
+      "totalPaginas": 160,
+      "produtos": 114,
+      "pastas": 114,
+      "catId": 49
+    },
+    {
+      "pasta": "Konfort 2025",
+      "totalPaginas": 97,
+      "produtos": 95,
+      "pastas": 95,
+      "catId": 50
+    },
+    {
+      "pasta": "LACASA 2025",
+      "totalPaginas": 126,
+      "produtos": 39,
+      "pastas": 39,
+      "catId": 51
+    },
+    {
+      "pasta": "LAZZ 05-08-25",
+      "totalPaginas": 140,
+      "produtos": 118,
+      "pastas": 118,
+      "catId": 52
+    },
+    {
+      "pasta": "LaForm 2024",
+      "totalPaginas": 120,
+      "produtos": 58,
+      "pastas": 58,
+      "catId": 53
+    },
+    {
+      "pasta": "Luhaz 2025",
+      "totalPaginas": 88,
+      "produtos": 66,
+      "pastas": 66,
+      "catId": 54
+    },
+    {
+      "pasta": "MADELUSTRE 2025",
+      "totalPaginas": 100,
+      "produtos": 91,
+      "pastas": 91,
+      "catId": 55
+    },
+    {
+      "pasta": "MAISOFA JUN 2025",
+      "totalPaginas": 252,
+      "produtos": 166,
+      "pastas": 166,
+      "catId": 56
+    },
+    {
+      "pasta": "MALVAS 2025",
+      "totalPaginas": 114,
+      "produtos": 99,
+      "pastas": 99,
+      "catId": 57
+    },
+    {
+      "pasta": "MANNES 2025",
+      "totalPaginas": 244,
+      "produtos": 213,
+      "pastas": 213,
+      "catId": 58
+    },
+    {
+      "pasta": "MORADA DECOR_2025",
+      "totalPaginas": 84,
+      "produtos": 51,
+      "pastas": 51,
+      "catId": 59
+    },
+    {
+      "pasta": "Mambel 2025",
+      "totalPaginas": 52,
+      "produtos": 46,
+      "pastas": 46,
+      "catId": 60
+    },
+    {
+      "pasta": "Manuela Decor 2025-1",
+      "totalPaginas": 60,
+      "produtos": 30,
+      "pastas": 30,
+      "catId": 61
+    },
+    {
+      "pasta": "Meridiano 2024",
+      "totalPaginas": 136,
+      "produtos": 119,
+      "pastas": 119,
+      "catId": 62
+    },
+    {
+      "pasta": "Mestre Artesão 2025",
+      "totalPaginas": 99,
+      "produtos": 91,
+      "pastas": 91,
+      "catId": 63
+    },
+    {
+      "pasta": "Mobel 2025",
+      "totalPaginas": 60,
+      "produtos": 30,
+      "pastas": 30,
+      "catId": 64
+    },
+    {
+      "pasta": "Montri 2024",
+      "totalPaginas": 52,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 65
+    },
+    {
+      "pasta": "Movelano 2025",
+      "totalPaginas": 76,
+      "produtos": 65,
+      "pastas": 65,
+      "catId": 66
+    },
+    {
+      "pasta": "NACIONAL MÓVEIS 2024",
+      "totalPaginas": 106,
+      "produtos": 51,
+      "pastas": 51,
+      "catId": 67
+    },
+    {
+      "pasta": "NOLAN 2024",
+      "totalPaginas": 69,
+      "produtos": 65,
+      "pastas": 65,
+      "catId": 68
+    },
+    {
+      "pasta": "Naiconal TAEDA 2025 - 2026",
+      "totalPaginas": 20,
+      "produtos": 16,
+      "pastas": 16,
+      "catId": 69
+    },
+    {
+      "pasta": "Niruma 2025",
+      "totalPaginas": 125,
+      "produtos": 5,
+      "pastas": 5,
+      "catId": 70
+    },
+    {
+      "pasta": "Niruma Murani 2025",
+      "totalPaginas": 33,
+      "produtos": 4,
+      "pastas": 4,
+      "catId": 71
+    },
+    {
+      "pasta": "PELINSON  2024 - Alto",
+      "totalPaginas": 72,
+      "produtos": 67,
+      "pastas": 67,
+      "catId": 72
+    },
+    {
+      "pasta": "PELINSON 2024 - Baixo",
+      "totalPaginas": 72,
+      "produtos": 67,
+      "pastas": 67,
+      "catId": 73
+    },
+    {
+      "pasta": "PELINSON 2024 - Medio",
+      "totalPaginas": 72,
+      "produtos": 67,
+      "pastas": 67,
+      "catId": 74
+    },
+    {
+      "pasta": "PRIME 2025",
+      "totalPaginas": 146,
+      "produtos": 116,
+      "pastas": 116,
+      "catId": 75
+    },
+    {
+      "pasta": "QAZA 2025",
+      "totalPaginas": 58,
+      "produtos": 3,
+      "pastas": 3,
+      "catId": 76
+    },
+    {
+      "pasta": "RG Móveis 2025",
+      "totalPaginas": 58,
+      "produtos": 2,
+      "pastas": 2,
+      "catId": 77
+    },
+    {
+      "pasta": "Realce 2025",
+      "totalPaginas": 102,
+      "produtos": 63,
+      "pastas": 63,
+      "catId": 78
+    },
+    {
+      "pasta": "Rudnick 12.12.2024",
+      "totalPaginas": 98,
+      "produtos": 80,
+      "pastas": 80,
+      "catId": 79
+    },
+    {
+      "pasta": "Rudnick Vogue 12.12.2024",
+      "totalPaginas": 16,
+      "produtos": 14,
+      "pastas": 14,
+      "catId": 80
+    },
+    {
+      "pasta": "Rustfer 2025",
+      "totalPaginas": 20,
+      "produtos": 17,
+      "pastas": 17,
+      "catId": 81
+    },
+    {
+      "pasta": "SIER 2025",
+      "totalPaginas": 275,
+      "produtos": 266,
+      "pastas": 266,
+      "catId": 82
+    },
+    {
+      "pasta": "STUDIO D 2025",
+      "totalPaginas": 75,
+      "produtos": 15,
+      "pastas": 15,
+      "catId": 83
+    },
+    {
+      "pasta": "SV OZKI 2025",
+      "totalPaginas": 61,
+      "produtos": 1,
+      "pastas": 1,
+      "catId": 84
+    },
+    {
+      "pasta": "Sankonfort 2024",
+      "totalPaginas": 162,
+      "produtos": 91,
+      "pastas": 91,
+      "catId": 85
+    },
+    {
+      "pasta": "Serra Gaúcha 2025",
+      "totalPaginas": 63,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 86
+    },
+    {
+      "pasta": "Starten 2025",
+      "totalPaginas": 50,
+      "produtos": 38,
+      "pastas": 38,
+      "catId": 87
+    },
+    {
+      "pasta": "TECNOARTE 25 ANOS",
+      "totalPaginas": 194,
+      "produtos": 182,
+      "pastas": 182,
+      "catId": 88
+    },
+    {
+      "pasta": "TIRONI 2025",
+      "totalPaginas": 65,
+      "produtos": 62,
+      "pastas": 62,
+      "catId": 89
+    },
+    {
+      "pasta": "Treviso 2025",
+      "totalPaginas": 73,
+      "produtos": 65,
+      "pastas": 65,
+      "catId": 90
+    },
+    {
+      "pasta": "Unic 2024",
+      "totalPaginas": 35,
+      "produtos": 33,
+      "pastas": 33,
+      "catId": 91
+    },
+    {
+      "pasta": "VIP 2025",
+      "totalPaginas": 84,
+      "produtos": 3,
+      "pastas": 3,
+      "catId": 92
+    },
+    {
+      "pasta": "VOLTTONI 2024",
+      "totalPaginas": 108,
+      "produtos": 54,
+      "pastas": 54,
+      "catId": 93
+    },
+    {
+      "pasta": "ZOMER 2026 DIGITAL",
+      "totalPaginas": 64,
+      "produtos": 60,
+      "pastas": 60,
+      "catId": 94
+    },
+    {
+      "pasta": "Zenit Dez 2025",
+      "totalPaginas": 12,
+      "produtos": 9,
+      "pastas": 9,
+      "catId": 95
+    },
+    {
+      "pasta": "Artecouro 2025",
+      "totalPaginas": 80,
+      "produtos": 6,
+      "pastas": 6,
+      "catId": 96
+    },
+    {
+      "pasta": "Authentic Lanç 12.2024",
+      "totalPaginas": 10,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 97
+    },
+    {
+      "pasta": "J.Marcon Catalago 2025",
+      "totalPaginas": 25,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 98
+    },
+    {
+      "pasta": "Meridiano lançamentos 2025",
+      "totalPaginas": 16,
+      "produtos": 0,
+      "pastas": 0,
+      "catId": 99
+    }
+  ],
+  "erros": [],
+  "ignorados": []
+}

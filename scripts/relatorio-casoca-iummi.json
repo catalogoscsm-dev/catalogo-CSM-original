@@ -1,0 +1,519 @@
+{
+  "atualizados": [],
+  "criados": [
+    {
+      "casoca": "Mesa Lateral Moet",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa Lateral Pepper",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa de centro Safira",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Banqueta Alessa",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa Lateral Oslo",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Cadeira Choice",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Aparador Atrium",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Banqueta Sofi",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Espelho Soft Orgânico",
+      "categoria": "Espelhos Orgânicos"
+    },
+    {
+      "casoca": "Puff Ricco",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Mesa lateral Safira",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Mesa Lateral Bolero",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Cadeira Prince",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Cabideiro Paine",
+      "categoria": "Cabideiros"
+    },
+    {
+      "casoca": "Mesa de Centro Orbis",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Aparador Bar Calumma",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Sofa table Valley",
+      "categoria": "Sofás-Table"
+    },
+    {
+      "casoca": "Puff Golden Quadrado",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Espelho Echo",
+      "categoria": "Espelhos Orgânicos"
+    },
+    {
+      "casoca": "Mesa de Apoio Nordic",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Poltrona Nuvia",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Centro Arona",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Apoio Ricco",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Banqueta Choice",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa de Apoio Aurora",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Cabeceira Rito",
+      "categoria": "Mesas De Cabeceira"
+    },
+    {
+      "casoca": "Puff Alamo",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Puff Loop",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Banqueta Duna",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Poltrona Amarone",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Sofá Monoli",
+      "categoria": "Sofás"
+    },
+    {
+      "casoca": "Mesa de Centro Vessel",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Apoio Ornatto",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Centro Lagoon",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Glammy",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Apoio Nomade",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Espelho Bossa",
+      "categoria": "Espelhos Orgânicos"
+    },
+    {
+      "casoca": "Mesa de Centro Oslo",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Jantar Safira",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Centro Arenna",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Apoio Chay",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de centro Isla",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Nimbus",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Carrinho Bar Sertão",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Aparador Máli",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Jantar Gracia",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Mesa de Apoio Nature",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Espelho Safira",
+      "categoria": "Espelhos Retangulares"
+    },
+    {
+      "casoca": "Cama Luna",
+      "categoria": "Camas"
+    },
+    {
+      "casoca": "Mesa de Apoio Auris",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Cadeira Vogue Escritório",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Puff Oslo",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Mesa de apoio Magna",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Apoio Kyn",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Aparador Magna",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Poltrona Naos Spin",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Jantar Glammy",
+      "categoria": "Mesas De Jantar"
+    },
+    {
+      "casoca": "Cabideiro Ways",
+      "categoria": "Cabideiros"
+    },
+    {
+      "casoca": "Puff Kingston",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Poltrona Allure",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Carrinho Bar Ornatto",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Apoio Tokyo",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa Lateral Magna",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banco Duets",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Espelho Sienna",
+      "categoria": "Espelhos Arco"
+    },
+    {
+      "casoca": "Mesa de Centro Infinity",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Apoio Live",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Carrinho Bar Otto",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Mesa de Apoio Flat",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de centro Strauss",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Omega",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Cadeira Alessa",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Apoio Pietra",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Banqueta Maison",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Mesa Lateral Calumma",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banqueta Safira",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Banco Loft",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Cadeira Tivoli",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Banco Tato",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Banco Magna",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa de Centro Elevare",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Poltrona Balloon",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Apoio Fitch",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa Lateral Glammy",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Espelho Arizona Retangular",
+      "categoria": "Espelhos Retangulares"
+    },
+    {
+      "casoca": "Estante Montecarlo",
+      "categoria": "Estantes E Prateleiras"
+    },
+    {
+      "casoca": "Cadeira Sorelle",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Mesa de Centro Atrium",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa Lateral Space",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banco Kawai",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa de Apoio Valentin",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa Lateral Máli",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Pedestal Safira",
+      "categoria": "Móveis de Apoio"
+    },
+    {
+      "casoca": "Espelho Athos",
+      "categoria": "Espelhos Arco"
+    },
+    {
+      "casoca": "Mesa de Centro Tymber",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Cabeceira Munich",
+      "categoria": "Mesas De Cabeceira"
+    },
+    {
+      "casoca": "Mesa Lateral Vanta",
+      "categoria": "Mesas Laterais"
+    },
+    {
+      "casoca": "Banqueta Prince",
+      "categoria": "Banquetas"
+    },
+    {
+      "casoca": "Puff Mumbai",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Mesa de Apoio Serena",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Puff Plummy",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Poltrona Naos",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Cadeira Duna",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Poltrona Madre",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Carrinho Bar Yaki",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Espelho Com Cabideiro Vlogger",
+      "categoria": "Espelhos Arco"
+    },
+    {
+      "casoca": "Mesa de Centro Space",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Puff Enigma",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Carrinho Bar Montecarlo",
+      "categoria": "Carrinhos de Bar"
+    },
+    {
+      "casoca": "Cadeira Maison",
+      "categoria": "Cadeiras"
+    },
+    {
+      "casoca": "Puff Golden Redondo",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Poltrona Dakota",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Mesa de Centro Lithos",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Aparador Soho",
+      "categoria": "Aparadores E Buffets"
+    },
+    {
+      "casoca": "Mesa de Apoio Modena",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Apoio Isla",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Mesa de Apoio Safira",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Espelho Arizona Redondo",
+      "categoria": "Espelhos Redondos"
+    },
+    {
+      "casoca": "Mesa Café Atto",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Cama Greta",
+      "categoria": "Camas"
+    },
+    {
+      "casoca": "Sofá Table Máli",
+      "categoria": "Sofás-Table"
+    },
+    {
+      "casoca": "Escrivaninha Melody",
+      "categoria": "Escrivaninhas"
+    },
+    {
+      "casoca": "Mesa de Apoio Strauss",
+      "categoria": "Mesas de Apoio"
+    },
+    {
+      "casoca": "Poltrona Lune",
+      "categoria": "Poltronas"
+    },
+    {
+      "casoca": "Puff Zenith",
+      "categoria": "Puffs"
+    },
+    {
+      "casoca": "Banco Naos",
+      "categoria": "Bancos"
+    },
+    {
+      "casoca": "Mesa de Centro Magna",
+      "categoria": "Mesas De Centro"
+    },
+    {
+      "casoca": "Mesa de Centro Aura",
+      "categoria": "Mesas De Centro"
+    }
+  ],
+  "sem_match": [],
+  "sem_imagem": []
+}

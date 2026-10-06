@@ -1,0 +1,2262 @@
+[
+  {
+    "slug": "mesa-lateral-kit-sier",
+    "url": "https://casoca.com.br/mesa-lateral-kit-sier.html",
+    "nome": "Mesa Lateral Kit",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 34cm x P 34cm x A 54cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_kit_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-carminha-giratoria-sier",
+    "url": "https://casoca.com.br/poltrona-carminha-giratoria-sier.html",
+    "nome": "Poltrona Carminha Giratória",
+    "categoria": "Poltronas",
+    "dimensoes": "L 84cm x P 75cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_carminha_giratoria_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-norah-giratoria-sier",
+    "url": "https://casoca.com.br/cadeira-norah-giratoria-sier.html",
+    "nome": "Cadeira Norah Giratória",
+    "categoria": "Cadeiras, Cadeiras de Escritório",
+    "dimensoes": "L 55cm x P 58cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_norah_giratoria_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-chapada-sier",
+    "url": "https://casoca.com.br/mesa-lateral-chapada-sier.html",
+    "nome": "Mesa Lateral Chapada",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 65cm x P 65cm x A 46cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_chapada_sier.1.jpg"
+  },
+  {
+    "slug": "estante-soft-slim-sier",
+    "url": "https://casoca.com.br/estante-soft-slim-sier.html",
+    "nome": "Estante Soft Slim",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 200cm x P 38cm x A 181cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_soft_slim_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-trento-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-trento-sier.html",
+    "nome": "Mesa De Centro Trento",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 100cm x P 60cm x A 36cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_trento_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-poly-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-poly-sier.html",
+    "nome": "Mesa De Centro Poly",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 140cm x P 65cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_poly_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-celina-sier",
+    "url": "https://casoca.com.br/poltrona-celina-sier.html",
+    "nome": "Poltrona Celina",
+    "categoria": "Poltronas",
+    "dimensoes": "L 88cm x P 84cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_celina_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-spock-organico-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-spock-organico-sier.html",
+    "nome": "Mesa de Jantar Spock Orgânico",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 140cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_spock_organico_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-carminha-03-sier",
+    "url": "https://casoca.com.br/cadeira-carminha-03-sier.html",
+    "nome": "Cadeira Carminha 03",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 60cm x P 58cm x A 82cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_carminha_03_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-quatro-sier",
+    "url": "https://casoca.com.br/carrinho-bar-quatro-sier.html",
+    "nome": "Carrinho Bar Quatro",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 70cm x P 70cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_quatro_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-pio-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-pio-sier.html",
+    "nome": "Mesa De Centro Pio",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 150cm x P 70cm x A 25cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_pio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-ted-sier",
+    "url": "https://casoca.com.br/mesa-lateral-ted-sier.html",
+    "nome": "Mesa Lateral Ted",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 50cm x P 50cm x A 52cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_ted_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-capitolio-sier",
+    "url": "https://casoca.com.br/carrinho-bar-capitolio-sier.html",
+    "nome": "Carrinho Bar Capitólio",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 120cm x P 48cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_capitolio_sier.1.jpg"
+  },
+  {
+    "slug": "escrivaninha-lavoro-sier",
+    "url": "https://casoca.com.br/escrivaninha-lavoro-sier.html",
+    "nome": "Escrivaninha Lavoro",
+    "categoria": "Escrivaninhas",
+    "dimensoes": "L 150cm x P 65cm x A 87cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/escrivaninha_lavoro.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-cerco-03-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-cerco-03-giratorio-sier.html",
+    "nome": "Mesa de Jantar Cerco 03 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 180cm x P 180cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_cerco_03_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-duck-sier",
+    "url": "https://casoca.com.br/mesa-lateral-duck-sier.html",
+    "nome": "Mesa Lateral Duck",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 60cm x P 60cm x A 55cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_duck_sier.1.jpg"
+  },
+  {
+    "slug": "cachepot-manilla-sier",
+    "url": "https://casoca.com.br/cachepot-manilla-sier.html",
+    "nome": "Cachepot Manilla",
+    "categoria": "Vasos, Cestos e Baús",
+    "dimensoes": "L 54cm x P 54cm x A 46cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cachepot_manilla_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-mosso-sier",
+    "url": "https://casoca.com.br/banqueta-mosso-sier.html",
+    "nome": "Banqueta Mossô",
+    "categoria": "Banquetas",
+    "dimensoes": "L 42cm x P 42cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_mosso_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-madson-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-madson-sier.html",
+    "nome": "Mesa de Jantar Madson",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_madson_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-pilares-plus-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-pilares-plus-sier.html",
+    "nome": "Mesa de Jantar Pilares Plus",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_pilares_plus_sier.1.jpg"
+  },
+  {
+    "slug": "escrivaninha-isla-sier",
+    "url": "https://casoca.com.br/escrivaninha-isla-sier.html",
+    "nome": "Escrivaninha Isla",
+    "categoria": "Escrivaninhas",
+    "dimensoes": "L 150cm x P 65cm x A 86cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/escrivaninha_isla_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-cha-sier",
+    "url": "https://casoca.com.br/mesa-lateral-cha-sier.html",
+    "nome": "Mesa Lateral Chá",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 50cm x P 50cm x A 54cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_cha_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-vinil-sier",
+    "url": "https://casoca.com.br/mesa-lateral-vinil-sier.html",
+    "nome": "Mesa Lateral Vinil",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 60cm x P 60cm x A 55cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_vinil_sier.1.jpg"
+  },
+  {
+    "slug": "banco-palmira-sier",
+    "url": "https://casoca.com.br/banco-palmira-sier.html",
+    "nome": "Banco Palmira",
+    "categoria": "Bancos",
+    "dimensoes": "L 62cm x P 42cm x A 45cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_palmira_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-apoio-theo-sier",
+    "url": "https://casoca.com.br/mesa-de-apoio-theo-sier.html",
+    "nome": "Mesa De Apoio Theo",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 40cm x P 30cm x A 62cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_apoio_theo_sier.1.jpg"
+  },
+  {
+    "slug": "banco-cipo-sier",
+    "url": "https://casoca.com.br/banco-cipo-sier.html",
+    "nome": "Banco Cipó",
+    "categoria": "Bancos",
+    "dimensoes": "L 54cm x P 48cm x A 44cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_cipo_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-leme-oval-sier",
+    "url": "https://casoca.com.br/carrinho-bar-leme-oval-sier.html",
+    "nome": "Carrinho Bar Leme Oval",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 77cm x P 48cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_leme_oval_sier.1.jpg"
+  },
+  {
+    "slug": "moldura-de-espelho-atrio-sier",
+    "url": "https://casoca.com.br/moldura-de-espelho-atrio-sier.html",
+    "nome": "Moldura De Espelho Átrio",
+    "categoria": "Espelhos Retangulares",
+    "dimensoes": "L 180cm x P 39cm x A 191cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/o/moldura_de_espelho_atrio_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-tamara-sier",
+    "url": "https://casoca.com.br/cadeira-tamara-sier.html",
+    "nome": "Cadeira Tamara",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 63cm x P 56cm x A 70cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_tamara_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-goulart-01-sier",
+    "url": "https://casoca.com.br/buffet-goulart-01-sier.html",
+    "nome": "Buffet Goulart 01",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 53cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_goulart_01_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-cameron-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-cameron-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Cameron Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_cameron_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-cristine-sier",
+    "url": "https://casoca.com.br/poltrona-cristine-sier.html",
+    "nome": "Poltrona Cristine",
+    "categoria": "Poltronas",
+    "dimensoes": "L 68cm x P 68cm x A 79cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_cristine_sier.1.jpg"
+  },
+  {
+    "slug": "estante-soft-new-sier",
+    "url": "https://casoca.com.br/estante-soft-new-sier.html",
+    "nome": "Estante Soft New",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 200cm x P 38cm x A 181cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_soft_new_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-joana-estofada-sier",
+    "url": "https://casoca.com.br/banqueta-joana-estofada-sier.html",
+    "nome": "Banqueta Joana Estofada",
+    "categoria": "Banquetas",
+    "dimensoes": "L 45cm x P 58cm x A 100cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_joana_estofada_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-canelas-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-canelas-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Canelas Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_canelas_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-atenas-sier",
+    "url": "https://casoca.com.br/mesa-lateral-atenas-sier.html",
+    "nome": "Mesa Lateral Atenas",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 60cm x P 60cm x A 56cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_atenas_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-privia-sier",
+    "url": "https://casoca.com.br/aparador-privia-sier.html",
+    "nome": "Aparador Prívia",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 300cm x P 60cm x A 82cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_privia_sier.1.jpg"
+  },
+  {
+    "slug": "sofa-table-plana-sier",
+    "url": "https://casoca.com.br/sofa-table-plana-sier.html",
+    "nome": "Sofá Table Plana",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 47cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/s/o/sofa_table_plana_1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-leme-sier",
+    "url": "https://casoca.com.br/carrinho-bar-leme-sier.html",
+    "nome": "Carrinho Bar Leme",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 82cm x P 52cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_leme_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-conne-03-new-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-conne-03-new-giratorio-sier.html",
+    "nome": "Mesa de Jantar Conne 03 New Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 140cm x P 140cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_conne_03_new_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "estante-torino-sier",
+    "url": "https://casoca.com.br/estante-torino-sier.html",
+    "nome": "Estante Torino",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 240cm x P 38cm x A 181cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_torino_sier.1.jpg"
+  },
+  {
+    "slug": "estante-bangalo-04-sier",
+    "url": "https://casoca.com.br/estante-bangalo-04-sier.html",
+    "nome": "Estante Bangalô 04",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 420cm x P 40cm x A 235cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_bangalo_04_sier.1.jpg"
+  },
+  {
+    "slug": "sofa-table-city-sier",
+    "url": "https://casoca.com.br/sofa-table-city-sier.html",
+    "nome": "Sofá Table City",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 240cm x P 28cm x A 63cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/s/o/sofa_table_city_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-chanceler-04-plus-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-chanceler-04-plus-giratorio-sier.html",
+    "nome": "Mesa de Jantar Chanceler 04 Plus Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 220cm x P 220cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_chanceler_04_plus_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-palma-sier",
+    "url": "https://casoca.com.br/mesa-lateral-palma-sier.html",
+    "nome": "Mesa Lateral Palma",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 70cm x P 70cm x A 45cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_palma_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-carminha-03-sier",
+    "url": "https://casoca.com.br/poltrona-carminha-03-sier.html",
+    "nome": "Poltrona Carminha 03",
+    "categoria": "Poltronas",
+    "dimensoes": "L 84cm x P 75cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_carminha_03_sier.1.jpg"
+  },
+  {
+    "slug": "estante-bangalo-new-sier",
+    "url": "https://casoca.com.br/estante-bangalo-new-sier.html",
+    "nome": "Estante Bangalô New",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 363cm x P 43cm x A 235cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_bangalo_new_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-tangran-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-tangran-sier.html",
+    "nome": "Mesa De Centro Tangran",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 142cm x P 59cm x A 33cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_tangran_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-prados-cristal-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-prados-cristal-sier.html",
+    "nome": "Mesa de Jantar Prados Cristal",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_prados_cristal_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-atenas-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-atenas-sier.html",
+    "nome": "Mesa De Centro Atenas",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 140cm x P 70cm x A 39cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_atenas_sier.1.jpg"
+  },
+  {
+    "slug": "revisteiro-west-sier",
+    "url": "https://casoca.com.br/revisteiro-west-sier.html",
+    "nome": "Revisteiro West",
+    "categoria": "Revisteiros",
+    "dimensoes": "L 50cm x P 19cm x A 51cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/r/e/revisteiro_west_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-marrocos-sier",
+    "url": "https://casoca.com.br/buffet-marrocos-sier.html",
+    "nome": "Buffet Marrocos",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 48cm x A 74cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_marrocos_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-montana-soft-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-montana-soft-sier.html",
+    "nome": "Mesa de Jantar Montana Soft",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": "Base fibra de vidro. Tampo MDF revestido.",
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_montana_soft_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-selena-02-sier",
+    "url": "https://casoca.com.br/cadeira-selena-02-sier.html",
+    "nome": "Cadeira Selena 02",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 53cm x P 59cm x A 82cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_selena_02_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-aurora-sier",
+    "url": "https://casoca.com.br/poltrona-aurora-sier.html",
+    "nome": "Poltrona Aurora",
+    "categoria": "Poltronas",
+    "dimensoes": "L 89cm x P 70cm x A 81cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_aurora_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-nexus-sier",
+    "url": "https://casoca.com.br/carrinho-bar-nexus-sier.html",
+    "nome": "Carrinho Bar Nexus",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 82cm x P 48cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_nexus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-garoni-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-garoni-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Garoni Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_garoni_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-anapolis-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-anapolis-sier.html",
+    "nome": "Mesa de Jantar Anápolis",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_anapolis_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-olma-01-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-olma-01-giratorio-sier.html",
+    "nome": "Mesa de Jantar Olma 01 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_olma_01_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-matter-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-matter-sier.html",
+    "nome": "Mesa De Centro Matter",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 162cm x P 82cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_matter_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-apoio-hebi-sier",
+    "url": "https://casoca.com.br/mesa-de-apoio-hebi-sier.html",
+    "nome": "Mesa De Apoio Hebi",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 50cm x P 50cm x A 67cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_apoio_hebi_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-chanceler-04-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-chanceler-04-giratorio-sier.html",
+    "nome": "Mesa de Jantar Chanceler 04 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 220cm x P 220cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_chanceler_04_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-samara-slim-moeda-grandes-formatos-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-samara-slim-moeda-grandes-formatos-sier.html",
+    "nome": "Mesa de Jantar Samara Slim Moeda Grandes Formatos",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 360cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_samara_slim_moeda_grandes_formatos_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-palazzo-delta-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-palazzo-delta-sier.html",
+    "nome": "Mesa de Jantar Palazzo Delta",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 140cm x P 137cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_palazzo_delta_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-joana-tela-sier",
+    "url": "https://casoca.com.br/banqueta-joana-tela-sier.html",
+    "nome": "Banqueta Joana Tela",
+    "categoria": "Banquetas",
+    "dimensoes": "L 45cm x P 58cm x A 100cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_joana_tela_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-soma-sier",
+    "url": "https://casoca.com.br/buffet-soma-sier.html",
+    "nome": "Buffet Soma",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 45cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_soma_sier.1.jpg"
+  },
+  {
+    "slug": "cachepot-sul-rec-sier",
+    "url": "https://casoca.com.br/cachepot-sul-rec-sier.html",
+    "nome": "Cachepot Sul Rec",
+    "categoria": "Vasos, Cestos e Baús",
+    "dimensoes": "L 50cm x P 50cm x A 89cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cachepot_sul_rec_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-dorothy-sier",
+    "url": "https://casoca.com.br/poltrona-dorothy-sier.html",
+    "nome": "Poltrona Dorothy",
+    "categoria": "Poltronas",
+    "dimensoes": "L 73cm x P 70cm x A 81cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_dorothy_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-carminha-plus-sier",
+    "url": "https://casoca.com.br/poltrona-carminha-plus-sier.html",
+    "nome": "Poltrona Carminha Plus",
+    "categoria": "Poltronas",
+    "dimensoes": "L 84cm x P 75cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_carminha_plus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-conversacao-pilares-sier",
+    "url": "https://casoca.com.br/mesa-de-conversacao-pilares-sier.html",
+    "nome": "Mesa de Conversação Pilares",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 66cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_conversacao_pilares_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-giovana-sier",
+    "url": "https://casoca.com.br/poltrona-giovana-sier.html",
+    "nome": "Poltrona Giovana",
+    "categoria": "Poltronas",
+    "dimensoes": "L 71cm x P 73cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_giovana_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-solaris-02-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-solaris-02-sier.html",
+    "nome": "Mesa de Jantar Solaris 02",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 200cm x P 200cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_solaris_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-finger-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-finger-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Finger Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 280cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_finger_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-angelina-sier",
+    "url": "https://casoca.com.br/cadeira-angelina-sier.html",
+    "nome": "Cadeira Angelina",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 64cm x P 65cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_angelina_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-mitreo-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-mitreo-sier.html",
+    "nome": "Mesa De Centro Mitreo",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 148cm x P 166cm x A 31cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_mitreo_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-velma-sier",
+    "url": "https://casoca.com.br/cadeira-velma-sier.html",
+    "nome": "Cadeira Velma",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 48cm x P 59cm x A 83cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_velma_sier.1.jpg"
+  },
+  {
+    "slug": "banco-orni-sier",
+    "url": "https://casoca.com.br/banco-orni-sier.html",
+    "nome": "Banco Orni",
+    "categoria": "Bancos",
+    "dimensoes": "L 200cm x P 45cm x A 46cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_orni_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-maiorca-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-maiorca-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Maiorca Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_maiorca_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-yasmin-sier",
+    "url": "https://casoca.com.br/cadeira-yasmin-sier.html",
+    "nome": "Cadeira Yasmin",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 49cm x P 60cm x A 84cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_yasmin_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-atenas-03-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-atenas-03-giratorio-sier.html",
+    "nome": "Mesa de Jantar Atenas 03 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 180cm x P 180cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_atenas_03_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "sofa-table-matter-sier",
+    "url": "https://casoca.com.br/sofa-table-matter-sier.html",
+    "nome": "Sofá Table Matter",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 202cm x P 48cm x A 61cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/s/o/sofa_table_matter_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-kal-sier",
+    "url": "https://casoca.com.br/mesa-lateral-kal-sier.html",
+    "nome": "Mesa Lateral Kal",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 45cm x P 45cm x A 53cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_kal_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-apoio-lee-sier",
+    "url": "https://casoca.com.br/mesa-de-apoio-lee-sier.html",
+    "nome": "Mesa De Apoio Lee",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 50cm x P 36cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_apoio_lee_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-outono-new-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-outono-new-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Outono New Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_outono_new_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "banco-carminha-plus-sier",
+    "url": "https://casoca.com.br/banco-carminha-plus-sier.html",
+    "nome": "Banco Carminha Plus",
+    "categoria": "Bancos",
+    "dimensoes": "L 52cm x P 52cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_carminha_plus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-spock-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-spock-sier.html",
+    "nome": "Mesa De Centro Spock",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 160cm x P 80cm x A 28cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_spock_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-carminha-giratoria-flex-sier",
+    "url": "https://casoca.com.br/cadeira-carminha-giratoria-flex-sier.html",
+    "nome": "Cadeira Carminha Giratória Flex",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 60cm x P 58cm x A 83cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_carminha_giratoria_flex_sier.1.jpg"
+  },
+  {
+    "slug": "puff-guri-sier",
+    "url": "https://casoca.com.br/puff-guri-sier.html",
+    "nome": "Puff Guri",
+    "categoria": "Puffs",
+    "dimensoes": "L 52cm x P 52cm x A 48cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/u/puff_guri_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-atenas-oblongo-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-atenas-oblongo-sier.html",
+    "nome": "Mesa de Jantar Atenas Oblongo",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 260cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_atenas_oblongo_sier.1.jpg"
+  },
+  {
+    "slug": "estante-emporio-sier",
+    "url": "https://casoca.com.br/estante-emporio-sier.html",
+    "nome": "Estante Empório",
+    "categoria": "Estantes E Prateleiras",
+    "dimensoes": "L 115cm x P 38cm x A 180cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/e/s/estante_emporio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-poa-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-poa-sier.html",
+    "nome": "Mesa De Centro Poá",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 92cm x P 92cm x A 24cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_poa_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-cerco-oblongo-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-cerco-oblongo-sier.html",
+    "nome": "Mesa de Jantar Cerco Oblongo",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_cerco_oblongo_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-gru-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-gru-sier.html",
+    "nome": "Mesa De Centro Gru",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 25cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_gru_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-savana-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-savana-sier.html",
+    "nome": "Mesa de Jantar Savana",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 233cm x P 200cm x A 75cm",
+    "material": null,
+    "acabamento": "Tampo: MDF revestido | madeira maciça",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_savana_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-monica-sier",
+    "url": "https://casoca.com.br/cadeira-monica-sier.html",
+    "nome": "Cadeira Mônica",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 59cm x P 59cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_monica_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-forum-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-forum-sier.html",
+    "nome": "Mesa de Jantar Fórum",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_forum_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-pilares-plus-02-quadrado-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-pilares-plus-02-quadrado-sier.html",
+    "nome": "Mesa de Jantar Pilares Plus 02 Quadrado",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_pilares_plus_02_quadrado_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-norah-sier",
+    "url": "https://casoca.com.br/cadeira-norah-sier.html",
+    "nome": "Cadeira Norah",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 55cm x P 58cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_norah_sier.1.jpg"
+  },
+  {
+    "slug": "banco-remo-sier",
+    "url": "https://casoca.com.br/banco-remo-sier.html",
+    "nome": "Banco Remo",
+    "categoria": "Bancos",
+    "dimensoes": "L 45cm x P 45cm x A 45cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_remo_sier.1.jpg"
+  },
+  {
+    "slug": "moldura-de-espelho-damiao-sier",
+    "url": "https://casoca.com.br/moldura-de-espelho-damiao-sier.html",
+    "nome": "Moldura De Espelho Damião",
+    "categoria": "Espelhos Redondos",
+    "dimensoes": "L 40cm x P 4cm x A 100cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/o/moldura_de_espelho_damiao_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-vinil-02-sier",
+    "url": "https://casoca.com.br/mesa-lateral-vinil-02-sier.html",
+    "nome": "Mesa Lateral Vinil 02",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 61cm x P 60cm x A 55cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_vinil_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-carrossel-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-carrossel-sier.html",
+    "nome": "Mesa de Centro Carrossel",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 95cm x P 95cm x A 28cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_carrossel_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-pilares-plus-03-redondo-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-pilares-plus-03-redondo-giratorio-sier.html",
+    "nome": "Mesa de Jantar Pilares Plus 03 Redondo Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_pilares_plus_03_redondo_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-carminha-plus-sier",
+    "url": "https://casoca.com.br/cadeira-carminha-plus-sier.html",
+    "nome": "Cadeira Carminha Plus",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 60cm x P 58cm x A 82cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_carminha_plus_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-missione-tela-01-sier",
+    "url": "https://casoca.com.br/buffet-missione-tela-01-sier.html",
+    "nome": "Buffet Missione Tela 01",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 50cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_missione_tela_01_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-joana-madeira-sier",
+    "url": "https://casoca.com.br/banqueta-joana-madeira-sier.html",
+    "nome": "Banqueta Joana Madeira",
+    "categoria": "Banquetas",
+    "dimensoes": "L 45cm x P 58cm x A 100cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_joana_madeira_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-prados-round-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-prados-round-sier.html",
+    "nome": "Mesa de Jantar Prados Round",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_prados_round_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-trevor-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-trevor-sier.html",
+    "nome": "Mesa De Centro Trevor",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 31cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_trevor_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-angaro-sier",
+    "url": "https://casoca.com.br/buffet-angaro-sier.html",
+    "nome": "Buffet Angaro",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 53cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_angaro_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-lilas-02-sier",
+    "url": "https://casoca.com.br/mesa-lateral-lilas-02-sier.html",
+    "nome": "Mesa Lateral Lilás 02",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 28cm x P 28cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_lilas_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-connect-oblongo-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-connect-oblongo-sier.html",
+    "nome": "Mesa de Jantar Connect Oblongo",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_connect_oblongo_sier.1.jpg"
+  },
+  {
+    "slug": "bandeja-pretty-sier",
+    "url": "https://casoca.com.br/bandeja-pretty-sier.html",
+    "nome": "Bandeja Pretty",
+    "categoria": "Bandejas",
+    "dimensoes": "L 41cm x P 31cm x A 6cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/bandeja_pretty_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-lilas-sier",
+    "url": "https://casoca.com.br/mesa-lateral-lilas-sier.html",
+    "nome": "Mesa Lateral Lilás",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 34cm x P 34cm x A 45cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_lilas_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-sydney-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-sydney-sier.html",
+    "nome": "Mesa de Jantar Sydney",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 130cm x A 76cm",
+    "material": null,
+    "acabamento": "Base: madeira maciça revestida | multilaminado de madeira revestido",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_sydney_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-palma-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-palma-sier.html",
+    "nome": "Mesa de Centro Palma",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 100cm x P 100cm x A 28cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_palma_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-tod-sier",
+    "url": "https://casoca.com.br/mesa-lateral-tod-sier.html",
+    "nome": "Mesa Lateral Tod",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 28cm x P 28cm x A 41cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_tod_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-belize-organico-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-belize-organico-sier.html",
+    "nome": "Mesa de Jantar Belize Orgânico",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 140cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_belize_organico_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-antares-sier",
+    "url": "https://casoca.com.br/mesa-lateral-antares-sier.html",
+    "nome": "Mesa Lateral Antares",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 60cm x P 60cm x A 49cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_antares_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-ecco-sier",
+    "url": "https://casoca.com.br/carrinho-bar-ecco-sier.html",
+    "nome": "Carrinho Bar Ecco",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 62cm x P 62cm x A 83cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_ecco_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-garoni-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-garoni-sier.html",
+    "nome": "Mesa de Jantar Garoni",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_garoni_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-carlton-sier",
+    "url": "https://casoca.com.br/buffet-carlton-sier.html",
+    "nome": "Buffet Carlton",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 50cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_carlton_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-odessa-02-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-odessa-02-sier.html",
+    "nome": "Mesa de Jantar Odessa 02",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_odessa_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-serrano-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-serrano-sier.html",
+    "nome": "Mesa De Centro Serrano",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 99cm x P 99cm x A 33cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_serrano_sier.1.jpg"
+  },
+  {
+    "slug": "sofa-table-syrah-sier",
+    "url": "https://casoca.com.br/sofa-table-syrah-sier.html",
+    "nome": "Sofá Table Syrah",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 196cm x P 42cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/s/o/sofa_table_syrah_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-atenas-redonda-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-atenas-redonda-sier.html",
+    "nome": "Mesa De Centro Atenas Redonda",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 31cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_atenas_redonda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-augusta-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-augusta-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Augusta Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_augusta_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-plana-sier",
+    "url": "https://casoca.com.br/mesa-lateral-plana-sier.html",
+    "nome": "Mesa Lateral Plana",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 66cm x P 66cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_plana_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-aurora-02-sier",
+    "url": "https://casoca.com.br/poltrona-aurora-02-sier.html",
+    "nome": "Poltrona Aurora 02",
+    "categoria": "Poltronas",
+    "dimensoes": "L 89cm x P 70cm x A 81cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_aurora_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-chapada-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-chapada-sier.html",
+    "nome": "Mesa de Centro Chapada",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 30cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_chapada_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-chloe-tela-sier",
+    "url": "https://casoca.com.br/cadeira-chloe-tela-sier.html",
+    "nome": "Cadeira Chloe Tela",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 46cm x P 54cm x A 86cm",
+    "material": "Cadeira Chloe Tela - Sier.",
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_chloe_tela_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-alfred-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-alfred-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Alfred Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_alfred_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-pilares-plus-organico-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-pilares-plus-organico-sier.html",
+    "nome": "Mesa de Jantar Pilares Plus Orgânico",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 180cm x P 180cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_pilares_plus_organico_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-ato-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-ato-sier.html",
+    "nome": "Mesa De Centro Ato",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 30cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_ato_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-euro-sier",
+    "url": "https://casoca.com.br/buffet-euro-sier.html",
+    "nome": "Buffet Euro",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 45cm x A 73cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_euro_sier.1.jpg"
+  },
+  {
+    "slug": "bancada-bistro-cleo-quadrada-sier",
+    "url": "https://casoca.com.br/bancada-bistro-cleo-quadrada-sier.html",
+    "nome": "Bancada Bistrô Cleo Quadrada",
+    "categoria": "Bistrô",
+    "dimensoes": "L 70cm x P 70cm x A 101cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/bancada_bistro_cleo_quadrada_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-goulart-02-sier",
+    "url": "https://casoca.com.br/buffet-goulart-02-sier.html",
+    "nome": "Buffet Goulart 02",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 53cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_goulart_02_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-maiorca-sier",
+    "url": "https://casoca.com.br/aparador-maiorca-sier.html",
+    "nome": "Aparador Maiorca",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 45cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_maiorca_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-missouri-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-missouri-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Missouri Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 300cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_missouri_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-meridiam-retangular-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-meridiam-retangular-sier.html",
+    "nome": "Mesa de Jantar Meridiam Retangular",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 200cm x P 100cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_meridiam_retangular_sier.1.jpg"
+  },
+  {
+    "slug": "bancada-bistro-cleo-redonda-sier",
+    "url": "https://casoca.com.br/bancada-bistro-cleo-redonda-sier.html",
+    "nome": "Bancada Bistrô Cleo Redonda",
+    "categoria": "Bistrô",
+    "dimensoes": "L 70cm x P 70cm x A 101cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/bancada_bistro_cleo_redonda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-carmo-sier",
+    "url": "https://casoca.com.br/mesa-lateral-carmo-sier.html",
+    "nome": "Mesa Lateral Carmo",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 55cm x P 45cm x A 46cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_carmo_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-plisse-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-plisse-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Plissê Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 260cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_plisse_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-cacau-sier",
+    "url": "https://casoca.com.br/banqueta-cacau-sier.html",
+    "nome": "Banqueta Cacau",
+    "categoria": "Banquetas",
+    "dimensoes": "L 48cm x P 56cm x A 96cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_cacau_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-box-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-box-sier.html",
+    "nome": "Mesa De Centro Box",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 120cm x P 60cm x A 32cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_box_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-kan-sier",
+    "url": "https://casoca.com.br/mesa-lateral-kan-sier.html",
+    "nome": "Mesa Lateral Kan",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 50cm x P 50cm x A 51cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_kan_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-yet-sier",
+    "url": "https://casoca.com.br/carrinho-bar-yet-sier.html",
+    "nome": "Carrinho Bar Yet",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 92cm x P 46cm x A 78cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_yet_sier.1.jpg"
+  },
+  {
+    "slug": "conjunto-cardeal-sier",
+    "url": "https://casoca.com.br/conjunto-cardeal-sier.html",
+    "nome": "Conjunto Cardeal",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 140cm x P 125cm x A 50cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/o/conjunto_cardeal_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-laguna-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-laguna-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Laguna Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_laguna_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-azimute-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-azimute-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Azimute Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_azimute_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-yasmin-tela-com-braco-sier",
+    "url": "https://casoca.com.br/cadeira-yasmin-tela-com-braco-sier.html",
+    "nome": "Cadeira Yasmin Tela com Braço",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 55cm x P 60cm x A 84cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_yasmin_tela_com_braco_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-antares-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-antares-sier.html",
+    "nome": "Mesa de Centro Antares",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_antares_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-delfos-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-delfos-sier.html",
+    "nome": "Mesa de Jantar Delfos",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 140cm x P 140cm x A 76cm",
+    "material": "Base multilaminado revestido. Tampo MDF revestido.",
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_delfos_sier.1.jpg"
+  },
+  {
+    "slug": "bancada-bistro-mosso-sier",
+    "url": "https://casoca.com.br/bancada-bistro-mosso-sier.html",
+    "nome": "Bancada Bistrô Mossô",
+    "categoria": "Bistrô",
+    "dimensoes": "L 90cm x P 90cm x A 101cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/bancada_bistro_mosso_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-delfos-organico-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-delfos-organico-sier.html",
+    "nome": "Mesa de Jantar Delfos Orgânico",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 180cm x P 180cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_delfos_organico_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-aurora-03-sier",
+    "url": "https://casoca.com.br/poltrona-aurora-03-sier.html",
+    "nome": "Poltrona Aurora 03",
+    "categoria": "Poltronas",
+    "dimensoes": "L 89cm x P 70cm x A 81cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_aurora_03_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-atenas-double-oblongo-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-atenas-double-oblongo-sier.html",
+    "nome": "Mesa de Jantar Atenas Double Oblongo",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_atenas_double_oblongo_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-plana-sier",
+    "url": "https://casoca.com.br/aparador-plana-sier.html",
+    "nome": "Aparador Plana",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 47cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_plana_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-velma-sier",
+    "url": "https://casoca.com.br/banqueta-velma-sier.html",
+    "nome": "Banqueta Velma",
+    "categoria": "Banquetas",
+    "dimensoes": "L 47cm x P 53cm x A 95cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_velma_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-opera-03-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-opera-03-giratorio-sier.html",
+    "nome": "Mesa de Jantar Ópera 03 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 200cm x P 200cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_opera_03_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "pedestal-lume-sier",
+    "url": "https://casoca.com.br/pedestal-lume-sier.html",
+    "nome": "Pedestal Lume",
+    "categoria": "Luminárias De Piso",
+    "dimensoes": "L 64cm x P 64cm x A 180cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/e/pedestal_lume_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-plana-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-plana-sier.html",
+    "nome": "Mesa De Centro Plana",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 102cm x P 102cm x A 37cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_plana_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-urca-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-urca-sier.html",
+    "nome": "Mesa de Centro Urca",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 74cm x P 74cm x A 30cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_urca_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-regia-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-regia-sier.html",
+    "nome": "Mesa de Centro Régia",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 70cm x P 70cm x A 22cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_regia_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-frasco-sier",
+    "url": "https://casoca.com.br/mesa-lateral-frasco-sier.html",
+    "nome": "Mesa Lateral Frasco",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 27cm x P 27cm x A 40cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_frasco_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-jazz-sier",
+    "url": "https://casoca.com.br/mesa-lateral-jazz-sier.html",
+    "nome": "Mesa Lateral Jazz",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 50cm x P 50cm x A 48cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_jazz_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-godan-sier",
+    "url": "https://casoca.com.br/banqueta-godan-sier.html",
+    "nome": "Banqueta Godan",
+    "categoria": "Banquetas",
+    "dimensoes": "L 46cm x P 60cm x A 104cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_godan_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-brasilia-03-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-brasilia-03-giratorio-sier.html",
+    "nome": "Mesa de Jantar Brasília 03 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 150cm x P 150cm x A 77cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_brasilia_03_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-gueixa-sier",
+    "url": "https://casoca.com.br/mesa-lateral-gueixa-sier.html",
+    "nome": "Mesa Lateral Gueixa",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 32cm x P 32cm x A 38cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_gueixa_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-box-02-rec-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-box-02-rec-sier.html",
+    "nome": "Mesa De Centro Box 02 Rec",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 60cm x P 60cm x A 32cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_box_02_rec_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-halo-01-giratorio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-halo-01-giratorio-sier.html",
+    "nome": "Mesa de Jantar Halo 01 Giratório",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 160cm x P 160cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_halo_01_giratorio_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-sula-sier",
+    "url": "https://casoca.com.br/cadeira-sula-sier.html",
+    "nome": "Cadeira Sula",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 53cm x P 61cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_sula_sier.1.jpg"
+  },
+  {
+    "slug": "moldura-de-espelho-evol-02-sier",
+    "url": "https://casoca.com.br/moldura-de-espelho-evol-02-sier.html",
+    "nome": "Moldura De Espelho Évol 02",
+    "categoria": "Espelhos",
+    "dimensoes": "L 100cm x P 4cm x A 199cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/o/moldura_de_espelho_evol_02_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-matter-sier",
+    "url": "https://casoca.com.br/mesa-lateral-matter-sier.html",
+    "nome": "Mesa Lateral Matter",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 62cm x P 62cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_matter_sier.1.jpg"
+  },
+  {
+    "slug": "banco-april-sier",
+    "url": "https://casoca.com.br/banco-april-sier.html",
+    "nome": "Banco April",
+    "categoria": "Bancos",
+    "dimensoes": "L 160cm x P 48cm x A 59cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_april_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-poly-sier",
+    "url": "https://casoca.com.br/aparador-poly-sier.html",
+    "nome": "Aparador Poly",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 45cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_poly_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-tamara-plus-sier",
+    "url": "https://casoca.com.br/cadeira-tamara-plus-sier.html",
+    "nome": "Cadeira Tamara Plus",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 63cm x P 56cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_tamara_plus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-quasar-raggio-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-quasar-raggio-sier.html",
+    "nome": "Mesa de Jantar Quasar Raggio",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 150cm x P 150cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_quasar_raggio_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-missione-sier",
+    "url": "https://casoca.com.br/buffet-missione-sier.html",
+    "nome": "Buffet Missione",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 50cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_missione_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-aruba-sier",
+    "url": "https://casoca.com.br/aparador-aruba-sier.html",
+    "nome": "Aparador Aruba",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 53cm x A 73cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_aruba_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-apoio-val-sier",
+    "url": "https://casoca.com.br/mesa-de-apoio-val-sier.html",
+    "nome": "Mesa De Apoio Val",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 50cm x P 40cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_apoio_val_sier.1.jpg"
+  },
+  {
+    "slug": "banco-faro-sier",
+    "url": "https://casoca.com.br/banco-faro-sier.html",
+    "nome": "Banco Faro",
+    "categoria": "Bancos",
+    "dimensoes": "L 51cm x P 51cm x A 47cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_faro_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-ted-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-ted-sier.html",
+    "nome": "Mesa De Centro Ted",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 70cm x P 70cm x A 32cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_ted_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-roberta-sier",
+    "url": "https://casoca.com.br/cadeira-roberta-sier.html",
+    "nome": "Cadeira Roberta",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 51cm x P 58cm x A 82cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_roberta_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-nina-sier",
+    "url": "https://casoca.com.br/mesa-lateral-nina-sier.html",
+    "nome": "Mesa Lateral Nina",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 30cm x P 30cm x A 36cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_nina_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-samara-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-samara-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Samara Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_samara_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-malha-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-malha-sier.html",
+    "nome": "Mesa De Centro Malha",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 116cm x P 96cm x A 26cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_malha_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-orlando-arc-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-orlando-arc-sier.html",
+    "nome": "Mesa de Jantar Orlando Arc",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 130cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_orlando_arc_sier.1.jpg"
+  },
+  {
+    "slug": "biombo-oasis-sier",
+    "url": "https://casoca.com.br/biombo-oasis-sier.html",
+    "nome": "Biombo Oásis",
+    "categoria": "Biombos",
+    "dimensoes": "L 230cm x P 35cm x A 160cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/i/biombo_oasis_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-agave-01-giratorio-quadrada-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-agave-01-giratorio-quadrada-sier.html",
+    "nome": "Mesa de Jantar Agave 01 Giratório Quadrada",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 140cm x P 140cm x A 77cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_agave_01_giratorio_quadrada_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-leme-quadrado-sier",
+    "url": "https://casoca.com.br/carrinho-bar-leme-quadrado-sier.html",
+    "nome": "Carrinho Bar Leme Quadrado",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 50cm x P 50cm x A 70cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_leme_quadrado_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-libra-slim-moeda-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-libra-slim-moeda-sier.html",
+    "nome": "Mesa de Jantar Libra Slim Moeda",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_libra_slim_moeda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-ozzi-02-plus-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-ozzi-02-plus-sier.html",
+    "nome": "Mesa De Centro Ozzi 02 Plus",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 90cm x P 90cm x A 21cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_ozzi_02_plus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-apoio-ozzi-02-plus-sier",
+    "url": "https://casoca.com.br/mesa-de-apoio-ozzi-02-plus-sier.html",
+    "nome": "Mesa De Apoio Ozzi 02 Plus",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 50cm x P 50cm x A 31cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_apoio_ozzi_02_plus_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-majestic-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-majestic-sier.html",
+    "nome": "Mesa de Jantar Majestic",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_majestic_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-urca-sier",
+    "url": "https://casoca.com.br/mesa-lateral-urca-sier.html",
+    "nome": "Mesa Lateral Urca",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 64cm x P 64cm x A 42cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_urca_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-meridiam-02-retangular-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-meridiam-02-retangular-sier.html",
+    "nome": "Mesa de Jantar Meridiam 02 Retangular",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 200cm x P 100cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_meridiam_02_retangular_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-cold-sier",
+    "url": "https://casoca.com.br/mesa-lateral-cold-sier.html",
+    "nome": "Mesa Lateral Cold",
+    "categoria": "Mesas Laterais",
+    "dimensoes": "L 28cm x P 28cm x A 37cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_cold_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-yasmin-tela-sier",
+    "url": "https://casoca.com.br/cadeira-yasmin-tela-sier.html",
+    "nome": "Cadeira Yasmin Tela",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 49cm x P 60cm x A 84cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_yasmin_tela_sier.1.jpg"
+  },
+  {
+    "slug": "buffet-visage-sier",
+    "url": "https://casoca.com.br/buffet-visage-sier.html",
+    "nome": "Buffet Visage",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 220cm x P 50cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/u/buffet_visage_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jogos-texas-sier",
+    "url": "https://casoca.com.br/mesa-de-jogos-texas-sier.html",
+    "nome": "Mesa de Jogos Texas",
+    "categoria": "Mesas de Jogos",
+    "dimensoes": "L 120cm x P 120cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jogos_texas_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-torres-sier",
+    "url": "https://casoca.com.br/mesa-lateral-torres-sier.html",
+    "nome": "Mesa Lateral Torres",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 22cm x P 22cm x A 35cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_torres_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-prumo-sier",
+    "url": "https://casoca.com.br/mesa-lateral-prumo-sier.html",
+    "nome": "Mesa Lateral Prumo",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 33cm x P 33cm x A 50cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_prumo_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-denise-sier",
+    "url": "https://casoca.com.br/cadeira-denise-sier.html",
+    "nome": "Cadeira Denise",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 54cm x P 59cm x A 81cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_denise_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-doppia-arc-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-doppia-arc-sier.html",
+    "nome": "Mesa de Jantar Doppia Arc",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 280cm x P 120cm x A 75cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_doppia_arc_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-nucleo-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-nucleo-sier.html",
+    "nome": "Mesa de Centro Núcleo",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 120cm x P 120cm x A 32cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_nucleo_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-brenda-sier",
+    "url": "https://casoca.com.br/cadeira-brenda-sier.html",
+    "nome": "Cadeira Brenda",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 58cm x P 56cm x A 79cm",
+    "material": null,
+    "acabamento": "Com Braço",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_brenda_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-colossus-soft-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-colossus-soft-sier.html",
+    "nome": "Mesa de Jantar Colossus Soft",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 240cm x P 120cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_colossus_soft_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-destaque-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-destaque-sier.html",
+    "nome": "Mesa de Centro Destaque",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 120cm x P 120cm x A 30cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_destaque_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-jantar-albania-sier",
+    "url": "https://casoca.com.br/mesa-de-jantar-albania-sier.html",
+    "nome": "Mesa de Jantar Albania",
+    "categoria": "Mesas De Jantar",
+    "dimensoes": "L 219cm x P 109cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_jantar_albania_sier.1.jpg"
+  },
+  {
+    "slug": "aparador-peregrino-sier",
+    "url": "https://casoca.com.br/aparador-peregrino-sier.html",
+    "nome": "Aparador Peregrino",
+    "categoria": "Aparadores E Buffets",
+    "dimensoes": "L 200cm x P 54cm x A 75cm",
+    "material": null,
+    "acabamento": "Tampo: Madeira maciça, tela, cristal incolor | Rocha Natural",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/a/p/aparador_peregrino_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-capitolio-02-sier",
+    "url": "https://casoca.com.br/carrinho-bar-capitolio-02-sier.html",
+    "nome": "Carrinho Bar Capitólio 02",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 180cm x P 48cm x A 80cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_capitolio_02_sier.1.jpg"
+  },
+  {
+    "slug": "banco-charlene-sier",
+    "url": "https://casoca.com.br/banco-charlene-sier.html",
+    "nome": "Banco Charlene",
+    "categoria": "Puffs",
+    "dimensoes": "L 70cm x P 52cm x A 38cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banco_charlene_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-grao-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-grao-sier.html",
+    "nome": "Mesa de Centro Grão",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 80cm x P 80cm x A 36cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_grao_sier.1.jpg"
+  },
+  {
+    "slug": "banqueta-vania-sier",
+    "url": "https://casoca.com.br/banqueta-vania-sier.html",
+    "nome": "Banqueta Vânia",
+    "categoria": "Banquetas",
+    "dimensoes": "L 45cm x P 58cm x A 65cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/b/a/banqueta_vania_sier.1.jpg"
+  },
+  {
+    "slug": "carrinho-bar-cosmos-sier",
+    "url": "https://casoca.com.br/carrinho-bar-cosmos-sier.html",
+    "nome": "Carrinho Bar Cosmos",
+    "categoria": "Carrinhos de Bar",
+    "dimensoes": "L 178cm x P 65cm x A 87cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/carrinho_bar_cosmos_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-spirit-sier",
+    "url": "https://casoca.com.br/cadeira-spirit-sier.html",
+    "nome": "Cadeira Spirit",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 48cm x P 55cm x A 81cm",
+    "material": null,
+    "acabamento": "Plus: Com estofado. | Sem Estofado",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_spirit_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-lateral-peregrino-sier",
+    "url": "https://casoca.com.br/mesa-lateral-peregrino-sier.html",
+    "nome": "Mesa Lateral Peregrino",
+    "categoria": "Mesas de Apoio",
+    "dimensoes": "L 55cm x P 55cm x A 48cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_lateral_peregrino_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-serrano-02-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-serrano-02-sier.html",
+    "nome": "Mesa De Centro Serrano 02",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 70cm x P 70cm x A 39cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_serrano_02_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-gioconda-02-sier",
+    "url": "https://casoca.com.br/poltrona-gioconda-02-sier.html",
+    "nome": "Poltrona Gioconda 02",
+    "categoria": "Poltronas",
+    "dimensoes": "L 92cm x P 81cm x A 76cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_gioconda_02_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-saori-sier",
+    "url": "https://casoca.com.br/cadeira-saori-sier.html",
+    "nome": "Cadeira Saori",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 50cm x P 58cm x A 86cm",
+    "material": null,
+    "acabamento": "Encosto multilaminado de madeira estofado. | Encosto madeira maciça",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_saori_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-preludio-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-preludio-sier.html",
+    "nome": "Mesa de Centro Prelúdio",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 130cm x P 125cm x A 24cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_preludio_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-floripa-sier",
+    "url": "https://casoca.com.br/poltrona-floripa-sier.html",
+    "nome": "Poltrona Floripa",
+    "categoria": "Poltronas",
+    "dimensoes": "L 71cm x P 84cm x A 89cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_floripa_sier.1.jpg"
+  },
+  {
+    "slug": "cadeira-josi-sier",
+    "url": "https://casoca.com.br/cadeira-josi-sier.html",
+    "nome": "Cadeira Josi",
+    "categoria": "Cadeiras",
+    "dimensoes": "L 57cm x P 60cm x A 81cm",
+    "material": null,
+    "acabamento": "Com Braço",
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/c/a/cadeira_josi_sier.1.jpg"
+  },
+  {
+    "slug": "mesa-de-centro-peregrino-sier",
+    "url": "https://casoca.com.br/mesa-de-centro-peregrino-sier.html",
+    "nome": "Mesa de Centro Peregrino",
+    "categoria": "Mesas De Centro",
+    "dimensoes": "L 165cm x P 75cm x A 34cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/m/e/mesa_de_centro_peregrino_sier.1.jpg"
+  },
+  {
+    "slug": "poltrona-margarida-sier",
+    "url": "https://casoca.com.br/poltrona-margarida-sier.html",
+    "nome": "Poltrona Margarida",
+    "categoria": "Poltronas",
+    "dimensoes": "L 102cm x P 92cm x A 73cm",
+    "material": null,
+    "acabamento": null,
+    "imagem_url": "https://casoca.com.br/media/catalog/product/cache/image/279x325/beff4985b56e3afdbeabfc89641a4582/p/o/poltrona_margarida_sier.1.jpg"
+  }
+]

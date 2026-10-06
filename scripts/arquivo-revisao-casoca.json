@@ -1,0 +1,3242 @@
+{
+  "IUMMI 2025": [
+    {
+      "id": 4901,
+      "nome": "Mesa Lateral Moet",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 30cm x P 30cm x A 47cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-moet-iummi.jpg"
+    },
+    {
+      "id": 4902,
+      "nome": "Mesa Lateral Pepper",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 62cm x P 48cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-pepper-iummi.jpg"
+    },
+    {
+      "id": 4903,
+      "nome": "Mesa de centro Safira",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 120cm x P 120cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-safira-iummi.jpg"
+    },
+    {
+      "id": 4904,
+      "nome": "Banqueta Alessa",
+      "categoria": "Banquetas",
+      "dimensoes": null,
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-alessa-iummi.jpg"
+    },
+    {
+      "id": 4905,
+      "nome": "Mesa Lateral Oslo",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 46cm x P 50cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-oslo-iummi.jpg"
+    },
+    {
+      "id": 4906,
+      "nome": "Cadeira Choice",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 49cm x P 59cm x A 82cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-choice-iummi.jpg"
+    },
+    {
+      "id": 4907,
+      "nome": "Aparador Atrium",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 180cm x P 60cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-aparador-atrium-iummi.jpg"
+    },
+    {
+      "id": 4908,
+      "nome": "Banqueta Sofi",
+      "categoria": "Banquetas",
+      "dimensoes": "L 53cm x P 44cm x A 98cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-sofi-iummi.jpg"
+    },
+    {
+      "id": 4909,
+      "nome": "Espelho Soft Orgânico",
+      "categoria": "Espelhos Orgânicos",
+      "dimensoes": "L 73cm x P 3cm x A 82cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-soft-organico-iummi.jpg"
+    },
+    {
+      "id": 4910,
+      "nome": "Puff Ricco",
+      "categoria": "Puffs",
+      "dimensoes": "L 45cm x P 45cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-ricco-iummi.jpg"
+    },
+    {
+      "id": 4911,
+      "nome": "Mesa lateral Safira",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 45cm x P 45cm x A 62cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-safira-iummi.jpg"
+    },
+    {
+      "id": 4912,
+      "nome": "Mesa Lateral Bolero",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 60cm x P 60cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-bolero-iummi.jpg"
+    },
+    {
+      "id": 4913,
+      "nome": "Cadeira Prince",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 49cm x P 53cm x A 80cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-prince-iummi.jpg"
+    },
+    {
+      "id": 4914,
+      "nome": "Cabideiro Paine",
+      "categoria": "Cabideiros",
+      "dimensoes": "L 40cm x P 40cm x A 162cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cabideiro-paine-iummi.jpg"
+    },
+    {
+      "id": 4915,
+      "nome": "Mesa de Centro Orbis",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 100cm x P 100cm x A 32cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-orbis-iummi.jpg"
+    },
+    {
+      "id": 4916,
+      "nome": "Aparador Bar Calumma",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 152cm x P 45cm x A 74cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-aparador-bar-calumma-iummi.jpg"
+    },
+    {
+      "id": 4917,
+      "nome": "Sofa table Valley",
+      "categoria": "Sofás-Table",
+      "dimensoes": "L 220cm x P 40cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-sofa-table-valley-iummi.jpg"
+    },
+    {
+      "id": 4918,
+      "nome": "Puff Golden Quadrado",
+      "categoria": "Puffs",
+      "dimensoes": "L 49cm x P 49cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-golden-quadrado-iummi.jpg"
+    },
+    {
+      "id": 4919,
+      "nome": "Espelho Echo",
+      "categoria": "Espelhos Orgânicos",
+      "dimensoes": "L 82cm x P 28cm x A 180cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-echo-iummi.jpg"
+    },
+    {
+      "id": 4920,
+      "nome": "Mesa de Apoio Nordic",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 25cm x P 25cm x A 53cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-nordic-iummi.jpg"
+    },
+    {
+      "id": 4921,
+      "nome": "Poltrona Nuvia",
+      "categoria": "Poltronas",
+      "dimensoes": "L 92cm x P 86cm x A 70cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-nuvia-iummi.jpg"
+    },
+    {
+      "id": 4922,
+      "nome": "Mesa de Centro Arona",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 135cm x P 89cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-arona-iummi.jpg"
+    },
+    {
+      "id": 4923,
+      "nome": "Mesa de Apoio Ricco",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 38cm x P 38cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-ricco-iummi.jpg"
+    },
+    {
+      "id": 4924,
+      "nome": "Banqueta Choice",
+      "categoria": "Banquetas",
+      "dimensoes": "L 50cm x P 57cm x A 117cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-choice-iummi.jpg"
+    },
+    {
+      "id": 4925,
+      "nome": "Mesa de Apoio Aurora",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 26cm x P 24cm x A 48cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-aurora-iummi.jpg"
+    },
+    {
+      "id": 4926,
+      "nome": "Mesa de Cabeceira Rito",
+      "categoria": "Mesas De Cabeceira",
+      "dimensoes": "L 54cm x P 54cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-cabeceira-rito-iummi.jpg"
+    },
+    {
+      "id": 4927,
+      "nome": "Puff Alamo",
+      "categoria": "Puffs",
+      "dimensoes": "L 53cm x P 53cm x A 53cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-alamo-iummi.jpg"
+    },
+    {
+      "id": 4928,
+      "nome": "Puff Loop",
+      "categoria": "Puffs",
+      "dimensoes": "L 42cm x P 40cm x A 59cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-loop-iummi.jpg"
+    },
+    {
+      "id": 4929,
+      "nome": "Banqueta Duna",
+      "categoria": "Banquetas",
+      "dimensoes": "L 54cm x P 57cm x A 110cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-duna-iummi.jpg"
+    },
+    {
+      "id": 4930,
+      "nome": "Poltrona Amarone",
+      "categoria": "Poltronas",
+      "dimensoes": "L 68cm x P 68cm x A 80cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-amarone-iummi.jpg"
+    },
+    {
+      "id": 4931,
+      "nome": "Sofá Monoli",
+      "categoria": "Sofás",
+      "dimensoes": "L 200cm x P 100cm x A 70cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-sofa-monoli-iummi.jpg"
+    },
+    {
+      "id": 4932,
+      "nome": "Mesa de Centro Vessel",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 170cm x P 42cm x A 36cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-vessel-iummi.jpg"
+    },
+    {
+      "id": 4933,
+      "nome": "Mesa de Apoio Ornatto",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 60cm x P 30cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-ornatto-iummi.jpg"
+    },
+    {
+      "id": 4934,
+      "nome": "Mesa de Centro Lagoon",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 117cm x P 129cm x A 31cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-lagoon-iummi.jpg"
+    },
+    {
+      "id": 4935,
+      "nome": "Mesa de Centro Glammy",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 100cm x P 100cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-glammy-iummi.jpg"
+    },
+    {
+      "id": 4936,
+      "nome": "Mesa de Apoio Nomade",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 29cm x P 25cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-nomade-iummi.jpg"
+    },
+    {
+      "id": 4937,
+      "nome": "Espelho Bossa",
+      "categoria": "Espelhos Orgânicos",
+      "dimensoes": "L 62cm x P 4cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-bossa-iummi.jpg"
+    },
+    {
+      "id": 4938,
+      "nome": "Mesa de Centro Oslo",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 73cm x P 84cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-oslo-iummi.jpg"
+    },
+    {
+      "id": 4939,
+      "nome": "Mesa de Jantar Safira",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 210cm x P 120cm x A 75cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-jantar-safira-iummi.jpg"
+    },
+    {
+      "id": 4940,
+      "nome": "Mesa de Centro Arenna",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 180cm x P 64cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-arenna-iummi.jpg"
+    },
+    {
+      "id": 4941,
+      "nome": "Mesa de Apoio Chay",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 38cm x P 40cm x A 65cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-chay-iummi.jpg"
+    },
+    {
+      "id": 4942,
+      "nome": "Mesa de centro Isla",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 102cm x P 102cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-isla-iummi.jpg"
+    },
+    {
+      "id": 4943,
+      "nome": "Mesa de Centro Nimbus",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 81cm x P 81cm x A 26cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-nimbus-iummi.jpg"
+    },
+    {
+      "id": 4944,
+      "nome": "Carrinho Bar Sertão",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 110cm x P 64cm x A 80cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-carrinho-bar-sertao-iummi.jpg"
+    },
+    {
+      "id": 4945,
+      "nome": "Aparador Máli",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 137cm x P 47cm x A 78cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-aparador-mali-iummi.jpg"
+    },
+    {
+      "id": 4946,
+      "nome": "Mesa de Jantar Gracia",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 270cm x P 120cm x A 75cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-jantar-gracia-iummi.jpg"
+    },
+    {
+      "id": 4947,
+      "nome": "Mesa de Apoio Nature",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 64cm x P 58cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-nature-iummi.jpg"
+    },
+    {
+      "id": 4948,
+      "nome": "Espelho Safira",
+      "categoria": "Espelhos Retangulares",
+      "dimensoes": "L 90cm x P 25cm x A 160cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-safira-iummi.jpg"
+    },
+    {
+      "id": 4949,
+      "nome": "Cama Luna",
+      "categoria": "Camas",
+      "dimensoes": "L 190cm x P 260cm x A 95cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cama-luna-iummi.jpg"
+    },
+    {
+      "id": 4950,
+      "nome": "Mesa de Apoio Auris",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 35cm x P 35cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-auris-iummi.jpg"
+    },
+    {
+      "id": 4951,
+      "nome": "Cadeira Vogue Escritório",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 74cm x P 74cm x A 95cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-vogue-escritorio-iummi.jpg"
+    },
+    {
+      "id": 4952,
+      "nome": "Puff Oslo",
+      "categoria": "Puffs",
+      "dimensoes": "L 102cm x P 108cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-oslo-iummi.jpg"
+    },
+    {
+      "id": 4953,
+      "nome": "Mesa de apoio Magna",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 45cm x P 37cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-magna-iummi.jpg"
+    },
+    {
+      "id": 4954,
+      "nome": "Mesa de Apoio Kyn",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 40cm x P 40cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-kyn-iummi.jpg"
+    },
+    {
+      "id": 4955,
+      "nome": "Aparador Magna",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 160cm x P 45cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-aparador-magna-iummi.jpg"
+    },
+    {
+      "id": 4956,
+      "nome": "Poltrona Naos Spin",
+      "categoria": "Poltronas",
+      "dimensoes": "L 69cm x P 87cm x A 78cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-naos-spin-iummi.jpg"
+    },
+    {
+      "id": 4957,
+      "nome": "Mesa de Jantar Glammy",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 120cm x P 120cm x A 75cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-jantar-glammy-iummi.jpg"
+    },
+    {
+      "id": 4958,
+      "nome": "Cabideiro Ways",
+      "categoria": "Cabideiros",
+      "dimensoes": "L 43cm x P 38cm x A 162cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cabideiro-ways-iummi.jpg"
+    },
+    {
+      "id": 4959,
+      "nome": "Puff Kingston",
+      "categoria": "Puffs",
+      "dimensoes": "L 48cm x P 48cm x A 49cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-kingston-iummi.jpg"
+    },
+    {
+      "id": 4960,
+      "nome": "Poltrona Allure",
+      "categoria": "Poltronas",
+      "dimensoes": "L 66cm x P 72cm x A 75cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-allure-iummi.jpg"
+    },
+    {
+      "id": 4961,
+      "nome": "Carrinho Bar Ornatto",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 90cm x P 61cm x A 76cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-carrinho-bar-ornatto-iummi.jpg"
+    },
+    {
+      "id": 4962,
+      "nome": "Mesa de Apoio Tokyo",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 23cm x P 23cm x A 55cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-tokyo-iummi.jpg"
+    },
+    {
+      "id": 4963,
+      "nome": "Mesa Lateral Magna",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 80cm x P 80cm x A 70cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-magna-iummi.jpg"
+    },
+    {
+      "id": 4964,
+      "nome": "Banco Duets",
+      "categoria": "Bancos",
+      "dimensoes": "L 80cm x P 40cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-duets-iummi.jpg"
+    },
+    {
+      "id": 4965,
+      "nome": "Espelho Sienna",
+      "categoria": "Espelhos Arco",
+      "dimensoes": "L 56cm x P 5cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-sienna-iummi.jpg"
+    },
+    {
+      "id": 4966,
+      "nome": "Mesa de Centro Infinity",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 70cm x P 60cm x A 37cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-infinity-iummi.jpg"
+    },
+    {
+      "id": 4967,
+      "nome": "Mesa de Apoio Live",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 38cm x P 38cm x A 56cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-live-iummi.jpg"
+    },
+    {
+      "id": 4968,
+      "nome": "Carrinho Bar Otto",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 92cm x P 58cm x A 70cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-carrinho-bar-otto-iummi.jpg"
+    },
+    {
+      "id": 4969,
+      "nome": "Mesa de Apoio Flat",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 26cm x P 26cm x A 53cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-flat-iummi.jpg"
+    },
+    {
+      "id": 4970,
+      "nome": "Mesa de centro Strauss",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 80cm x P 80cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-strauss-iummi.jpg"
+    },
+    {
+      "id": 4971,
+      "nome": "Mesa de Centro Omega",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 1380cm x P 60cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-omega-iummi.jpg"
+    },
+    {
+      "id": 4972,
+      "nome": "Cadeira Alessa",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 55cm x P 54cm x A 76cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-alessa-iummi.jpg"
+    },
+    {
+      "id": 4973,
+      "nome": "Mesa de Apoio Pietra",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 40cm x P 40cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-pietra-iummi.jpg"
+    },
+    {
+      "id": 4974,
+      "nome": "Banqueta Maison",
+      "categoria": "Banquetas",
+      "dimensoes": "L 57cm x P 53cm x A 93cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-maison-iummi.jpg"
+    },
+    {
+      "id": 4975,
+      "nome": "Mesa Lateral Calumma",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 80cm x P 30cm x A 64cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-calumma-iummi.jpg"
+    },
+    {
+      "id": 4976,
+      "nome": "Banqueta Safira",
+      "categoria": "Banquetas",
+      "dimensoes": "L 43cm x P 45cm x A 84cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-safira-iummi.jpg"
+    },
+    {
+      "id": 4977,
+      "nome": "Banco Loft",
+      "categoria": "Bancos",
+      "dimensoes": "L 140cm x P 45cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-loft-iummi.jpg"
+    },
+    {
+      "id": 4978,
+      "nome": "Cadeira Tivoli",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 47cm x P 60cm x A 86cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-tivoli-iummi.jpg"
+    },
+    {
+      "id": 4979,
+      "nome": "Banco Tato",
+      "categoria": "Bancos",
+      "dimensoes": "L 160cm x P 45cm x A 43cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-tato-iummi.jpg"
+    },
+    {
+      "id": 4980,
+      "nome": "Banco Magna",
+      "categoria": "Bancos",
+      "dimensoes": "L 160cm x P 45cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-magna-iummi.jpg"
+    },
+    {
+      "id": 4981,
+      "nome": "Mesa de Centro Elevare",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 120cm x P 50cm x A 33cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-elevare-iummi.jpg"
+    },
+    {
+      "id": 4982,
+      "nome": "Poltrona Balloon",
+      "categoria": "Poltronas",
+      "dimensoes": "L 72cm x P 70cm x A 71cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-balloon-iummi.jpg"
+    },
+    {
+      "id": 4983,
+      "nome": "Mesa de Apoio Fitch",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 50cm x P 34cm x A 66cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-fitch-iummi.jpg"
+    },
+    {
+      "id": 4984,
+      "nome": "Mesa Lateral Glammy",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 78cm x P 76cm x A 62cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-glammy-iummi.jpg"
+    },
+    {
+      "id": 4985,
+      "nome": "Espelho Arizona Retangular",
+      "categoria": "Espelhos Retangulares",
+      "dimensoes": "L 55cm x P 5cm x A 80cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-arizona-retangular-iummi.jpg"
+    },
+    {
+      "id": 4986,
+      "nome": "Estante Montecarlo",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 160cm x P 44cm x A 168cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-estante-montecarlo-iummi.jpg"
+    },
+    {
+      "id": 4987,
+      "nome": "Cadeira Sorelle",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 45cm x P 58cm x A 88cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-sorelle-iummi.jpg"
+    },
+    {
+      "id": 4988,
+      "nome": "Mesa de Centro Atrium",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 160cm x P 60cm x A 37cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-atrium-iummi.jpg"
+    },
+    {
+      "id": 4989,
+      "nome": "Mesa Lateral Space",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 61cm x P 61cm x A 62cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-space-iummi.jpg"
+    },
+    {
+      "id": 4990,
+      "nome": "Banco Kawai",
+      "categoria": "Bancos",
+      "dimensoes": "L 52cm x P 35cm x A 47cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-kawai-iummi.jpg"
+    },
+    {
+      "id": 4991,
+      "nome": "Mesa de Apoio Valentin",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 25cm x P 25cm x A 57cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-valentin-iummi.jpg"
+    },
+    {
+      "id": 4992,
+      "nome": "Mesa Lateral Máli",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 80cm x P 25cm x A 64cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-mali-iummi.jpg"
+    },
+    {
+      "id": 4993,
+      "nome": "Pedestal Safira",
+      "categoria": "Móveis de Apoio",
+      "dimensoes": "L 30cm x P 30cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-pedestal-safira-iummi.jpg"
+    },
+    {
+      "id": 4994,
+      "nome": "Espelho Athos",
+      "categoria": "Espelhos Arco",
+      "dimensoes": "L 60cm x P 30cm x A 119cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-athos-iummi.jpg"
+    },
+    {
+      "id": 4995,
+      "nome": "Mesa de Centro Tymber",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 140cm x P 100cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-tymber-iummi.jpg"
+    },
+    {
+      "id": 4996,
+      "nome": "Mesa de Cabeceira Munich",
+      "categoria": "Mesas De Cabeceira",
+      "dimensoes": "L 66cm x P 43cm x A 58cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-cabeceira-munich-iummi.jpg"
+    },
+    {
+      "id": 4997,
+      "nome": "Mesa Lateral Vanta",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 50cm x P 50cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-lateral-vanta-iummi.jpg"
+    },
+    {
+      "id": 4998,
+      "nome": "Banqueta Prince",
+      "categoria": "Banquetas",
+      "dimensoes": "L 49cm x P 53cm x A 105cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banqueta-prince-iummi.jpg"
+    },
+    {
+      "id": 4999,
+      "nome": "Puff Mumbai",
+      "categoria": "Puffs",
+      "dimensoes": "L 42cm x P 42cm x A 41cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-mumbai-iummi.jpg"
+    },
+    {
+      "id": 5000,
+      "nome": "Mesa de Apoio Serena",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 32cm x P 36cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-serena-iummi.jpg"
+    },
+    {
+      "id": 5001,
+      "nome": "Puff Plummy",
+      "categoria": "Puffs",
+      "dimensoes": "L 44cm x P 44cm x A 46cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-plummy-iummi.jpg"
+    },
+    {
+      "id": 5002,
+      "nome": "Poltrona Naos",
+      "categoria": "Poltronas",
+      "dimensoes": "L 92cm x P 90cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-naos-iummi.jpg"
+    },
+    {
+      "id": 5003,
+      "nome": "Cadeira Duna",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 54cm x P 55cm x A 81cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-duna-iummi.jpg"
+    },
+    {
+      "id": 5004,
+      "nome": "Poltrona Madre",
+      "categoria": "Poltronas",
+      "dimensoes": "L 135cm x P 93cm x A 76cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-madre-iummi.jpg"
+    },
+    {
+      "id": 5005,
+      "nome": "Carrinho Bar Yaki",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 53cm x P 41cm x A 69cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-carrinho-bar-yaki-iummi.jpg"
+    },
+    {
+      "id": 5006,
+      "nome": "Espelho Com Cabideiro Vlogger",
+      "categoria": "Espelhos Arco",
+      "dimensoes": "L 79cm x P 32cm x A 180cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-com-cabideiro-vlogger-iummi.jpg"
+    },
+    {
+      "id": 5007,
+      "nome": "Mesa de Centro Space",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 78cm x P 78cm x A 40cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-space-iummi.jpg"
+    },
+    {
+      "id": 5008,
+      "nome": "Puff Enigma",
+      "categoria": "Puffs",
+      "dimensoes": "L 45cm x P 45cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-enigma-iummi.jpg"
+    },
+    {
+      "id": 5009,
+      "nome": "Carrinho Bar Montecarlo",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 124cm x P 50cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-carrinho-bar-montecarlo-iummi.jpg"
+    },
+    {
+      "id": 5010,
+      "nome": "Cadeira Maison",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 59cm x P 62cm x A 77cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cadeira-maison-iummi.jpg"
+    },
+    {
+      "id": 5011,
+      "nome": "Puff Golden Redondo",
+      "categoria": "Puffs",
+      "dimensoes": "L 70cm x P 70cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-golden-redondo-iummi.jpg"
+    },
+    {
+      "id": 5012,
+      "nome": "Poltrona Dakota",
+      "categoria": "Poltronas",
+      "dimensoes": "L 70cm x P 82cm x A 87cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-dakota-iummi.jpg"
+    },
+    {
+      "id": 5013,
+      "nome": "Mesa de Centro Lithos",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 150cm x P 80cm x A 30cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-lithos-iummi.jpg"
+    },
+    {
+      "id": 5014,
+      "nome": "Aparador Soho",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 160cm x P 45cm x A 76cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-aparador-soho-iummi.jpg"
+    },
+    {
+      "id": 5015,
+      "nome": "Mesa de Apoio Modena",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 45cm x P 45cm x A 46cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-modena-iummi.jpg"
+    },
+    {
+      "id": 5016,
+      "nome": "Mesa de Apoio Isla",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 43cm x P 43cm x A 43cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-isla-iummi.jpg"
+    },
+    {
+      "id": 5017,
+      "nome": "Mesa de Apoio Safira",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 30cm x P 30cm x A 60cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-safira-iummi.jpg"
+    },
+    {
+      "id": 5018,
+      "nome": "Espelho Arizona Redondo",
+      "categoria": "Espelhos Redondos",
+      "dimensoes": "L 76cm x P 57cm x A 180cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-espelho-arizona-redondo-iummi.jpg"
+    },
+    {
+      "id": 5019,
+      "nome": "Mesa Café Atto",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 60cm x P 60cm x A 75cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-cafe-atto-iummi.jpg"
+    },
+    {
+      "id": 5020,
+      "nome": "Cama Greta",
+      "categoria": "Camas",
+      "dimensoes": "L 192cm x P 229cm x A 104cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-cama-greta-iummi.jpg"
+    },
+    {
+      "id": 5021,
+      "nome": "Sofá Table Máli",
+      "categoria": "Sofás-Table",
+      "dimensoes": "L 150cm x P 35cm x A 50cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-sofa-table-mali-iummi.jpg"
+    },
+    {
+      "id": 5022,
+      "nome": "Escrivaninha Melody",
+      "categoria": "Escrivaninhas",
+      "dimensoes": "L 160cm x P 70cm x A 74cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-escrivaninha-melody-iummi.jpg"
+    },
+    {
+      "id": 5023,
+      "nome": "Mesa de Apoio Strauss",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 30cm x P 30cm x A 61cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-apoio-strauss-iummi.jpg"
+    },
+    {
+      "id": 5024,
+      "nome": "Poltrona Lune",
+      "categoria": "Poltronas",
+      "dimensoes": "L 1050cm x P 110cm x A 86cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-poltrona-lune-iummi.jpg"
+    },
+    {
+      "id": 5025,
+      "nome": "Puff Zenith",
+      "categoria": "Puffs",
+      "dimensoes": "L 53cm x P 53cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-puff-zenith-iummi.jpg"
+    },
+    {
+      "id": 5026,
+      "nome": "Banco Naos",
+      "categoria": "Bancos",
+      "dimensoes": "L 73cm x P 36cm x A 45cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-banco-naos-iummi.jpg"
+    },
+    {
+      "id": 5027,
+      "nome": "Mesa de Centro Magna",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 80cm x P 80cm x A 40cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-magna-iummi.jpg"
+    },
+    {
+      "id": 5028,
+      "nome": "Mesa de Centro Aura",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 72cm x P 95cm x A 35cm",
+      "imagem": "/imagens/IUMMI%202025/casoca-mesa-de-centro-aura-iummi.jpg"
+    }
+  ],
+  "SIER 2025": [
+    {
+      "id": 5029,
+      "nome": "Mesa Lateral Kit",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 34cm x P 34cm x A 54cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-kit-sier.jpg"
+    },
+    {
+      "id": 5030,
+      "nome": "Poltrona Carminha Giratória",
+      "categoria": "Poltronas",
+      "dimensoes": "L 84cm x P 75cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-carminha-giratoria-sier.jpg"
+    },
+    {
+      "id": 5031,
+      "nome": "Cadeira Norah Giratória",
+      "categoria": "Cadeiras, Cadeiras de Escritório",
+      "dimensoes": "L 55cm x P 58cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-norah-giratoria-sier.jpg"
+    },
+    {
+      "id": 5032,
+      "nome": "Mesa Lateral Chapada",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 65cm x P 65cm x A 46cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-chapada-sier.jpg"
+    },
+    {
+      "id": 5033,
+      "nome": "Estante Soft Slim",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 200cm x P 38cm x A 181cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-soft-slim-sier.jpg"
+    },
+    {
+      "id": 5034,
+      "nome": "Mesa De Centro Trento",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 100cm x P 60cm x A 36cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-trento-sier.jpg"
+    },
+    {
+      "id": 5035,
+      "nome": "Mesa De Centro Poly",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 140cm x P 65cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-poly-sier.jpg"
+    },
+    {
+      "id": 5036,
+      "nome": "Poltrona Celina",
+      "categoria": "Poltronas",
+      "dimensoes": "L 88cm x P 84cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-celina-sier.jpg"
+    },
+    {
+      "id": 5037,
+      "nome": "Mesa de Jantar Spock Orgânico",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 140cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-spock-organico-sier.jpg"
+    },
+    {
+      "id": 5038,
+      "nome": "Cadeira Carminha 03",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 60cm x P 58cm x A 82cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-carminha-03-sier.jpg"
+    },
+    {
+      "id": 5039,
+      "nome": "Carrinho Bar Quatro",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 70cm x P 70cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-quatro-sier.jpg"
+    },
+    {
+      "id": 5040,
+      "nome": "Mesa De Centro Pio",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 150cm x P 70cm x A 25cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-pio-sier.jpg"
+    },
+    {
+      "id": 5041,
+      "nome": "Mesa Lateral Ted",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 50cm x P 50cm x A 52cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-ted-sier.jpg"
+    },
+    {
+      "id": 5042,
+      "nome": "Carrinho Bar Capitólio",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 120cm x P 48cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-capitolio-sier.jpg"
+    },
+    {
+      "id": 5043,
+      "nome": "Escrivaninha Lavoro",
+      "categoria": "Escrivaninhas",
+      "dimensoes": "L 150cm x P 65cm x A 87cm",
+      "imagem": "/imagens/SIER%202025/casoca-escrivaninha-lavoro-sier.jpg"
+    },
+    {
+      "id": 5044,
+      "nome": "Mesa de Jantar Cerco 03 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 180cm x P 180cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-cerco-03-giratorio-sier.jpg"
+    },
+    {
+      "id": 5045,
+      "nome": "Mesa Lateral Duck",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 60cm x P 60cm x A 55cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-duck-sier.jpg"
+    },
+    {
+      "id": 5046,
+      "nome": "Cachepot Manilla",
+      "categoria": "Vasos, Cestos e Baús",
+      "dimensoes": "L 54cm x P 54cm x A 46cm",
+      "imagem": "/imagens/SIER%202025/casoca-cachepot-manilla-sier.jpg"
+    },
+    {
+      "id": 5047,
+      "nome": "Banqueta Mossô",
+      "categoria": "Banquetas",
+      "dimensoes": "L 42cm x P 42cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-mosso-sier.jpg"
+    },
+    {
+      "id": 5048,
+      "nome": "Mesa de Jantar Madson",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-madson-sier.jpg"
+    },
+    {
+      "id": 5049,
+      "nome": "Mesa de Jantar Pilares Plus",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-pilares-plus-sier.jpg"
+    },
+    {
+      "id": 5050,
+      "nome": "Escrivaninha Isla",
+      "categoria": "Escrivaninhas",
+      "dimensoes": "L 150cm x P 65cm x A 86cm",
+      "imagem": "/imagens/SIER%202025/casoca-escrivaninha-isla-sier.jpg"
+    },
+    {
+      "id": 5051,
+      "nome": "Mesa Lateral Chá",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 50cm x P 50cm x A 54cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-cha-sier.jpg"
+    },
+    {
+      "id": 5052,
+      "nome": "Mesa Lateral Vinil",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 60cm x P 60cm x A 55cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-vinil-sier.jpg"
+    },
+    {
+      "id": 5053,
+      "nome": "Banco Palmira",
+      "categoria": "Bancos",
+      "dimensoes": "L 62cm x P 42cm x A 45cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-palmira-sier.jpg"
+    },
+    {
+      "id": 5054,
+      "nome": "Mesa De Apoio Theo",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 40cm x P 30cm x A 62cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-apoio-theo-sier.jpg"
+    },
+    {
+      "id": 5055,
+      "nome": "Banco Cipó",
+      "categoria": "Bancos",
+      "dimensoes": "L 54cm x P 48cm x A 44cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-cipo-sier.jpg"
+    },
+    {
+      "id": 5056,
+      "nome": "Carrinho Bar Leme Oval",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 77cm x P 48cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-leme-oval-sier.jpg"
+    },
+    {
+      "id": 5057,
+      "nome": "Moldura De Espelho Átrio",
+      "categoria": "Espelhos Retangulares",
+      "dimensoes": "L 180cm x P 39cm x A 191cm",
+      "imagem": "/imagens/SIER%202025/casoca-moldura-de-espelho-atrio-sier.jpg"
+    },
+    {
+      "id": 5058,
+      "nome": "Cadeira Tamara",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 63cm x P 56cm x A 70cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-tamara-sier.jpg"
+    },
+    {
+      "id": 5059,
+      "nome": "Buffet Goulart 01",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 53cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-goulart-01-sier.jpg"
+    },
+    {
+      "id": 5060,
+      "nome": "Mesa de Jantar Cameron Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-cameron-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5061,
+      "nome": "Poltrona Cristine",
+      "categoria": "Poltronas",
+      "dimensoes": "L 68cm x P 68cm x A 79cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-cristine-sier.jpg"
+    },
+    {
+      "id": 5062,
+      "nome": "Estante Soft New",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 200cm x P 38cm x A 181cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-soft-new-sier.jpg"
+    },
+    {
+      "id": 5063,
+      "nome": "Banqueta Joana Estofada",
+      "categoria": "Banquetas",
+      "dimensoes": "L 45cm x P 58cm x A 100cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-joana-estofada-sier.jpg"
+    },
+    {
+      "id": 5064,
+      "nome": "Mesa de Jantar Canelas Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-canelas-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5065,
+      "nome": "Mesa Lateral Atenas",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 60cm x P 60cm x A 56cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-atenas-sier.jpg"
+    },
+    {
+      "id": 5066,
+      "nome": "Aparador Prívia",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 300cm x P 60cm x A 82cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-privia-sier.jpg"
+    },
+    {
+      "id": 5067,
+      "nome": "Sofá Table Plana",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 47cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-sofa-table-plana-sier.jpg"
+    },
+    {
+      "id": 5068,
+      "nome": "Carrinho Bar Leme",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 82cm x P 52cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-leme-sier.jpg"
+    },
+    {
+      "id": 5069,
+      "nome": "Mesa de Jantar Conne 03 New Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 140cm x P 140cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-conne-03-new-giratorio-sier.jpg"
+    },
+    {
+      "id": 5070,
+      "nome": "Estante Torino",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 240cm x P 38cm x A 181cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-torino-sier.jpg"
+    },
+    {
+      "id": 5071,
+      "nome": "Estante Bangalô 04",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 420cm x P 40cm x A 235cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-bangalo-04-sier.jpg"
+    },
+    {
+      "id": 5072,
+      "nome": "Sofá Table City",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 240cm x P 28cm x A 63cm",
+      "imagem": "/imagens/SIER%202025/casoca-sofa-table-city-sier.jpg"
+    },
+    {
+      "id": 5073,
+      "nome": "Mesa de Jantar Chanceler 04 Plus Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 220cm x P 220cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-chanceler-04-plus-giratorio-sier.jpg"
+    },
+    {
+      "id": 5074,
+      "nome": "Mesa Lateral Palma",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 70cm x P 70cm x A 45cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-palma-sier.jpg"
+    },
+    {
+      "id": 5075,
+      "nome": "Poltrona Carminha 03",
+      "categoria": "Poltronas",
+      "dimensoes": "L 84cm x P 75cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-carminha-03-sier.jpg"
+    },
+    {
+      "id": 5076,
+      "nome": "Estante Bangalô New",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 363cm x P 43cm x A 235cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-bangalo-new-sier.jpg"
+    },
+    {
+      "id": 5077,
+      "nome": "Mesa De Centro Tangran",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 142cm x P 59cm x A 33cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-tangran-sier.jpg"
+    },
+    {
+      "id": 5078,
+      "nome": "Mesa de Jantar Prados Cristal",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-prados-cristal-sier.jpg"
+    },
+    {
+      "id": 5079,
+      "nome": "Mesa De Centro Atenas",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 140cm x P 70cm x A 39cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-atenas-sier.jpg"
+    },
+    {
+      "id": 5080,
+      "nome": "Revisteiro West",
+      "categoria": "Revisteiros",
+      "dimensoes": "L 50cm x P 19cm x A 51cm",
+      "imagem": "/imagens/SIER%202025/casoca-revisteiro-west-sier.jpg"
+    },
+    {
+      "id": 5081,
+      "nome": "Buffet Marrocos",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 48cm x A 74cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-marrocos-sier.jpg"
+    },
+    {
+      "id": 5082,
+      "nome": "Mesa de Jantar Montana Soft",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-montana-soft-sier.jpg"
+    },
+    {
+      "id": 5083,
+      "nome": "Cadeira Selena 02",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 53cm x P 59cm x A 82cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-selena-02-sier.jpg"
+    },
+    {
+      "id": 5084,
+      "nome": "Poltrona Aurora",
+      "categoria": "Poltronas",
+      "dimensoes": "L 89cm x P 70cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-aurora-sier.jpg"
+    },
+    {
+      "id": 5085,
+      "nome": "Carrinho Bar Nexus",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 82cm x P 48cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-nexus-sier.jpg"
+    },
+    {
+      "id": 5086,
+      "nome": "Mesa de Jantar Garoni Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-garoni-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5087,
+      "nome": "Mesa de Jantar Anápolis",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-anapolis-sier.jpg"
+    },
+    {
+      "id": 5088,
+      "nome": "Mesa de Jantar Olma 01 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-olma-01-giratorio-sier.jpg"
+    },
+    {
+      "id": 5089,
+      "nome": "Mesa De Centro Matter",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 162cm x P 82cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-matter-sier.jpg"
+    },
+    {
+      "id": 5090,
+      "nome": "Mesa De Apoio Hebi",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 50cm x P 50cm x A 67cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-apoio-hebi-sier.jpg"
+    },
+    {
+      "id": 5091,
+      "nome": "Mesa de Jantar Chanceler 04 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 220cm x P 220cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-chanceler-04-giratorio-sier.jpg"
+    },
+    {
+      "id": 5092,
+      "nome": "Mesa de Jantar Samara Slim Moeda Grandes Formatos",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 360cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-samara-slim-moeda-grandes-formatos-sier.jpg"
+    },
+    {
+      "id": 5093,
+      "nome": "Mesa de Jantar Palazzo Delta",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 140cm x P 137cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-palazzo-delta-sier.jpg"
+    },
+    {
+      "id": 5094,
+      "nome": "Banqueta Joana Tela",
+      "categoria": "Banquetas",
+      "dimensoes": "L 45cm x P 58cm x A 100cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-joana-tela-sier.jpg"
+    },
+    {
+      "id": 5095,
+      "nome": "Buffet Soma",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 45cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-soma-sier.jpg"
+    },
+    {
+      "id": 5096,
+      "nome": "Cachepot Sul Rec",
+      "categoria": "Vasos, Cestos e Baús",
+      "dimensoes": "L 50cm x P 50cm x A 89cm",
+      "imagem": "/imagens/SIER%202025/casoca-cachepot-sul-rec-sier.jpg"
+    },
+    {
+      "id": 5097,
+      "nome": "Poltrona Dorothy",
+      "categoria": "Poltronas",
+      "dimensoes": "L 73cm x P 70cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-dorothy-sier.jpg"
+    },
+    {
+      "id": 5098,
+      "nome": "Poltrona Carminha Plus",
+      "categoria": "Poltronas",
+      "dimensoes": "L 84cm x P 75cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-carminha-plus-sier.jpg"
+    },
+    {
+      "id": 5099,
+      "nome": "Mesa de Conversação Pilares",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 66cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-conversacao-pilares-sier.jpg"
+    },
+    {
+      "id": 5100,
+      "nome": "Poltrona Giovana",
+      "categoria": "Poltronas",
+      "dimensoes": "L 71cm x P 73cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-giovana-sier.jpg"
+    },
+    {
+      "id": 5101,
+      "nome": "Mesa de Jantar Solaris 02",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 200cm x P 200cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-solaris-02-sier.jpg"
+    },
+    {
+      "id": 5102,
+      "nome": "Mesa de Jantar Finger Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 280cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-finger-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5103,
+      "nome": "Cadeira Angelina",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 64cm x P 65cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-angelina-sier.jpg"
+    },
+    {
+      "id": 5104,
+      "nome": "Mesa De Centro Mitreo",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 148cm x P 166cm x A 31cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-mitreo-sier.jpg"
+    },
+    {
+      "id": 5105,
+      "nome": "Cadeira Velma",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 48cm x P 59cm x A 83cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-velma-sier.jpg"
+    },
+    {
+      "id": 5106,
+      "nome": "Banco Orni",
+      "categoria": "Bancos",
+      "dimensoes": "L 200cm x P 45cm x A 46cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-orni-sier.jpg"
+    },
+    {
+      "id": 5107,
+      "nome": "Mesa de Jantar Maiorca Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-maiorca-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5108,
+      "nome": "Cadeira Yasmin",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 49cm x P 60cm x A 84cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-yasmin-sier.jpg"
+    },
+    {
+      "id": 5109,
+      "nome": "Mesa de Jantar Atenas 03 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 180cm x P 180cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-atenas-03-giratorio-sier.jpg"
+    },
+    {
+      "id": 5110,
+      "nome": "Sofá Table Matter",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 202cm x P 48cm x A 61cm",
+      "imagem": "/imagens/SIER%202025/casoca-sofa-table-matter-sier.jpg"
+    },
+    {
+      "id": 5111,
+      "nome": "Mesa Lateral Kal",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 45cm x P 45cm x A 53cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-kal-sier.jpg"
+    },
+    {
+      "id": 5112,
+      "nome": "Mesa De Apoio Lee",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 50cm x P 36cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-apoio-lee-sier.jpg"
+    },
+    {
+      "id": 5113,
+      "nome": "Mesa de Jantar Outono New Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-outono-new-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5114,
+      "nome": "Banco Carminha Plus",
+      "categoria": "Bancos",
+      "dimensoes": "L 52cm x P 52cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-carminha-plus-sier.jpg"
+    },
+    {
+      "id": 5115,
+      "nome": "Mesa De Centro Spock",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 160cm x P 80cm x A 28cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-spock-sier.jpg"
+    },
+    {
+      "id": 5116,
+      "nome": "Cadeira Carminha Giratória Flex",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 60cm x P 58cm x A 83cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-carminha-giratoria-flex-sier.jpg"
+    },
+    {
+      "id": 5117,
+      "nome": "Puff Guri",
+      "categoria": "Puffs",
+      "dimensoes": "L 52cm x P 52cm x A 48cm",
+      "imagem": "/imagens/SIER%202025/casoca-puff-guri-sier.jpg"
+    },
+    {
+      "id": 5118,
+      "nome": "Mesa de Jantar Atenas Oblongo",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 260cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-atenas-oblongo-sier.jpg"
+    },
+    {
+      "id": 5119,
+      "nome": "Estante Empório",
+      "categoria": "Estantes E Prateleiras",
+      "dimensoes": "L 115cm x P 38cm x A 180cm",
+      "imagem": "/imagens/SIER%202025/casoca-estante-emporio-sier.jpg"
+    },
+    {
+      "id": 5120,
+      "nome": "Mesa De Centro Poá",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 92cm x P 92cm x A 24cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-poa-sier.jpg"
+    },
+    {
+      "id": 5121,
+      "nome": "Mesa de Jantar Cerco Oblongo",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-cerco-oblongo-sier.jpg"
+    },
+    {
+      "id": 5122,
+      "nome": "Mesa De Centro Gru",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 25cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-gru-sier.jpg"
+    },
+    {
+      "id": 5123,
+      "nome": "Mesa de Jantar Savana",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 233cm x P 200cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-savana-sier.jpg"
+    },
+    {
+      "id": 5124,
+      "nome": "Cadeira Mônica",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 59cm x P 59cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-monica-sier.jpg"
+    },
+    {
+      "id": 5125,
+      "nome": "Mesa de Jantar Fórum",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-forum-sier.jpg"
+    },
+    {
+      "id": 5126,
+      "nome": "Mesa de Jantar Pilares Plus 02 Quadrado",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-pilares-plus-02-quadrado-sier.jpg"
+    },
+    {
+      "id": 5127,
+      "nome": "Cadeira Norah",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 55cm x P 58cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-norah-sier.jpg"
+    },
+    {
+      "id": 5128,
+      "nome": "Banco Remo",
+      "categoria": "Bancos",
+      "dimensoes": "L 45cm x P 45cm x A 45cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-remo-sier.jpg"
+    },
+    {
+      "id": 5129,
+      "nome": "Moldura De Espelho Damião",
+      "categoria": "Espelhos Redondos",
+      "dimensoes": "L 40cm x P 4cm x A 100cm",
+      "imagem": "/imagens/SIER%202025/casoca-moldura-de-espelho-damiao-sier.jpg"
+    },
+    {
+      "id": 5130,
+      "nome": "Mesa Lateral Vinil 02",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 61cm x P 60cm x A 55cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-vinil-02-sier.jpg"
+    },
+    {
+      "id": 5131,
+      "nome": "Mesa de Centro Carrossel",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 95cm x P 95cm x A 28cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-carrossel-sier.jpg"
+    },
+    {
+      "id": 5132,
+      "nome": "Mesa de Jantar Pilares Plus 03 Redondo Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-pilares-plus-03-redondo-giratorio-sier.jpg"
+    },
+    {
+      "id": 5133,
+      "nome": "Cadeira Carminha Plus",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 60cm x P 58cm x A 82cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-carminha-plus-sier.jpg"
+    },
+    {
+      "id": 5134,
+      "nome": "Buffet Missione Tela 01",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 50cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-missione-tela-01-sier.jpg"
+    },
+    {
+      "id": 5135,
+      "nome": "Banqueta Joana Madeira",
+      "categoria": "Banquetas",
+      "dimensoes": "L 45cm x P 58cm x A 100cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-joana-madeira-sier.jpg"
+    },
+    {
+      "id": 5136,
+      "nome": "Mesa de Jantar Prados Round",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-prados-round-sier.jpg"
+    },
+    {
+      "id": 5137,
+      "nome": "Mesa De Centro Trevor",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 31cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-trevor-sier.jpg"
+    },
+    {
+      "id": 5138,
+      "nome": "Buffet Angaro",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 53cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-angaro-sier.jpg"
+    },
+    {
+      "id": 5139,
+      "nome": "Mesa Lateral Lilás 02",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 28cm x P 28cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-lilas-02-sier.jpg"
+    },
+    {
+      "id": 5140,
+      "nome": "Mesa de Jantar Connect Oblongo",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-connect-oblongo-sier.jpg"
+    },
+    {
+      "id": 5141,
+      "nome": "Bandeja Pretty",
+      "categoria": "Bandejas",
+      "dimensoes": "L 41cm x P 31cm x A 6cm",
+      "imagem": "/imagens/SIER%202025/casoca-bandeja-pretty-sier.jpg"
+    },
+    {
+      "id": 5142,
+      "nome": "Mesa Lateral Lilás",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 34cm x P 34cm x A 45cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-lilas-sier.jpg"
+    },
+    {
+      "id": 5143,
+      "nome": "Mesa de Jantar Sydney",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 130cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-sydney-sier.jpg"
+    },
+    {
+      "id": 5144,
+      "nome": "Mesa de Centro Palma",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 100cm x P 100cm x A 28cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-palma-sier.jpg"
+    },
+    {
+      "id": 5145,
+      "nome": "Mesa Lateral Tod",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 28cm x P 28cm x A 41cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-tod-sier.jpg"
+    },
+    {
+      "id": 5146,
+      "nome": "Mesa de Jantar Belize Orgânico",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 140cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-belize-organico-sier.jpg"
+    },
+    {
+      "id": 5147,
+      "nome": "Mesa Lateral Antares",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 60cm x P 60cm x A 49cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-antares-sier.jpg"
+    },
+    {
+      "id": 5148,
+      "nome": "Carrinho Bar Ecco",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 62cm x P 62cm x A 83cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-ecco-sier.jpg"
+    },
+    {
+      "id": 5149,
+      "nome": "Mesa de Jantar Garoni",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-garoni-sier.jpg"
+    },
+    {
+      "id": 5150,
+      "nome": "Buffet Carlton",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 50cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-carlton-sier.jpg"
+    },
+    {
+      "id": 5151,
+      "nome": "Mesa de Jantar Odessa 02",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-odessa-02-sier.jpg"
+    },
+    {
+      "id": 5152,
+      "nome": "Mesa De Centro Serrano",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 99cm x P 99cm x A 33cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-serrano-sier.jpg"
+    },
+    {
+      "id": 5153,
+      "nome": "Sofá Table Syrah",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 196cm x P 42cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-sofa-table-syrah-sier.jpg"
+    },
+    {
+      "id": 5154,
+      "nome": "Mesa De Centro Atenas Redonda",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 31cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-atenas-redonda-sier.jpg"
+    },
+    {
+      "id": 5155,
+      "nome": "Mesa de Jantar Augusta Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-augusta-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5156,
+      "nome": "Mesa Lateral Plana",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 66cm x P 66cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-plana-sier.jpg"
+    },
+    {
+      "id": 5157,
+      "nome": "Poltrona Aurora 02",
+      "categoria": "Poltronas",
+      "dimensoes": "L 89cm x P 70cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-aurora-02-sier.jpg"
+    },
+    {
+      "id": 5158,
+      "nome": "Mesa de Centro Chapada",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 30cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-chapada-sier.jpg"
+    },
+    {
+      "id": 5159,
+      "nome": "Cadeira Chloe Tela",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 46cm x P 54cm x A 86cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-chloe-tela-sier.jpg"
+    },
+    {
+      "id": 5160,
+      "nome": "Mesa de Jantar Alfred Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-alfred-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5161,
+      "nome": "Mesa de Jantar Pilares Plus Orgânico",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 180cm x P 180cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-pilares-plus-organico-sier.jpg"
+    },
+    {
+      "id": 5162,
+      "nome": "Mesa De Centro Ato",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 30cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-ato-sier.jpg"
+    },
+    {
+      "id": 5163,
+      "nome": "Buffet Euro",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 45cm x A 73cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-euro-sier.jpg"
+    },
+    {
+      "id": 5164,
+      "nome": "Bancada Bistrô Cleo Quadrada",
+      "categoria": "Bistrô",
+      "dimensoes": "L 70cm x P 70cm x A 101cm",
+      "imagem": "/imagens/SIER%202025/casoca-bancada-bistro-cleo-quadrada-sier.jpg"
+    },
+    {
+      "id": 5165,
+      "nome": "Buffet Goulart 02",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 53cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-goulart-02-sier.jpg"
+    },
+    {
+      "id": 5166,
+      "nome": "Aparador Maiorca",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 45cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-maiorca-sier.jpg"
+    },
+    {
+      "id": 5167,
+      "nome": "Mesa de Jantar Missouri Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 300cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-missouri-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5168,
+      "nome": "Mesa de Jantar Meridiam Retangular",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 200cm x P 100cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-meridiam-retangular-sier.jpg"
+    },
+    {
+      "id": 5169,
+      "nome": "Bancada Bistrô Cleo Redonda",
+      "categoria": "Bistrô",
+      "dimensoes": "L 70cm x P 70cm x A 101cm",
+      "imagem": "/imagens/SIER%202025/casoca-bancada-bistro-cleo-redonda-sier.jpg"
+    },
+    {
+      "id": 5170,
+      "nome": "Mesa Lateral Carmo",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 55cm x P 45cm x A 46cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-carmo-sier.jpg"
+    },
+    {
+      "id": 5171,
+      "nome": "Mesa de Jantar Plissê Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 260cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-plisse-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5172,
+      "nome": "Banqueta Cacau",
+      "categoria": "Banquetas",
+      "dimensoes": "L 48cm x P 56cm x A 96cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-cacau-sier.jpg"
+    },
+    {
+      "id": 5173,
+      "nome": "Mesa De Centro Box",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 120cm x P 60cm x A 32cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-box-sier.jpg"
+    },
+    {
+      "id": 5174,
+      "nome": "Mesa Lateral Kan",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 50cm x P 50cm x A 51cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-kan-sier.jpg"
+    },
+    {
+      "id": 5175,
+      "nome": "Carrinho Bar Yet",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 92cm x P 46cm x A 78cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-yet-sier.jpg"
+    },
+    {
+      "id": 5176,
+      "nome": "Conjunto Cardeal",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 140cm x P 125cm x A 50cm",
+      "imagem": "/imagens/SIER%202025/casoca-conjunto-cardeal-sier.jpg"
+    },
+    {
+      "id": 5177,
+      "nome": "Mesa de Jantar Laguna Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-laguna-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5178,
+      "nome": "Mesa de Jantar Azimute Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-azimute-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5179,
+      "nome": "Cadeira Yasmin Tela com Braço",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 55cm x P 60cm x A 84cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-yasmin-tela-com-braco-sier.jpg"
+    },
+    {
+      "id": 5180,
+      "nome": "Mesa de Centro Antares",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-antares-sier.jpg"
+    },
+    {
+      "id": 5181,
+      "nome": "Mesa de Jantar Delfos",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 140cm x P 140cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-delfos-sier.jpg"
+    },
+    {
+      "id": 5182,
+      "nome": "Bancada Bistrô Mossô",
+      "categoria": "Bistrô",
+      "dimensoes": "L 90cm x P 90cm x A 101cm",
+      "imagem": "/imagens/SIER%202025/casoca-bancada-bistro-mosso-sier.jpg"
+    },
+    {
+      "id": 5183,
+      "nome": "Mesa de Jantar Delfos Orgânico",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 180cm x P 180cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-delfos-organico-sier.jpg"
+    },
+    {
+      "id": 5184,
+      "nome": "Poltrona Aurora 03",
+      "categoria": "Poltronas",
+      "dimensoes": "L 89cm x P 70cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-aurora-03-sier.jpg"
+    },
+    {
+      "id": 5185,
+      "nome": "Mesa de Jantar Atenas Double Oblongo",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-atenas-double-oblongo-sier.jpg"
+    },
+    {
+      "id": 5186,
+      "nome": "Aparador Plana",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 47cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-plana-sier.jpg"
+    },
+    {
+      "id": 5187,
+      "nome": "Banqueta Velma",
+      "categoria": "Banquetas",
+      "dimensoes": "L 47cm x P 53cm x A 95cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-velma-sier.jpg"
+    },
+    {
+      "id": 5188,
+      "nome": "Mesa de Jantar Ópera 03 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 200cm x P 200cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-opera-03-giratorio-sier.jpg"
+    },
+    {
+      "id": 5189,
+      "nome": "Pedestal Lume",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 64cm x P 64cm x A 180cm",
+      "imagem": "/imagens/SIER%202025/casoca-pedestal-lume-sier.jpg"
+    },
+    {
+      "id": 5190,
+      "nome": "Mesa De Centro Plana",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 102cm x P 102cm x A 37cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-plana-sier.jpg"
+    },
+    {
+      "id": 5191,
+      "nome": "Mesa de Centro Urca",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 74cm x P 74cm x A 30cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-urca-sier.jpg"
+    },
+    {
+      "id": 5192,
+      "nome": "Mesa de Centro Régia",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 70cm x P 70cm x A 22cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-regia-sier.jpg"
+    },
+    {
+      "id": 5193,
+      "nome": "Mesa Lateral Frasco",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 27cm x P 27cm x A 40cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-frasco-sier.jpg"
+    },
+    {
+      "id": 5194,
+      "nome": "Mesa Lateral Jazz",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 50cm x P 50cm x A 48cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-jazz-sier.jpg"
+    },
+    {
+      "id": 5195,
+      "nome": "Banqueta Godan",
+      "categoria": "Banquetas",
+      "dimensoes": "L 46cm x P 60cm x A 104cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-godan-sier.jpg"
+    },
+    {
+      "id": 5196,
+      "nome": "Mesa de Jantar Brasília 03 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 150cm x P 150cm x A 77cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-brasilia-03-giratorio-sier.jpg"
+    },
+    {
+      "id": 5197,
+      "nome": "Mesa Lateral Gueixa",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 32cm x P 32cm x A 38cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-gueixa-sier.jpg"
+    },
+    {
+      "id": 5198,
+      "nome": "Mesa De Centro Box 02 Rec",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 60cm x P 60cm x A 32cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-box-02-rec-sier.jpg"
+    },
+    {
+      "id": 5199,
+      "nome": "Mesa de Jantar Halo 01 Giratório",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 160cm x P 160cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-halo-01-giratorio-sier.jpg"
+    },
+    {
+      "id": 5200,
+      "nome": "Cadeira Sula",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 53cm x P 61cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-sula-sier.jpg"
+    },
+    {
+      "id": 5201,
+      "nome": "Moldura De Espelho Évol 02",
+      "categoria": "Espelhos",
+      "dimensoes": "L 100cm x P 4cm x A 199cm",
+      "imagem": "/imagens/SIER%202025/casoca-moldura-de-espelho-evol-02-sier.jpg"
+    },
+    {
+      "id": 5202,
+      "nome": "Mesa Lateral Matter",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 62cm x P 62cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-matter-sier.jpg"
+    },
+    {
+      "id": 5203,
+      "nome": "Banco April",
+      "categoria": "Bancos",
+      "dimensoes": "L 160cm x P 48cm x A 59cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-april-sier.jpg"
+    },
+    {
+      "id": 5204,
+      "nome": "Aparador Poly",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 45cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-poly-sier.jpg"
+    },
+    {
+      "id": 5205,
+      "nome": "Cadeira Tamara Plus",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 63cm x P 56cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-tamara-plus-sier.jpg"
+    },
+    {
+      "id": 5206,
+      "nome": "Mesa de Jantar Quasar Raggio",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 150cm x P 150cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-quasar-raggio-sier.jpg"
+    },
+    {
+      "id": 5207,
+      "nome": "Buffet Missione",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 50cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-missione-sier.jpg"
+    },
+    {
+      "id": 5208,
+      "nome": "Aparador Aruba",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 53cm x A 73cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-aruba-sier.jpg"
+    },
+    {
+      "id": 5209,
+      "nome": "Mesa De Apoio Val",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 50cm x P 40cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-apoio-val-sier.jpg"
+    },
+    {
+      "id": 5210,
+      "nome": "Banco Faro",
+      "categoria": "Bancos",
+      "dimensoes": "L 51cm x P 51cm x A 47cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-faro-sier.jpg"
+    },
+    {
+      "id": 5211,
+      "nome": "Mesa De Centro Ted",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 70cm x P 70cm x A 32cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-ted-sier.jpg"
+    },
+    {
+      "id": 5212,
+      "nome": "Cadeira Roberta",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 51cm x P 58cm x A 82cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-roberta-sier.jpg"
+    },
+    {
+      "id": 5213,
+      "nome": "Mesa Lateral Nina",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 30cm x P 30cm x A 36cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-nina-sier.jpg"
+    },
+    {
+      "id": 5214,
+      "nome": "Mesa de Jantar Samara Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-samara-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5215,
+      "nome": "Mesa De Centro Malha",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 116cm x P 96cm x A 26cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-malha-sier.jpg"
+    },
+    {
+      "id": 5216,
+      "nome": "Mesa de Jantar Orlando Arc",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 130cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-orlando-arc-sier.jpg"
+    },
+    {
+      "id": 5217,
+      "nome": "Biombo Oásis",
+      "categoria": "Biombos",
+      "dimensoes": "L 230cm x P 35cm x A 160cm",
+      "imagem": "/imagens/SIER%202025/casoca-biombo-oasis-sier.jpg"
+    },
+    {
+      "id": 5218,
+      "nome": "Mesa de Jantar Agave 01 Giratório Quadrada",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 140cm x P 140cm x A 77cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-agave-01-giratorio-quadrada-sier.jpg"
+    },
+    {
+      "id": 5219,
+      "nome": "Carrinho Bar Leme Quadrado",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 50cm x P 50cm x A 70cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-leme-quadrado-sier.jpg"
+    },
+    {
+      "id": 5220,
+      "nome": "Mesa de Jantar Libra Slim Moeda",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-libra-slim-moeda-sier.jpg"
+    },
+    {
+      "id": 5221,
+      "nome": "Mesa De Centro Ozzi 02 Plus",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 90cm x P 90cm x A 21cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-ozzi-02-plus-sier.jpg"
+    },
+    {
+      "id": 5222,
+      "nome": "Mesa De Apoio Ozzi 02 Plus",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 50cm x P 50cm x A 31cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-apoio-ozzi-02-plus-sier.jpg"
+    },
+    {
+      "id": 5223,
+      "nome": "Mesa de Jantar Majestic",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-majestic-sier.jpg"
+    },
+    {
+      "id": 5224,
+      "nome": "Mesa Lateral Urca",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 64cm x P 64cm x A 42cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-urca-sier.jpg"
+    },
+    {
+      "id": 5225,
+      "nome": "Mesa de Jantar Meridiam 02 Retangular",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 200cm x P 100cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-meridiam-02-retangular-sier.jpg"
+    },
+    {
+      "id": 5226,
+      "nome": "Mesa Lateral Cold",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 28cm x P 28cm x A 37cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-cold-sier.jpg"
+    },
+    {
+      "id": 5227,
+      "nome": "Cadeira Yasmin Tela",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 49cm x P 60cm x A 84cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-yasmin-tela-sier.jpg"
+    },
+    {
+      "id": 5228,
+      "nome": "Buffet Visage",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 220cm x P 50cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-buffet-visage-sier.jpg"
+    },
+    {
+      "id": 5229,
+      "nome": "Mesa de Jogos Texas",
+      "categoria": "Mesas de Jogos",
+      "dimensoes": "L 120cm x P 120cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jogos-texas-sier.jpg"
+    },
+    {
+      "id": 5230,
+      "nome": "Mesa Lateral Torres",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 22cm x P 22cm x A 35cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-torres-sier.jpg"
+    },
+    {
+      "id": 5231,
+      "nome": "Mesa Lateral Prumo",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 33cm x P 33cm x A 50cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-prumo-sier.jpg"
+    },
+    {
+      "id": 5232,
+      "nome": "Cadeira Denise",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 54cm x P 59cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-denise-sier.jpg"
+    },
+    {
+      "id": 5233,
+      "nome": "Mesa de Jantar Doppia Arc",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 280cm x P 120cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-doppia-arc-sier.jpg"
+    },
+    {
+      "id": 5234,
+      "nome": "Mesa de Centro Núcleo",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 120cm x P 120cm x A 32cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-nucleo-sier.jpg"
+    },
+    {
+      "id": 5235,
+      "nome": "Cadeira Brenda",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 58cm x P 56cm x A 79cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-brenda-sier.jpg"
+    },
+    {
+      "id": 5236,
+      "nome": "Mesa de Jantar Colossus Soft",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 240cm x P 120cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-colossus-soft-sier.jpg"
+    },
+    {
+      "id": 5237,
+      "nome": "Mesa de Centro Destaque",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 120cm x P 120cm x A 30cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-destaque-sier.jpg"
+    },
+    {
+      "id": 5238,
+      "nome": "Mesa de Jantar Albania",
+      "categoria": "Mesas De Jantar",
+      "dimensoes": "L 219cm x P 109cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-jantar-albania-sier.jpg"
+    },
+    {
+      "id": 5239,
+      "nome": "Aparador Peregrino",
+      "categoria": "Aparadores E Buffets",
+      "dimensoes": "L 200cm x P 54cm x A 75cm",
+      "imagem": "/imagens/SIER%202025/casoca-aparador-peregrino-sier.jpg"
+    },
+    {
+      "id": 5240,
+      "nome": "Carrinho Bar Capitólio 02",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 180cm x P 48cm x A 80cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-capitolio-02-sier.jpg"
+    },
+    {
+      "id": 5241,
+      "nome": "Banco Charlene",
+      "categoria": "Puffs",
+      "dimensoes": "L 70cm x P 52cm x A 38cm",
+      "imagem": "/imagens/SIER%202025/casoca-banco-charlene-sier.jpg"
+    },
+    {
+      "id": 5242,
+      "nome": "Mesa de Centro Grão",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 80cm x P 80cm x A 36cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-grao-sier.jpg"
+    },
+    {
+      "id": 5243,
+      "nome": "Banqueta Vânia",
+      "categoria": "Banquetas",
+      "dimensoes": "L 45cm x P 58cm x A 65cm",
+      "imagem": "/imagens/SIER%202025/casoca-banqueta-vania-sier.jpg"
+    },
+    {
+      "id": 5244,
+      "nome": "Carrinho Bar Cosmos",
+      "categoria": "Carrinhos de Bar",
+      "dimensoes": "L 178cm x P 65cm x A 87cm",
+      "imagem": "/imagens/SIER%202025/casoca-carrinho-bar-cosmos-sier.jpg"
+    },
+    {
+      "id": 5245,
+      "nome": "Cadeira Spirit",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 48cm x P 55cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-spirit-sier.jpg"
+    },
+    {
+      "id": 5246,
+      "nome": "Mesa Lateral Peregrino",
+      "categoria": "Mesas de Apoio",
+      "dimensoes": "L 55cm x P 55cm x A 48cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-lateral-peregrino-sier.jpg"
+    },
+    {
+      "id": 5247,
+      "nome": "Mesa De Centro Serrano 02",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 70cm x P 70cm x A 39cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-serrano-02-sier.jpg"
+    },
+    {
+      "id": 5248,
+      "nome": "Poltrona Gioconda 02",
+      "categoria": "Poltronas",
+      "dimensoes": "L 92cm x P 81cm x A 76cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-gioconda-02-sier.jpg"
+    },
+    {
+      "id": 5249,
+      "nome": "Cadeira Saori",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 50cm x P 58cm x A 86cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-saori-sier.jpg"
+    },
+    {
+      "id": 5250,
+      "nome": "Mesa de Centro Prelúdio",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 130cm x P 125cm x A 24cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-preludio-sier.jpg"
+    },
+    {
+      "id": 5251,
+      "nome": "Poltrona Floripa",
+      "categoria": "Poltronas",
+      "dimensoes": "L 71cm x P 84cm x A 89cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-floripa-sier.jpg"
+    },
+    {
+      "id": 5252,
+      "nome": "Cadeira Josi",
+      "categoria": "Cadeiras",
+      "dimensoes": "L 57cm x P 60cm x A 81cm",
+      "imagem": "/imagens/SIER%202025/casoca-cadeira-josi-sier.jpg"
+    },
+    {
+      "id": 5253,
+      "nome": "Mesa de Centro Peregrino",
+      "categoria": "Mesas De Centro",
+      "dimensoes": "L 165cm x P 75cm x A 34cm",
+      "imagem": "/imagens/SIER%202025/casoca-mesa-de-centro-peregrino-sier.jpg"
+    },
+    {
+      "id": 5254,
+      "nome": "Poltrona Margarida",
+      "categoria": "Poltronas",
+      "dimensoes": "L 102cm x P 92cm x A 73cm",
+      "imagem": "/imagens/SIER%202025/casoca-poltrona-margarida-sier.jpg"
+    }
+  ],
+  "MADELUSTRE 2025": [
+    {
+      "id": 5255,
+      "nome": "Luminária De Piso Minimum 3201",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 33cm x P 33cm x A 169cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-minimum-3201-madelustre.jpg"
+    },
+    {
+      "id": 5256,
+      "nome": "Arandela Yasmin 3056",
+      "categoria": "Luminárias De Parede",
+      "dimensoes": "L 13cm x P 23cm x A 29cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-yasmin-madelustre.jpg"
+    },
+    {
+      "id": 5257,
+      "nome": "Abajur Tucano",
+      "categoria": "Abajures",
+      "dimensoes": "L 10cm x P 30cm x A 56cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-tucano-madelustre.jpg"
+    },
+    {
+      "id": 5258,
+      "nome": "Garrafão Cilindro 7411",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 33cm x P 33cm x A 36cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-garrafao-cilindro-7411-madelustre.jpg"
+    },
+    {
+      "id": 5259,
+      "nome": "Pendente Navi",
+      "categoria": "Pendentes",
+      "dimensoes": "L 53cm x P 53cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-navi-madelustre.jpg"
+    },
+    {
+      "id": 5260,
+      "nome": "Spot Point 3248",
+      "categoria": "Spots",
+      "dimensoes": "L 18cm x P 18cm x A 15cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-spot-point-3248-madelustre.jpg"
+    },
+    {
+      "id": 5261,
+      "nome": "Plafon Orgânico 3421NA/88",
+      "categoria": "Plafons",
+      "dimensoes": "L 53cm x P 100cm x A 13cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-plafon-organico-3421na88-madelustre.jpg"
+    },
+    {
+      "id": 5262,
+      "nome": "Luminária De Piso Trippé Viena 3203",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 53cm x P 48cm x A 165cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-trippe-viena-3203-madelustre.jpg"
+    },
+    {
+      "id": 5263,
+      "nome": "Arandela Elíptico",
+      "categoria": "Arandelas",
+      "dimensoes": "L 45cm x P 17cm x A 40cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-eliptico-madelustre.jpg"
+    },
+    {
+      "id": 5264,
+      "nome": "Abajur Garabe Cônico Cup Com Palha 3196NA-85",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 32cm x P 32cm x A 53cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-garabe-conico-cup-com-palha-3196na-85-madelustre.jpg"
+    },
+    {
+      "id": 5265,
+      "nome": "Luminária de Piso Elíptico 3286",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 46cm x P 17cm x A 169cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-eliptico-3286-madelustre.jpg"
+    },
+    {
+      "id": 5266,
+      "nome": "Coluna Slim Cup Com Palha 3042CT-85",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 42cm x P 42cm x A 160cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-slim-cup-com-palha-3042ct-85-madelustre.jpg"
+    },
+    {
+      "id": 5267,
+      "nome": "Arandela Standard 3027",
+      "categoria": "Luminárias De Parede",
+      "dimensoes": "L 25cm x P 32cm x A 34cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-standard-3027-madelustre.jpg"
+    },
+    {
+      "id": 5268,
+      "nome": "Plafon Apollo 3345/88-3346/88-3347/88",
+      "categoria": "Plafons",
+      "dimensoes": "L 40cm x P 40cm x A 10cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-plafon-apollo-334588-334688-334788-madelustre.jpg"
+    },
+    {
+      "id": 5269,
+      "nome": "Trilho Brooklyn 2858PC",
+      "categoria": "Pendentes",
+      "dimensoes": "L 29cm x P 150cm x A 29cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-trilho-brooklyn-2858pc-madelustre.jpg"
+    },
+    {
+      "id": 5270,
+      "nome": "Pendente Rettangolare 3088",
+      "categoria": "Pendentes",
+      "dimensoes": "L 123cm x P 4cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-rettangolare-madelustre.jpg"
+    },
+    {
+      "id": 5271,
+      "nome": "Pendente Point 3272-3273-3274",
+      "categoria": "Pendentes",
+      "dimensoes": "L 5cm x P 5cm x A 55cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-point-3272-3273-3274-madelustre.jpg"
+    },
+    {
+      "id": 5272,
+      "nome": "Abajur Apollo 3267",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 32cm x P 32cm x A 67cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-apollo-3267-madelustre.jpg"
+    },
+    {
+      "id": 5273,
+      "nome": "Abajur Esbelto 3341",
+      "categoria": "Abajures",
+      "dimensoes": "L 28cm x P 28cm x A 58cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-esbelto-3341-madelustre.jpg"
+    },
+    {
+      "id": 5274,
+      "nome": "Pendente Rettangolare 2983",
+      "categoria": "Pendentes",
+      "dimensoes": "L 130cm x P 7cm x A 68cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-rettangolare-2983-madelustre.jpg"
+    },
+    {
+      "id": 5275,
+      "nome": "Trilho Point Eletrificado 3255 com Spots 3246",
+      "categoria": "Spots",
+      "dimensoes": "L 4cm x P 100cm x A 4cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-trilho-point-eletrificado-3255-com-spots-3246-madelustre.jpg"
+    },
+    {
+      "id": 5276,
+      "nome": "Abajur Turim",
+      "categoria": "Abajures",
+      "dimensoes": "L 25cm x P 27cm x A 47cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-turim-madelustre.jpg"
+    },
+    {
+      "id": 5277,
+      "nome": "Garrafão 7266",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 20cm x P 20cm x A 60cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-garrafao-7266-madelustre.jpg"
+    },
+    {
+      "id": 5278,
+      "nome": "Vasos Fusion",
+      "categoria": "Vasos, Cestos e Baús",
+      "dimensoes": null,
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-vasos-fusion-madelustre.jpg"
+    },
+    {
+      "id": 5279,
+      "nome": "Pendente Vibrance",
+      "categoria": "Pendentes",
+      "dimensoes": "L 15cm x P 15cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-vibrance-madelustre.jpg"
+    },
+    {
+      "id": 5280,
+      "nome": "Pendente Esfera 2783 94",
+      "categoria": "Pendentes",
+      "dimensoes": "L 30cm x P 30cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-esfera-2783-94-madelustre.jpg"
+    },
+    {
+      "id": 5281,
+      "nome": "Luminária de Piso Cabideiro Elíptico 3276",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 21cm x P 21cm x A 167cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-cabideiro-eliptico-3276-madelustre.jpg"
+    },
+    {
+      "id": 5282,
+      "nome": "Coluna Atlântica",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 31cm x P 31cm x A 145cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-atlantica-madelustre.jpg"
+    },
+    {
+      "id": 5283,
+      "nome": "Abajur Esphera Base de Madeira 3299-3300",
+      "categoria": "Abajures",
+      "dimensoes": "L 25cm x P 25cm x A 67cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-esphera-base-de-madeira-3299-3300-madelustre.jpg"
+    },
+    {
+      "id": 5284,
+      "nome": "Cascata Vintage 8 Lâmpadas 3096",
+      "categoria": "Pendentes",
+      "dimensoes": "L 70cm x P 70cm x A 400cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-cascata-vintage-madelustre.jpg"
+    },
+    {
+      "id": 5285,
+      "nome": "Pendente Cogumelo 3234",
+      "categoria": "Pendentes",
+      "dimensoes": "L 20cm x P 20cm x A 400cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-cogumelo-3234-madelustre.jpg"
+    },
+    {
+      "id": 5286,
+      "nome": "Pendente Componível",
+      "categoria": "Pendentes",
+      "dimensoes": "L 111cm x P 55cm x A 200cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-componivel-madelustre.jpg"
+    },
+    {
+      "id": 5287,
+      "nome": "Luminária de Piso Fler",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 36cm x P 36cm x A 164cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-fler-madelustre.jpg"
+    },
+    {
+      "id": 5288,
+      "nome": "Luminária de Piso Navi 3148",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 65cm x P 65cm x A 174cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-navi-3148-madelustre.jpg"
+    },
+    {
+      "id": 5289,
+      "nome": "Coluna Viena 3094",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 33cm x P 33cm x A 165cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-viena-madelustre.jpg"
+    },
+    {
+      "id": 5290,
+      "nome": "Luminária De Piso Sintonia 3 Lâmpadas 3223",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 32cm x P 32cm x A 164cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-sintonia-3-lampadas-3223-madelustre.jpg"
+    },
+    {
+      "id": 5291,
+      "nome": "Arandela Eclipse 3390-2992-2993",
+      "categoria": "Arandelas",
+      "dimensoes": "L 33cm x P 2cm x A 33cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-eclipse-3390-2992-2993-madelustre.jpg"
+    },
+    {
+      "id": 5292,
+      "nome": "Abajur Sequoia 3398NA",
+      "categoria": "Abajures",
+      "dimensoes": "L 38cm x P 38cm x A 98cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-sequoia-3398na-madelustre.jpg"
+    },
+    {
+      "id": 5293,
+      "nome": "Coluna Axis",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 20cm x P 20cm x A 155cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-axis-madelustre.jpg"
+    },
+    {
+      "id": 5294,
+      "nome": "Arandela Tocheiro Cogumelo 3232",
+      "categoria": "Luminárias De Parede",
+      "dimensoes": "L 25cm x P 25cm x A 50cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-tocheiro-cogumelo-3232-madelustre.jpg"
+    },
+    {
+      "id": 5295,
+      "nome": "Abajur Trento 3289CT",
+      "categoria": "Abajures",
+      "dimensoes": "L 38cm x P 38cm x A 61cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-trento-3289ct-madelustre.jpg"
+    },
+    {
+      "id": 5296,
+      "nome": "Trilho Viena 3093",
+      "categoria": "Pendentes",
+      "dimensoes": "L 30cm x P 30cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-trilho-viena-madelustre.jpg"
+    },
+    {
+      "id": 5297,
+      "nome": "Mesa Lateral Cosmo Iluminada",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 45cm x P 50cm x A 55cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-lateral-cosmo-iluminada-madelustre.jpg"
+    },
+    {
+      "id": 5298,
+      "nome": "Trilho Point Eletrificado 3255 com Spots 3245",
+      "categoria": "Spots",
+      "dimensoes": "L 4cm x P 100cm x A 4cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-trilho-point-eletrificado-3255-com-spots-3245-madelustre.jpg"
+    },
+    {
+      "id": 5299,
+      "nome": "Mesa Lateral Stella",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 40cm x P 40cm x A 44cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-lateral-stella-madelustre.jpg"
+    },
+    {
+      "id": 5300,
+      "nome": "Arandela Point Haste Flexível 3249",
+      "categoria": "Arandelas",
+      "dimensoes": "L 10cm x P 27cm x A 26cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-point-haste-flexivel-3249-madelustre.jpg"
+    },
+    {
+      "id": 5301,
+      "nome": "Lustre Pendente Yasmin 3058",
+      "categoria": "Pendentes",
+      "dimensoes": "L 70cm x P 70cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-lustre-pendente-yasmin-3058-madelustre.jpg"
+    },
+    {
+      "id": 5302,
+      "nome": "Mesa Lateral Radial",
+      "categoria": "Mesas Laterais",
+      "dimensoes": null,
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-lateral-radial-madelustre.jpg"
+    },
+    {
+      "id": 5303,
+      "nome": "Spot Point 3247",
+      "categoria": "Arandelas",
+      "dimensoes": "L 12cm x P 12cm x A 15cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-spot-point-3247-madelustre.jpg"
+    },
+    {
+      "id": 5304,
+      "nome": "Mesa Lateral Fler",
+      "categoria": "Mesas Laterais",
+      "dimensoes": null,
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-lateral-fler-madelustre.jpg"
+    },
+    {
+      "id": 5305,
+      "nome": "Lustre Apollo 30 Lâmpadas 3336",
+      "categoria": "Lustres",
+      "dimensoes": "L 120cm x P 120cm x A 200cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-lustre-apollo-30-lampadas-3336-madelustre.jpg"
+    },
+    {
+      "id": 5306,
+      "nome": "Pendente Buriti",
+      "categoria": "Pendentes",
+      "dimensoes": "L 32cm x P 32cm x A 56cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-buriti-madelustre.jpg"
+    },
+    {
+      "id": 5307,
+      "nome": "Pendente Catedral",
+      "categoria": "Pendentes",
+      "dimensoes": "L 90cm x P 90cm x A 400cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-catedral-madelustre.jpg"
+    },
+    {
+      "id": 5308,
+      "nome": "Abajur Esther 3211",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 37cm x P 37cm x A 78cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-esther-3211-madelustre.jpg"
+    },
+    {
+      "id": 5309,
+      "nome": "Abajur Elíptico 3285",
+      "categoria": "Abajures",
+      "dimensoes": "L 46cm x P 17cm x A 38cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-eliptico-3285-madelustre.jpg"
+    },
+    {
+      "id": 5310,
+      "nome": "Spot Fixo Point 3253-3254",
+      "categoria": "Spots",
+      "dimensoes": "L 7cm x P 7cm x A 21cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-spot-fixo-point-3253-3254-madelustre.jpg"
+    },
+    {
+      "id": 5311,
+      "nome": "Luminária de Piso Amanda 2771",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 46cm x P 129cm x A 190cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-amanda-2771-madelustre.jpg"
+    },
+    {
+      "id": 5312,
+      "nome": "Mesa de Vidro com Luminária 3298CT",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 46cm x P 46cm x A 162cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-de-vidro-com-luminaria-3298ct-madelustre.jpg"
+    },
+    {
+      "id": 5313,
+      "nome": "Plafon Catedral",
+      "categoria": "Plafons",
+      "dimensoes": "L 90cm x P 90cm x A 27cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-plafon-catedral-madelustre.jpg"
+    },
+    {
+      "id": 5314,
+      "nome": "Luminária de Piso Trippé 3048",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 50cm x P 50cm x A 170cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-trippe-3048-madelustre.jpg"
+    },
+    {
+      "id": 5315,
+      "nome": "Pendente Médio Lampadari 2835CT 94",
+      "categoria": "Pendentes",
+      "dimensoes": "L 29cm x P 29cm x A 130cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-medio-lampadari-2835ct-94-madelustre.jpg"
+    },
+    {
+      "id": 5316,
+      "nome": "Abajur Slim com cúpula 3038",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 17cm x P 17cm x A 35cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-slim-com-cupula-3038-madelustre.jpg"
+    },
+    {
+      "id": 5317,
+      "nome": "Arandela Estância com Ferradura 426",
+      "categoria": "Luminárias De Parede",
+      "dimensoes": "L 21cm x P 27cm x A 34cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-estancia-com-ferradura-madelustre.jpg"
+    },
+    {
+      "id": 5318,
+      "nome": "Luminária de Piso Trippé Apollo 3268",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 32cm x P 32cm x A 162cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-trippe-apollo-3268-madelustre.jpg"
+    },
+    {
+      "id": 5319,
+      "nome": "Pendente Apollo 3265-3266",
+      "categoria": "Pendentes",
+      "dimensoes": "L 32cm x P 32cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-apollo-3265-3266-madelustre.jpg"
+    },
+    {
+      "id": 5320,
+      "nome": "Lustre Estância Roda de Carroça 425",
+      "categoria": "Pendentes",
+      "dimensoes": "L 115cm x P 115cm x A 230cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-lustre-estancia-roda-de-carroca-425-madelustre.jpg"
+    },
+    {
+      "id": 5321,
+      "nome": "Luminária de Piso Tucano",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 18cm x P 36cm x A 168cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-tucano-madelustre.jpg"
+    },
+    {
+      "id": 5322,
+      "nome": "Arandela Point Facho Duplo 3250",
+      "categoria": "Arandelas",
+      "dimensoes": "L 5cm x P 8cm x A 21cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-point-facho-duplo-3250-madelustre.jpg"
+    },
+    {
+      "id": 5323,
+      "nome": "Abajur Lacrima Grande",
+      "categoria": "Abajures",
+      "dimensoes": "L 31cm x P 31cm x A 36cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-lacrima-grande-madelustre.jpg"
+    },
+    {
+      "id": 5324,
+      "nome": "Arandela Apollo",
+      "categoria": "Arandelas",
+      "dimensoes": "L 12cm x P 12cm x A 25cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-apollo-madelustre.jpg"
+    },
+    {
+      "id": 5325,
+      "nome": "Abajur Cogumelo",
+      "categoria": "Abajures",
+      "dimensoes": "L 20cm x P 20cm x A 31cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-cogumelo-madelustre.jpg"
+    },
+    {
+      "id": 5326,
+      "nome": "Luminária De Piso Esther 3212",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 37cm x P 37cm x A 145cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-esther-3212-madelustre.jpg"
+    },
+    {
+      "id": 5327,
+      "nome": "Luminária de Piso Esfera 3051",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 40cm x P 40cm x A 170cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-esfera-3051-madelustre.jpg"
+    },
+    {
+      "id": 5328,
+      "nome": "Espeto Fiore Cogumelo 3226",
+      "categoria": "Luminárias Para Área Externa",
+      "dimensoes": "L 20cm x P 20cm x A 50cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-espeto-fiore-cogumelo-3226-madelustre.jpg"
+    },
+    {
+      "id": 5329,
+      "nome": "Pendente Estância 419",
+      "categoria": "Pendentes",
+      "dimensoes": "L 29cm x P 29cm x A 100cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-estancia-419-madelustre.jpg"
+    },
+    {
+      "id": 5330,
+      "nome": "Luminária de Piso Esbelto 3338",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 21cm x P 21cm x A 151cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-esbelto-3338-madelustre.jpg"
+    },
+    {
+      "id": 5331,
+      "nome": "Abajur Garrafão Cilindro 3354-3353",
+      "categoria": "Abajures",
+      "dimensoes": "L 38cm x P 38cm x A 60cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-garrafao-cilindro-3354-3353-madelustre.jpg"
+    },
+    {
+      "id": 5332,
+      "nome": "Garrafão Cilindro 7313",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 35cm x P 35cm x A 46cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-garrafao-cilindro-7313-madelustre.jpg"
+    },
+    {
+      "id": 5333,
+      "nome": "Arandela Nature Horizonte",
+      "categoria": "Arandelas",
+      "dimensoes": "L 90cm x P 12cm x A 15cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-nature-horizonte-madelustre.jpg"
+    },
+    {
+      "id": 5334,
+      "nome": "Luminária de Piso Navi com palha natural 2928",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 65cm x P 65cm x A 175cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-navi-com-palha-natural-2928-madelustre.jpg"
+    },
+    {
+      "id": 5335,
+      "nome": "Abajur Axis",
+      "categoria": "Abajures",
+      "dimensoes": "L 20cm x P 20cm x A 48cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-axis-madelustre.jpg"
+    },
+    {
+      "id": 5336,
+      "nome": "Abajur Laís Cup Com Palha 3156CM-85",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 42cm x P 42cm x A 62cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-lais-cup-com-palha-3156cm-85-madelustre.jpg"
+    },
+    {
+      "id": 5337,
+      "nome": "Abajur Point 3287",
+      "categoria": "Abajures",
+      "dimensoes": "L 15cm x P 15cm x A 42cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-point-3287-madelustre.jpg"
+    },
+    {
+      "id": 5338,
+      "nome": "Abajur Serena",
+      "categoria": "Abajures",
+      "dimensoes": "L 37cm x P 37cm x A 78cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-serena-madelustre.jpg"
+    },
+    {
+      "id": 5339,
+      "nome": "Luminária de Piso Serra",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 36cm x P 36cm x A 170cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-serra-madelustre.jpg"
+    },
+    {
+      "id": 5340,
+      "nome": "Mesa Lateral Cosmo com regulagem",
+      "categoria": "Mesas Laterais",
+      "dimensoes": "L 30cm x P 30cm x A 53cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-mesa-lateral-cosmo-com-regulagem-madelustre.jpg"
+    },
+    {
+      "id": 5341,
+      "nome": "Abajur Duo",
+      "categoria": "Abajures",
+      "dimensoes": "L 51cm x P 13cm x A 53cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-duo-madelustre.jpg"
+    },
+    {
+      "id": 5342,
+      "nome": "Pendente Flutum",
+      "categoria": "Pendentes",
+      "dimensoes": "L 20cm x P 20cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-flutum-madelustre.jpg"
+    },
+    {
+      "id": 5343,
+      "nome": "Luminária de Piso Navi 2690",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 65cm x P 65cm x A 170cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-navi-2690-madelustre.jpg"
+    },
+    {
+      "id": 5344,
+      "nome": "Pendente Arcus",
+      "categoria": "Pendentes",
+      "dimensoes": "L 120cm x P 59cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-arcus-madelustre.jpg"
+    },
+    {
+      "id": 5345,
+      "nome": "Arandela Flutum",
+      "categoria": "Arandelas",
+      "dimensoes": "L 20cm x P 21cm x A 21cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-arandela-flutum-madelustre.jpg"
+    },
+    {
+      "id": 5346,
+      "nome": "Abajur Flutum 3476CT 3477CT",
+      "categoria": "Abajures",
+      "dimensoes": "L 17cm x P 17cm x A 12cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-flutum-3476ct-3477ct-madelustre.jpg"
+    },
+    {
+      "id": 5347,
+      "nome": "Coluna Duo",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 51cm x P 13cm x A 156cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-duo-madelustre.jpg"
+    },
+    {
+      "id": 5348,
+      "nome": "Luminária de Piso Sequoia 3399NA-83",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 38cm x P 38cm x A 167cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-sequoia-3399na-83-madelustre.jpg"
+    },
+    {
+      "id": 5349,
+      "nome": "Pendente Elíptico Slim",
+      "categoria": "Pendentes",
+      "dimensoes": "L 95cm x P 14cm x A 95cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-eliptico-slim-madelustre.jpg"
+    },
+    {
+      "id": 5350,
+      "nome": "Coluna Flutum",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 30cm x P 30cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-flutum-madelustre.jpg"
+    },
+    {
+      "id": 5351,
+      "nome": "Pendente Curitiba 3418NA/93",
+      "categoria": "Pendentes",
+      "dimensoes": "L 122cm x P 62cm x A 121cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-curitiba-3418na93-madelustre.jpg"
+    },
+    {
+      "id": 5352,
+      "nome": "Luminária de Piso Com Mesa Nature 3277",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 32cm x P 32cm x A 170cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-com-mesa-nature-3277-madelustre.jpg"
+    },
+    {
+      "id": 5353,
+      "nome": "Pendente Apollo Diâm. 15cm 3329",
+      "categoria": "Pendentes",
+      "dimensoes": "L 15cm x P 15cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-apollo-diam-15cm-3329-madelustre.jpg"
+    },
+    {
+      "id": 5354,
+      "nome": "Garrafão Garrafa Pequeno 7391",
+      "categoria": "Luminárias De Mesa",
+      "dimensoes": "L 14cm x P 14cm x A 30cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-garrafao-garrafa-pequeno-7391-madelustre.jpg"
+    },
+    {
+      "id": 5355,
+      "nome": "Pendente Elíptico 3328CT",
+      "categoria": "Pendentes",
+      "dimensoes": "L 25cm x P 25cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-eliptico-3328ct-madelustre.jpg"
+    },
+    {
+      "id": 5356,
+      "nome": "Plafon Arcus",
+      "categoria": "Plafons",
+      "dimensoes": "L 120cm x P 59cm x A 10cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-plafon-arcus-madelustre.jpg"
+    },
+    {
+      "id": 5357,
+      "nome": "Abajur Garrafão 3302",
+      "categoria": "Abajures",
+      "dimensoes": "L 30cm x P 30cm x A 47cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-garrafao-3302-madelustre.jpg"
+    },
+    {
+      "id": 5358,
+      "nome": "Pendente Catedral 3117-3416-3415NA/92",
+      "categoria": "Pendentes",
+      "dimensoes": "L 60cm x P 50cm x A 200cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-catedral-3117-3416-3415na92-madelustre.jpg"
+    },
+    {
+      "id": 5359,
+      "nome": "Coluna Nuci",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 40cm x P 40cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-coluna-nuci-madelustre.jpg"
+    },
+    {
+      "id": 5360,
+      "nome": "Luminária de Piso Serena",
+      "categoria": "Luminárias De Piso",
+      "dimensoes": "L 37cm x P 37cm x A 1500cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-luminaria-de-piso-serena-madelustre.jpg"
+    },
+    {
+      "id": 5361,
+      "nome": "Abajur Flutum",
+      "categoria": "Abajures",
+      "dimensoes": "L 27cm x P 20cm x A 53cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-abajur-flutum-madelustre.jpg"
+    },
+    {
+      "id": 5362,
+      "nome": "Pendente Celeiro 3325",
+      "categoria": "Pendentes",
+      "dimensoes": "L 45cm x P 45cm x A 150cm",
+      "imagem": "/imagens/MADELUSTRE%202025/casoca-pendente-celeiro-3325-madelustre.jpg"
+    }
+  ]
+}
