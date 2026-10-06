@@ -115,7 +115,7 @@ Acesso restrito para vendedores internos — exibe fornecedor, código e página
 
 Clicar no **cadeadinho discreto no canto superior direito** do site → abre `/admin/login`.
 
-**Senha padrão:** `catalogo2025`
+**Senha padrão:** *(consultar o .env.local — nunca commitar a senha aqui)*
 
 ### Resetar a senha
 
