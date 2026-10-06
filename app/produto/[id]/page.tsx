@@ -1,4 +1,5 @@
 ﻿import { getProdutos, getProduto } from '@/lib/data'
+import { isAdminSession } from '@/lib/auth'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ImageZoom from '@/components/ImageZoom'
@@ -23,7 +24,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
   const anterior = idx > 0 ? todos[idx - 1] : null
   const proximo  = idx < todos.length - 1 ? todos[idx + 1] : null
 
-  const isAdmin = false
+  const isAdmin = await isAdminSession()
 
   const fichaPublica = [
     { label: 'Material', value: produto.material },

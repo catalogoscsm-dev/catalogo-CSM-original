@@ -6,6 +6,8 @@ import SearchToolbar from '@/components/SearchToolbar'
 import PageTransition from '@/components/PageTransition'
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton'
 import MobileBottomNav from '@/components/MobileBottomNav'
+import AdminBanner from '@/components/AdminBanner'
+import { isAdminSession } from '@/lib/auth'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
@@ -13,11 +15,13 @@ export const metadata: Metadata = {
   description: 'Catálogo CSM de produtos de móveis e decoração',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const admin = await isAdminSession()
   return (
     <html lang="pt-BR">
       <body className="min-h-screen">
         <ThemeProvider>
+          {admin && <AdminBanner />}
           <Header />
           <Suspense>
             <SearchToolbar />

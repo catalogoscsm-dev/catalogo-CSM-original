@@ -1,22 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { jwtVerify } from 'jose'
 
-const secret = new TextEncoder().encode(
-  process.env.JWT_SECRET ?? 'fallback-secret-32-characters-min'
-)
-
-export async function proxy(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl
 
   if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
-    const token = req.cookies.get('admin_token')?.value
-    if (!token) {
-      return NextResponse.redirect(new URL('/admin/login', req.url))
-    }
-    try {
-      await jwtVerify(token, secret)
-    } catch {
-      return NextResponse.redirect(new URL('/admin/login', req.url))
+    const token = req.cookies.get('csm_admin')?.value
+    const secret = process.env.ADMIN_SECRET ?? ''
+    if (!token || token !== secret) {
+      const loginUrl = new URL('/admin/login', req.url)
+      loginUrl.searchParams.set('next', pathname)
+      return NextResponse.redirect(loginUrl)
     }
   }
 

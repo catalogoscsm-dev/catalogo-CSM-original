@@ -40,8 +40,14 @@ async function buildOverlay(logoBuffer, targetW, targetH) {
     .toBuffer({ resolveWithObject: true });
 
   const { data, info } = withAlpha;
-  for (let i = 3; i < data.length; i += 4) {
-    data[i] = Math.round(data[i] * OPACITY);
+  for (let i = 0; i < data.length; i += 4) {
+    const r = data[i], g = data[i + 1], b = data[i + 2];
+    // Remove fundo branco/quase-branco do logo
+    if (r > 230 && g > 230 && b > 230) {
+      data[i + 3] = 0;
+    } else {
+      data[i + 3] = Math.round(data[i + 3] * OPACITY);
+    }
   }
 
   const overlay = await sharp(Buffer.from(data), {

@@ -107,6 +107,54 @@ Com o mapa em mãos:
 
 ---
 
+## Área de Vendedor (Admin)
+
+Acesso restrito para vendedores internos — exibe fornecedor, código e página do catálogo em cada produto.
+
+### Como acessar
+
+Clicar no **cadeadinho discreto no canto superior direito** do site → abre `/admin/login`.
+
+**Senha padrão:** `catalogo2025`
+
+### Resetar a senha
+
+```bash
+node scripts/reset-admin-password.cjs <nova-senha>
+```
+
+Depois reiniciar o servidor (`npm run dev`). A senha antiga é descartada — não há como recuperá-la (armazenada como hash, nunca em texto puro).
+
+### Segurança implementada
+
+- Hash `scrypt` com salt aleatório no `.env.local` — impossível reverter
+- `timingSafeEqual` — protege contra timing attacks
+- Rate limiting: **5 tentativas erradas → bloqueio de 15 min por IP**
+- Cookie `httpOnly` + `sameSite: strict`
+
+### Variáveis de ambiente (`.env.local`)
+
+| Variável | Descrição |
+|---|---|
+| `ADMIN_PASSWORD_HASH` | Hash scrypt (`salt:hash`) |
+| `ADMIN_SECRET` | Token da sessão (cookie) |
+
+---
+
+## Marca d'água CSM
+
+Aplica o logo CSM em todas as imagens de produtos:
+
+```bash
+node scripts/watermark.cjs                                   # todas as imagens
+node scripts/watermark.cjs --pasta "ARMIL COMPLETO 2024"     # só um catálogo
+node scripts/watermark.cjs --dry-run                         # simula sem alterar
+```
+
+Logo fonte: `public/logo-csm.png`
+
+---
+
 ## Tecnologias
 
 - **Next.js 16** (App Router, `output: 'export'` — geração estática)

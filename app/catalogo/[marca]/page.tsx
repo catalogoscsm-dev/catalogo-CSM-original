@@ -14,11 +14,8 @@ export default async function CatalogoPage({ params }: { params: Promise<{ marca
   if (!catalogo) notFound()
 
   const produtosRaw = getProdutosPorCatalogo(catalogo.pasta)
-  // Products with images first, rest maintain original order
-  const produtos = [
-    ...produtosRaw.filter(p => p.imagens.length > 0),
-    ...produtosRaw.filter(p => p.imagens.length === 0),
-  ]
+  // DEV: last cataloged first — pagina DESC (revert to images-first for production)
+  const produtos = [...produtosRaw].sort((a, b) => (b.pagina ?? 0) - (a.pagina ?? 0))
   const newIds = new Set(produtosRaw.filter(p => p.imagens.length > 0).map(p => p.id))
 
   return (

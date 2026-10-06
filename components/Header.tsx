@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useRef, useEffect, useState, useCallback } from 'react'
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -15,6 +16,7 @@ interface Spark {
 }
 
 export default function Header() {
+  const pathname = usePathname()
   const shellRef              = useRef<HTMLDivElement>(null)
   const [shimmering, setShimmering] = useState(false)
   const [sparks, setSparks]   = useState<Spark[]>([])
@@ -165,6 +167,17 @@ export default function Header() {
 
       <div className="px-4">
         <div className="flex items-center h-20">
+          <Link
+            href={`/admin/login?next=${encodeURIComponent(pathname)}`}
+            tabIndex={-1}
+            title=""
+            className="absolute top-2 right-2 opacity-10 hover:opacity-30 transition-opacity duration-300"
+            style={{ color: 'var(--g)' }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a5 5 0 0 1 5 5v2h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v2h6V7a3 3 0 0 0-3-3z"/>
+            </svg>
+          </Link>
           <Link href="/" className="flex items-center" tabIndex={-1}>
             <div
               ref={shellRef}
