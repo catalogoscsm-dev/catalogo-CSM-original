@@ -70,7 +70,7 @@ async function main() {
     const srcDir = path.join(SRC_BASE, subpasta)
     const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
     const arquivos = fs.readdirSync(srcDir)
-      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()) && !f.toLowerCase().includes('ficha tecn'))
       .sort((a, b) => rankImagem(a) - rankImagem(b) || a.localeCompare(b))
     if (!arquivos.length) continue
 
