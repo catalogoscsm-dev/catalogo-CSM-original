@@ -19,7 +19,24 @@
 
 const Database = require('better-sqlite3')
 const path     = require('path')
+const fs       = require('fs')
 const { execSync, spawn } = require('child_process')
+
+// ── Lê ADMIN_SECRET do .env.local ────────────────────────────────────────────
+
+function readAdminSecret() {
+  const envPath = path.join(__dirname, '..', '.env.local')
+  try {
+    const lines = fs.readFileSync(envPath, 'utf8').split('\n')
+    for (const line of lines) {
+      const m = line.match(/^ADMIN_SECRET=(.+)$/)
+      if (m) return m[1].trim()
+    }
+  } catch {}
+  return null
+}
+
+const ADMIN_SECRET = readAdminSecret()
 
 const DB_PATH    = path.join(__dirname, '..', 'database', 'catalogo.db')
 const PROD_URL   = 'https://catalogo-csm.vercel.app'
@@ -130,13 +147,25 @@ for (const p of bravePaths) {
 
 // ── Abre as abas ──────────────────────────────────────────────────────────────
 
-const urls = abrir.map(p => `${baseUrl}/produto/${p.id}`)
+const isLocal = baseUrl.startsWith('http://localhost') || baseUrl.startsWith('http://127.0.0.1')
+
+const produtoUrls = abrir.map(p => `${baseUrl}/produto/${p.id}`)
+
+// Em localhost: abre a página de login como 1º tab.
+// Os tabs de produto são abertos em seguida mas o Brave os carrega lazy —
+// quando você clicar neles já estarão com o cookie de admin setado.
+const urls = isLocal
+  ? [`${baseUrl}/admin/login`, ...produtoUrls]
+  : produtoUrls
+
+if (isLocal) {
+  console.log(`Admin : tab 1 = login admin — faça login e depois navegue pelos produtos\n`)
+}
 
 if (bravePath) {
   console.log(`Abrindo ${urls.length} abas no Brave...\n`)
   spawn(bravePath, ['--new-window', ...urls], { detached: true, stdio: 'ignore' }).unref()
 } else {
-  // Fallback: tenta via start (abre no browser padrão)
   console.log('Brave não encontrado — abrindo no navegador padrão...\n')
   for (const url of urls) {
     try { execSync(`start "" "${url}"`, { shell: true }) } catch {}
