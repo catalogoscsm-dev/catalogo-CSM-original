@@ -77,16 +77,18 @@ async function main() {
     const produtos = db.prepare('SELECT * FROM produtos WHERE catalogo_id = ? AND pagina = ?').all(cat.id, pageNum)
     if (!produtos.length) { console.warn(`  [${subpasta}] Sem produto na pág. ${pageNum}. Pulando.`); continue }
 
+    const pageDir = path.join(PUBLIC_BASE, subpasta)
+    fs.mkdirSync(pageDir, { recursive: true })
     const urls = []
     for (const arquivo of arquivos) {
       const srcPath  = path.join(srcDir, arquivo)
-      const destPath = path.join(PUBLIC_BASE, arquivo)
+      const destPath = path.join(pageDir, arquivo)
       if (!fs.existsSync(destPath)) {
         process.stdout.write(`  Processando ${arquivo}...`)
         await aplicarWatermark(srcPath, destPath)
         console.log(' ✓')
       }
-      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(arquivo)}`)
+      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(subpasta)}/${encodeURIComponent(arquivo)}`)
     }
     for (const prod of produtos) {
       db.prepare('UPDATE produtos SET imagens = ? WHERE id = ?').run(JSON.stringify(urls), prod.id)
