@@ -174,13 +174,13 @@ export default function CarrosselDestaques({ produtos }: Props) {
     <section
       className="mb-10"
       style={{
-        /* Full-bleed: sai do container e toca as bordas do viewport */
         width:     '100vw',
         position:  'relative',
         left:      '50%',
         transform: 'translateX(-50%)',
         paddingBlock: '2.25rem 2rem',
         overflow:  'hidden',
+        background: 'transparent',
       }}
     >
       {/* Label EM DESTAQUE com sparkles */}
