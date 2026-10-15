@@ -2,6 +2,11 @@
 @import "tailwindcss";
 
 :root {
+  --ticker-bg:     #EDE5D8;
+  --ticker-text:   #B8633A;
+  --ticker-sep:    #B8633A;
+  --ticker-border: rgba(184,99,58,0.18);
+  --ticker-glow:   none;
   --a: #FAF8F3;
   --b: #F0EBE0;
   --c: #FFFFFF;
@@ -26,6 +31,11 @@
 }
 
 html.dark {
+  --ticker-bg:     #160F07;
+  --ticker-text:   #D96820;
+  --ticker-sep:    #D96820;
+  --ticker-border: rgba(217,104,32,0.18);
+  --ticker-glow:   0 0 6px rgba(217,104,32,0.42), 0 0 16px rgba(217,104,32,0.18);
   --a: #0A0A0A;
   --b: #0D0D0D;
   --c: #141414;
