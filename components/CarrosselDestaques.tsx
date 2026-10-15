@@ -117,6 +117,55 @@ export default function CarrosselDestaques({ produtos }: Props) {
     }
   }, [startDrag, moveDrag, endDrag])
 
+  // ─── Sparkle effect sobre o label ───────────────────────────────────────
+  const sparkleRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const container = sparkleRef.current
+    if (!container) return
+
+    let tid: ReturnType<typeof setTimeout>
+
+    const spawn = () => {
+      const el = document.createElement('span')
+      const size = 5 + Math.random() * 6
+      el.textContent = '✦'
+      el.style.cssText = [
+        'position:absolute',
+        `font-size:${size}px`,
+        `left:${8 + Math.random() * 84}%`,
+        `top:${5 + Math.random() * 90}%`,
+        'color:#fff',
+        'text-shadow:0 0 5px rgba(184,99,58,0.9),0 0 12px rgba(184,99,58,0.4)',
+        'opacity:0',
+        'pointer-events:none',
+        'transform:scale(0.2)',
+        'transition:opacity 0.45s ease,transform 0.45s ease',
+        'z-index:10',
+        'line-height:1',
+      ].join(';')
+      container.appendChild(el)
+
+      // double rAF garante que o browser aplicou o estado inicial antes de animar
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.style.opacity = '0.90'
+        el.style.transform = `scale(1) rotate(${Math.random() * 20 - 10}deg)`
+      }))
+
+      const life = 750 + Math.random() * 450
+      setTimeout(() => {
+        el.style.opacity = '0'
+        el.style.transform = 'scale(0.15)'
+        setTimeout(() => { el.parentNode && el.remove() }, 450)
+      }, life)
+
+      tid = setTimeout(spawn, 320 + Math.random() * 380)
+    }
+
+    tid = setTimeout(spawn, 100)
+    return () => clearTimeout(tid)
+  }, [])
+
   if (!produtos.length) return null
 
   const items = [...produtos, ...produtos]
@@ -134,46 +183,42 @@ export default function CarrosselDestaques({ produtos }: Props) {
         overflow:  'hidden',
       }}
     >
-      {/* Label EM DESTAQUE com glow pulsante */}
+      {/* Label EM DESTAQUE com sparkles */}
       <style>{`
         @keyframes destaque-glow {
-          0%, 100% {
-            text-shadow: 0 0 0px rgba(184,99,58,0), 0 0 0px rgba(184,99,58,0);
-            opacity: 0.82;
-          }
-          50% {
-            text-shadow: 0 0 10px rgba(184,99,58,0.60), 0 0 26px rgba(184,99,58,0.24), 0 0 50px rgba(184,99,58,0.10);
-            opacity: 1;
-          }
+          0%, 100% { text-shadow: none; opacity: 0.82; }
+          50%       { text-shadow: 0 0 10px rgba(184,99,58,0.55), 0 0 24px rgba(184,99,58,0.20); opacity: 1; }
         }
         html.dark .destaque-label {
           animation: destaque-glow-dark 3.8s ease-in-out infinite;
         }
         @keyframes destaque-glow-dark {
-          0%, 100% {
-            text-shadow: 0 0 0px rgba(217,104,32,0), 0 0 0px rgba(217,104,32,0);
-            opacity: 0.75;
-          }
-          50% {
-            text-shadow: 0 0 12px rgba(217,104,32,0.70), 0 0 30px rgba(217,104,32,0.32), 0 0 60px rgba(217,104,32,0.14);
-            opacity: 1;
-          }
+          0%, 100% { text-shadow: none; opacity: 0.75; }
+          50%       { text-shadow: 0 0 12px rgba(217,104,32,0.65), 0 0 28px rgba(217,104,32,0.28); opacity: 1; }
         }
       `}</style>
-      <p
-        className="destaque-label text-center mb-5"
-        style={{
-          fontFamily:    'var(--n)',
-          fontSize:      '13px',
-          fontWeight:    600,
-          letterSpacing: '.28em',
-          textTransform: 'uppercase',
-          color:         'var(--ticker-text)',
-          animation:     'destaque-glow 3.8s ease-in-out infinite',
-        }}
+      <div
+        ref={sparkleRef}
+        className="relative flex justify-center mb-5"
+        style={{ isolation: 'isolate' }}
       >
-        ✦✦&nbsp;&nbsp;&nbsp;EM DESTAQUE&nbsp;&nbsp;&nbsp;✦✦
-      </p>
+        <p
+          className="destaque-label"
+          style={{
+            fontFamily:    'var(--n)',
+            fontSize:      '13px',
+            fontWeight:    600,
+            letterSpacing: '.28em',
+            textTransform: 'uppercase',
+            color:         'var(--ticker-text)',
+            animation:     'destaque-glow 3.8s ease-in-out infinite',
+            position:      'relative',
+            zIndex:        1,
+          }}
+        >
+          ✦&nbsp;&nbsp;&nbsp;EM DESTAQUE&nbsp;&nbsp;&nbsp;✦
+        </p>
+      </div>
 
       {/* Wrapper com efeito de portal de luz nas bordas */}
       <div className="relative">
