@@ -10,7 +10,7 @@ const produtos = db.prepare(`
   FROM produtos p
   JOIN catalogos c ON p.catalogo_id = c.id
   ORDER BY p.id
-`).all().map(r => ({ ...r, imagens: JSON.parse(r.imagens || '[]') }))
+`).all().map(r => ({ ...r, imagens: JSON.parse(r.imagens || '[]'), categoria: r.categoria ?? null }))
 
 const catalogos = db.prepare(`
   SELECT c.*, COUNT(p.id) as total_produtos

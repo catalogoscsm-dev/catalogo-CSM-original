@@ -176,15 +176,32 @@ export default function ProductsView({ produtos, total }: Props) {
   const searchParams = useSearchParams()
   const query = searchParams.get('q') ?? ''
 
+  // Categorias únicas com produtos suficientes (oculta "Outros")
+  const categorias = useMemo(() => {
+    const cnt: Record<string, number> = {}
+    for (const p of produtos) {
+      const cat = (p as { categoria?: string | null }).categoria
+      if (cat && cat !== 'Outros') cnt[cat] = (cnt[cat] ?? 0) + 1
+    }
+    return Object.entries(cnt)
+      .filter(([, n]) => n >= 5)
+      .sort((a, b) => b[1] - a[1])
+      .map(([cat]) => cat)
+  }, [produtos])
+
+  const [categoriaAtiva, setCategoriaAtiva] = useState<string | null>(null)
+
   const filtered = useMemo(() => {
-    if (!query.trim()) return produtos
+    let list = produtos
+    if (categoriaAtiva) list = list.filter(p => (p as { categoria?: string | null }).categoria === categoriaAtiva)
+    if (!query.trim()) return list
     const nq = normalizeStr(query)
-    return produtos.filter(p => {
+    return list.filter(p => {
       const haystack = [p.nome, p.material, p.descricao, p.texto_livre, p.acabamento]
         .filter(Boolean).join(' ')
       return normalizeStr(haystack).includes(nq)
     })
-  }, [produtos, query])
+  }, [produtos, query, categoriaAtiva])
 
   const [view, setView] = useState<'grid' | 'list'>('grid')
   const [visibleCount, setVisibleCount] = useState(48)
@@ -194,10 +211,7 @@ export default function ProductsView({ produtos, total }: Props) {
     if (saved) setView(saved)
   }, [])
 
-  // Reseta ao mudar busca
-  useEffect(() => {
-    setVisibleCount(48)
-  }, [query])
+  useEffect(() => { setVisibleCount(48) }, [query, categoriaAtiva])
 
   function changeView(v: 'grid' | 'list') {
     setView(v)
@@ -206,12 +220,48 @@ export default function ProductsView({ produtos, total }: Props) {
 
   return (
     <div className="space-y-4">
+
+      {/* ── Chips de categoria ── */}
+      <div
+        className="flex gap-2 pb-0.5"
+        style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        <style>{`div.cat-chips::-webkit-scrollbar{display:none}`}</style>
+        {[null, ...categorias].map(cat => {
+          const ativo = categoriaAtiva === cat
+          return (
+            <button
+              key={cat ?? '__todos'}
+              onClick={() => setCategoriaAtiva(cat)}
+              className="flex-shrink-0 transition-all duration-200 hover:scale-[1.03] active:scale-95"
+              style={{
+                fontSize:      '11px',
+                fontWeight:    ativo ? 600 : 500,
+                fontFamily:    'var(--n)',
+                letterSpacing: '.06em',
+                padding:       '5px 14px',
+                borderRadius:  999,
+                border:        ativo ? '1px solid var(--ticker-text)' : '1px solid var(--h)',
+                background:    ativo ? 'var(--ticker-text)' : 'var(--c)',
+                color:         ativo ? '#fff' : 'var(--g)',
+                cursor:        'pointer',
+                whiteSpace:    'nowrap',
+              }}
+            >
+              {cat ?? 'Todos'}
+            </button>
+          )
+        })}
+      </div>
+
       {/* Barra de controle */}
       <div className="flex items-center justify-between">
         <p className="text-sm" style={{ color: 'var(--g)' }}>
           {query
             ? <><span style={{ color: 'var(--f)', fontWeight: 600 }}>"{query}"</span> — {filtered.length} resultado(s)</>
-            : <>{total} produto(s)</>}
+            : categoriaAtiva
+              ? <>{filtered.length} produto(s) em <span style={{ color: 'var(--f)', fontWeight: 600 }}>{categoriaAtiva}</span></>
+              : <>{total} produto(s)</>}
         </p>
 
         <div className="flex items-center gap-1 p-1 rounded-lg" style={{ background: 'var(--c)' }}>

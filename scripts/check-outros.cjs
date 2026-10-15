@@ -1,0 +1,6 @@
+const Database = require('better-sqlite3')
+const path = require('path')
+const db = new Database(path.join(__dirname, '../database/catalogo.db'), { readonly: true })
+const rows = db.prepare("SELECT nome FROM produtos WHERE categoria='Outros' ORDER BY RANDOM() LIMIT 80").all()
+rows.forEach(r => console.log(r.nome))
+db.close()

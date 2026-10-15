@@ -21,6 +21,7 @@ export interface Produto {
   preco_max: number | null
   pagina: number | null
   texto_livre: string | null
+  categoria: string | null
   imagens: string[]
   catalogo_pasta?: string
 }
