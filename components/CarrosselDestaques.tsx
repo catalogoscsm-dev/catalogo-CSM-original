@@ -32,6 +32,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
   const halfW     = useRef(0)
 
   const dragging   = useRef(false)
+  const dragMoved  = useRef(false)   // true se o arrasto passou de 5px
   const dragLastX  = useRef(0)
   const dragLastT  = useRef(0)
   const dragMoment = useRef(0)
@@ -62,6 +63,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
 
   const startDrag = useCallback((x: number) => {
     dragging.current   = true
+    dragMoved.current  = false
     dragLastX.current  = x
     dragLastT.current  = performance.now()
     dragMoment.current = 0
@@ -76,6 +78,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
     const dx  = x - dragLastX.current
     const now = performance.now()
     const dt  = now - dragLastT.current || 1
+    if (Math.abs(dx) > 5) dragMoved.current = true
     dragMoment.current = (dx / dt) * 16.67
     dragLastX.current  = x
     dragLastT.current  = now
@@ -273,7 +276,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
                   draggable={false}
                   className="block flex-shrink-0 group"
                   style={{ width: CARD_W }}
-                  onClick={e => { if (dragging.current) e.preventDefault() }}
+                  onClick={e => { if (dragMoved.current) e.preventDefault() }}
                 >
                   <div
                     className="relative overflow-hidden"
