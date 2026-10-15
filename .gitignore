@@ -43,3 +43,6 @@ next-env.d.ts
 # database
 database/*.db-shm
 database/*.db-wal
+
+.vercel
+.env*
