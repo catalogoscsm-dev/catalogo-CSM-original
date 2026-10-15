@@ -37,3 +37,18 @@ export function getCatalogoPorPasta(pasta: string): CatalogoFull | null {
 export function getProdutosPorCatalogo(pasta: string): ProdutoFull[] {
   return data.produtos.filter(p => p.catalogo_pasta === pasta)
 }
+
+// Temporário: pega produtos com imagem do Artecouro 2026 como destaques
+// Futuramente usar campo destaque=true no banco
+export function getDestaques(): ProdutoFull[] {
+  const comImagem = data.produtos
+    .filter(p => p.imagens && p.imagens.length > 0)
+    .map(withBase)
+  // Pega 1 a cada 4 produtos para ter variedade de catálogos
+  const selecionados: ProdutoFull[] = []
+  for (let i = 0; i < comImagem.length; i += 4) {
+    selecionados.push(comImagem[i])
+    if (selecionados.length >= 16) break
+  }
+  return selecionados
+}
