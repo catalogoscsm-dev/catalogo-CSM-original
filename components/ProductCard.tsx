@@ -224,19 +224,25 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
         {/* Área de imagem */}
         <div className="relative aspect-square overflow-hidden" style={{ background: '#ffffff' }}>
 
-          {/* Badge NEW */}
-          {produto.catalogo_pasta === 'Aco Mobilia 2025-7' && (
-            <div style={{
-              position: 'absolute', top: 8, left: 8, zIndex: 25,
-              background: '#D4A017', color: '#fff',
-              fontSize: 9, fontWeight: 800, letterSpacing: '0.12em',
-              padding: '3px 7px', borderRadius: 4,
-              textTransform: 'uppercase',
-              boxShadow: '0 1px 4px rgba(0,0,0,0.3)',
-            }}>
-              NEW
-            </div>
-          )}
+          {/* Badge categoria — canto superior esquerdo da imagem */}
+          {(() => {
+            const cat = (produto as { categoria?: string | null }).categoria
+            if (!cat || cat === 'Outros') return null
+            return (
+              <div style={{
+                position: 'absolute', top: 8, left: 8, zIndex: 25,
+                background: 'rgba(0,0,0,0.52)',
+                backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)',
+                color: '#fff',
+                fontSize: 8, fontWeight: 600, letterSpacing: '0.16em',
+                padding: '3px 8px', borderRadius: 99,
+                textTransform: 'uppercase',
+                border: '1px solid rgba(255,255,255,0.14)',
+              }}>
+                {cat}
+              </div>
+            )
+          })()}
 
           {img ? (
             <>
