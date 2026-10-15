@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import './globals.css'
 import Header from '@/components/Header'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import SearchToolbar from '@/components/SearchToolbar'
 import PageTransition from '@/components/PageTransition'
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton'
 import MobileBottomNav from '@/components/MobileBottomNav'
@@ -23,12 +22,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className="min-h-screen">
         <ThemeProvider>
           <AdminBanner serverAdmin={admin} />
-          <Header />
-          <Suspense>
-            <SearchToolbar />
-          </Suspense>
+          <Suspense><Header /></Suspense>
           <MarqueeTicker />
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
             <PageTransition>
               {children}
             </PageTransition>
