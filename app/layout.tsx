@@ -21,7 +21,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="pt-BR">
       <body className="min-h-screen">
         <ThemeProvider>
-          {admin && <AdminBanner />}
+          <AdminBanner serverAdmin={admin} />
           <Header />
           <Suspense>
             <SearchToolbar />
