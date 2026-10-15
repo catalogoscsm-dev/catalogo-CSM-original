@@ -176,15 +176,25 @@ export default function ProductsView({ produtos, total }: Props) {
   const searchParams = useSearchParams()
   const query = searchParams.get('q') ?? ''
 
+  // Catálogos únicos ordenados alfabeticamente
+  const catalogos = useMemo(() => {
+    const names = Array.from(new Set(produtos.map(p => (p as { catalogo_nome?: string }).catalogo_nome ?? '').filter(Boolean)))
+    return names.sort((a, b) => a.localeCompare(b, 'pt'))
+  }, [produtos])
+
+  const [catalogoAtivo, setCatalogoAtivo] = useState<string | null>(null)
+
   const filtered = useMemo(() => {
-    if (!query.trim()) return produtos
+    let list = produtos
+    if (catalogoAtivo) list = list.filter(p => (p as { catalogo_nome?: string }).catalogo_nome === catalogoAtivo)
+    if (!query.trim()) return list
     const nq = normalizeStr(query)
-    return produtos.filter(p => {
+    return list.filter(p => {
       const haystack = [p.nome, p.material, p.descricao, p.texto_livre, p.acabamento]
         .filter(Boolean).join(' ')
       return normalizeStr(haystack).includes(nq)
     })
-  }, [produtos, query])
+  }, [produtos, query, catalogoAtivo])
 
   const [view, setView] = useState<'grid' | 'list'>('grid')
   const [visibleCount, setVisibleCount] = useState(48)
@@ -194,10 +204,8 @@ export default function ProductsView({ produtos, total }: Props) {
     if (saved) setView(saved)
   }, [])
 
-  // Reseta ao mudar busca
-  useEffect(() => {
-    setVisibleCount(48)
-  }, [query])
+  // Reseta ao mudar busca ou catálogo
+  useEffect(() => { setVisibleCount(48) }, [query, catalogoAtivo])
 
   function changeView(v: 'grid' | 'list') {
     setView(v)
@@ -206,12 +214,48 @@ export default function ProductsView({ produtos, total }: Props) {
 
   return (
     <div className="space-y-4">
+
+      {/* ── Chips de catálogo ── */}
+      <div
+        className="flex gap-2 pb-1"
+        style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        <style>{`.chips-row::-webkit-scrollbar { display: none; }`}</style>
+        {[null, ...catalogos].map(nome => {
+          const ativo = catalogoAtivo === nome
+          return (
+            <button
+              key={nome ?? '__todos'}
+              onClick={() => setCatalogoAtivo(nome)}
+              className="flex-shrink-0 transition-all duration-200"
+              style={{
+                fontSize:      '11px',
+                fontWeight:    ativo ? 600 : 500,
+                fontFamily:    'var(--n)',
+                letterSpacing: '.08em',
+                padding:       '5px 14px',
+                borderRadius:  999,
+                border:        ativo ? '1px solid var(--ticker-text)' : '1px solid var(--h)',
+                background:    ativo ? 'var(--ticker-text)' : 'var(--c)',
+                color:         ativo ? '#fff' : 'var(--g)',
+                cursor:        'pointer',
+                whiteSpace:    'nowrap',
+              }}
+            >
+              {nome ?? 'Todos'}
+            </button>
+          )
+        })}
+      </div>
+
       {/* Barra de controle */}
       <div className="flex items-center justify-between">
         <p className="text-sm" style={{ color: 'var(--g)' }}>
           {query
             ? <><span style={{ color: 'var(--f)', fontWeight: 600 }}>"{query}"</span> — {filtered.length} resultado(s)</>
-            : <>{total} produto(s)</>}
+            : catalogoAtivo
+              ? <><span style={{ color: 'var(--f)', fontWeight: 600 }}>{catalogoAtivo}</span> — {filtered.length} produto(s)</>
+              : <>{total} produto(s)</>}
         </p>
 
         <div className="flex items-center gap-1 p-1 rounded-lg" style={{ background: 'var(--c)' }}>
