@@ -229,7 +229,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
                       boxShadow:    '0 2px 16px rgba(0,0,0,0.08)',
                       transition:   'filter .4s ease',
                     }}
-                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = 'drop-shadow(0 0 14px rgba(184,99,58,0.35))' }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = 'drop-shadow(0 0 7px rgba(184,99,58,0.22))' }}
                     onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = 'none' }}
                   >
                     {img ? (
