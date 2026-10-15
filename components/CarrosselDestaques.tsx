@@ -11,9 +11,9 @@ interface Props {
 
 const BASE_SPEED = 0.45
 const LERP       = 0.045
-const CARD_W     = 280
-const CARD_H     = 200
-const CARD_GAP   = 12
+const CARD_W     = 300
+const CARD_H     = 210
+const CARD_GAP   = 14
 
 function normalise(pos: number, half: number): number {
   let p = pos % half
@@ -123,86 +123,81 @@ export default function CarrosselDestaques({ produtos }: Props) {
 
   return (
     <section
-      className="mb-10 -mx-4 sm:-mx-6 lg:-mx-8"
+      className="mb-10"
       style={{
-        background:   'var(--ticker-bg)',
-        paddingBlock: 'clamp(2rem, 5vw, 3.5rem)',
-        overflow:     'hidden',
+        /* Full-bleed: sai do container e toca as bordas do viewport */
+        width:     '100vw',
+        position:  'relative',
+        left:      '50%',
+        transform: 'translateX(-50%)',
+        paddingBlock: '2.25rem 2rem',
+        overflow:  'hidden',
       }}
     >
-      {/* ── Cabeçalho ── */}
-      <div className="px-6 sm:px-8 lg:px-10 mb-8">
-        <p
-          className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] uppercase mb-3"
-          style={{ color: 'var(--ticker-text)' }}
-        >
-          <span
-            style={{
-              display:    'inline-block',
-              width:      20,
-              height:     1.5,
-              background: 'var(--ticker-text)',
-              flexShrink: 0,
-            }}
-          />
-          Em Destaque
-        </p>
-        <h2
+      {/* Label discreta */}
+      <p
+        className="text-center mb-4"
+        style={{
+          fontFamily:    'var(--n)',
+          fontSize:      '10px',
+          fontWeight:    500,
+          letterSpacing: '.22em',
+          textTransform: 'uppercase',
+          color:         'var(--g)',
+          opacity:       0.7,
+        }}
+      >
+        ✦&nbsp;&nbsp;Em Destaque&nbsp;&nbsp;·&nbsp;&nbsp;
+        <em
           style={{
             fontFamily: 'var(--m)',
-            fontSize:   'clamp(1.75rem, 4vw, 3rem)',
-            fontWeight: 300,
-            lineHeight: 1.1,
-            color:      'var(--f)',
+            fontStyle:  'italic',
+            fontWeight: 400,
+            fontSize:   '11px',
+            color:      'var(--ticker-text)',
+            opacity:    0.85,
+            letterSpacing: '.05em',
+            textTransform: 'none',
           }}
         >
-          Peças que contam<br />
-          <em style={{ fontStyle: 'italic', color: 'var(--ticker-text)' }}>a sua história</em>
-        </h2>
-        <p
-          style={{
-            fontFamily: 'var(--n)',
-            fontSize:   'clamp(.82rem, 1.3vw, .95rem)',
-            color:      'var(--g)',
-            marginTop:  '.75rem',
-            maxWidth:   520,
-          }}
-        >
-          Selecione qualquer peça para explorar detalhes, dimensões e acabamentos.
-        </p>
-      </div>
+          Peças que contam a sua história
+        </em>
+      </p>
 
-      {/* ── Carrossel com fade nas bordas ── */}
+      {/* Wrapper com efeito de portal de luz nas bordas */}
       <div className="relative">
-        {/* Fade esquerda */}
-        <div
-          aria-hidden="true"
-          style={{
-            position:       'absolute',
-            inset:          '0 auto 0 0',
-            width:          'clamp(3rem, 8vw, 6rem)',
-            background:     'linear-gradient(to right, var(--ticker-bg) 10%, transparent)',
-            zIndex:         2,
-            pointerEvents:  'none',
-          }}
-        />
-        {/* Fade direita */}
-        <div
-          aria-hidden="true"
-          style={{
-            position:       'absolute',
-            inset:          '0 0 0 auto',
-            width:          'clamp(3rem, 8vw, 6rem)',
-            background:     'linear-gradient(to left, var(--ticker-bg) 10%, transparent)',
-            zIndex:         2,
-            pointerEvents:  'none',
-          }}
-        />
 
+        {/* Portal esquerdo — luz que dissolve os cards */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: '0 auto 0 0',
+          width: '22%', zIndex: 3, pointerEvents: 'none',
+          background: 'linear-gradient(to right, var(--a) 0%, var(--a) 18%, transparent 100%)',
+        }} />
+        {/* Brilho suave laranja no portal esquerdo */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: '0 auto 0 0',
+          width: '28%', zIndex: 2, pointerEvents: 'none',
+          background: 'radial-gradient(ellipse 80% 100% at 0% 50%, rgba(184,99,58,0.10) 0%, transparent 100%)',
+        }} />
+
+        {/* Portal direito */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: '0 0 0 auto',
+          width: '22%', zIndex: 3, pointerEvents: 'none',
+          background: 'linear-gradient(to left, var(--a) 0%, var(--a) 18%, transparent 100%)',
+        }} />
+        {/* Brilho suave laranja no portal direito */}
+        <div aria-hidden="true" style={{
+          position: 'absolute', inset: '0 0 0 auto',
+          width: '28%', zIndex: 2, pointerEvents: 'none',
+          background: 'radial-gradient(ellipse 80% 100% at 100% 50%, rgba(184,99,58,0.10) 0%, transparent 100%)',
+        }} />
+
+        {/* Track arrastável */}
         <div
           ref={containerRef}
           className="overflow-hidden cursor-grab active:cursor-grabbing select-none"
-          style={{ paddingBlock: '.5rem' }}
+          style={{ paddingBlock: '6px' }}
           onMouseEnter={() => { isHovering.current = true;  if (!dragging.current) targetVel.current = 0 }}
           onMouseLeave={() => { isHovering.current = false; if (!dragging.current) targetVel.current = BASE_SPEED }}
           onMouseDown={e => { e.preventDefault(); startDrag(e.clientX) }}
@@ -213,7 +208,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
             style={{ gap: CARD_GAP, willChange: 'transform' }}
           >
             {items.map((p, i) => {
-              const img = p.imagens?.[0] ?? null
+              const img      = p.imagens?.[0] ?? null
               const catalogo = (p as { catalogo_nome?: string }).catalogo_nome ?? ''
               return (
                 <Link
@@ -230,8 +225,12 @@ export default function CarrosselDestaques({ produtos }: Props) {
                       width:        CARD_W,
                       height:       CARD_H,
                       borderRadius: '1rem',
-                      background:   '#e8e4de',
+                      background:   'var(--z)',
+                      boxShadow:    '0 2px 16px rgba(0,0,0,0.08)',
+                      transition:   'filter .4s ease',
                     }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.filter = 'drop-shadow(0 0 14px rgba(184,99,58,0.35))' }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.filter = 'none' }}
                   >
                     {img ? (
                       <Image
@@ -251,55 +250,36 @@ export default function CarrosselDestaques({ produtos }: Props) {
                       </div>
                     )}
 
-                    {/* Gradient overlay — aparece no hover */}
+                    {/* Overlay com nome — aparece no hover */}
                     <div
-                      className="absolute inset-0 flex flex-col justify-end p-3 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100"
                       style={{
-                        background: 'linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.6) 28%, rgba(0,0,0,.18) 55%, transparent 80%)',
+                        background: 'linear-gradient(to top, rgba(0,0,0,.88) 0%, rgba(0,0,0,.55) 30%, rgba(0,0,0,.12) 55%, transparent 80%)',
+                        transition: 'opacity .3s ease',
                       }}
                     >
                       {catalogo && (
-                        <span
-                          style={{
-                            fontFamily:    'var(--n)',
-                            fontSize:      '.58rem',
-                            fontWeight:    600,
-                            letterSpacing: '.18em',
-                            textTransform: 'uppercase',
-                            color:         'var(--ticker-text)',
-                            textShadow:    '0 1px 4px rgba(0,0,0,.6)',
-                            marginBottom:  '.2rem',
-                          }}
-                        >
+                        <span style={{
+                          fontFamily: 'var(--n)', fontSize: '.56rem', fontWeight: 600,
+                          letterSpacing: '.18em', textTransform: 'uppercase',
+                          color: 'var(--ticker-text)', marginBottom: '.2rem',
+                          textShadow: '0 1px 4px rgba(0,0,0,.6)',
+                        }}>
                           {catalogo}
                         </span>
                       )}
-                      <span
-                        style={{
-                          fontFamily: 'var(--m)',
-                          fontSize:   'clamp(.9rem, 1.6vw, 1.1rem)',
-                          fontWeight: 400,
-                          color:      '#fff',
-                          lineHeight: 1.2,
-                          textShadow: '0 1px 6px rgba(0,0,0,.7), 0 2px 16px rgba(0,0,0,.4)',
-                          display:    '-webkit-box',
-                          WebkitLineClamp: 2,
-                          WebkitBoxOrient: 'vertical',
-                          overflow:   'hidden',
-                        }}
-                      >
+                      <span style={{
+                        fontFamily: 'var(--m)', fontSize: '1.05rem', fontWeight: 400,
+                        color: '#fff', lineHeight: 1.2,
+                        textShadow: '0 1px 6px rgba(0,0,0,.7)',
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                      }}>
                         {p.nome}
                       </span>
                     </div>
-
-                    {/* Glow no hover */}
-                    <div
-                      className="absolute inset-0 rounded-[1rem] transition-all duration-450 opacity-0 group-hover:opacity-100"
-                      style={{
-                        boxShadow: '0 0 0 1.5px var(--ticker-text), 0 0 20px rgba(184,99,58,.25)',
-                        pointerEvents: 'none',
-                      }}
-                    />
                   </div>
                 </Link>
               )
