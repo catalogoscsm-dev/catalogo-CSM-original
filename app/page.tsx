@@ -9,6 +9,27 @@ export default function Home() {
   return (
     <Suspense>
       <CarrosselDestaques produtos={destaques} />
+
+      {/* ── Separador ── */}
+      <div className="flex items-center gap-4 mb-5">
+        <div className="flex-1 h-px" style={{ background: 'var(--h)' }} />
+        <span
+          style={{
+            fontFamily:    'var(--n)',
+            fontSize:      '10px',
+            fontWeight:    500,
+            letterSpacing: '.22em',
+            textTransform: 'uppercase',
+            color:         'var(--g)',
+            opacity:       0.6,
+            whiteSpace:    'nowrap',
+          }}
+        >
+          Todos os produtos
+        </span>
+        <div className="flex-1 h-px" style={{ background: 'var(--h)' }} />
+      </div>
+
       <ProductsView produtos={produtos} total={produtos.length} />
     </Suspense>
   )
