@@ -134,34 +134,45 @@ export default function CarrosselDestaques({ produtos }: Props) {
         overflow:  'hidden',
       }}
     >
-      {/* Label discreta */}
+      {/* Label EM DESTAQUE com glow pulsante */}
+      <style>{`
+        @keyframes destaque-glow {
+          0%, 100% {
+            text-shadow: 0 0 0px rgba(184,99,58,0), 0 0 0px rgba(184,99,58,0);
+            opacity: 0.82;
+          }
+          50% {
+            text-shadow: 0 0 10px rgba(184,99,58,0.60), 0 0 26px rgba(184,99,58,0.24), 0 0 50px rgba(184,99,58,0.10);
+            opacity: 1;
+          }
+        }
+        html.dark .destaque-label {
+          animation: destaque-glow-dark 3.8s ease-in-out infinite;
+        }
+        @keyframes destaque-glow-dark {
+          0%, 100% {
+            text-shadow: 0 0 0px rgba(217,104,32,0), 0 0 0px rgba(217,104,32,0);
+            opacity: 0.75;
+          }
+          50% {
+            text-shadow: 0 0 12px rgba(217,104,32,0.70), 0 0 30px rgba(217,104,32,0.32), 0 0 60px rgba(217,104,32,0.14);
+            opacity: 1;
+          }
+        }
+      `}</style>
       <p
-        className="text-center mb-4"
+        className="destaque-label text-center mb-5"
         style={{
           fontFamily:    'var(--n)',
-          fontSize:      '10px',
-          fontWeight:    500,
-          letterSpacing: '.22em',
+          fontSize:      '13px',
+          fontWeight:    600,
+          letterSpacing: '.28em',
           textTransform: 'uppercase',
-          color:         'var(--g)',
-          opacity:       0.7,
+          color:         'var(--ticker-text)',
+          animation:     'destaque-glow 3.8s ease-in-out infinite',
         }}
       >
-        ✦&nbsp;&nbsp;Em Destaque&nbsp;&nbsp;·&nbsp;&nbsp;
-        <em
-          style={{
-            fontFamily: 'var(--m)',
-            fontStyle:  'italic',
-            fontWeight: 400,
-            fontSize:   '11px',
-            color:      'var(--ticker-text)',
-            opacity:    0.85,
-            letterSpacing: '.05em',
-            textTransform: 'none',
-          }}
-        >
-          Peças que contam a sua história
-        </em>
+        ✦✦&nbsp;&nbsp;&nbsp;EM DESTAQUE&nbsp;&nbsp;&nbsp;✦✦
       </p>
 
       {/* Wrapper com efeito de portal de luz nas bordas */}
