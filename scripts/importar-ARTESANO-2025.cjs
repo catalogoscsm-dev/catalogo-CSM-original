@@ -70,23 +70,30 @@ async function main() {
     const srcDir = path.join(SRC_BASE, subpasta)
     const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
     const arquivos = fs.readdirSync(srcDir)
-      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+      .filter(f => {
+        const lower = f.toLowerCase()
+        return IMG_EXTS.has(path.extname(f).toLowerCase())
+          && !lower.startsWith('ficha')
+          && !lower.startsWith('full')
+      })
       .sort((a, b) => rankImagem(a) - rankImagem(b) || a.localeCompare(b))
     if (!arquivos.length) continue
 
     const produtos = db.prepare('SELECT * FROM produtos WHERE catalogo_id = ? AND pagina = ?').all(cat.id, pageNum)
     if (!produtos.length) { console.warn(`  [${subpasta}] Sem produto na pág. ${pageNum}. Pulando.`); continue }
 
+    const pagTag = `pag${String(pageNum).padStart(2, '0')}-`
     const urls = []
     for (const arquivo of arquivos) {
-      const srcPath  = path.join(srcDir, arquivo)
-      const destPath = path.join(PUBLIC_BASE, arquivo)
+      const srcPath   = path.join(srcDir, arquivo)
+      const destName  = pagTag + arquivo
+      const destPath  = path.join(PUBLIC_BASE, destName)
       if (!fs.existsSync(destPath)) {
-        process.stdout.write(`  Processando ${arquivo}...`)
+        process.stdout.write(`  Processando ${destName}...`)
         await aplicarWatermark(srcPath, destPath)
         console.log(' ✓')
       }
-      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(arquivo)}`)
+      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(destName)}`)
     }
     for (const prod of produtos) {
       db.prepare('UPDATE produtos SET imagens = ? WHERE id = ?').run(JSON.stringify(urls), prod.id)
