@@ -56,7 +56,7 @@ function tipoImagem(filename) {
 
 function rankImagem(filename) {
   const t = tipoImagem(filename)
-  return t === 'capa' ? 0 : 1
+  return t === 'capa' ? 1 : 0
 }
 
 async function main() {
