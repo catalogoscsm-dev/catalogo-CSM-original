@@ -25,7 +25,7 @@ export default function Home() {
             whiteSpace:    'nowrap',
           }}
         >
-          Todos os produtos
+          {produtos.length.toLocaleString('pt-BR')} produtos disponíveis
         </span>
         <div className="flex-1 h-px" style={{ background: 'var(--h)' }} />
       </div>

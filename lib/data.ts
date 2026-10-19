@@ -13,12 +13,11 @@ function withBase(p: ProdutoFull): ProdutoFull {
 }
 
 export function getProdutos(): ProdutoFull[] {
-  const all = data.produtos.map(withBase)
-  const aprimore = all.filter(p => p.catalogo_pasta === 'Aprimore Decor 2025' && p.imagens.length > 0)
+  const all = data.produtos.map(withBase).filter(p => p.imagens.length > 0)
+  const aprimore = all.filter(p => p.catalogo_pasta === 'Aprimore Decor 2025')
   const aluminas = all.filter(p => p.catalogo_pasta === 'ALUMINAS 2024')
-  const resto = all.filter(p => p.catalogo_pasta !== 'Aprimore Decor 2025' && p.catalogo_pasta !== 'ALUMINAS 2024')
-  const aprimoreRest = all.filter(p => p.catalogo_pasta === 'Aprimore Decor 2025' && p.imagens.length === 0)
-  return [...aprimore, ...aluminas, ...resto, ...aprimoreRest]
+  const resto    = all.filter(p => p.catalogo_pasta !== 'Aprimore Decor 2025' && p.catalogo_pasta !== 'ALUMINAS 2024')
+  return [...aprimore, ...aluminas, ...resto]
 }
 
 export function getProduto(id: number | string): ProdutoFull | null {

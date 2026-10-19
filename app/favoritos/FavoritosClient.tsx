@@ -16,7 +16,7 @@ const MAX_HIST     = 50
 interface HistEntry { id: number; at: number }
 
 function getLS<T>(key: string, fallback: T): T {
-  try { return JSON.parse(localStorage.getItem(key) ?? '') } catch { return fallback }
+  try { return JSON.parse(localStorage.getItem(key) ?? 'null') ?? fallback } catch { return fallback }
 }
 
 function buildWaHref(produtos: Produto[], origin: string) {
