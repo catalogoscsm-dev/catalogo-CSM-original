@@ -4,19 +4,6 @@ import { Suspense, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ShieldCheck, Eye, EyeOff } from 'lucide-react'
 
-const PWD_SHA256 = '32d6b52f45050843ae9050fa85855c3e29fff7a9d7aca2d6e9c4fabceee680e8'
-const SESSION_TOKEN = 'csm-admin-session-2025'
-
-async function sha256(text: string): Promise<string> {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
-  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('')
-}
-
-function setAdminCookie() {
-  const maxAge = 60 * 60 * 24 * 30
-  document.cookie = `csm_admin=${SESSION_TOKEN}; path=/; max-age=${maxAge}; SameSite=Strict`
-}
-
 function LoginContent() {
   const [password, setPassword] = useState('')
   const [showPw, setShowPw]     = useState(false)
@@ -31,36 +18,22 @@ function LoginContent() {
     setLoading(true)
     setError('')
 
-    // Tenta API (funciona no Vercel)
     try {
       const res = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ password }),
       })
+      const data = await res.json()
       if (res.ok) {
-        setAdminCookie()
         router.push(next)
         router.refresh()
-        return
-      }
-      if (res.status !== 404) {
-        setError('Senha incorreta.')
+      } else {
+        setError(data.error || 'Senha incorreta.')
         setLoading(false)
-        return
       }
     } catch {
-      // API indisponível (GitHub Pages) — cai no fallback abaixo
-    }
-
-    // Fallback cliente (GitHub Pages): verifica SHA-256 da senha
-    const hash = await sha256(password)
-    if (hash === PWD_SHA256) {
-      setAdminCookie()
-      router.push(next)
-      router.refresh()
-    } else {
-      setError('Senha incorreta.')
+      setError('Erro de conexão. Tente novamente.')
       setLoading(false)
     }
   }
