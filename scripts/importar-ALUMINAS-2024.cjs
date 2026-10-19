@@ -62,8 +62,10 @@ function rankImagem(filename) {
 async function main() {
   fs.mkdirSync(PUBLIC_BASE, { recursive: true })
 
+  const SUFFIX_IDX = { '': 0, 'b': 1, 'c': 2, 'd': 3 }
+
   const subpastas = fs.readdirSync(SRC_BASE, { withFileTypes: true })
-    .filter(d => d.isDirectory() && /^pag\s*\d+$/i.test(d.name))
+    .filter(d => d.isDirectory() && /^pag\s*\d+[a-d]?$/i.test(d.name))
     .map(d => d.name)
     .sort()
 
@@ -71,7 +73,10 @@ async function main() {
 
   for (const subpasta of subpastas) {
     const srcDir  = path.join(SRC_BASE, subpasta)
-    const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
+    const match   = subpasta.match(/^pag\s*(\d+)([a-d]?)$/i)
+    const pageNum = parseInt(match[1], 10)
+    const suffix  = match[2].toLowerCase()
+    const prodIdx = SUFFIX_IDX[suffix] ?? 0
 
     const arquivos = fs.readdirSync(srcDir)
       .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()) && !SKIP_FILES.has(f.toLowerCase()))
@@ -79,12 +84,14 @@ async function main() {
 
     if (!arquivos.length) continue
 
-    const produtos = db.prepare(
-      'SELECT * FROM produtos WHERE catalogo_id = ? AND pagina = ?'
+    const todosProdutos = db.prepare(
+      'SELECT * FROM produtos WHERE catalogo_id = ? AND pagina = ? ORDER BY id'
     ).all(cat.id, pageNum)
 
+    const produtos = prodIdx < todosProdutos.length ? [todosProdutos[prodIdx]] : []
+
     if (!produtos.length) {
-      console.warn(`  [${subpasta}] Sem produto na pág. ${pageNum}. Pulando.`)
+      console.warn(`  [${subpasta}] Sem produto na pág. ${pageNum} índice ${prodIdx}. Pulando.`)
       continue
     }
 
@@ -92,7 +99,7 @@ async function main() {
     for (const arquivo of arquivos) {
       const ext      = path.extname(arquivo)
       const base     = path.basename(arquivo, ext)
-      const slug     = `pag${String(pageNum).padStart(2,'0')}_${base}${ext}`
+      const slug     = `pag${String(pageNum).padStart(2,'0')}${suffix}_${base}${ext}`
       const srcPath  = path.join(srcDir, arquivo)
       const destPath = path.join(PUBLIC_BASE, slug)
       process.stdout.write(`  Processando ${slug}...`)
