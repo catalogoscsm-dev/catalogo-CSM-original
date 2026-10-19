@@ -19,6 +19,7 @@ const SRC_BASE      = path.join(BASE_CATALOGOS, CATALOG_PASTA, 'imagens dos prod
 const PUBLIC_BASE   = path.join(__dirname, '..', 'public', 'imagens', CATALOG_PASTA)
 const LOGO_PATH     = path.join(__dirname, '..', 'public', 'logo-csm.png')
 const IMG_EXTS      = new Set(['.png', '.jpg', '.jpeg', '.webp', '.jfif'])
+const SKIP_FILES    = new Set(['full.png','full.jpg','ficha tecn.png','ficha tecn.jpg'])
 const OPACITY       = 0.38
 const LOGO_RATIO    = 0.14
 const MARGIN_RATIO  = 0.025
@@ -73,7 +74,7 @@ async function main() {
     const pageNum = parseInt(subpasta.replace(/\D/g, ''), 10)
 
     const arquivos = fs.readdirSync(srcDir)
-      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()))
+      .filter(f => IMG_EXTS.has(path.extname(f).toLowerCase()) && !SKIP_FILES.has(f.toLowerCase()))
       .sort((a, b) => rankImagem(a) - rankImagem(b) || a.localeCompare(b))
 
     if (!arquivos.length) continue
@@ -89,14 +90,15 @@ async function main() {
 
     const urls = []
     for (const arquivo of arquivos) {
+      const ext      = path.extname(arquivo)
+      const base     = path.basename(arquivo, ext)
+      const slug     = `pag${String(pageNum).padStart(2,'0')}_${base}${ext}`
       const srcPath  = path.join(srcDir, arquivo)
-      const destPath = path.join(PUBLIC_BASE, arquivo)
-      if (!fs.existsSync(destPath)) {
-        process.stdout.write(`  Processando ${arquivo}...`)
-        await aplicarWatermark(srcPath, destPath)
-        console.log(' ✓')
-      }
-      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(arquivo)}`)
+      const destPath = path.join(PUBLIC_BASE, slug)
+      process.stdout.write(`  Processando ${slug}...`)
+      await aplicarWatermark(srcPath, destPath)
+      console.log(' ✓')
+      urls.push(`/imagens/${encodeURIComponent(CATALOG_PASTA)}/${encodeURIComponent(slug)}`)
     }
 
     for (const prod of produtos) {

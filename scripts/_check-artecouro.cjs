@@ -1,8 +1,3 @@
 const db = require('better-sqlite3')('database/catalogo.db');
-// Check if Rembrandt exists anywhere in catalog 101
-const rows = db.prepare("SELECT id, nome, pagina, imagens FROM produtos WHERE catalogo_id = 101 AND (nome LIKE '%Rembrandt%' OR pagina = 44)").all();
-console.log('Busca Rembrandt/pag44:', JSON.stringify(rows, null, 2));
-
-// Also check current max page in catalog 101
-const maxPag = db.prepare("SELECT MAX(pagina) as max FROM produtos WHERE catalogo_id = 101").get();
-console.log('Max pag no Concept:', maxPag.max);
+const rows = db.prepare("SELECT id, nome, pagina, dimensoes, texto_livre FROM produtos WHERE catalogo_id = 100 AND pagina BETWEEN 9 AND 16 ORDER BY pagina").all();
+rows.forEach(r => console.log(`pag ${r.pagina} | ID ${r.id} | ${r.nome} | dim: ${r.dimensoes} | tipo: ${r.texto_livre}`));
