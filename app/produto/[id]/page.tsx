@@ -53,7 +53,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
             <ImageZoom
               src={produto.imagens[0] ?? null}
               alt={produto.nome}
-              thumbnails={produto.imagens}
+              thumbnails={produto.imagens.slice(0, 1)}
               fullHeight
             />
           </div>
