@@ -3,12 +3,19 @@ import { NextRequest, NextResponse } from 'next/server'
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl
 
-  // Passa pathname para o layout raiz via header (usado para ocultar nav na tela de login)
-  const reqHeaders = new Headers(req.headers)
-  reqHeaders.set('x-pathname', pathname)
-  return NextResponse.next({ request: { headers: reqHeaders } })
+  if (pathname.startsWith('/admin') && pathname !== '/admin/login') {
+    const token = req.cookies.get('csm_admin')?.value
+    const secret = process.env.ADMIN_SECRET ?? ''
+    if (!token || token !== secret) {
+      const loginUrl = new URL('/admin/login', req.url)
+      loginUrl.searchParams.set('next', pathname)
+      return NextResponse.redirect(loginUrl)
+    }
+  }
+
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/admin/:path*'],
 }
