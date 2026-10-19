@@ -9,6 +9,7 @@ import AdminBanner from '@/components/AdminBanner'
 import MarqueeTicker from '@/components/MarqueeTicker'
 import { isAdminSession } from '@/lib/auth'
 import { Suspense } from 'react'
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   title: 'Catálogo CSM',
@@ -16,21 +17,25 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers()
+  const pathname = headersList.get('x-pathname') ?? '/'
+  const isAdminPage = pathname.startsWith('/admin')
   const admin = await isAdminSession()
+
   return (
     <html lang="pt-BR">
       <body className="min-h-screen">
         <ThemeProvider>
-          <AdminBanner serverAdmin={admin} />
-          <Suspense><Header /></Suspense>
-          <MarqueeTicker />
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
+          {!isAdminPage && <AdminBanner serverAdmin={admin} />}
+          {!isAdminPage && <Suspense><Header /></Suspense>}
+          {!isAdminPage && <MarqueeTicker />}
+          <main className={isAdminPage ? '' : 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8'}>
             <PageTransition>
               {children}
             </PageTransition>
           </main>
-          <WhatsAppFloatingButton />
-          <Suspense><MobileBottomNav /></Suspense>
+          {!isAdminPage && <WhatsAppFloatingButton />}
+          {!isAdminPage && <Suspense><MobileBottomNav /></Suspense>}
         </ThemeProvider>
       </body>
     </html>

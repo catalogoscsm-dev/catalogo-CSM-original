@@ -12,7 +12,12 @@ export function proxy(req: NextRequest) {
     pathname.startsWith('/imagens') ||
     pathname === '/favicon.ico'
 
-  if (isPublic) return NextResponse.next()
+  // Passa pathname para o layout via header
+  const reqHeaders = new Headers(req.headers)
+  reqHeaders.set('x-pathname', pathname)
+  const next = () => NextResponse.next({ request: { headers: reqHeaders } })
+
+  if (isPublic) return next()
 
   const token = req.cookies.get('csm_admin')?.value
   const secret = process.env.ADMIN_SECRET ?? ''
@@ -23,7 +28,7 @@ export function proxy(req: NextRequest) {
     return NextResponse.redirect(loginUrl)
   }
 
-  return NextResponse.next()
+  return next()
 }
 
 export const config = {
