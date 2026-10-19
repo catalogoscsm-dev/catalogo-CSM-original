@@ -1,33 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { ShieldCheck } from 'lucide-react'
 
-const SESSION_TOKEN = 'csm-admin-session-2025'
-
-function getAdminCookie(): boolean {
-  if (typeof document === 'undefined') return false
-  return document.cookie.split(';').some(c => c.trim() === `csm_admin=${SESSION_TOKEN}`)
-}
-
 export default function AdminBanner({ serverAdmin = false }: { serverAdmin?: boolean }) {
-  const [visible, setVisible] = useState(serverAdmin)
   const router = useRouter()
 
-  useEffect(() => {
-    setVisible(serverAdmin || getAdminCookie())
-  }, [serverAdmin])
-
-  function logout() {
-    document.cookie = 'csm_admin=; path=/; max-age=0'
-    // Tenta API (Vercel), ignora erro em sites estáticos
-    fetch('/api/admin/logout', { method: 'POST' }).catch(() => {})
-    setVisible(false)
+  async function logout() {
+    await fetch('/api/admin/logout', { method: 'POST' }).catch(() => {})
+    router.push('/admin/login')
     router.refresh()
   }
 
-  if (!visible) return null
+  if (!serverAdmin) return null
 
   return (
     <div className="w-full flex items-center justify-between px-4 py-2 text-xs font-semibold"
