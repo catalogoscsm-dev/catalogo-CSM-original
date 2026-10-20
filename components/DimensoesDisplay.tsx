@@ -56,9 +56,10 @@ function getSwatchColor(name: string): string | null {
 // ─── Parsers ─────────────────────────────────────────────────────────────────
 
 function parseFormatA(raw: string): Row | null {
-  const sizeM = raw.match(/^([A-Z]+)-(.+)$/i)
-  const size  = sizeM ? sizeM[1].toUpperCase() : null
-  const body  = sizeM ? sizeM[2] : raw
+  const sizeM = raw.match(/^([A-Z0-9]+)-(.+)$/i)
+  const hasSizeLetter = sizeM ? /[A-Za-z]/.test(sizeM[1]) : false
+  const size  = hasSizeLetter ? sizeM![1] : null
+  const body  = hasSizeLetter ? sizeM![2] : raw
   const tokens = body.split(/[Xx×]/i).map(t => t.trim())
   const cells: Cell[] = []
   for (let i = 0; i < tokens.length; i++) {

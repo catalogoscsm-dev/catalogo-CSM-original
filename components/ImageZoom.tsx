@@ -134,7 +134,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
       width: PANEL_W, height: PANEL_H, borderRadius: 16,
       border: '1px solid rgba(255,255,255,0.12)',
       boxShadow: '0 24px 64px rgba(0,0,0,0.3)',
-      backgroundImage: `url(${active})`,
+      backgroundImage: `url('${active}')`,
       backgroundSize: `${ZOOM_FACTOR * 100}%`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: `${lens.x}% ${lens.y}%`,
