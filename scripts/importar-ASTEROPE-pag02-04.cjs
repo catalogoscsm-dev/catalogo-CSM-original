@@ -42,9 +42,8 @@ for (const pg of paginas) {
   const capaPublic = `${pg.prefixo}-capa.png`
   fs.copyFileSync(path.join(srcDir, 'capa.png'), path.join(DEST, capaPublic))
 
-  // ── Copiar ficha ──
-  const fichaPublic = `${pg.prefixo}-ficha.png`
-  fs.copyFileSync(path.join(srcDir, 'ficha tecn.png'), path.join(DEST, fichaPublic))
+  // ── Copiar ficha (referência interna — não entra no array de imagens) ──
+  fs.copyFileSync(path.join(srcDir, 'ficha tecn.png'), path.join(DEST, `${pg.prefixo}-ficha.png`))
 
   // ── Copiar recortes ──
   const recortesPublic = pg.recortes.map((nome, i) => {
@@ -55,7 +54,6 @@ for (const pg of paginas) {
 
   const imagens = JSON.stringify([
     `/imagens/ASTEROPE MÓVEIS/${capaPublic}`,
-    `/imagens/ASTEROPE MÓVEIS/${fichaPublic}`,
     ...recortesPublic,
   ])
 
