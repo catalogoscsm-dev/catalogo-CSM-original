@@ -12,6 +12,7 @@ const LS_REMOVIDOS = 'csm_removidos'
 const LS_VISTOS    = 'csm_visualizados'
 const WA_PHONE     = '5519990034068'
 const MAX_HIST     = 50
+const EXPIRY_MS    = 7 * 24 * 60 * 60 * 1000 // 7 dias
 
 interface HistEntry { id: number; at: number }
 
@@ -103,8 +104,11 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
   useEffect(() => {
     setMounted(true)
     setFavIds(getLS(LS_FAV, []))
-    setRemovidosList(getLS(LS_REMOVIDOS, []))
-    setVistos(getLS(LS_VISTOS, []))
+    const cutoff = Date.now() - EXPIRY_MS
+    const removidos: HistEntry[] = getLS(LS_REMOVIDOS, []).filter((e: HistEntry) => e.at > cutoff)
+    const vistos: HistEntry[]    = getLS(LS_VISTOS, []).filter((e: HistEntry) => e.at > cutoff)
+    setRemovidosList(removidos)
+    setVistos(vistos)
     if (searchParams.get('hist') === '1') {
       setDrawerOpen(true)
     }
@@ -145,6 +149,14 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
       localStorage.setItem(LS_FAV, JSON.stringify(next))
       setRemovingId(null)
     }, 380)
+  }
+
+  function limparHistorico() {
+    localStorage.removeItem(LS_VISTOS)
+    localStorage.removeItem(LS_REMOVIDOS)
+    setVistos([])
+    setRemovidosList([])
+    closeDrawer()
   }
 
   function restaurar(id: number) {
@@ -294,13 +306,22 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
                   {totalHist}
                 </span>
               </div>
-              <button
-                onClick={closeDrawer}
-                className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
-                style={{ background: 'var(--c)', color: 'var(--g)' }}
-              >
-                <X className="w-4 h-4" />
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={limparHistorico}
+                  className="px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-150 hover:opacity-80"
+                  style={{ background: 'var(--c)', border: '1px solid var(--h)', color: 'var(--g)' }}
+                >
+                  Limpar
+                </button>
+                <button
+                  onClick={closeDrawer}
+                  className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
+                  style={{ background: 'var(--c)', color: 'var(--g)' }}
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
             {/* Removed section */}

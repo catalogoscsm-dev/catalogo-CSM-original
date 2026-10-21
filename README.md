@@ -8,22 +8,21 @@ Consulta de produtos de móveis e decoração extraídos de PDFs de fornecedores
 
 ---
 
-## LEIA PRIMEIRO — Estado atual e próximos passos (outubro/2025)
+## LEIA PRIMEIRO — Estado atual e próximos passos (outubro/2026)
 
 ### O que está em andamento agora
 
-Estamos catalogando o **ARMIL COMPLETO 2024** — catálogo com múltiplos produtos por página.
+Estamos catalogando o **Artano 2024** — catálogo de sofás e poltronas (27 produtos, pag 03–55).
 
 | Situação | Valor |
 |---|---|
-| Total de produtos no banco | 125 |
-| Produtos com imagens | 70 |
-| Placeholders pendentes | 0 |
-| Última página com imagem | pag 114 |
+| Total de produtos no banco | 5.646 |
+| Produtos com imagens | 1.249 |
+| Próximo catálogo | Artano 2024 |
 
-**O que falta:** recortar e inserir as páginas que ainda estão com pastas vazias em:
+**O que falta:** rodar o script de importação do Artano 2024. As pastas `pag 03` a `pag 55` já têm `capa.png` e `ficha tecn.png` prontas em:
 ```
-C:\Users\joao.miguel\Documents\PROJETOS CSM\catalogos\catalogos separados\ARMIL COMPLETO 2024\imagens dos produtos\
+C:\Users\joao.miguel\Documents\PROJETOS CSM\catalogos\catalogos separados\Artano 2024\imagens dos produtos\
 ```
 
 ---
@@ -291,16 +290,38 @@ C:\Users\joao.miguel\Documents\catalogos\catalogos separados\
 
 ---
 
-## Estado atual (set/2026)
+## Estado atual (out/2026)
 
-| Catálogo | Produtos | Imagens |
+### Catálogos com imagens completas (ou quase)
+
+| Catálogo | Produtos | Com imagem |
 |---|---|---|
-| ABV 2025 | catalogado págs 7–107 | ✅ importadas |
-| Artano 2024 | no banco | ⏳ fotos pendentes |
-| Gold Line 2025 | no banco | ⏳ fotos pendentes |
+| ABV 2025 | 51 | ✅ 51 |
+| ACQUARELLA - AGO 2023 | 58 | ✅ 57 |
+| ALUMINAS 2024 | 142 | ✅ 142 |
+| ARMIL COMPLETO 2024 | 192 | ⚠️ 175 |
+| ARTESANO 2025 | 115 | ✅ 115 |
+| Aco Mobilia 2025 | 51 | ⚠️ 32 |
+| Adrián Line 2023 | 12 | ✅ 12 |
+| Aprimore Decor 2025 | 45 | ⚠️ 42 |
+| Art Ferro 2024-25 | 75 | ⚠️ 72 |
+| Artecouro 2026 | 46 | ✅ 46 |
+| Artecouro Concept 2026 | 37 | ✅ 37 |
+| Aço Mobilia 2025-7 | 2 | ✅ 2 |
+| IUMMI 2025 | 306 | ⚠️ 128 |
+| MADELUSTRE 2025 | 199 | ⚠️ 108 |
+| SIER 2025 | 492 | ⚠️ 226 |
+| ASTEROPE MÓVEIS | 48 | 🔄 4 (em andamento) |
 
-- **57 produtos** no banco, **51 com fotos**, **102 imagens** no repositório
-- ~100 outros catálogos em disco ainda não importados
+### Próximos a catalogar (por ordem)
+1. **Artano 2024** ← estamos aqui (27 produtos, imagens prontas)
+2. Artecouro 2025 (após Artano)
+3. ARTESANO 2025 (após Artecouro)
+4. ... e assim por diante alfabeticamente
+
+- **5.646 produtos** no banco total
+- **1.249 com imagens** importadas
+- ~80 catálogos no banco ainda sem imagens
 
 ---
 
