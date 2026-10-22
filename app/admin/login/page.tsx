@@ -4,8 +4,8 @@ import { Suspense, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { ShieldCheck, Eye, EyeOff } from 'lucide-react'
 
-const PWD_SHA256 = '32d6b52f45050843ae9050fa85855c3e29fff7a9d7aca2d6e9c4fabceee680e8'
-const SESSION_TOKEN = 'csm-admin-session-2025'
+// Hash SHA-256 da senha — lido de variável de ambiente, nunca hardcoded
+const PWD_SHA256 = process.env.NEXT_PUBLIC_ADMIN_HASH ?? ''
 
 async function sha256(text: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text))
@@ -13,8 +13,9 @@ async function sha256(text: string): Promise<string> {
 }
 
 function setAdminCookie() {
+  // Cookie de UI separado do httpOnly do servidor (não sobrescreve o seguro)
   const maxAge = 60 * 60 * 24 * 30
-  document.cookie = `csm_admin=${SESSION_TOKEN}; path=/; max-age=${maxAge}; SameSite=Strict`
+  document.cookie = `csm_admin_ui=1; path=/; max-age=${maxAge}; SameSite=Strict`
 }
 
 function LoginContent() {
