@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useRef, useEffect, useState, useCallback } from 'react'
-import { Search, X, Heart, Sun, Moon } from 'lucide-react'
+import { Search, X, Heart, Sun, Moon, Lock, LockOpen } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
@@ -93,6 +93,24 @@ export default function Header() {
   }
 
   const isDark = mounted && theme === 'dark'
+
+  // ── Admin toggle ──────────────────────────────────────────────────────────
+  const [isAdmin, setIsAdmin] = useState(false)
+  useEffect(() => {
+    const check = () => setIsAdmin(document.cookie.includes('csm_admin_ui=1'))
+    check()
+    window.addEventListener('csm-admin-change', check)
+    return () => window.removeEventListener('csm-admin-change', check)
+  }, [])
+
+  function toggleAdmin() {
+    if (isAdmin) {
+      document.cookie = 'csm_admin_ui=; path=/; max-age=0'
+    } else {
+      document.cookie = 'csm_admin_ui=1; path=/; max-age=86400; SameSite=Strict'
+    }
+    window.dispatchEvent(new CustomEvent('csm-admin-change'))
+  }
 
   return (
     <header className="_h sticky top-0 z-40">
@@ -276,18 +294,18 @@ export default function Header() {
               <Heart className="w-4 h-4" style={{ color: 'var(--g)' }} />
             </Link>
 
-            {/* Admin lock — invisível */}
-            <Link
-              href={`/admin/login?next=${encodeURIComponent(pathname)}`}
+            {/* Admin toggle — discreto */}
+            <button
+              onClick={toggleAdmin}
               tabIndex={-1}
               title=""
-              className="opacity-10 hover:opacity-30 transition-opacity duration-300 w-6 h-6 flex items-center justify-center"
-              style={{ color: 'var(--g)' }}
+              className={`transition-opacity duration-300 w-6 h-6 flex items-center justify-center ${isAdmin ? 'opacity-50 hover:opacity-70' : 'opacity-10 hover:opacity-30'}`}
+              style={{ color: 'var(--g)', background: 'none', border: 'none', cursor: 'pointer' }}
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2a5 5 0 0 1 5 5v2h1a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h1V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v2h6V7a3 3 0 0 0-3-3z"/>
-              </svg>
-            </Link>
+              {isAdmin
+                ? <LockOpen width={12} height={12} />
+                : <Lock width={12} height={12} />}
+            </button>
           </div>
 
         </div>

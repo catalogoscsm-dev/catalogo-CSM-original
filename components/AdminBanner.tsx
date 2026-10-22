@@ -1,34 +1,21 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
 import { ShieldCheck } from 'lucide-react'
 
-async function checkAdminStatus(): Promise<boolean> {
-  // 1. Tenta verificar pelo cookie httpOnly via API (Vercel)
-  try {
-    const r = await fetch('/api/admin/check', { cache: 'no-store' })
-    if (r.status !== 404) return r.ok
-  } catch {}
-  // 2. Fallback para GitHub Pages: cookie de UI client-side
-  if (typeof document === 'undefined') return false
-  return document.cookie.split(';').some(c => c.trim().startsWith('csm_admin_ui='))
-}
-
 export default function AdminBanner({ serverAdmin = false }: { serverAdmin?: boolean }) {
-  const [visible, setVisible] = useState(serverAdmin)
-  const router = useRouter()
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (serverAdmin) { setVisible(true); return }
-    checkAdminStatus().then(setVisible)
-  }, [serverAdmin])
+    const check = () => setVisible(document.cookie.includes('csm_admin_ui=1'))
+    check()
+    window.addEventListener('csm-admin-change', check)
+    return () => window.removeEventListener('csm-admin-change', check)
+  }, [])
 
   function logout() {
     document.cookie = 'csm_admin_ui=; path=/; max-age=0'
-    fetch('/api/admin/logout', { method: 'POST' }).catch(() => {})
-    setVisible(false)
-    router.refresh()
+    window.dispatchEvent(new CustomEvent('csm-admin-change'))
   }
 
   if (!visible) return null
