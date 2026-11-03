@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export-data": "node scripts/export-data.js"
+    "export-data": "node scripts/export-data.js",
+    "upscale": "node scripts/upscale.cjs",
+    "upscale:dry": "node scripts/upscale.cjs --dry-run",
+    "upscale:api": "node scripts/upscale-api.cjs",
+    "upscale:api:dry": "node scripts/upscale-api.cjs --dry-run"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
