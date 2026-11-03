@@ -276,7 +276,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
               <Image
                 src={active} alt={alt} fill
                 className="object-contain pointer-events-none"
-                style={{ padding: '6px' }}
+                style={{ padding: '6px', mixBlendMode: 'multiply' }}
                 priority
               />
               {zooming && (
@@ -316,7 +316,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
           <div style={{
             display: 'flex', gap: 8, padding: '12px 16px',
             borderTop: '1px solid rgba(0,0,0,0.06)',
-            overflowX: 'auto', background: '#fafaf9',
+            overflowX: 'auto', background: '#F5F0E8',
           }}>
             {thumbnails.map((img, i) => (
               <button
@@ -328,7 +328,7 @@ export default function ImageZoom({ src, alt, thumbnails = [], fullHeight = fals
                   border: active === img ? '2px solid #1a1a1a' : '2px solid transparent',
                   opacity: active === img ? 1 : 0.5,
                   transition: 'all 0.2s ease',
-                  position: 'relative', background: '#fff', cursor: 'pointer',
+                  position: 'relative', background: '#F5F0E8', cursor: 'pointer',
                 }}
               >
                 <Image src={img} alt={`${alt} ${i + 1}`} fill className="object-contain" style={{ padding: 4 }} />

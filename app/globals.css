@@ -31,23 +31,23 @@
 }
 
 html.dark {
-  --ticker-bg:     #160F07;
+  --ticker-bg:     #180E06;
   --ticker-text:   #D96820;
   --ticker-sep:    #D96820;
   --ticker-border: rgba(217,104,32,0.18);
   --ticker-glow:   0 0 6px rgba(217,104,32,0.42), 0 0 16px rgba(217,104,32,0.18);
-  --a: #0A0A0A;
-  --b: #0D0D0D;
-  --c: #141414;
-  --d: #1C1C1C;
-  --e: rgba(14,14,14,0.98);
+  --a: #110D08;
+  --b: #160F09;
+  --c: #1E1610;
+  --d: #271C13;
+  --e: rgba(20,15,10,0.98);
   --f: #EDE8E2;
   --g: #807C78;
   --h: rgba(255,255,255,0.08);
   --j: #C4924A;
   --k: #D4A860;
-  --p: #0A0A0A;
-  --q: #141414;
+  --p: #110D08;
+  --q: #1E1610;
   --r: #EDE8E2;
   --w: #807C78;
   --z: rgba(255,255,255,0.08);
@@ -249,11 +249,25 @@ html.dark ._g:hover {
 }
 
 ._pi {
-  background: #ffffff;
+  background: #F5F0E8;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 75vw;
+  position: relative;
+}
+
+html.dark ._pi {
+  background: #EDE7DC;
+}
+
+html.dark ._pi::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 46%, transparent 32%, rgba(17,13,8,0.62) 92%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 ._po {
