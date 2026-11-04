@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
+export const dynamic = 'force-static'
+
 export async function GET(req: NextRequest) {
   const cookie = req.cookies.get('csm_admin')
   const secret = process.env.ADMIN_SECRET ?? ''

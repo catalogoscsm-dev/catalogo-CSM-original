@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { scryptSync, timingSafeEqual } from 'crypto'
 
+export const dynamic = 'force-static'
+
 // In-memory rate limiter: ip → { count, blockedUntil }
 const attempts = new Map<string, { count: number; blockedUntil: number }>()
 
