@@ -34,6 +34,7 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /catalogo-CSM-original
           GITHUB_PAGES: 'true'
           NODE_OPTIONS: --max-old-space-size=4096
+          NEXT_PUBLIC_ADMIN_HASH: ${{ secrets.ADMIN_HASH }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
