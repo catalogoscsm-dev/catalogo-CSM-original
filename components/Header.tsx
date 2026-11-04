@@ -105,11 +105,13 @@ export default function Header() {
 
   function toggleAdmin() {
     if (isAdmin) {
-      document.cookie = 'csm_admin_ui=; path=/; max-age=0'
+      fetch('/api/admin/logout', { method: 'POST' }).finally(() => {
+        document.cookie = 'csm_admin_ui=; path=/; max-age=0'
+        window.dispatchEvent(new CustomEvent('csm-admin-change'))
+      })
     } else {
-      document.cookie = 'csm_admin_ui=1; path=/; max-age=86400; SameSite=Strict'
+      router.push('/admin/login')
     }
-    window.dispatchEvent(new CustomEvent('csm-admin-change'))
   }
 
   return (

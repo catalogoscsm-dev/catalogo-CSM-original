@@ -14,8 +14,10 @@ export default function AdminBanner({ serverAdmin = false }: { serverAdmin?: boo
   }, [])
 
   function logout() {
-    document.cookie = 'csm_admin_ui=; path=/; max-age=0'
-    window.dispatchEvent(new CustomEvent('csm-admin-change'))
+    fetch('/api/admin/logout', { method: 'POST' }).finally(() => {
+      document.cookie = 'csm_admin_ui=; path=/; max-age=0'
+      window.dispatchEvent(new CustomEvent('csm-admin-change'))
+    })
   }
 
   if (!visible) return null
