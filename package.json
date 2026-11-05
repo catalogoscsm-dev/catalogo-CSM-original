@@ -14,6 +14,7 @@
     "upscale:api:dry": "node scripts/upscale-api.cjs --dry-run"
   },
   "dependencies": {
+    "@react-pdf/renderer": "^4.9.0",
     "bcryptjs": "^3.0.3",
     "better-sqlite3": "^13.0.3",
     "framer-motion": "^13.2.0",

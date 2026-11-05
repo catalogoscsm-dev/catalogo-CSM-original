@@ -1,11 +1,13 @@
 ﻿'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { Produto } from '@/lib/types'
-import { Heart, X, History, RotateCcw } from 'lucide-react'
+import { Heart, X, History, RotateCcw, FileDown } from 'lucide-react'
 import ProductCard from '@/components/ProductCard'
+
+const GerarPDFModal = lazy(() => import('@/components/GerarPDFModal'))
 
 const LS_FAV       = 'csm_favoritos'
 const LS_REMOVIDOS = 'csm_removidos'
@@ -100,6 +102,7 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
   const [drawerOpen, setDrawerOpen]   = useState(false)
   const [closing, setClosing]         = useState(false)
   const [removingId, setRemovingId]   = useState<number | null>(null)
+  const [pdfModal,   setPdfModal]     = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -217,6 +220,22 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
               </button>
             )}
 
+            {produtos.length > 0 && (
+              <button
+                onClick={() => setPdfModal(true)}
+                className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-[0.98] shrink-0"
+                style={{
+                  background: 'linear-gradient(135deg, #8C6E18, #B8973A)',
+                  color: '#fff',
+                  boxShadow: '0 4px 18px rgba(140,110,24,0.35)',
+                  border: 'none', cursor: 'pointer',
+                }}
+              >
+                <FileDown className="w-4 h-4" />
+                Gerar PDF
+              </button>
+            )}
+
             {waHref && (
               <a
                 href={waHref}
@@ -266,6 +285,13 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
           </div>
         )}
       </div>
+
+      {/* Modal PDF */}
+      {pdfModal && (
+        <Suspense fallback={null}>
+          <GerarPDFModal produtos={produtos} onClose={() => setPdfModal(false)} />
+        </Suspense>
+      )}
 
       {/* Drawer backdrop + panel */}
       {drawerOpen && (
