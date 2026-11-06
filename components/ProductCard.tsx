@@ -224,23 +224,70 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
         {/* Área de imagem */}
         <div className="relative aspect-square overflow-hidden" style={{ background: '#ffffff' }}>
 
-          {/* Badge categoria — canto superior esquerdo da imagem */}
+          {/* Badge categoria + botão remover favorito — canto superior esquerdo */}
           {(() => {
             const cat = (produto as { categoria?: string | null }).categoria
-            if (!cat || cat === 'Outros') return null
+            const hasCat = cat && cat !== 'Outros'
             return (
-              <div style={{
-                position: 'absolute', top: 8, left: 8, zIndex: 25,
-                background: 'rgba(0,0,0,0.52)',
-                backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)',
-                color: '#fff',
-                fontSize: 8, fontWeight: 600, letterSpacing: '0.16em',
-                padding: '3px 8px', borderRadius: 99,
-                textTransform: 'uppercase',
-                border: '1px solid rgba(255,255,255,0.14)',
-              }}>
-                {cat}
-              </div>
+              <>
+                <div style={{
+                  position: 'absolute', top: 8, left: 8, zIndex: 25,
+                  display: 'flex', alignItems: 'center', gap: 4,
+                }}>
+                  {hasCat && (
+                    <div style={{
+                      background: 'rgba(0,0,0,0.52)',
+                      backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)',
+                      color: '#fff',
+                      fontSize: 8, fontWeight: 600, letterSpacing: '0.16em',
+                      padding: favorito && onToggleFavorito ? '3px 6px 3px 8px' : '3px 8px',
+                      borderRadius: 99,
+                      textTransform: 'uppercase',
+                      border: '1px solid rgba(255,255,255,0.14)',
+                      display: 'flex', alignItems: 'center', gap: 5,
+                    }}>
+                      {cat}
+                      {favorito && onToggleFavorito && (
+                        <button
+                          onClick={e => { e.preventDefault(); e.stopPropagation(); onToggleFavorito(produto.id) }}
+                          title="Remover dos favoritos"
+                          style={{
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            width: 14, height: 14,
+                            borderRadius: '50%',
+                            background: 'rgba(255,255,255,0.9)',
+                            border: 'none', cursor: 'pointer', padding: 0,
+                            flexShrink: 0,
+                            transition: 'background 0.15s ease, transform 0.15s ease',
+                          }}
+                          onMouseEnter={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.transform = 'scale(1.15)' }}
+                          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.9)'; e.currentTarget.style.transform = 'scale(1)' }}
+                        >
+                          <X style={{ width: 8, height: 8, color: '#111' }} />
+                        </button>
+                      )}
+                    </div>
+                  )}
+                  {!hasCat && favorito && onToggleFavorito && (
+                    <button
+                      onClick={e => { e.preventDefault(); e.stopPropagation(); onToggleFavorito(produto.id) }}
+                      title="Remover dos favoritos"
+                      style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        width: 24, height: 24, borderRadius: '50%',
+                        background: 'rgba(0,0,0,0.6)',
+                        boxShadow: '0 1px 6px rgba(0,0,0,0.3)',
+                        border: 'none', cursor: 'pointer',
+                        transition: 'transform 0.15s ease',
+                      }}
+                      onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
+                      onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                    >
+                      <X style={{ width: 10, height: 10, color: '#fff' }} />
+                    </button>
+                  )}
+                </div>
+              </>
             )
           })()}
 

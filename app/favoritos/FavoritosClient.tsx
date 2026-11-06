@@ -271,14 +271,6 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
                   style={isRemoving ? {} : { animationDelay: `${i * 0.04}s`, opacity: 0 }}
                 >
                   <ProductCard produto={p} favorito onToggleFavorito={remover} />
-                  <button
-                    onClick={() => remover(p.id)}
-                    title="Remover dos favoritos"
-                    className="absolute top-2 left-2 z-30 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
-                    style={{ background: 'rgba(0,0,0,0.6)', boxShadow: '0 1px 6px rgba(0,0,0,0.3)' }}
-                  >
-                    <X className="w-3.5 h-3.5 text-white" />
-                  </button>
                 </div>
               )
             })}
