@@ -6,13 +6,13 @@ import Link from 'next/link'
 import { Produto } from '@/lib/types'
 import { Heart, X, History, RotateCcw, FileDown } from 'lucide-react'
 import ProductCard from '@/components/ProductCard'
+import { useVendedor, getFavKey } from '@/lib/useVendedor'
 
-const GerarPDFModal = lazy(() => import('@/components/GerarPDFModal'))
+const GerarPDFModal         = lazy(() => import('@/components/GerarPDFModal'))
+const ClienteWhatsAppModal  = lazy(() => import('@/components/ClienteWhatsAppModal'))
 
-const LS_FAV       = 'csm_favoritos'
 const LS_REMOVIDOS = 'csm_removidos'
 const LS_VISTOS    = 'csm_visualizados'
-const WA_PHONE     = '5519990034068'
 const MAX_HIST     = 50
 const EXPIRY_MS    = 7 * 24 * 60 * 60 * 1000 // 7 dias
 
@@ -22,16 +22,6 @@ function getLS<T>(key: string, fallback: T): T {
   try { return JSON.parse(localStorage.getItem(key) ?? 'null') ?? fallback } catch { return fallback }
 }
 
-function buildWaHref(produtos: Produto[], origin: string) {
-  const lista = produtos
-    .map((p, i) => `${i + 1}. *${p.nome}*\n   🔗 ${origin}/produto/${p.id}`)
-    .join('\n\n')
-  const msg =
-    `Olá! 👋 Selecionei ${produtos.length} produto(s) no Catálogo CSM que me encantaram e gostaria de saber mais:\n\n` +
-    `${lista}\n\n` +
-    `Podem me ajudar com informações, disponibilidade e condições? 😊✨`
-  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(msg)}`
-}
 
 function timeAgo(ts: number): string {
   const m = Math.floor((Date.now() - ts) / 60000)
@@ -94,19 +84,20 @@ function HistItem({ produto, at, action, isFav, onAction, onClose }: {
 
 export default function FavoritosClient({ todos }: { todos: Produto[] }) {
   const searchParams = useSearchParams()
+  const vendedora = useVendedor()
   const [favIds, setFavIds]           = useState<number[]>([])
   const [removidos, setRemovidosList] = useState<HistEntry[]>([])
   const [vistos, setVistos]           = useState<HistEntry[]>([])
   const [mounted, setMounted]         = useState(false)
-  const [waHref, setWaHref]           = useState('')
   const [drawerOpen, setDrawerOpen]   = useState(false)
   const [closing, setClosing]         = useState(false)
   const [removingId, setRemovingId]   = useState<number | null>(null)
   const [pdfModal,   setPdfModal]     = useState(false)
+  const [waModal,    setWaModal]      = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    setFavIds(getLS(LS_FAV, []))
+    setFavIds(getLS(getFavKey(), []))
     const cutoff = Date.now() - EXPIRY_MS
     const removidos: HistEntry[] = getLS(LS_REMOVIDOS, []).filter((e: HistEntry) => e.at > cutoff)
     const vistos: HistEntry[]    = getLS(LS_VISTOS, []).filter((e: HistEntry) => e.at > cutoff)
@@ -116,12 +107,6 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
       setDrawerOpen(true)
     }
   }, [])
-
-  useEffect(() => {
-    if (!mounted) return
-    const produtos = todos.filter(p => favIds.includes(p.id))
-    setWaHref(produtos.length ? buildWaHref(produtos, window.location.origin) : '')
-  }, [favIds, mounted, todos])
 
   // Lock body scroll while drawer is open
   useEffect(() => {
@@ -149,8 +134,9 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
 
       const next = favIds.filter(f => f !== id)
       setFavIds(next)
-      localStorage.setItem(LS_FAV, JSON.stringify(next))
+      localStorage.setItem(getFavKey(), JSON.stringify(next))
       setRemovingId(null)
+      window.dispatchEvent(new CustomEvent('csm:favoritos-updated'))
     }, 380)
   }
 
@@ -166,17 +152,18 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
     if (favIds.includes(id)) return
     const next = [...favIds, id]
     setFavIds(next)
-    localStorage.setItem(LS_FAV, JSON.stringify(next))
+    localStorage.setItem(getFavKey(), JSON.stringify(next))
     const updated = removidos.filter(e => e.id !== id)
     setRemovidosList(updated)
     localStorage.setItem(LS_REMOVIDOS, JSON.stringify(updated))
+    window.dispatchEvent(new CustomEvent('csm:favoritos-updated'))
   }
 
   function favoritar(id: number) {
     if (favIds.includes(id)) return
     const next = [...favIds, id]
     setFavIds(next)
-    localStorage.setItem(LS_FAV, JSON.stringify(next))
+    localStorage.setItem(getFavKey(), JSON.stringify(next))
   }
 
   const produtos = todos.filter(p => favIds.includes(p.id))
@@ -236,17 +223,15 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
               </button>
             )}
 
-            {waHref && (
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
+            {produtos.length > 0 && (
+              <button
+                onClick={() => setWaModal(true)}
                 className="flex items-center gap-2.5 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-[0.98] shrink-0"
-                style={{ background: '#25D366', color: '#fff', boxShadow: '0 4px 18px rgba(37,211,102,0.35)' }}
+                style={{ background: '#25D366', color: '#fff', boxShadow: '0 4px 18px rgba(37,211,102,0.35)', border: 'none', cursor: 'pointer' }}
               >
                 <WaIcon />
                 Enviar lista pelo WhatsApp
-              </a>
+              </button>
             )}
           </div>
         </div>
@@ -282,6 +267,17 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
       {pdfModal && (
         <Suspense fallback={null}>
           <GerarPDFModal produtos={produtos} onClose={() => setPdfModal(false)} />
+        </Suspense>
+      )}
+
+      {/* Modal WhatsApp — identificação do cliente */}
+      {waModal && (
+        <Suspense fallback={null}>
+          <ClienteWhatsAppModal
+            produtos={produtos}
+            vendedora={vendedora}
+            onClose={() => setWaModal(false)}
+          />
         </Suspense>
       )}
 

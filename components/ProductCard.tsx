@@ -7,6 +7,7 @@ import { createPortal } from 'react-dom'
 import { Produto } from '@/lib/types'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTheme } from './ThemeProvider'
+import { getFavKey } from '@/lib/useVendedor'
 
 const WA_PHONE = '5519990034068'
 
@@ -98,7 +99,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
   useEffect(() => {
     setMounted(true)
     if (!favorito) {
-      const favs: number[] = JSON.parse(localStorage.getItem('csm_favoritos') ?? '[]')
+      const favs: number[] = JSON.parse(localStorage.getItem(getFavKey()) ?? '[]')
       setIsFav(favs.includes(produto.id))
     }
   }, [produto.id, favorito])
@@ -157,12 +158,13 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
 
   function toggleFavorito(e: React.MouseEvent) {
     e.preventDefault()
-    const LS_KEY = 'csm_favoritos'
+    const LS_KEY = getFavKey()
     const favs: number[] = JSON.parse(localStorage.getItem(LS_KEY) ?? '[]')
     const next = isFav ? favs.filter(id => id !== produto.id) : [...favs, produto.id]
     localStorage.setItem(LS_KEY, JSON.stringify(next))
     setIsFav(!isFav)
     onToggleFavorito?.(produto.id)
+    window.dispatchEvent(new CustomEvent('csm:favoritos-updated'))
   }
 
   const isMobileDevice = () =>

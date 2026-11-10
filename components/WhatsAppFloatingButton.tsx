@@ -1,6 +1,7 @@
 ﻿'use client'
 
-const PHONE = '5519990034068'
+import { useVendedor } from '@/lib/useVendedor'
+import { WHATSAPP_PADRAO } from '@/lib/vendedores'
 
 const GLOBAL_MSG = encodeURIComponent(
   'Olá! 👋 Estou explorando o Catálogo CSM e fiquei encantado(a) com os produtos! ' +
@@ -9,9 +10,12 @@ const GLOBAL_MSG = encodeURIComponent(
 )
 
 export default function WhatsAppFloatingButton() {
+  const vendedora = useVendedor()
+  const phone = vendedora?.whatsapp ?? WHATSAPP_PADRAO
+
   return (
     <a
-      href={`https://wa.me/${PHONE}?text=${GLOBAL_MSG}`}
+      href={`https://wa.me/${phone}?text=${GLOBAL_MSG}`}
       target="_blank"
       rel="noopener noreferrer"
       title="Fale conosco no WhatsApp"

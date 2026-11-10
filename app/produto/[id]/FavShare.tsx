@@ -3,15 +3,13 @@
 import { Heart, Share2, Link2, X, Mail } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
-
-const WA_PHONE = '5519990034068'
-const LS_KEY   = 'csm_favoritos'
+import { getFavKey } from '@/lib/useVendedor'
 
 function getFavs(): number[] {
-  try { return JSON.parse(localStorage.getItem(LS_KEY) ?? '[]') } catch { return [] }
+  try { return JSON.parse(localStorage.getItem(getFavKey()) ?? '[]') } catch { return [] }
 }
 function saveFavs(ids: number[]) {
-  localStorage.setItem(LS_KEY, JSON.stringify(ids))
+  localStorage.setItem(getFavKey(), JSON.stringify(ids))
 }
 
 function msgWhatsApp(nome: string, url: string) {
@@ -87,6 +85,7 @@ export default function FavShare({ produtoId, nomeProduto }: Props) {
     setIsFav(!isFav)
     setAnimating(true)
     setTimeout(() => setAnimating(false), 600)
+    window.dispatchEvent(new CustomEvent('csm:favoritos-updated'))
   }
 
   const getUrl = () => typeof window !== 'undefined' ? window.location.href : ''

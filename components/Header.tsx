@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useRef, useEffect, useState, useCallback } from 'react'
 import { Search, X, Heart, Sun, Moon, Lock, LockOpen } from 'lucide-react'
 import { useTheme } from './ThemeProvider'
+import { getFavKey, useVendedor } from '@/lib/useVendedor'
 
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
@@ -29,12 +30,30 @@ export default function Header() {
   const [sparks, setSparks]   = useState<Spark[]>([])
   const [tilt, setTilt]       = useState({ x: 0, y: 0 })
   const [hovered, setHovered] = useState(false)
+  const [favCount, setFavCount] = useState(0)
+  const vendedora = useVendedor()
 
   useEffect(() => {
     const fire = () => { setShimmering(true); setTimeout(() => setShimmering(false), 1700) }
     const t0 = setTimeout(fire, 1800)
     const iv = setInterval(fire, 6000)
     return () => { clearTimeout(t0); clearInterval(iv) }
+  }, [])
+
+  useEffect(() => {
+    function syncFavCount() {
+      try {
+        const ids: number[] = JSON.parse(localStorage.getItem(getFavKey()) ?? '[]')
+        setFavCount(ids.length)
+      } catch { setFavCount(0) }
+    }
+    syncFavCount()
+    window.addEventListener('csm:favoritos-updated', syncFavCount)
+    window.addEventListener('storage', syncFavCount)
+    return () => {
+      window.removeEventListener('csm:favoritos-updated', syncFavCount)
+      window.removeEventListener('storage', syncFavCount)
+    }
   }, [])
 
   useEffect(() => {
@@ -207,7 +226,7 @@ export default function Header() {
         <div className="flex items-center gap-4 h-16">
 
           {/* ── Logo ── */}
-          <Link href="/" tabIndex={-1} className="flex-shrink-0">
+          <Link href={vendedora ? `/?v=${vendedora.codigo}` : '/'} tabIndex={-1} className="flex-shrink-0">
             <div
               ref={shellRef}
               className={`logo-shell${hovered ? ' is-hovered' : ''}`}
@@ -292,8 +311,39 @@ export default function Header() {
               href="/favoritos"
               className="_b w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110"
               title="Favoritos"
+              style={{ position: 'relative' }}
             >
-              <Heart className="w-4 h-4" style={{ color: 'var(--g)' }} />
+              <Heart
+                className="w-4 h-4 transition-all duration-300"
+                fill={favCount > 0 ? '#fb7185' : 'none'}
+                style={{
+                  color: favCount > 0 ? '#fb7185' : 'var(--g)',
+                  filter: favCount > 0 ? 'drop-shadow(0 0 5px rgba(251,113,133,0.55))' : 'none',
+                  transition: 'color 0.3s ease, filter 0.3s ease',
+                }}
+              />
+              {favCount > 0 && (
+                <span style={{
+                  position: 'absolute',
+                  top: '3px',
+                  right: '3px',
+                  minWidth: '14px',
+                  height: '14px',
+                  borderRadius: '999px',
+                  background: 'linear-gradient(135deg, #f43f5e, #fb7185)',
+                  color: '#fff',
+                  fontSize: '9px',
+                  fontWeight: 700,
+                  lineHeight: '14px',
+                  textAlign: 'center',
+                  padding: '0 3px',
+                  boxShadow: '0 1px 6px rgba(244,63,94,0.5)',
+                  letterSpacing: '-0.01em',
+                  pointerEvents: 'none',
+                }}>
+                  {favCount > 99 ? '99+' : favCount}
+                </span>
+              )}
             </Link>
 
             {/* Admin toggle — discreto */}
