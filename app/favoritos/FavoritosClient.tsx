@@ -10,6 +10,7 @@ import { useVendedor, getFavKey } from '@/lib/useVendedor'
 
 const GerarPDFModal         = lazy(() => import('@/components/GerarPDFModal'))
 const ClienteWhatsAppModal  = lazy(() => import('@/components/ClienteWhatsAppModal'))
+const LeadForm              = lazy(() => import('@/components/LeadForm'))
 
 const LS_REMOVIDOS = 'csm_removidos'
 const LS_VISTOS    = 'csm_visualizados'
@@ -259,6 +260,15 @@ export default function FavoritosClient({ todos }: { todos: Produto[] }) {
                 </div>
               )
             })}
+          </div>
+        )}
+
+        {/* Envio da seleção ao vendedor — só aparece com token válido (?v=TOKEN) */}
+        {mounted && produtos.length > 0 && (
+          <div className="max-w-xl">
+            <Suspense fallback={null}>
+              <LeadForm produtos={produtos} />
+            </Suspense>
           </div>
         )}
       </div>

@@ -347,3 +347,41 @@ C:\Users\joao.miguel\Documents\catalogos\catalogos separados\
 ```bash
 node scripts/seed.js
 ```
+
+---
+
+## Integração de leads (Supabase)
+
+Na página `/favoritos`, o cliente pode enviar a seleção de produtos direto ao
+vendedor. O registro é feito 100% no browser (compatível com o export estático
+do GitHub Pages), via RPC do Supabase.
+
+### Variáveis de ambiente
+
+Copie `.env.example` para `.env.local` e preencha:
+
+| Variável | Descrição |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL do projeto Supabase (ex.: `https://xxxx.supabase.co`) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Chave **publishable** (anon) do projeto |
+
+> ⚠️ Use **apenas** a chave publishable (anon). **Nunca** coloque a service/secret
+> key aqui — estas variáveis `NEXT_PUBLIC_*` são embutidas no bundle do browser.
+> O `.env.local` é ignorado pelo git; só o `.env.example` (com placeholders) é versionado.
+
+### Como funciona
+
+1. **Token do vendedor** — ao abrir qualquer página com `?v=TOKEN`, o token é
+   guardado em `localStorage` (`csm_vendedor_token`) para persistir entre páginas.
+   A RPC `nome_vendedor` (`{ p_token }`) resolve o nome; havendo nome, o site
+   mostra discretamente **"Atendimento: &lt;nome&gt;"**.
+2. **Formulário em `/favoritos`** — só aparece com token válido. Pede nome,
+   telefone (máscara BR) e um consentimento obrigatório (link para `/privacidade`),
+   além de um honeypot invisível (`site`) contra bots.
+3. **Envio** — chama a RPC `registrar_lead` com
+   `{ p_token, p_nome, p_telefone, p_consentimento, p_itens, p_hp }`.
+   Os itens levam **apenas** dados públicos: `produto_id`, `nome` e `url` relativa
+   (`/produto/123`). Nenhum nome de fornecedor, marca interna ou preço é enviado.
+
+Erro de "limite excedido" vira a mensagem "Muitas tentativas, tente mais tarde";
+demais erros viram "Não foi possível enviar" (detalhe técnico só no `console.error`).

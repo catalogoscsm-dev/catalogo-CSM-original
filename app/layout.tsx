@@ -7,6 +7,7 @@ import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import AdminBanner from '@/components/AdminBanner'
 import MarqueeTicker from '@/components/MarqueeTicker'
+import AtendimentoBadge from '@/components/AtendimentoBadge'
 import { isAdminSession } from '@/lib/auth'
 import { Suspense } from 'react'
 
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <AdminBanner serverAdmin={admin} />
           <Suspense><Header /></Suspense>
           <MarqueeTicker />
+          <Suspense><AtendimentoBadge /></Suspense>
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-8">
             <PageTransition>
               {children}
