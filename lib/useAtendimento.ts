@@ -1,24 +1,25 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { capturarToken, nomeVendedor } from './leads'
+import { capturarToken, dadosVendedor, WHATSAPP_PADRAO } from './leads'
 
 export interface Atendimento {
   token: string | null
   nome: string | null
+  whatsapp: string
   carregando: boolean
 }
 
 /**
- * Captura o token de ?v= (persistindo em localStorage) e resolve o nome do
- * vendedor via RPC. Compartilhado pelo badge "Atendimento" e pelo formulário
- * de envio de leads — o resultado é memoizado por token em lib/leads.
- *
- * Token válido = a RPC retornou um nome. Sem nome, o formulário não deve aparecer.
+ * Captura o token de ?v= (persistindo em localStorage) e resolve nome e
+ * whatsapp do vendedor via RPC dados_vendedor (uma chamada, resultado memoizado).
+ * whatsapp cai automaticamente para o número da loja se o vendedor não tiver
+ * cadastrado o seu ou se não houver token.
  */
 export function useAtendimento(): Atendimento {
-  const [token, setToken] = useState<string | null>(null)
-  const [nome, setNome] = useState<string | null>(null)
+  const [token, setToken]     = useState<string | null>(null)
+  const [nome, setNome]       = useState<string | null>(null)
+  const [whatsapp, setWhatsapp] = useState<string>(WHATSAPP_PADRAO)
   const [carregando, setCarregando] = useState(true)
 
   useEffect(() => {
@@ -29,13 +30,14 @@ export function useAtendimento(): Atendimento {
       return
     }
     let ativo = true
-    nomeVendedor(t).then(n => {
+    dadosVendedor(t).then(d => {
       if (!ativo) return
-      setNome(n)
+      setNome(d.nome)
+      setWhatsapp(d.whatsapp)
       setCarregando(false)
     })
     return () => { ativo = false }
   }, [])
 
-  return { token, nome, carregando }
+  return { token, nome, whatsapp, carregando }
 }

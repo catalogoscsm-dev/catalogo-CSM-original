@@ -4,6 +4,7 @@ import { Heart, Share2, Link2, X, Mail } from 'lucide-react'
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { getFavKey } from '@/lib/useVendedor'
+import { useAtendimento } from '@/lib/useAtendimento'
 
 function getFavs(): number[] {
   try { return JSON.parse(localStorage.getItem(getFavKey()) ?? '[]') } catch { return [] }
@@ -14,6 +15,10 @@ function saveFavs(ids: number[]) {
 
 function msgWhatsApp(nome: string, url: string) {
   return `✨ Olha que achado no Catálogo CSM!\n\n*${nome}*\n\nA *CSM – Campinas Shopping Móveis* tem uma curadoria incrível de móveis e decoração de alto padrão. Vale muito conferir! 🏡\n\n🔗 ${url}`
+}
+function msgInteresse(nomeProduto: string, nomeVendedor: string | null, url: string) {
+  const saudacao = nomeVendedor ? `Olá, ${nomeVendedor}!` : 'Olá!'
+  return `${saudacao} 👋 Tenho interesse neste produto:\n\n✨ *${nomeProduto}*\n\n🔗 ${url}\n\nPodem me dar mais informações? 😊`
 }
 function msgTelegram(nome: string, url: string) {
   return `✨ Olha que achado no Catálogo CSM!\n\n${nome}\n\nA CSM – Campinas Shopping Móveis tem uma curadoria incrível de móveis e decoração. Vale conferir! 🏡`
@@ -55,8 +60,6 @@ const IconInstagram = () => (
   </svg>
 )
 
-const WA_PHONE = '5519990034068'
-
 const platforms = [
   { id: 'whatsapp',  label: 'WhatsApp',  color: '#25D366', bg: 'rgba(37,211,102,0.12)',  Icon: IconWA },
   { id: 'telegram',  label: 'Telegram',  color: '#229ED9', bg: 'rgba(34,158,217,0.12)',  Icon: IconTelegram },
@@ -69,6 +72,7 @@ const platforms = [
 interface Props { produtoId: number; nomeProduto: string }
 
 export default function FavShare({ produtoId, nomeProduto }: Props) {
+  const { whatsapp: waPhone, nome: nomeVendedorWa } = useAtendimento()
   const [isFav, setIsFav]         = useState(false)
   const [animating, setAnimating] = useState(false)
   const [mounted, setMounted]     = useState(false)
@@ -203,10 +207,10 @@ export default function FavShare({ produtoId, nomeProduto }: Props) {
         </button>
       </div>
 
-      {/* Link de interesse WA */}
+      {/* Link de interesse WA — número do vendedor do link, ou loja como fallback */}
       <a
-        href={`https://wa.me/${WA_PHONE}?text=${encodeURIComponent(
-          `Olá! 👋 Encontrei este produto no Catálogo CSM e tenho interesse:\n\n✨ *${nomeProduto}*\n\n🔗 ${getUrl()}\n\nPodem me dar mais informações? 😊`
+        href={`https://wa.me/${waPhone}?text=${encodeURIComponent(
+          msgInteresse(nomeProduto, nomeVendedorWa, getUrl())
         )}`}
         target="_blank"
         rel="noopener noreferrer"

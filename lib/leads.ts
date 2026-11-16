@@ -45,6 +45,53 @@ export function capturarToken(): string | null {
   }
 }
 
+/** Número da loja — fallback quando não há vendedor no link. */
+export const WHATSAPP_PADRAO = '5519990034068'
+
+export interface DadosVendedor {
+  nome: string | null
+  whatsapp: string
+}
+
+// Memo por token: evita chamadas repetidas na mesma página.
+const dadosCache = new Map<string, Promise<DadosVendedor>>()
+
+/**
+ * Busca nome e whatsapp do vendedor via RPC dados_vendedor.
+ * Nunca lança exceção: retorna fallback { nome: null, whatsapp: loja } em caso de falha.
+ */
+export function dadosVendedor(token: string): Promise<DadosVendedor> {
+  const fallback: DadosVendedor = { nome: null, whatsapp: WHATSAPP_PADRAO }
+  if (!leadsConfigurado() || !token) return Promise.resolve(fallback)
+  const cached = dadosCache.get(token)
+  if (cached) return cached
+
+  const p = (async (): Promise<DadosVendedor> => {
+    try {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/dados_vendedor`, {
+        method: 'POST',
+        headers: headers(),
+        body: JSON.stringify({ p_token: token }),
+      })
+      if (!res.ok) return fallback
+      const data: unknown = await res.json()
+      if (!data || typeof data !== 'object') return fallback
+      const d = data as Record<string, unknown>
+      const nome = typeof d.nome === 'string' && d.nome.trim() ? d.nome.trim() : null
+      const whatsapp = typeof d.whatsapp === 'string' && d.whatsapp.trim()
+        ? d.whatsapp.trim()
+        : WHATSAPP_PADRAO
+      return { nome, whatsapp }
+    } catch (e) {
+      console.error('[leads] dados_vendedor falhou:', e)
+      return fallback
+    }
+  })()
+
+  dadosCache.set(token, p)
+  return p
+}
+
 // Memo por token: evita chamadas repetidas à RPC quando badge e formulário
 // consultam o nome do vendedor na mesma página.
 const nomeCache = new Map<string, Promise<string | null>>()
