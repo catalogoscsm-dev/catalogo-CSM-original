@@ -55,6 +55,8 @@ const IconInstagram = () => (
   </svg>
 )
 
+const WA_PHONE = '5519990034068'
+
 const platforms = [
   { id: 'whatsapp',  label: 'WhatsApp',  color: '#25D366', bg: 'rgba(37,211,102,0.12)',  Icon: IconWA },
   { id: 'telegram',  label: 'Telegram',  color: '#229ED9', bg: 'rgba(34,158,217,0.12)',  Icon: IconTelegram },
