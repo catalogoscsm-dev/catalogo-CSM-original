@@ -49,7 +49,7 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
     const itens: LeadItem[] = produtos.map(p => ({
       produto_id: p.id,
       nome: p.nome,
-      url: `/produto/${p.id}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/produto/${p.id}`,
     }))
 
     const r = await registrarLead({
