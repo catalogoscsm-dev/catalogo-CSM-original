@@ -12,6 +12,11 @@ type StatusPdf = 'idle' | 'gerando' | 'erro'
 
 const PDF_ATIVO = process.env.NEXT_PUBLIC_PROPOSTA_PDF === '1'
 
+function imagemParaPdf(basePath: string, imagem: string): string {
+  const prefixado = imagem.startsWith(basePath) ? imagem : `${basePath}${imagem}`
+  return prefixado.startsWith('/') ? prefixado : `/${prefixado}`
+}
+
 function formatarTelefoneVendedor(whatsapp: string): string {
   // "5519992936703" → "(19) 99293-6703"
   const d = whatsapp.replace(/\D/g, '')
@@ -110,7 +115,7 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
           material: p.material ?? undefined,
           descricao: p.descricao ?? undefined,
           linha: p.texto_livre ?? undefined,
-        }, p.imagens[0] ? `${basePath}${p.imagens[0]}` : undefined))
+        }, p.imagens[0] ? imagemParaPdf(basePath, p.imagens[0]) : undefined))
       )
 
       const assets = await carregarAssets(`${basePath}/proposta`)

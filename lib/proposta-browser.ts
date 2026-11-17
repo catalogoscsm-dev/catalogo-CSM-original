@@ -72,7 +72,8 @@ export async function produtoParaPdf(
   try {
     const img = await carregarImagem(imagemUrl);
     return { ...base, imgDataUrl: img.dataUrl, imgW: img.w, imgH: img.h };
-  } catch {
+  } catch (erro) {
+    console.warn("PDF: foto não carregou", imagemUrl, erro);
     return base; // sem foto, o layout mostra só o painel cinza
   }
 }
