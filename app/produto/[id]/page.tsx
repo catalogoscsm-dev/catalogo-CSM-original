@@ -1,5 +1,4 @@
 ﻿import { getProdutos, getProduto } from '@/lib/data'
-import { isAdminSession } from '@/lib/auth'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import ImageZoom from '@/components/ImageZoom'
@@ -8,7 +7,7 @@ import FichaTecnica from '@/components/FichaTecnica'
 import DimensoesDisplay from '@/components/DimensoesDisplay'
 import ProductNavAnimated from '@/components/ProductNavAnimated'
 import ViewTracker from '@/components/ViewTracker'
-import { ShieldCheck, ChevronRight } from 'lucide-react'
+import { ChevronRight } from 'lucide-react'
 
 export async function generateStaticParams() {
   return getProdutos().map(p => ({ id: String(p.id) }))
@@ -24,20 +23,12 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
   const anterior = idx > 0 ? todos[idx - 1] : null
   const proximo  = idx < todos.length - 1 ? todos[idx + 1] : null
 
-  const isAdmin = await isAdminSession()
-
   const fichaPublica = [
     { label: 'Material', value: produto.material },
   ].filter(c => c.value && c.value.trim().length > 1)
 
   const temDimensoes  = produto.dimensoes  && produto.dimensoes.trim().length  > 1
   const temAcabamento = produto.acabamento && produto.acabamento.trim().length > 1
-
-  const fichaInterna = [
-    { label: 'Fornecedor',         value: produto.catalogo_nome },
-    { label: 'Código do produto',  value: produto.codigo },
-    { label: 'Página no catálogo', value: produto.pagina ? `Pág. ${produto.pagina}` : null },
-  ].filter(c => c.value)
 
   return (
     <ProductNavAnimated
@@ -114,22 +105,7 @@ export default async function ProdutoPage({ params }: { params: Promise<{ id: st
               </div>
             )}
 
-            {isAdmin && fichaInterna.length > 0 && (
-              <div className="rounded-xl p-5 space-y-3"
-                style={{ background: 'var(--c)', border: '1px solid var(--h)' }}>
-                <div className="flex items-center gap-2 text-sm font-medium"
-                  style={{ color: 'var(--g)' }}>
-                  <ShieldCheck className="w-4 h-4" />
-                  Dados internos
-                </div>
-                {fichaInterna.map(({ label, value }) => (
-                  <div key={label} className="flex items-center gap-4">
-                    <span className="text-xs w-36 shrink-0" style={{ color: 'var(--g)' }}>{label}</span>
-                    <span className="text-sm font-semibold" style={{ color: 'var(--f)' }}>{value}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            {/* TODO: ficha interna (Fornecedor, Código, Página) volta via Supabase com auth de vendedor */}
 
             {produto.texto_livre && (
               <div className="rounded-xl p-5 space-y-2"

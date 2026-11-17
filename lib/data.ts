@@ -1,26 +1,22 @@
 import { Produto, Catalogo } from './types'
 import rawData from '../data/static-data.json'
 
-type ProdutoFull = Produto & { catalogo_nome: string; catalogo_pasta: string }
 type CatalogoFull = Catalogo & { total_produtos: number }
 
-const data = rawData as { produtos: ProdutoFull[]; catalogos: CatalogoFull[] }
+const data = rawData as { produtos: Produto[]; catalogos: CatalogoFull[] }
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
-function withBase(p: ProdutoFull): ProdutoFull {
+function withBase(p: Produto): Produto {
   if (!BASE || !p.imagens?.length) return p
   return { ...p, imagens: p.imagens.map(img => `${BASE}${img}`) }
 }
 
-export function getProdutos(): ProdutoFull[] {
-  const all = data.produtos.map(withBase).filter(p => p.imagens.length > 0)
-  const aprimore = all.filter(p => p.catalogo_pasta === 'Aprimore Decor 2025')
-  const aluminas = all.filter(p => p.catalogo_pasta === 'ALUMINAS 2024')
-  const resto    = all.filter(p => p.catalogo_pasta !== 'Aprimore Decor 2025' && p.catalogo_pasta !== 'ALUMINAS 2024')
-  return [...aprimore, ...aluminas, ...resto]
+export function getProdutos(): Produto[] {
+  // TODO: restore Aprimore/ALUMINAS pinning once catalogo_id is available via Supabase
+  return data.produtos.filter(p => p.imagens.length > 0).map(withBase)
 }
 
-export function getProduto(id: number | string): ProdutoFull | null {
+export function getProduto(id: number | string): Produto | null {
   const p = data.produtos.find(p => p.id === Number(id))
   return p ? withBase(p) : null
 }
@@ -33,18 +29,11 @@ export function getCatalogoPorPasta(pasta: string): CatalogoFull | null {
   return data.catalogos.find(c => c.pasta === pasta) ?? null
 }
 
-export function getProdutosPorCatalogo(pasta: string): ProdutoFull[] {
-  return data.produtos.filter(p => p.catalogo_pasta === pasta)
-}
-
-// Temporário: pega produtos com imagem do Artecouro 2026 como destaques
-// Futuramente usar campo destaque=true no banco
-export function getDestaques(): ProdutoFull[] {
+export function getDestaques(): Produto[] {
   const comImagem = data.produtos
     .filter(p => p.imagens && p.imagens.length > 0)
     .map(withBase)
-  // Pega 1 a cada 4 produtos para ter variedade de catálogos
-  const selecionados: ProdutoFull[] = []
+  const selecionados: Produto[] = []
   for (let i = 0; i < comImagem.length; i += 4) {
     selecionados.push(comImagem[i])
     if (selecionados.length >= 16) break

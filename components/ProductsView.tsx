@@ -22,7 +22,7 @@ interface Props {
 /* ── Card horizontal (modo lista) ── */
 function ListCard({ produto }: { produto: Produto }) {
   const imgs = produto.imagens ?? []
-  const categoria = produto.descricao?.trim() || produto.catalogo_nome || ''
+  const categoria = produto.descricao?.trim() || ''
 
   const [imgIdx, setImgIdx]   = useState(0)
   const [fading, setFading]   = useState(false)
@@ -136,12 +136,7 @@ function ListCard({ produto }: { produto: Produto }) {
         {/* ── Lado da info ── */}
         <div className="flex flex-col justify-center px-8 py-6 gap-3" style={{ background: 'var(--a)' }}>
           <div className="space-y-2">
-            {produto.catalogo_nome && (
-              <p className="text-xs uppercase tracking-[0.18em]" style={{ color: 'var(--g)', opacity: 0.7 }}>
-                {produto.catalogo_nome}
-              </p>
-            )}
-            <h2 className="_fd" style={{
+              <h2 className="_fd" style={{
               fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
               fontWeight: 400,
               lineHeight: 1.1,

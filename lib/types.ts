@@ -6,24 +6,18 @@ export interface Catalogo {
   total_produtos: number
 }
 
+// Public product type — only user-visible fields, no supplier identifiers.
 export interface Produto {
   id: number
-  catalogo_id: number
-  catalogo_nome: string
-  codigo: string | null
   nome: string
   descricao: string | null
   material: string | null
   dimensoes: string | null
   acabamento: string | null
   cores: string | null
-  preco_min: number | null
-  preco_max: number | null
-  pagina: number | null
   texto_livre: string | null
   categoria: string | null
   imagens: string[]
-  catalogo_pasta?: string
 }
 
 export interface Favorito {

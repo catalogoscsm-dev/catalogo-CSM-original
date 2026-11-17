@@ -267,8 +267,7 @@ export default function CarrosselDestaques({ produtos }: Props) {
             style={{ gap: CARD_GAP, willChange: 'transform' }}
           >
             {items.map((p, i) => {
-              const img      = p.imagens?.[0] ?? null
-              const catalogo = (p as { catalogo_nome?: string }).catalogo_nome ?? ''
+              const img = p.imagens?.[0] ?? null
               return (
                 <Link
                   key={`${p.id}-${i}`}
@@ -317,16 +316,6 @@ export default function CarrosselDestaques({ produtos }: Props) {
                         transition: 'opacity .3s ease',
                       }}
                     >
-                      {catalogo && (
-                        <span style={{
-                          fontFamily: 'var(--n)', fontSize: '.56rem', fontWeight: 600,
-                          letterSpacing: '.18em', textTransform: 'uppercase',
-                          color: 'var(--ticker-text)', marginBottom: '.2rem',
-                          textShadow: '0 1px 4px rgba(0,0,0,.6)',
-                        }}>
-                          {catalogo}
-                        </span>
-                      )}
                       <span style={{
                         fontFamily: 'var(--m)', fontSize: '1.05rem', fontWeight: 400,
                         color: '#fff', lineHeight: 1.2,
