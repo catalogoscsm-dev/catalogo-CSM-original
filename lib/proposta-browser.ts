@@ -64,7 +64,7 @@ async function logoParaFundoEscuro(url: string): Promise<string> {
     const r = d[i], g = d[i + 1], b = d[i + 2];
     const laranja = r > 170 && r - b > 70;
     const lum = 0.299 * r + 0.587 * g + 0.114 * b;
-    if (!laranja && lum < 150) { d[i] = 245; d[i + 1] = 238; d[i + 2] = 225; }
+    if (!laranja && lum < 150) { d[i] = 190; d[i + 1] = 178; d[i + 2] = 158; }
   }
   ctx.putImageData(im, 0, 0);
   return cv.toDataURL("image/png");
@@ -111,19 +111,9 @@ export async function produtoParaPdf(
   }
 }
 
-/** Dispara o download (ou abre o compartilhamento nativo no celular, se disponível). */
+/** Dispara o download direto do PDF no navegador. */
 export async function entregarPdf(pdf: ArrayBuffer, nomeArquivo: string) {
   const blob = new Blob([pdf], { type: "application/pdf" });
-  const arquivo = new File([blob], nomeArquivo, { type: "application/pdf" });
-  const nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
-  if (nav.canShare?.({ files: [arquivo] })) {
-    try {
-      await navigator.share({ files: [arquivo], title: nomeArquivo });
-      return;
-    } catch {
-      /* usuário cancelou: cai no download */
-    }
-  }
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
