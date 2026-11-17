@@ -227,7 +227,7 @@ function capa(d: Doc, p: DadosProposta, loja: Loja) {
     const lw = 62 * MM;
     const lh = lw * ratio;
     d.addImage(p.assets.logoDataUrl, "PNG", (W - lw) / 2, Y(H - 62 * MM), lw, lh, undefined, "FAST");
-    spaced(d, loja.nome.toUpperCase(), W / 2, H - 62 * MM - lh - 9 * MM, "helvetica", false, 7.6, 3.2, "#CFC8BA", "center");
+    // nome da loja omitido: a logo já traz o texto "Campinas Shopping Móveis"
   } else {
     spaced(d, loja.nome.toUpperCase(), W / 2, H - 70 * MM, "helvetica", false, 9, 3.2, "#CFC8BA", "center");
   }

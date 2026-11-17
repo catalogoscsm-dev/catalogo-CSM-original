@@ -47,12 +47,45 @@ export async function fotoCircular(url: string, lado = 360): Promise<string> {
   return cv.toDataURL("image/png");
 }
 
+async function logoParaFundoEscuro(url: string): Promise<string> {
+  const resp = await fetch(url);
+  if (!resp.ok) throw new Error(`Logo não carregou (${resp.status})`);
+  const bmp = await createImageBitmap(await resp.blob());
+  const esc = Math.min(1, 900 / bmp.width);
+  const w = Math.round(bmp.width * esc), h = Math.round(bmp.height * esc);
+  const cv = document.createElement("canvas");
+  cv.width = w; cv.height = h;
+  const ctx = cv.getContext("2d")!;
+  ctx.drawImage(bmp, 0, 0, w, h);
+  const im = ctx.getImageData(0, 0, w, h);
+  const d = im.data;
+  for (let i = 0; i < d.length; i += 4) {
+    if (d[i + 3] === 0) continue;
+    const r = d[i], g = d[i + 1], b = d[i + 2];
+    const laranja = r > 170 && r - b > 70;
+    const lum = 0.299 * r + 0.587 * g + 0.114 * b;
+    if (!laranja && lum < 150) { d[i] = 245; d[i + 1] = 238; d[i + 2] = 225; }
+  }
+  ctx.putImageData(im, 0, 0);
+  return cv.toDataURL("image/png");
+}
+
 /** Carrega os fundos de luz (e a logo) que ficam em /public/proposta/. */
 export async function carregarAssets(base: string): Promise<Assets> {
+  const logoUrl = `${base}/logo-csm.png`;
   const [c, f, l] = await Promise.all([
     carregarImagem(`${base}/glow-cover.jpg`, 1200),
     carregarImagem(`${base}/glow-final.jpg`, 1200),
-    carregarImagem(`${base}/logo-csm.png`, 1600, "png").catch(() => null), // logo é opcional
+    (async () => {
+      try {
+        const dataUrl = await logoParaFundoEscuro(logoUrl);
+        // dimensões já escaladas estão no PNG resultante — lê sem rede extra
+        const bmp = await createImageBitmap(await (await fetch(dataUrl)).blob());
+        return { dataUrl, w: bmp.width, h: bmp.height };
+      } catch {
+        return null;
+      }
+    })(),
   ]);
   return {
     glowCover: c.dataUrl,
