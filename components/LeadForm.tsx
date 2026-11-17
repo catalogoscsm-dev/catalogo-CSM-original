@@ -5,9 +5,21 @@ import Link from 'next/link'
 import { Send, Loader2, CheckCircle2, User, Phone } from 'lucide-react'
 import { Produto } from '@/lib/types'
 import { useAtendimento } from '@/lib/useAtendimento'
-import { registrarLead, type LeadItem } from '@/lib/leads'
+import { registrarLead, WHATSAPP_PADRAO, type LeadItem } from '@/lib/leads'
 
 type Status = 'idle' | 'enviando' | 'sucesso' | 'erro'
+type StatusPdf = 'idle' | 'gerando' | 'erro'
+
+const PDF_ATIVO = process.env.NEXT_PUBLIC_PROPOSTA_PDF === '1'
+
+function formatarTelefoneVendedor(whatsapp: string): string {
+  // "5519992936703" → "(19) 99293-6703"
+  const d = whatsapp.replace(/\D/g, '')
+  const local = d.startsWith('55') ? d.slice(2) : d
+  if (local.length === 11) return `(${local.slice(0, 2)}) ${local.slice(2, 7)}-${local.slice(7)}`
+  if (local.length === 10) return `(${local.slice(0, 2)}) ${local.slice(2, 6)}-${local.slice(6)}`
+  return local
+}
 
 function maskPhone(raw: string) {
   const d = raw.replace(/\D/g, '').slice(0, 11)
@@ -30,6 +42,7 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
   const [honeypot, setHoneypot] = useState('') // campo "site" — invisível
   const [status, setStatus] = useState<Status>('idle')
   const [msgErro, setMsgErro] = useState('')
+  const [statusPdf, setStatusPdf] = useState<StatusPdf>('idle')
 
   // Sem token válido → não exibe formulário de envio.
   if (carregando || !token || !nomeVendedor) return null
@@ -70,6 +83,55 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
           ? 'Muitas tentativas, tente mais tarde'
           : 'Não foi possível enviar',
       )
+    }
+  }
+
+  async function gerarPdf() {
+    if (statusPdf === 'gerando') return
+    setStatusPdf('gerando')
+    try {
+      const { gerarPropostaPdf } = await import('@/lib/proposta-pdf')
+      const { produtoParaPdf, carregarAssets, entregarPdf } = await import('@/lib/proposta-browser')
+
+      const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/catalogo-CSM-original'
+      const isVendedorProprio = whatsapp !== WHATSAPP_PADRAO
+      const vendedor = {
+        nome: nomeVendedor!,
+        telefone: isVendedorProprio ? formatarTelefoneVendedor(whatsapp) : undefined,
+        whatsapp: isVendedorProprio ? whatsapp : undefined,
+      }
+
+      const hoje = new Date().toLocaleDateString('pt-BR', { day: 'numeric', month: 'long', year: 'numeric' })
+
+      const prods = await Promise.all(
+        produtos.map(p => produtoParaPdf({
+          nome: p.nome,
+          dimensoes: p.dimensoes ?? undefined,
+          material: p.material ?? undefined,
+          descricao: p.descricao ?? undefined,
+          linha: p.texto_livre ?? undefined,
+        }, p.imagens[0] ? `${basePath}${p.imagens[0]}` : undefined))
+      )
+
+      const assets = await carregarAssets(`${basePath}/proposta`)
+
+      const dados = {
+        tipo: 'selecao' as const,
+        vendedor,
+        cliente: {
+          nome: nome.trim() || undefined,
+          telefone: telefone.trim() || undefined,
+        },
+        produtos: prods,
+        data: hoje,
+        assets,
+      }
+
+      const { pdf } = await gerarPropostaPdf(dados)
+      await entregarPdf(pdf, 'selecao-csm.pdf')
+      setStatusPdf('idle')
+    } catch {
+      setStatusPdf('erro')
     }
   }
 
@@ -122,6 +184,37 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
           </svg>
           Continuar no WhatsApp
         </a>
+
+        {PDF_ATIVO && (
+          <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <button
+              onClick={gerarPdf}
+              disabled={statusPdf === 'gerando'}
+              style={{
+                width: '100%', padding: '12px', borderRadius: '12px', border: '1px solid var(--h)',
+                cursor: statusPdf === 'gerando' ? 'not-allowed' : 'pointer',
+                background: 'var(--c)', color: 'var(--f)',
+                fontSize: '14px', fontWeight: 600,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                boxSizing: 'border-box',
+              }}
+            >
+              {statusPdf === 'gerando' ? (
+                <>
+                  <Loader2 size={16} style={{ animation: 'spin 1s linear infinite' }} />
+                  Gerando...
+                </>
+              ) : (
+                'Baixar minha seleção (PDF)'
+              )}
+            </button>
+            {statusPdf === 'erro' && (
+              <p style={{ margin: 0, fontSize: '12px', color: '#fb7185', textAlign: 'center' }}>
+                Não foi possível gerar o PDF. Tente novamente.
+              </p>
+            )}
+          </div>
+        )}
       </div>
     )
   }
