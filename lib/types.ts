@@ -1,11 +1,3 @@
-export interface Catalogo {
-  id: number
-  nome: string
-  pasta: string
-  ano: number | null
-  total_produtos: number
-}
-
 // Public product type — only user-visible fields, no supplier identifiers.
 export interface Produto {
   id: number

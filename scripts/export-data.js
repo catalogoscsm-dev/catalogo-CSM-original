@@ -1,9 +1,9 @@
-// Run after adding new products: npm run export-data
-// Also runs automatically before `next build` (see package.json build script)
+// Run locally after adding new products: npm run export-data
+// CI uses the committed data/static-data.json — does NOT run this script.
 const Database = require('better-sqlite3')
-const crypto = require('crypto')
-const fs = require('fs')
-const path = require('path')
+const crypto   = require('crypto')
+const fs       = require('fs')
+const path     = require('path')
 
 const db = new Database(path.join(__dirname, '../database/catalogo.db'), { readonly: true })
 
@@ -14,43 +14,39 @@ const produtos = db.prepare(`
   ORDER BY p.id
 `).all().map(r => ({ ...r, imagens: JSON.parse(r.imagens || '[]'), categoria: r.categoria ?? null }))
 
-const catalogos = db.prepare(`
-  SELECT c.*, COUNT(p.id) as total_produtos
-  FROM catalogos c
-  LEFT JOIN produtos p ON p.catalogo_id = c.id
-  GROUP BY c.id
-  ORDER BY c.nome
-`).all()
-
 db.close()
 
-// ── Image hashing ──────────────────────────────────────────────────────────
-const CONTENT_TYPES = {
-  '.png':  'image/png',
-  '.jpg':  'image/jpeg',
-  '.jpeg': 'image/jpeg',
-  '.webp': 'image/webp',
-  '.gif':  'image/gif',
-}
+// ── Image hashing & copy ───────────────────────────────────────────────────
+const EXTS = { '.png': 'png', '.jpg': 'jpg', '.jpeg': 'jpg', '.webp': 'webp', '.gif': 'gif' }
 
 function hashUrl(url) {
   return crypto.createHash('sha256').update(url).digest('hex').slice(0, 12)
 }
 
-function contentTypeOf(url) {
-  const ext = path.extname(decodeURIComponent(url)).toLowerCase()
-  return CONTENT_TYPES[ext] || 'application/octet-stream'
-}
+const imgOutDir = path.join(__dirname, '../public/img')
+fs.mkdirSync(imgOutDir, { recursive: true })
 
-// imageMap: hash → { path, contentType }  — private, never served via HTTP
-const imageMap = {}
+let copied = 0, skipped = 0, missing = 0
 
 const produtosHashed = produtos.map(produto => ({
   ...produto,
   imagens: produto.imagens.map(imgUrl => {
     const hash = hashUrl(imgUrl)
-    imageMap[hash] = { path: imgUrl, contentType: contentTypeOf(imgUrl) }
-    return `/api/img/${hash}`
+    const rawExt = path.extname(decodeURIComponent(imgUrl)).toLowerCase()
+    const ext = EXTS[rawExt] ? `.${EXTS[rawExt]}` : rawExt || '.jpg'
+    const destFile = path.join(imgOutDir, `${hash}${ext}`)
+    if (!fs.existsSync(destFile)) {
+      const srcFile = path.join(__dirname, '../public', decodeURIComponent(imgUrl))
+      if (fs.existsSync(srcFile)) {
+        fs.copyFileSync(srcFile, destFile)
+        copied++
+      } else {
+        missing++
+      }
+    } else {
+      skipped++
+    }
+    return `/img/${hash}${ext}`
   }),
 }))
 
@@ -58,18 +54,22 @@ const produtosHashed = produtos.map(produto => ({
 const outDir = path.join(__dirname, '../data')
 fs.mkdirSync(outDir, { recursive: true })
 
-// Public data — somente campos públicos, sem identificadores de fornecedor
+// Public JSON — only public fields, no supplier identifiers, no catalogos list
 fs.writeFileSync(
   path.join(outDir, 'static-data.json'),
-  JSON.stringify({ produtos: produtosHashed, catalogos })
+  JSON.stringify({ produtos: produtosHashed })
 )
 
-// Private map — gitignored, regenerated on every build
+// First-image index per product (public — hash URLs only, no supplier info)
+const imagesIndex = {}
+for (const p of produtosHashed) {
+  if (p.imagens.length > 0) imagesIndex[p.id] = p.imagens[0]
+}
 fs.writeFileSync(
-  path.join(outDir, 'image-map.json'),
-  JSON.stringify(imageMap)
+  path.join(__dirname, '../public/imagens-index.json'),
+  JSON.stringify(imagesIndex)
 )
 
-const imgCount = Object.keys(imageMap).length
-console.log(`Exportado: ${produtos.length} produtos, ${catalogos.length} catálogos → data/static-data.json`)
-console.log(`Mapeadas: ${imgCount} imagens → data/image-map.json (privado)`)
+console.log(`Exportado: ${produtos.length} produtos → data/static-data.json`)
+console.log(`Imagens: ${copied} copiadas, ${skipped} já existiam, ${missing} não encontradas`)
+console.log(`Índice: ${Object.keys(imagesIndex).length} entradas → public/imagens-index.json`)

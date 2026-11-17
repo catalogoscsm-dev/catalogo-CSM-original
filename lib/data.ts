@@ -1,9 +1,7 @@
-import { Produto, Catalogo } from './types'
+import { Produto } from './types'
 import rawData from '../data/static-data.json'
 
-type CatalogoFull = Catalogo & { total_produtos: number }
-
-const data = rawData as { produtos: Produto[]; catalogos: CatalogoFull[] }
+const data = rawData as { produtos: Produto[] }
 const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 
 function withBase(p: Produto): Produto {
@@ -19,14 +17,6 @@ export function getProdutos(): Produto[] {
 export function getProduto(id: number | string): Produto | null {
   const p = data.produtos.find(p => p.id === Number(id))
   return p ? withBase(p) : null
-}
-
-export function getCatalogos(): CatalogoFull[] {
-  return data.catalogos
-}
-
-export function getCatalogoPorPasta(pasta: string): CatalogoFull | null {
-  return data.catalogos.find(c => c.pasta === pasta) ?? null
 }
 
 export function getDestaques(): Produto[] {
