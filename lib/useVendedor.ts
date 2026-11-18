@@ -1,35 +1,24 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { getVendedora, type Vendedora } from './vendedores'
+
+export interface Vendedora {
+  codigo: string
+  nome: string
+  whatsapp: string
+}
 
 // sessionStorage — isolado por aba, não vaza entre tabs
 const SS_KEY = 'csm_vendedora_sessao'
 
-export function useVendedor() {
+export function useVendedor(): Vendedora | null {
   const [vendedora, setVendedora] = useState<Vendedora | null>(null)
-
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search)
-    const codigoUrl = params.get('v')
-
-    if (codigoUrl) {
-      const encontrada = getVendedora(codigoUrl)
-      if (encontrada) {
-        sessionStorage.setItem(SS_KEY, JSON.stringify(encontrada))
-        setVendedora(encontrada)
-        window.dispatchEvent(new CustomEvent('csm:favoritos-updated'))
-        return
-      }
-    }
-
-    // Sem ?v= na URL — tenta recuperar da sessão desta aba
     try {
       const salva = sessionStorage.getItem(SS_KEY)
       if (salva) setVendedora(JSON.parse(salva))
     } catch { /* noop */ }
   }, [])
-
   return vendedora
 }
 

@@ -3,7 +3,8 @@
 import { useState, useRef, useEffect } from 'react'
 import { X, MessageCircle, User, Phone, Building2, Mail, StickyNote, Loader2 } from 'lucide-react'
 import { Produto } from '@/lib/types'
-import { type Vendedora, WHATSAPP_PADRAO } from '@/lib/vendedores'
+import { type Vendedora } from '@/lib/useVendedor'
+import { WHATSAPP_PADRAO } from '@/lib/leads'
 
 const SHEETS_URL = process.env.NEXT_PUBLIC_SHEETS_WEBHOOK ?? ''
 

@@ -1,21 +1,22 @@
-﻿'use client'
+'use client'
 
-import { useVendedor } from '@/lib/useVendedor'
-import { WHATSAPP_PADRAO } from '@/lib/vendedores'
+import { useAtendimento } from '@/lib/useAtendimento'
 
-const GLOBAL_MSG = encodeURIComponent(
-  'Olá! 👋 Estou explorando o Catálogo CSM e fiquei encantado(a) com os produtos! ' +
-  'Podem me ajudar a encontrar o móvel perfeito para transformar meu ambiente? 🏡✨ ' +
-  'Adoraria receber uma consultoria!'
-)
+// false = botão só aparece com token de vendedor válido (padrão).
+// true  = exibe sempre com número da loja como fallback.
+const MOSTRAR_BOTAO_SEM_VENDEDOR = false
+
+const MSG = encodeURIComponent('Olá! Estou vendo o catálogo da CSM Decor')
 
 export default function WhatsAppFloatingButton() {
-  const vendedora = useVendedor()
-  const phone = vendedora?.whatsapp ?? WHATSAPP_PADRAO
+  const { token, whatsapp, carregando } = useAtendimento()
+
+  if (carregando) return null
+  if (!token && !MOSTRAR_BOTAO_SEM_VENDEDOR) return null
 
   return (
     <a
-      href={`https://wa.me/${phone}?text=${GLOBAL_MSG}`}
+      href={`https://wa.me/${whatsapp}?text=${MSG}`}
       target="_blank"
       rel="noopener noreferrer"
       title="Fale conosco no WhatsApp"
