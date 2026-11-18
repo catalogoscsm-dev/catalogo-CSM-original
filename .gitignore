@@ -54,6 +54,7 @@ scripts/*.pdf
 scripts/*.bin
 check-db.js
 amanha.md
+HANDOFF.local.md
 
 # imagens originais com nomes de fornecedor (ficam localmente, fora do public/)
 /imagens-src/
