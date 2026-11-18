@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@napi-rs/canvas": "^1.0.9",
+    "sharp": "^0.35.4",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/qrcode": "^1.5.6",

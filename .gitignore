@@ -55,11 +55,9 @@ scripts/*.bin
 check-db.js
 amanha.md
 
-# imagens originais com nomes de fornecedor (ficam localmente, não no repo)
-public/imagens/
+# imagens originais com nomes de fornecedor (ficam localmente, fora do public/)
+/imagens-src/
 
-# imagens hash — 1.7 GB; use Git LFS antes de commitar: git lfs track "public/img/*"
-public/img/
 
 .vercel
 .env*
