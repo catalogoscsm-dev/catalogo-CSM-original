@@ -65,3 +65,8 @@ HANDOFF.local.md
 
 # ...mas o template de exemplo deve ser versionado (sem segredos)
 !.env.example
+
+# scripts locais de checagem
+scripts/_check-*.cjs
+scripts/check-status.cjs
+scripts/__pycache__/
