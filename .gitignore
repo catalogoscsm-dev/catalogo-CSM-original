@@ -70,3 +70,6 @@ HANDOFF.local.md
 scripts/_check-*.cjs
 scripts/check-status.cjs
 scripts/__pycache__/
+
+# gerado no prebuild a partir de data/static-data.json (só campos públicos)
+public/static-data.json
