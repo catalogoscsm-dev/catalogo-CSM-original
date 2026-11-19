@@ -7,6 +7,8 @@
 // Segurança: só copia os campos da lista PERMITIDOS — os mesmos que a página do produto
 // já mostra. Qualquer campo novo/interno que apareça em data/static-data.json fica de fora.
 // Imagens: só caminhos com hash (/img/<12 hex>.webp); outros são descartados.
+// Produtos: SÓ os que têm foto — o mesmo filtro de lib/data.ts getProdutos(), ou seja,
+// exatamente os produtos que o site já publica. Produto sem foto nunca entra.
 const fs   = require('fs')
 const path = require('path')
 
@@ -31,6 +33,7 @@ const publicos = produtos
     imagensDescartadas += imgs.length - o.imagens.length
     return o
   })
+  .filter(o => o.imagens.length > 0)   // só produtos com foto (os que o site mostra)
 
 fs.writeFileSync(DESTINO, JSON.stringify({ versao: 1, produtos: publicos }))
 console.log(`static-data público: ${publicos.length} produtos → public/static-data.json` +
