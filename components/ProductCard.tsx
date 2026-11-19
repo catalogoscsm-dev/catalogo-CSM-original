@@ -9,7 +9,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useTheme } from './ThemeProvider'
 import { getFavKey } from '@/lib/useVendedor'
 
-const WA_PHONE = '5519990034068'
+import { WHATSAPP_RECEPCAO } from '@/lib/leads'
 
 function getProductUrl(id: number) {
   if (typeof window === 'undefined') return ''
@@ -376,7 +376,7 @@ export default function ProductCard({ produto, favorito = false, onToggleFavorit
               <Share2 className="w-3.5 h-3.5" style={{ color: 'var(--g)' }} />
             </button>
             <button
-              onClick={e => { e.preventDefault(); e.stopPropagation(); window.open(`https://wa.me/${WA_PHONE}?text=${waProductMsg(produto.nome, produto.id)}`, '_blank', 'noopener,noreferrer') }}
+              onClick={e => { e.preventDefault(); e.stopPropagation(); window.open(`https://wa.me/${WHATSAPP_RECEPCAO}?text=${waProductMsg(produto.nome, produto.id)}`, '_blank', 'noopener,noreferrer') }}
               className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-150 hover:scale-110"
               style={{
                 background: '#25D366',

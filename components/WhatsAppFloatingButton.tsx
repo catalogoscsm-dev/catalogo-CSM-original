@@ -1,22 +1,28 @@
 'use client'
 
 import { useAtendimento } from '@/lib/useAtendimento'
+import { WHATSAPP_RECEPCAO } from '@/lib/leads'
 
-// false = botão só aparece com token de vendedor válido (padrão).
-// true  = exibe sempre com número da loja como fallback.
-const MOSTRAR_BOTAO_SEM_VENDEDOR = false
+// true = sem vendedor válido no link, o botão leva à recepção da loja.
+const MOSTRAR_BOTAO_SEM_VENDEDOR = true
 
-const MSG = encodeURIComponent('Olá! Estou vendo o catálogo da CSM Decor')
+const MSG_VENDEDOR = encodeURIComponent('Olá! Estou vendo o catálogo da CSM Decor')
+const MSG_RECEPCAO = encodeURIComponent('Olá! Estou vendo o catálogo da CSM Decor e gostaria de atendimento')
 
 export default function WhatsAppFloatingButton() {
-  const { token, whatsapp, carregando } = useAtendimento()
+  const { token, nome, whatsapp, carregando } = useAtendimento()
 
   if (carregando) return null
   if (!token && !MOSTRAR_BOTAO_SEM_VENDEDOR) return null
 
+  // Vendedor válido = token com cadastro ativo (nome resolvido). Caso contrário, recepção.
+  const vendedorValido = !!token && !!nome
+  const numero = vendedorValido ? whatsapp : WHATSAPP_RECEPCAO
+  const msg = vendedorValido ? MSG_VENDEDOR : MSG_RECEPCAO
+
   return (
     <a
-      href={`https://wa.me/${whatsapp}?text=${MSG}`}
+      href={`https://wa.me/${numero}?text=${msg}`}
       target="_blank"
       rel="noopener noreferrer"
       title="Fale conosco no WhatsApp"

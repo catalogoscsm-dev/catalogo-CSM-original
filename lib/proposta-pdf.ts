@@ -10,6 +10,7 @@
  */
 import { jsPDF } from "jspdf";
 import QRCode from "qrcode";
+import { WHATSAPP_RECEPCAO } from "./leads";
 
 // ───────────────────────── Tipos (contrato de dados) ─────────────────────────
 
@@ -86,7 +87,7 @@ export interface DadosProposta {
 export const LOJA_PADRAO: Loja = {
   nome: "Campinas Shopping Móveis",
   site: "csmdecor.com.br",
-  whatsapp: "5519990034068",
+  whatsapp: WHATSAPP_RECEPCAO,
 };
 
 // ───────────────────────── Constantes visuais ─────────────────────────

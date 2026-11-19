@@ -45,8 +45,8 @@ export function capturarToken(): string | null {
   }
 }
 
-/** Número da loja — fallback quando não há vendedor no link. */
-export const WHATSAPP_PADRAO = '5519990034068'
+/** WhatsApp da recepção da loja — única fonte do número; fallback quando não há vendedor válido no link. */
+export const WHATSAPP_RECEPCAO = '5519990034068'
 
 export interface DadosVendedor {
   nome: string | null
@@ -61,7 +61,7 @@ const dadosCache = new Map<string, Promise<DadosVendedor>>()
  * Nunca lança exceção: retorna fallback { nome: null, whatsapp: loja } em caso de falha.
  */
 export function dadosVendedor(token: string): Promise<DadosVendedor> {
-  const fallback: DadosVendedor = { nome: null, whatsapp: WHATSAPP_PADRAO }
+  const fallback: DadosVendedor = { nome: null, whatsapp: WHATSAPP_RECEPCAO }
   if (!leadsConfigurado() || !token) return Promise.resolve(fallback)
   const cached = dadosCache.get(token)
   if (cached) return cached
@@ -80,7 +80,7 @@ export function dadosVendedor(token: string): Promise<DadosVendedor> {
       const nome = typeof d.nome === 'string' && d.nome.trim() ? d.nome.trim() : null
       const whatsapp = typeof d.whatsapp === 'string' && d.whatsapp.trim()
         ? d.whatsapp.trim()
-        : WHATSAPP_PADRAO
+        : WHATSAPP_RECEPCAO
       return { nome, whatsapp }
     } catch (e) {
       console.error('[leads] dados_vendedor falhou:', e)

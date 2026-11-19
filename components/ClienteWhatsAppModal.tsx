@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { X, MessageCircle, User, Phone, Building2, Mail, StickyNote, Loader2 } from 'lucide-react'
 import { Produto } from '@/lib/types'
 import { type Vendedora } from '@/lib/useVendedor'
-import { WHATSAPP_PADRAO } from '@/lib/leads'
+import { WHATSAPP_RECEPCAO } from '@/lib/leads'
 
 const SHEETS_URL = process.env.NEXT_PUBLIC_SHEETS_WEBHOOK ?? ''
 
@@ -101,7 +101,7 @@ export default function ClienteWhatsAppModal({ produtos, vendedora, onClose }: P
     if (!podeEnviar) return
     setStatus('sending')
     await salvarNaPlanilha(produtos, form, vendedora)
-    const phone = vendedora?.whatsapp ?? WHATSAPP_PADRAO
+    const phone = vendedora?.whatsapp ?? WHATSAPP_RECEPCAO
     const msg   = buildWaMsg(produtos, form, vendedora, window.location.origin)
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
     handleClose()

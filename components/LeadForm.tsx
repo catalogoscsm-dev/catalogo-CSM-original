@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { Send, Loader2, CheckCircle2, User, Phone } from 'lucide-react'
 import { Produto } from '@/lib/types'
 import { useAtendimento } from '@/lib/useAtendimento'
-import { registrarLead, WHATSAPP_PADRAO, type LeadItem } from '@/lib/leads'
+import { registrarLead, WHATSAPP_RECEPCAO, type LeadItem } from '@/lib/leads'
 
 type Status = 'idle' | 'enviando' | 'sucesso' | 'erro'
 type StatusPdf = 'idle' | 'gerando' | 'erro'
@@ -99,7 +99,7 @@ export default function LeadForm({ produtos }: { produtos: Produto[] }) {
       const { produtoParaPdf, carregarAssets, entregarPdf } = await import('@/lib/proposta-browser')
 
       const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '/catalogo-CSM-original'
-      const isVendedorProprio = whatsapp !== WHATSAPP_PADRAO
+      const isVendedorProprio = whatsapp !== WHATSAPP_RECEPCAO
       const vendedor = {
         nome: nomeVendedor!,
         telefone: isVendedorProprio ? formatarTelefoneVendedor(whatsapp) : undefined,

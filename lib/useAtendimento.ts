@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { capturarToken, dadosVendedor, WHATSAPP_PADRAO } from './leads'
+import { capturarToken, dadosVendedor, WHATSAPP_RECEPCAO } from './leads'
 
 export interface Atendimento {
   token: string | null
@@ -19,7 +19,7 @@ export interface Atendimento {
 export function useAtendimento(): Atendimento {
   const [token, setToken]     = useState<string | null>(null)
   const [nome, setNome]       = useState<string | null>(null)
-  const [whatsapp, setWhatsapp] = useState<string>(WHATSAPP_PADRAO)
+  const [whatsapp, setWhatsapp] = useState<string>(WHATSAPP_RECEPCAO)
   const [carregando, setCarregando] = useState(true)
 
   useEffect(() => {
