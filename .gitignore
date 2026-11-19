@@ -65,3 +65,6 @@ HANDOFF.local.md
 
 # ...mas o template de exemplo deve ser versionado (sem segredos)
 !.env.example
+
+# gerado no prebuild a partir de data/static-data.json (só campos públicos)
+public/static-data.json
