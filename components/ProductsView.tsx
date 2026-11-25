@@ -5,6 +5,7 @@ import { useSearchParams } from 'next/navigation'
 import { LayoutGrid, Rows3 } from 'lucide-react'
 import { Produto } from '@/lib/types'
 import ProductCard from './ProductCard'
+import CategoryChips from './CategoryChips'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -217,37 +218,7 @@ export default function ProductsView({ produtos, total }: Props) {
     <div className="space-y-4">
 
       {/* ── Chips de categoria ── */}
-      <div
-        className="flex gap-2 pb-0.5"
-        style={{ overflowX: 'auto', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        <style>{`div.cat-chips::-webkit-scrollbar{display:none}`}</style>
-        {[null, ...categorias].map(cat => {
-          const ativo = categoriaAtiva === cat
-          return (
-            <button
-              key={cat ?? '__todos'}
-              onClick={() => setCategoriaAtiva(cat)}
-              className="flex-shrink-0 transition-all duration-200 hover:scale-[1.03] active:scale-95"
-              style={{
-                fontSize:      '11px',
-                fontWeight:    ativo ? 600 : 500,
-                fontFamily:    'var(--n)',
-                letterSpacing: '.06em',
-                padding:       '5px 14px',
-                borderRadius:  999,
-                border:        ativo ? '1px solid var(--ticker-text)' : '1px solid var(--h)',
-                background:    ativo ? 'var(--ticker-text)' : 'var(--c)',
-                color:         ativo ? '#fff' : 'var(--g)',
-                cursor:        'pointer',
-                whiteSpace:    'nowrap',
-              }}
-            >
-              {cat ?? 'Todos'}
-            </button>
-          )
-        })}
-      </div>
+      <CategoryChips categorias={categorias} ativa={categoriaAtiva} onSelect={setCategoriaAtiva} />
 
       {/* Barra de controle */}
       <div className="flex items-center justify-between">
