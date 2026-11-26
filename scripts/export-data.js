@@ -17,6 +17,18 @@ const produtos = db.prepare(`
 
 db.close()
 
+// ── Aviso: dimensões que o site não consegue exibir como tabela ─────────────
+{
+  const { statusDimensoes } = require('./_dimensoes-guard.cjs')
+  const ruins = produtos.filter(p => statusDimensoes(p.dimensoes) === 'invalido')
+  if (ruins.length) {
+    console.warn(`\n⚠ ${ruins.length} produto(s) com dimensões NÃO reconhecidas (aparecem como texto cru no site):`)
+    ruins.slice(0, 15).forEach(p => console.warn(`   id ${p.id} ${p.nome}: ${p.dimensoes}`))
+    if (ruins.length > 15) console.warn(`   … e mais ${ruins.length - 15}. Rode: npm run validar-dimensoes`)
+    console.warn('   Formato: docs/FORMATO-DIMENSOES.md\n')
+  }
+}
+
 // ── Image hashing & WebP conversion ───────────────────────────────────────
 const MAX_SIDE = 1400   // px
 const WEBP_Q   = 80     // quality

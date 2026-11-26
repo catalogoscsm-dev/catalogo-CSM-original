@@ -42,6 +42,7 @@ const rows = j.produtos.map(p => {
     acabamento: i.acabamento, dimensoes: i.dimensoes, texto_livre: i.texto_livre.join('\n'), pagina: p.paginas[0] } }
 })
 
+require('./_dimensoes-guard.cjs').assertDimensoes(rows.map(r => r.row)) // aborta antes de gravar se dimensões fora do formato (docs/FORMATO-DIMENSOES.md)
 let cat = db.prepare('select id from catalogos where pasta=?').get(PASTA)
 const res = []
 db.transaction(() => {

@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "export-data": "node scripts/export-data.js",
+    "validar-dimensoes": "node scripts/validar-dimensoes.cjs",
+    "test": "node --test tests/*.test.cjs",
     "upscale": "node scripts/upscale.cjs",
     "upscale:dry": "node scripts/upscale.cjs --dry-run",
     "upscale:api": "node scripts/upscale-api.cjs",
